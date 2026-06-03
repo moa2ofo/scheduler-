@@ -1,24 +1,20 @@
 #include "Sched_Priv.h"
 #include "Mcu.h"
 
-void Sched_Task0(void)
-{
+void Sched_Task0(void) {
   /* Task code for 5ms period */
 }
 
-void Sched_Task1(void)
-{
+void Sched_Task1(void) {
   /* Task code for 10ms period */
 }
 
-void Sched_Task2(void)
-{
+void Sched_Task2(void) {
   /* Task code for 20ms period */
   Mcu_ServiceWatchdog();
 }
 
-void Sched_Task3(void)
-{
+void Sched_Task3(void) {
   /* Task code for 100ms period */
 
   /************* example code *************/
@@ -26,8 +22,7 @@ void Sched_Task3(void)
 
   counter++;
 
-  if (counter >= 5)
-  {
+  if(counter >= 5) {
     counter = 0;
     toggle_led();
   }
