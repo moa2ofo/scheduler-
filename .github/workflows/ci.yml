@@ -1,0 +1,172 @@
+name: CI
+
+on:
+  push:
+    branches: ["**"]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  format_and_unit_tests:
+    runs-on: ubuntu-latest
+    env:
+      TZ: Europe/Rome
+    if: ${{ github.ref != 'refs/heads/main' && github.ref != 'refs/heads/develop' }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Sync branch with remote (push only)
+        if: github.event_name == 'push'
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+
+      - name: Install clang-format
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y clang-format
+
+      - name: Checkout git_action_scripts repo
+        uses: actions/checkout@v4
+        with:
+          repository: moa2ofo/git_action_scripts
+          path: git_action_scripts
+          fetch-depth: 1
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+
+      - name: Build Docker image + Generate test units
+        id: generate_tests
+        run: |
+          cd git_action_scripts
+          python run_docker.py build --tag llvm-c-parser:latest --file Dockerfile
+
+          MSYS_NO_PATHCONV=1 MSYS2_ARG_CONV_EXCL="*" \
+          python run_docker.py cmd --host-dir "${{ github.workspace }}" -- \
+          python3 /workspace/git_action_scripts/generate_test_units.py /workspace/git_action_scripts -- -DDEBUG
+
+      - name: Run clang-format on all .c and .h files
+        run: |
+          find dev test -type f \( -name "*.c" -o -name "*.h" \) \
+            -not -path "*/docs/*" \
+            -not -path "*/UnitTestResults/*" \
+            -not -path "*/build/*" \
+            -not -path "*/git_action_scripts/*" \
+            -exec clang-format --style=file:git_action_scripts/.clang-format -i {} \;
+
+      - name: Verify Docker is available
+        id: docker_info
+        continue-on-error: true
+        run: docker info
+
+      - name: Run swCmpBuildCheck (launcher repo)
+        id: sw_cmp_build_check
+        continue-on-error: true
+        run: |
+          sudo -E python3 git_action_scripts/swCmpBuildCheck.py
+
+      - name: Run swCmpDocsGenerator
+        id: sw_docs_generator
+        continue-on-error: true
+        run: |
+          sudo -E python3 git_action_scripts/swCmpDocsGenerator.py
+
+      - name: Fix permissions for git_action_scripts workspace
+        id: fix_permissions
+        continue-on-error: true
+        run: |
+          sudo mkdir -p git_action_scripts/utExecutionAndResults/utUnderTest/build
+          sudo chmod -R 777 .
+
+      - name: Run unit tests (launcher repo)
+        id: unit_tests
+        continue-on-error: true
+        run: |
+          script -q -e -c "sudo -E python3 git_action_scripts/unitTestsLauncher.py all" /dev/null
+
+      - name: Delete git_action_scripts folder
+        if: always()
+        run: |
+          sudo rm -rf git_action_scripts
+
+      - name: Commit and push changes (format + buildCheck + utResults)
+        if: github.event_name == 'push' && always()
+        env:
+          GENERATE_TESTS_OUTCOME: ${{ steps.generate_tests.outcome }}
+          DOCKER_OUTCOME: ${{ steps.docker_info.outcome }}
+          BUILD_OUTCOME:  ${{ steps.sw_cmp_build_check.outcome }}
+          UT_OUTCOME:     ${{ steps.unit_tests.outcome }}
+          DOXYGEN_OUTCOME: ${{ steps.sw_docs_generator.outcome }}
+          RUN_URL:        ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+
+          map_outcome() {
+            case "$1" in
+              success) echo "performed" ;;
+              skipped) echo "skipped" ;;
+              *)       echo "failed" ;;
+            esac
+          }
+          GENERATE_TESTS_STATUS="$(map_outcome "$GENERATE_TESTS_OUTCOME")"
+          DOCKER_STATUS="$(map_outcome "$DOCKER_OUTCOME")"
+          BUILD_STATUS="$(map_outcome "$BUILD_OUTCOME")"
+          UT_STATUS="$(map_outcome "$UT_OUTCOME")"
+          DOXYGEN_STATUS="$(map_outcome "$DOXYGEN_OUTCOME")"
+
+          FAILED=0
+
+          for s in "$GENERATE_TESTS_STATUS" "$DOCKER_STATUS" "$BUILD_STATUS" "$UT_STATUS" "$DOXYGEN_STATUS" ; do
+            [ "$s" = "failed" ] && FAILED=1
+          done
+
+
+          mkdir -p ci_status
+
+          if [ "$FAILED" -eq 1 ]; then
+            STATUS_LINE="GIT ACTION FAILED"
+          else
+            STATUS_LINE="GIT ACTION PERFORMED"
+          fi
+
+          {
+            echo "${STATUS_LINE}"
+            echo "Run: ${RUN_URL}"
+            echo "generate_tests: ${GENERATE_TESTS_STATUS}"
+            echo "docker info: ${DOCKER_STATUS}"
+            echo "swCmpBuildCheck: ${BUILD_STATUS}"
+            echo "doxygen: ${DOXYGEN_STATUS}"
+            echo "unit tests: ${UT_STATUS}"
+            echo "Timestamp (UTC): $(date -u +"%Y-%m-%dT%H:%M:%SZ")"
+          } > ci_status/last_status
+
+          git add -A
+
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            if [ "$FAILED" -eq 1 ]; then
+              git commit -m "[GitAct_Failed] - Git actions docker=${DOCKER_STATUS}, build=${BUILD_STATUS}, ut=${UT_STATUS} [skip ci]"
+            else
+              git commit -m "[GitAct_Performed] - All git actions have been performed"
+            fi
+            git push
+          fi
+
+          if [ "$FAILED" -eq 1 ]; then
+            exit 1
+          fi
