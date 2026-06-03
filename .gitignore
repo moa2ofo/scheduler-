@@ -1,0 +1,13 @@
+
+# Object files
+*.o
+
+# Coverage files
+*.gcno
+*.gcda
+*.out
+*.d
+*.yml
+/CMakeLists.txt
+
+
