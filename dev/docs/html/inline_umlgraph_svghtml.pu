@@ -1,12 +1,16 @@
 @startuml inline_umlgraph_1.svg
-External -> Sched_Main
-Sched_Main -> CountTime
-Sched_Main -> ExecutePendingTasks
-ExecutePendingTasks -> Sched_Task0
-ExecutePendingTasks -> Sched_Task1
-ExecutePendingTasks -> Sched_Task2
-ExecutePendingTasks -> Sched_Task3
-ExecutePendingTasks -> Sched_Task4
+ External -> Sched_Main
+ External -> Sched_EntrySequence
+ External -> Sched_GetRefTime_u32
+
+ Sched_Main -> CountTime
+ Sched_Main -> ExecutePendingTasks
+
+ ExecutePendingTasks -> Sched_Task0
+ ExecutePendingTasks -> Sched_Task1
+ ExecutePendingTasks -> Sched_Task2
+ ExecutePendingTasks -> Sched_Task3
+ ExecutePendingTasks -> Sched_Task4
 @enduml
 @startuml inline_umlgraph_2.svg
 start
