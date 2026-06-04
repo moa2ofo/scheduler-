@@ -1,6 +1,9 @@
 #ifndef SCHED_CFG_H
 #define SCHED_CFG_H
 
+void Sched_EntrySequence(void);
+uint32_t Sched_GetRefTime_u32(void);
+
 /* Default time unit for all time-based variables is milliseconds */
 
 #define SCHED_MAX_REF_TIME (UINT32_MAX)

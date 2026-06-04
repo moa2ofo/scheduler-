@@ -1,13 +1,7 @@
 #include "Sched_Priv.h"
 #include <string.h>
 
-typedef void (*const TaskHandler_t)(void);
 
-typedef struct {
-  TaskHandler_t handler_;
-  const uint32_t period_cu32;
-  const uint32_t shift_cu32;
-} Task_t;
 
 static uint32_t Timer_u32 = 0u;
 
