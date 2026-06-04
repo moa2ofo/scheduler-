@@ -30,15 +30,15 @@
  * ExecutePendingTasks -> Sched_Task3
  * ExecutePendingTasks -> Sched_Task4
  * @enduml
- * @{
  */
 
 /**
  * @brief Main scheduler function.
+ * @ingroup Sched
  * @return Execution status.
  */
 int32_t Sched_Main(void);
 
-/** @} */
+
 
 #endif
