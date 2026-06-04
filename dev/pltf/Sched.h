@@ -15,9 +15,15 @@
  *
  * ## Module Interface Specification
  *
- * | Name        | Input | Output | Type                     | Factor | Offset | Size | Range  | Unit | Init value | Special Values |
- * |-------------|-------|--------|--------------------------|--------|--------|------|--------|------|------------|----------------|
- * | Sched_Main  | No    | Yes    | int32_t Sched_Main(void) | N/A    | N/A    | 1    | N/A    | N/A  | N/A        | Return status  |
+ * | Name                 | Input | Output | Type                     | Factor | Offset | Size | Range         | Unit | Init value | Special Values | Link          |
+ * |----------------------|-------|--------|--------------------------|--------|--------|------|---------------|------|------------|----------------|---------------|
+ * | Sched_Main           | No    | Yes    | int32_t Sched_Main(void) | N/A    | N/A    | 1    | N/A           | N/A  | N/A        | Return status  | SW_INTF-P0006 |
+ * | Sched_GetRefTime_u32 | Yes   | No     | uint32                   | N/A    | N/A    | 1    | [0,UINT32_MAX]| ms   | N/A        | Return status  | SW_ARCH-C0005 |
+ * | Sched_EntrySequence  | No    | Yes    | void (void)              | N/A    | N/A    | N/A  | N/A           | N/A  | N/A        | N/A            | SW_ARCH-C0004 |
+ * | SCHED_TASK0_PERIOD   | Yes   | No     | const uint32             | 1      | 0      | 1    | [5,5]         | ms   | 5          | N/A            | SW_ARCH-C0003 |
+ * | SCHED_TASK1_PERIOD   | Yes   | No     | const uint32             | 1      | 0      | 1    | [10,10]       | ms   | 10         | N/A            | SW_ARCH-C0003 |
+ * | SCHED_TASK2_PERIOD   | Yes   | No     | const uint32             | 1      | 0      | 1    | [20,20]       | ms   | 20         | N/A            | SW_ARCH-C0003 |
+ * | SCHED_TASK3_PERIOD   | Yes   | No     | const uint32             | 1      | 0      | 1    | [100,100]     | ms   | 100        | N/A            | SW_ARCH-C0003 |
  *
  * ## High-level interaction
  * @startuml
