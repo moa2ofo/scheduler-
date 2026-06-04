@@ -90,6 +90,8 @@ $(document).ready(function(){initNavTree('group__Sched.html',''); initResizable(
 
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">Scheduler</div></div>
 </div><!--header-->
@@ -98,11 +100,35 @@ $(document).ready(function(){initNavTree('group__Sched.html',''); initResizable(
 <p>Scheduler module.  
 <a href="#details">More...</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTask__t.html">Task_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Task configuration structure.  <a href="structTask__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:gadce47304ee8b44e4d240b01367c2f82a" id="r_gadce47304ee8b44e4d240b01367c2f82a"><td class="memItemLeft" align="right" valign="top">typedef void(*const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Sched.html#gadce47304ee8b44e4d240b01367c2f82a">TaskHandler_t</a>) (void)</td></tr>
+<tr class="memdesc:gadce47304ee8b44e4d240b01367c2f82a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Task handler function type.  <br /></td></tr>
+<tr class="separator:gadce47304ee8b44e4d240b01367c2f82a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:gae75409b16ee02f84ef65a77637d2decb" id="r_gae75409b16ee02f84ef65a77637d2decb"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Sched.html#gae75409b16ee02f84ef65a77637d2decb">Sched_Main</a> (void)</td></tr>
 <tr class="memdesc:gae75409b16ee02f84ef65a77637d2decb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main scheduler function.  <br /></td></tr>
 <tr class="separator:gae75409b16ee02f84ef65a77637d2decb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga99b8597edbc7a86e0ff556329d27d28c" id="r_ga99b8597edbc7a86e0ff556329d27d28c"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Sched.html#ga99b8597edbc7a86e0ff556329d27d28c">CountTime</a> (void)</td></tr>
+<tr class="memdesc:ga99b8597edbc7a86e0ff556329d27d28c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update scheduler time base.  <br /></td></tr>
+<tr class="separator:ga99b8597edbc7a86e0ff556329d27d28c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga75a48d5cf2208ddbe805fffb9af6df15" id="r_ga75a48d5cf2208ddbe805fffb9af6df15"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Sched.html#ga75a48d5cf2208ddbe805fffb9af6df15">ExecutePendingTasks</a> (void)</td></tr>
+<tr class="memdesc:ga75a48d5cf2208ddbe805fffb9af6df15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Execute pending tasks.  <br /></td></tr>
+<tr class="separator:ga75a48d5cf2208ddbe805fffb9af6df15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga00304344cc73ea96d3ad1b85eefe2df2" id="r_ga00304344cc73ea96d3ad1b85eefe2df2"><td class="memItemLeft" align="right" valign="top">static uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Sched.html#ga00304344cc73ea96d3ad1b85eefe2df2">DeltaTime_u32</a> (void)</td></tr>
+<tr class="memdesc:ga00304344cc73ea96d3ad1b85eefe2df2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute elapsed time since last call.  <br /></td></tr>
+<tr class="separator:ga00304344cc73ea96d3ad1b85eefe2df2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae400bce4176ddab53753e642e759598b" id="r_gae400bce4176ddab53753e642e759598b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Sched.html#gae400bce4176ddab53753e642e759598b">Sched_Task0</a> (void)</td></tr>
+<tr class="memdesc:gae400bce4176ddab53753e642e759598b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Task 0 entry point.  <br /></td></tr>
+<tr class="separator:gae400bce4176ddab53753e642e759598b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Scheduler module. </p>
@@ -120,7 +146,111 @@ High-level interaction</h2>
 <div class="plantumlgraph">
 <object type="image/svg+xml" data="inline_umlgraph_1.svg"></object>
 </div>
- <h2 class="groupheader">Function Documentation</h2>
+ <h2 class="groupheader">Typedef Documentation</h2>
+<a id="gadce47304ee8b44e4d240b01367c2f82a" name="gadce47304ee8b44e4d240b01367c2f82a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gadce47304ee8b44e4d240b01367c2f82a">&#9670;&#160;</a></span>TaskHandler_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef void(*const TaskHandler_t) (void)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Task handler function type. </p>
+
+<p class="definition">Definition at line <a class="el" href="Sched__Priv_8h_source.html#l00012">12</a> of file <a class="el" href="Sched__Priv_8h_source.html">Sched_Priv.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="ga99b8597edbc7a86e0ff556329d27d28c" name="ga99b8597edbc7a86e0ff556329d27d28c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga99b8597edbc7a86e0ff556329d27d28c">&#9670;&#160;</a></span>CountTime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void CountTime </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Update scheduler time base. </p>
+
+</div>
+</div>
+<a id="ga00304344cc73ea96d3ad1b85eefe2df2" name="ga00304344cc73ea96d3ad1b85eefe2df2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga00304344cc73ea96d3ad1b85eefe2df2">&#9670;&#160;</a></span>DeltaTime_u32()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint32_t DeltaTime_u32 </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Compute elapsed time since last call. </p>
+<dl class="section return"><dt>Returns</dt><dd>Delta time. </dd></dl>
+
+</div>
+</div>
+<a id="ga75a48d5cf2208ddbe805fffb9af6df15" name="ga75a48d5cf2208ddbe805fffb9af6df15"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga75a48d5cf2208ddbe805fffb9af6df15">&#9670;&#160;</a></span>ExecutePendingTasks()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void ExecutePendingTasks </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Execute pending tasks. </p>
+
+</div>
+</div>
 <a id="gae75409b16ee02f84ef65a77637d2decb" name="gae75409b16ee02f84ef65a77637d2decb"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gae75409b16ee02f84ef65a77637d2decb">&#9670;&#160;</a></span>Sched_Main()</h2>
 
@@ -158,6 +288,31 @@ Here is the call graph for this function:</div>
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="group__Sched_gae75409b16ee02f84ef65a77637d2decb_cgraph.svg" width="100%" height="401"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
+</div>
+</div>
+<a id="gae400bce4176ddab53753e642e759598b" name="gae400bce4176ddab53753e642e759598b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae400bce4176ddab53753e642e759598b">&#9670;&#160;</a></span>Sched_Task0()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Sched_Task0 </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Task 0 entry point. </p>
+
+<p class="definition">Definition at line <a class="el" href="Sched__Priv_8c_source.html#l00003">3</a> of file <a class="el" href="Sched__Priv_8c_source.html">Sched_Priv.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">    3</span>                       {</div>
+<div class="line"><span class="lineno">    4</span>  <span class="comment">/* Task code for 5ms period */</span></div>
+<div class="line"><span class="lineno">    5</span>}</div>
+</div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->

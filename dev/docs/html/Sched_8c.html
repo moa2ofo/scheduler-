@@ -281,7 +281,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">   81</span>}</div>
 <div class="ttc" id="aSched_8c_html_ab4e66f821cd9db9184340762ea40b555"><div class="ttname"><a href="Sched_8c.html#ab4e66f821cd9db9184340762ea40b555">Task_ac</a></div><div class="ttdeci">static const Task_t Task_ac[SCHED_NUM_OF_TASKS]</div><div class="ttdef"><b>Definition</b> <a href="Sched_8c_source.html#l00007">Sched.c:7</a></div></div>
 <div class="ttc" id="aSched__Cfg_8h_html_abefd09110bdb31d75202f8cb2258a672"><div class="ttname"><a href="Sched__Cfg_8h.html#abefd09110bdb31d75202f8cb2258a672">SCHED_NUM_OF_TASKS</a></div><div class="ttdeci">#define SCHED_NUM_OF_TASKS</div><div class="ttdef"><b>Definition</b> <a href="Sched__Cfg_8h_source.html#l00013">Sched_Cfg.h:13</a></div></div>
-<div class="ttc" id="astructTask__t_html_af6bbf42a3241695d7c9e64091f66e685"><div class="ttname"><a href="structTask__t.html#af6bbf42a3241695d7c9e64091f66e685">Task_t::handler_</a></div><div class="ttdeci">TaskHandler_t handler_</div><div class="ttdef"><b>Definition</b> <a href="Sched__Priv_8h_source.html#l00017">Sched_Priv.h:17</a></div></div>
+<div class="ttc" id="astructTask__t_html_af6bbf42a3241695d7c9e64091f66e685"><div class="ttname"><a href="structTask__t.html#af6bbf42a3241695d7c9e64091f66e685">Task_t::handler_</a></div><div class="ttdeci">TaskHandler_t handler_</div><div class="ttdef"><b>Definition</b> <a href="Sched__Priv_8h_source.html#l00019">Sched_Priv.h:19</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -336,7 +336,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">= {</div>
-<div class="line">    {.handler_ = &amp;<a class="code hl_function" href="Sched__Priv_8c.html#ae400bce4176ddab53753e642e759598b">Sched_Task0</a>, .period_cu32 = <a class="code hl_define" href="Sched__Cfg_8h.html#a18863de2bf4b2e00ff7cf6226ec14ce6">SCHED_TASK0_PERIOD</a>, .shift_cu32 = <a class="code hl_define" href="Sched__Cfg_8h.html#adc67cba90889b793ab47ca425041a555">SCHED_TASK0_SHIFT</a>},</div>
+<div class="line">    {.handler_ = &amp;<a class="code hl_function" href="group__Sched.html#gae400bce4176ddab53753e642e759598b">Sched_Task0</a>, .period_cu32 = <a class="code hl_define" href="Sched__Cfg_8h.html#a18863de2bf4b2e00ff7cf6226ec14ce6">SCHED_TASK0_PERIOD</a>, .shift_cu32 = <a class="code hl_define" href="Sched__Cfg_8h.html#adc67cba90889b793ab47ca425041a555">SCHED_TASK0_SHIFT</a>},</div>
 <div class="line"> </div>
 <div class="line"> </div>
 <div class="line"> </div>
@@ -355,11 +355,11 @@ Here is the caller graph for this function:</div>
 <div class="line">}</div>
 <div class="ttc" id="aSched__Cfg_8h_html_a18863de2bf4b2e00ff7cf6226ec14ce6"><div class="ttname"><a href="Sched__Cfg_8h.html#a18863de2bf4b2e00ff7cf6226ec14ce6">SCHED_TASK0_PERIOD</a></div><div class="ttdeci">#define SCHED_TASK0_PERIOD</div><div class="ttdef"><b>Definition</b> <a href="Sched__Cfg_8h_source.html#l00015">Sched_Cfg.h:15</a></div></div>
 <div class="ttc" id="aSched__Cfg_8h_html_adc67cba90889b793ab47ca425041a555"><div class="ttname"><a href="Sched__Cfg_8h.html#adc67cba90889b793ab47ca425041a555">SCHED_TASK0_SHIFT</a></div><div class="ttdeci">#define SCHED_TASK0_SHIFT</div><div class="ttdef"><b>Definition</b> <a href="Sched__Cfg_8h_source.html#l00020">Sched_Cfg.h:20</a></div></div>
-<div class="ttc" id="aSched__Priv_8c_html_ae400bce4176ddab53753e642e759598b"><div class="ttname"><a href="Sched__Priv_8c.html#ae400bce4176ddab53753e642e759598b">Sched_Task0</a></div><div class="ttdeci">void Sched_Task0(void)</div><div class="ttdef"><b>Definition</b> <a href="Sched__Priv_8c_source.html#l00003">Sched_Priv.c:3</a></div></div>
+<div class="ttc" id="agroup__Sched_html_gae400bce4176ddab53753e642e759598b"><div class="ttname"><a href="group__Sched.html#gae400bce4176ddab53753e642e759598b">Sched_Task0</a></div><div class="ttdeci">void Sched_Task0(void)</div><div class="ttdoc">Task 0 entry point.</div><div class="ttdef"><b>Definition</b> <a href="Sched__Priv_8c_source.html#l00003">Sched_Priv.c:3</a></div></div>
 </div><!-- fragment -->
 <p class="definition">Definition at line <a class="el" href="Sched_8c_source.html#l00007">7</a> of file <a class="el" href="Sched_8c_source.html">Sched.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">    7</span>                                                  {</div>
-<div class="line"><span class="lineno">    8</span>    {.handler_ = &amp;<a class="code hl_function" href="Sched__Priv_8c.html#ae400bce4176ddab53753e642e759598b">Sched_Task0</a>, .period_cu32 = <a class="code hl_define" href="Sched__Cfg_8h.html#a18863de2bf4b2e00ff7cf6226ec14ce6">SCHED_TASK0_PERIOD</a>, .shift_cu32 = <a class="code hl_define" href="Sched__Cfg_8h.html#adc67cba90889b793ab47ca425041a555">SCHED_TASK0_SHIFT</a>},</div>
+<div class="line"><span class="lineno">    8</span>    {.handler_ = &amp;<a class="code hl_function" href="group__Sched.html#gae400bce4176ddab53753e642e759598b">Sched_Task0</a>, .period_cu32 = <a class="code hl_define" href="Sched__Cfg_8h.html#a18863de2bf4b2e00ff7cf6226ec14ce6">SCHED_TASK0_PERIOD</a>, .shift_cu32 = <a class="code hl_define" href="Sched__Cfg_8h.html#adc67cba90889b793ab47ca425041a555">SCHED_TASK0_SHIFT</a>},</div>
 <div class="line"><span class="lineno">    9</span><span class="preprocessor">#if(SCHED_NUM_OF_TASKS &gt; 1u)</span></div>
 <div class="line"><span class="lineno">   10</span>    {.handler_ = &amp;<a class="code hl_function" href="Sched__Priv_8c.html#a10314d7837d80b3579c3b4267d144945">Sched_Task1</a>, .period_cu32 = <a class="code hl_define" href="Sched__Cfg_8h.html#a4d184e5867cc6ead3d948e1f2e3e3aca">SCHED_TASK1_PERIOD</a>, .shift_cu32 = <a class="code hl_define" href="Sched__Cfg_8h.html#a12416d1c7c7ace051dec55bd83e58d06">SCHED_TASK1_SHIFT</a>},</div>
 <div class="line"><span class="lineno">   11</span><span class="preprocessor">#endif</span></div>

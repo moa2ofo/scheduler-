@@ -12,7 +12,7 @@ var searchData=
   ['sched_5fnum_5fof_5ftasks_9',['SCHED_NUM_OF_TASKS',['../Sched__Cfg_8h.html#abefd09110bdb31d75202f8cb2258a672',1,'Sched_Cfg.h']]],
   ['sched_5fpriv_2ec_10',['Sched_Priv.c',['../Sched__Priv_8c.html',1,'']]],
   ['sched_5fpriv_2eh_11',['Sched_Priv.h',['../Sched__Priv_8h.html',1,'']]],
-  ['sched_5ftask0_12',['sched_task0',['../Sched__Priv_8c.html#ae400bce4176ddab53753e642e759598b',1,'Sched_Task0(void):&#160;Sched_Priv.c'],['../Sched__Priv_8h.html#ae400bce4176ddab53753e642e759598b',1,'Sched_Task0(void):&#160;Sched_Priv.c']]],
+  ['sched_5ftask0_12',['sched_task0',['../group__Sched.html#gae400bce4176ddab53753e642e759598b',1,'Sched_Task0(void):&#160;Sched_Priv.c'],['../group__Sched.html#gae400bce4176ddab53753e642e759598b',1,'Sched_Task0(void):&#160;Sched_Priv.c']]],
   ['sched_5ftask0_5fperiod_13',['SCHED_TASK0_PERIOD',['../Sched__Cfg_8h.html#a18863de2bf4b2e00ff7cf6226ec14ce6',1,'Sched_Cfg.h']]],
   ['sched_5ftask0_5fshift_14',['SCHED_TASK0_SHIFT',['../Sched__Cfg_8h.html#adc67cba90889b793ab47ca425041a555',1,'Sched_Cfg.h']]],
   ['sched_5ftask1_15',['Sched_Task1',['../Sched__Priv_8c.html#a10314d7837d80b3579c3b4267d144945',1,'Sched_Priv.c']]],
