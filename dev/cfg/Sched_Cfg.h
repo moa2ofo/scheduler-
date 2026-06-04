@@ -22,5 +22,4 @@ const uint32 SCHED_TASK1_SHIFT = (2u);
 const uint32 SCHED_TASK2_SHIFT = (7u);
 const uint32 SCHED_TASK3_SHIFT = (17u);
 
-
 #endif // SCHED_CFG_H

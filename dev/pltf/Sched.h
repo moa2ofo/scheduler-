@@ -26,10 +26,14 @@
  * | SCHED_TASK3_PERIOD   | Yes   | No     | const uint32             | 1      | 0      | 1    | [100,100]     | ms   | 100        | N/A            | SW_ARCH-C0003 |
  *
  * ## High-level interaction
- * @startuml
+* @startuml
  * External -> Sched_Main
+ * External -> Sched_EntrySequence
+ * External -> Sched_GetRefTime_u32
+ *
  * Sched_Main -> CountTime
  * Sched_Main -> ExecutePendingTasks
+ *
  * ExecutePendingTasks -> Sched_Task0
  * ExecutePendingTasks -> Sched_Task1
  * ExecutePendingTasks -> Sched_Task2
