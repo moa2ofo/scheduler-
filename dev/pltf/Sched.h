@@ -33,7 +33,6 @@
  * @{
  */
 
-
 /**
  * @brief Main scheduler function.
  * @return Execution status.

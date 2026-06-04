@@ -1,29 +1,4 @@
 var searchData=
 [
-  ['sched_2ec_0',['Sched.c',['../Sched_8c.html',1,'']]],
-  ['sched_2eh_1',['Sched.h',['../Sched_8h.html',1,'']]],
-  ['sched_5fcfg_2ec_2',['Sched_Cfg.c',['../Sched__Cfg_8c.html',1,'']]],
-  ['sched_5fcfg_2eh_3',['Sched_Cfg.h',['../Sched__Cfg_8h.html',1,'']]],
-  ['sched_5fentrysequence_4',['sched_entrysequence',['../Sched__Cfg_8c.html#a41d855b5aa179267c4c27ac86601ad34',1,'Sched_EntrySequence(void):&#160;Sched_Cfg.c'],['../Sched__Cfg_8h.html#a41d855b5aa179267c4c27ac86601ad34',1,'Sched_EntrySequence(void):&#160;Sched_Cfg.c']]],
-  ['sched_5fgetreftime_5fu32_5',['sched_getreftime_u32',['../Sched__Cfg_8c.html#a6db6318dec09fb3100bd27a4fe7981ff',1,'Sched_GetRefTime_u32(void):&#160;Sched_Cfg.c'],['../Sched__Cfg_8h.html#a6db6318dec09fb3100bd27a4fe7981ff',1,'Sched_GetRefTime_u32(void):&#160;Sched_Cfg.c']]],
-  ['sched_5floop_5fperiod_6',['SCHED_LOOP_PERIOD',['../Sched__Cfg_8h.html#aea308311f0950c45b22527f9e26775a9',1,'Sched_Cfg.h']]],
-  ['sched_5fmain_7',['sched_main',['../group__Sched.html#gae75409b16ee02f84ef65a77637d2decb',1,'Sched_Main(void):&#160;Sched.c'],['../group__Sched.html#gae75409b16ee02f84ef65a77637d2decb',1,'Sched_Main(void):&#160;Sched.c']]],
-  ['sched_5fmax_5fref_5ftime_8',['SCHED_MAX_REF_TIME',['../Sched__Cfg_8h.html#a979ab355e298f761c0a8f950a9d60df8',1,'Sched_Cfg.h']]],
-  ['sched_5fnum_5fof_5ftasks_9',['SCHED_NUM_OF_TASKS',['../Sched__Cfg_8h.html#abefd09110bdb31d75202f8cb2258a672',1,'Sched_Cfg.h']]],
-  ['sched_5fpriv_2ec_10',['Sched_Priv.c',['../Sched__Priv_8c.html',1,'']]],
-  ['sched_5fpriv_2eh_11',['Sched_Priv.h',['../Sched__Priv_8h.html',1,'']]],
-  ['sched_5ftask0_12',['sched_task0',['../Sched__Priv_8c.html#ae400bce4176ddab53753e642e759598b',1,'Sched_Task0(void):&#160;Sched_Priv.c'],['../Sched__Priv_8h.html#ae400bce4176ddab53753e642e759598b',1,'Sched_Task0(void):&#160;Sched_Priv.c']]],
-  ['sched_5ftask0_5fperiod_13',['SCHED_TASK0_PERIOD',['../Sched__Cfg_8h.html#a18863de2bf4b2e00ff7cf6226ec14ce6',1,'Sched_Cfg.h']]],
-  ['sched_5ftask0_5fshift_14',['SCHED_TASK0_SHIFT',['../Sched__Cfg_8h.html#adc67cba90889b793ab47ca425041a555',1,'Sched_Cfg.h']]],
-  ['sched_5ftask1_15',['Sched_Task1',['../Sched__Priv_8c.html#a10314d7837d80b3579c3b4267d144945',1,'Sched_Priv.c']]],
-  ['sched_5ftask1_5fperiod_16',['SCHED_TASK1_PERIOD',['../Sched__Cfg_8h.html#a4d184e5867cc6ead3d948e1f2e3e3aca',1,'Sched_Cfg.h']]],
-  ['sched_5ftask1_5fshift_17',['SCHED_TASK1_SHIFT',['../Sched__Cfg_8h.html#a12416d1c7c7ace051dec55bd83e58d06',1,'Sched_Cfg.h']]],
-  ['sched_5ftask2_18',['Sched_Task2',['../Sched__Priv_8c.html#a2903d59f824547c96cfde10d5356a158',1,'Sched_Priv.c']]],
-  ['sched_5ftask2_5fperiod_19',['SCHED_TASK2_PERIOD',['../Sched__Cfg_8h.html#ad6aeb6ef682b67decc0143f5b1aed113',1,'Sched_Cfg.h']]],
-  ['sched_5ftask2_5fshift_20',['SCHED_TASK2_SHIFT',['../Sched__Cfg_8h.html#aa4e6dc75244b667077f6707b6561818d',1,'Sched_Cfg.h']]],
-  ['sched_5ftask3_21',['Sched_Task3',['../Sched__Priv_8c.html#a0e7ef63cf946dd03f941e68381e6089e',1,'Sched_Priv.c']]],
-  ['sched_5ftask3_5fperiod_22',['SCHED_TASK3_PERIOD',['../Sched__Cfg_8h.html#ad0b28ae5fb825424b02316177cb5f4ae',1,'Sched_Cfg.h']]],
-  ['sched_5ftask3_5fshift_23',['SCHED_TASK3_SHIFT',['../Sched__Cfg_8h.html#acdcf9a08ce4aae268e3a74a2534acfd8',1,'Sched_Cfg.h']]],
-  ['scheduler_24',['Scheduler',['../group__Sched.html',1,'']]],
-  ['shift_5fcu32_25',['shift_cu32',['../structTask__t.html#a7486afa45342e74af53777cf69ce6599',1,'Task_t']]]
+  ['module_20interface_20specification_0',['Module Interface Specification',['../group__Sched.html#autotoc_md0',1,'']]]
 ];

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['numoftaskcalls_5fau32_0',['NumOfTaskCalls_au32',['../Sched_8c.html#a5aafb740a26c9198fe9aeb07862a223f',1,'Sched.c']]]
+  ['interaction_0',['High-level interaction',['../group__Sched.html#autotoc_md1',1,'']]],
+  ['interface_20specification_1',['Module Interface Specification',['../group__Sched.html#autotoc_md0',1,'']]]
 ];
