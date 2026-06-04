@@ -8,3 +8,18 @@ ExecutePendingTasks -> Sched_Task2
 ExecutePendingTasks -> Sched_Task3
 ExecutePendingTasks -> Sched_Task4
 @enduml
+@startuml inline_umlgraph_2.svg
+start
+:l_idx_u32 = 0;
+while (l_idx_u32 < SCHED_NUM_OF_TASKS) is (yes)
+  :compute l_timeShift_s32;
+  if (l_timeShift_s32 >= 0) then (yes)
+    :call handler_();
+    :NumOfTaskCalls_au32[idx]++;
+  else (no)
+  endif
+  :l_idx_u32++;
+endwhile
+:return;
+stop
+@enduml

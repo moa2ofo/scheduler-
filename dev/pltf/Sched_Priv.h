@@ -27,8 +27,6 @@ typedef struct {
  */
 static void CountTime(void);
 
-
-
 /**
  * @ingroup Sched
  * @brief Execute all tasks whose activation time has been reached.
