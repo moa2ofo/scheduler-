@@ -1,8 +1,6 @@
 #include "Sched_Priv.h"
 #include <string.h>
 
-
-
 static uint32_t Timer_u32 = 0u;
 
 static uint32_t NumOfTaskCalls_au32[SCHED_NUM_OF_TASKS] = {0u};

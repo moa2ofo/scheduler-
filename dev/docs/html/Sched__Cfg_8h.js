@@ -10,5 +10,7 @@ var Sched__Cfg_8h =
     [ "SCHED_TASK2_PERIOD", "Sched__Cfg_8h.html#ad6aeb6ef682b67decc0143f5b1aed113", null ],
     [ "SCHED_TASK2_SHIFT", "Sched__Cfg_8h.html#aa4e6dc75244b667077f6707b6561818d", null ],
     [ "SCHED_TASK3_PERIOD", "Sched__Cfg_8h.html#ad0b28ae5fb825424b02316177cb5f4ae", null ],
-    [ "SCHED_TASK3_SHIFT", "Sched__Cfg_8h.html#acdcf9a08ce4aae268e3a74a2534acfd8", null ]
+    [ "SCHED_TASK3_SHIFT", "Sched__Cfg_8h.html#acdcf9a08ce4aae268e3a74a2534acfd8", null ],
+    [ "Sched_EntrySequence", "Sched__Cfg_8h.html#a41d855b5aa179267c4c27ac86601ad34", null ],
+    [ "Sched_GetRefTime_u32", "Sched__Cfg_8h.html#a6db6318dec09fb3100bd27a4fe7981ff", null ]
 ];

@@ -7,7 +7,7 @@
 :failures: []
 :ignores:
 - :test: test_CountTime
-  :line: 13
+  :line: 14
   :message: Auto-generated stub test
   :unity_test_time: 0
 :counts:
@@ -16,4 +16,4 @@
   :failed: 0
   :ignored: 1
 :stdout: []
-:time: 0.0009066009999969538
+:time: 0.0009382799999855251

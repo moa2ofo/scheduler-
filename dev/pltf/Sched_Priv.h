@@ -14,9 +14,9 @@ typedef void (*const TaskHandler_t)(void);
  * @brief Task configuration structure.
  */
 typedef struct {
-    TaskHandler_t handler_;    /**< Task function */
-    const uint32_t period_cu32;/**< Task period */
-    const uint32_t shift_cu32; /**< Task phase shift */
+  TaskHandler_t handler_;     /**< Task function */
+  const uint32_t period_cu32; /**< Task period */
+  const uint32_t shift_cu32;  /**< Task phase shift */
 } Task_t;
 
 /* Internal functions */

@@ -94,8 +94,7 @@ $(document).ready(function(){initNavTree('Sched__Cfg_8c.html',''); initResizable
   <div class="headertitle"><div class="title">Sched_Cfg.c File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;Mcu.h&quot;</code><br />
-<code>#include &quot;<a class="el" href="Sched__Priv_8h_source.html">Sched_Priv.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="Sched__Priv_8h_source.html">Sched_Priv.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for Sched_Cfg.c:</div>
 <div class="dyncontent">
@@ -128,15 +127,9 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Sched__Cfg_8c_source.html#l00004">4</a> of file <a class="el" href="Sched__Cfg_8c_source.html">Sched_Cfg.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">    4</span>                               {</div>
-<div class="line"><span class="lineno">    5</span>  <span class="comment">/* Initialize MCU hardware modules*/</span></div>
-<div class="line"><span class="lineno">    6</span>  Mcu_Initialize();</div>
-<div class="line"><span class="lineno">    7</span>  <span class="comment">/* Begin Short-Open-Window in case MCU initialization took too long */</span></div>
-<div class="line"><span class="lineno">    8</span>  Mcu_ServiceWatchdogSow();</div>
-<div class="line"><span class="lineno">    9</span>  <span class="comment">/* Reset SysTick counter and reference timestamp */</span></div>
-<div class="line"><span class="lineno">   10</span>  Mcu_ReloadSystick();</div>
-<div class="line"><span class="lineno">   11</span>}</div>
+<p class="definition">Definition at line <a class="el" href="Sched__Cfg_8c_source.html#l00003">3</a> of file <a class="el" href="Sched__Cfg_8c_source.html">Sched_Cfg.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">    3</span>                               {</div>
+<div class="line"><span class="lineno">    4</span>}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -161,11 +154,9 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Sched__Cfg_8c_source.html#l00013">13</a> of file <a class="el" href="Sched__Cfg_8c_source.html">Sched_Cfg.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   13</span>                                    {</div>
-<div class="line"><span class="lineno">   14</span>  <span class="comment">/* Return the current system time in ms */</span></div>
-<div class="line"><span class="lineno">   15</span>  <span class="keywordflow">return</span> Mcu_GetSystemTime_u32();</div>
-<div class="line"><span class="lineno">   16</span>}</div>
+<p class="definition">Definition at line <a class="el" href="Sched__Cfg_8c_source.html#l00006">6</a> of file <a class="el" href="Sched__Cfg_8c_source.html">Sched_Cfg.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">    6</span>                                    {</div>
+<div class="line"><span class="lineno">    7</span>}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">

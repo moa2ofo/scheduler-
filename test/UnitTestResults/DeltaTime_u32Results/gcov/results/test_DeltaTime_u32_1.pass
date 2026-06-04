@@ -7,7 +7,7 @@
 :failures: []
 :ignores:
 - :test: test_DeltaTime_u32
-  :line: 13
+  :line: 14
   :message: Auto-generated stub test
   :unity_test_time: 0
 :counts:
@@ -16,4 +16,4 @@
   :failed: 0
   :ignored: 1
 :stdout: []
-:time: 0.0009076640000102998
+:time: 0.0010141699999905995

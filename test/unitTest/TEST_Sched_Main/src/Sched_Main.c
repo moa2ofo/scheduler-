@@ -1,12 +1,10 @@
 #include "Sched_Main_help.h"
 
 /* FUNCTION TO TEST */
-int32_t Sched_Main(void)
-{
+int32_t Sched_Main(void) {
   Sched_EntrySequence();
 
-  while (true)
-  {
+  while(true) {
     CountTime();
     ExecutePendingTasks();
   }

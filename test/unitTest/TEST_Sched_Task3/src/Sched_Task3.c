@@ -1,8 +1,7 @@
 #include "Sched_Task3_help.h"
 
 /* FUNCTION TO TEST */
-void Sched_Task3(void)
-{
+void Sched_Task3(void) {
   /* Task code for 100ms period */
 
   /************* example code *************/
@@ -10,8 +9,7 @@ void Sched_Task3(void)
 
   counter++;
 
-  if (counter >= 5)
-  {
+  if(counter >= 5) {
     counter = 0;
     toggle_led();
   }

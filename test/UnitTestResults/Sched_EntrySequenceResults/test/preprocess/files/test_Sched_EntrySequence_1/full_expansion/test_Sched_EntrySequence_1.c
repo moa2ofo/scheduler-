@@ -11,6 +11,9 @@
 # 1 "utExecutionAndResults/utUnderTest/src/Sched_Cfg.h" 1
 # 5 "utExecutionAndResults/utUnderTest/src/Sched_EntrySequence.h" 2
 # 1 "utExecutionAndResults/utUnderTest/src/Sched_Priv.h" 1
+
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/12/include/stdbool.h" 1 3 4
+# 3 "utExecutionAndResults/utUnderTest/src/Sched_Priv.h" 2
 # 1 "/usr/lib/gcc/x86_64-linux-gnu/12/include/stdint.h" 1 3 4
 # 9 "/usr/lib/gcc/x86_64-linux-gnu/12/include/stdint.h" 3 4
 # 1 "/usr/include/stdint.h" 1 3 4
@@ -244,10 +247,7 @@ typedef unsigned long int uintptr_t;
 typedef __intmax_t intmax_t;
 typedef __uintmax_t uintmax_t;
 # 10 "/usr/lib/gcc/x86_64-linux-gnu/12/include/stdint.h" 2 3 4
-# 2 "utExecutionAndResults/utUnderTest/src/Sched_Priv.h" 2
-# 1 "/usr/lib/gcc/x86_64-linux-gnu/12/include/stdbool.h" 1 3 4
-# 3 "utExecutionAndResults/utUnderTest/src/Sched_Priv.h" 2
-
+# 4 "utExecutionAndResults/utUnderTest/src/Sched_Priv.h" 2
 
 
 # 5 "utExecutionAndResults/utUnderTest/src/Sched_Priv.h"
@@ -2368,11 +2368,12 @@ void Sched_Task3_Stub(CMOCK_Sched_Task3_CALLBACK Callback);
 #pragma GCC diagnostic pop
 # 6 "utExecutionAndResults/utUnderTest/test/test_Sched_EntrySequence_1.c" 2
 
-void setUp(void) {}
+void setUp(void) {
+}
 
-void tearDown(void) {}
+void tearDown(void) {
+}
 
-void test_Sched_EntrySequence(void)
-{
-    UnityIgnore( (("Auto-generated stub test")), (UNITY_UINT)(13));
+void test_Sched_EntrySequence(void) {
+  UnityIgnore( (("Auto-generated stub test")), (UNITY_UINT)(14));
 }

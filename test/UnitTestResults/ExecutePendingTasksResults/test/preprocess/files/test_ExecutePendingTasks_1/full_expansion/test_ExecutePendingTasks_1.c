@@ -11,6 +11,9 @@
 # 1 "utExecutionAndResults/utUnderTest/src/Sched_Cfg.h" 1
 # 5 "utExecutionAndResults/utUnderTest/src/ExecutePendingTasks.h" 2
 # 1 "utExecutionAndResults/utUnderTest/src/Sched_Priv.h" 1
+
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/12/include/stdbool.h" 1 3 4
+# 3 "utExecutionAndResults/utUnderTest/src/Sched_Priv.h" 2
 # 1 "/usr/lib/gcc/x86_64-linux-gnu/12/include/stdint.h" 1 3 4
 # 9 "/usr/lib/gcc/x86_64-linux-gnu/12/include/stdint.h" 3 4
 # 1 "/usr/include/stdint.h" 1 3 4
@@ -244,10 +247,7 @@ typedef unsigned long int uintptr_t;
 typedef __intmax_t intmax_t;
 typedef __uintmax_t uintmax_t;
 # 10 "/usr/lib/gcc/x86_64-linux-gnu/12/include/stdint.h" 2 3 4
-# 2 "utExecutionAndResults/utUnderTest/src/Sched_Priv.h" 2
-# 1 "/usr/lib/gcc/x86_64-linux-gnu/12/include/stdbool.h" 1 3 4
-# 3 "utExecutionAndResults/utUnderTest/src/Sched_Priv.h" 2
-
+# 4 "utExecutionAndResults/utUnderTest/src/Sched_Priv.h" 2
 
 
 # 5 "utExecutionAndResults/utUnderTest/src/Sched_Priv.h"
@@ -575,12 +575,12 @@ extern char *stpncpy (char *__restrict __dest,
 # 10 "utExecutionAndResults/utUnderTest/src/ExecutePendingTasks.h"
 void ExecutePendingTasks(void);
 
-uint32_t* get_NumOfTaskCalls_au32_ptr(void);
+uint32_t *get_NumOfTaskCalls_au32_ptr(void);
 size_t get_NumOfTaskCalls_au32_size(void);
-void set_NumOfTaskCalls_au32(const uint32_t* src, size_t n);
-const Task_t* get_Task_ac_ptr(void);
+void set_NumOfTaskCalls_au32(const uint32_t *src, size_t n);
+const Task_t *get_Task_ac_ptr(void);
 size_t get_Task_ac_size(void);
-void set_Task_ac(const const Task_t* src, size_t n);
+void set_Task_ac(const const Task_t *src, size_t n);
 uint32_t get_Timer_u32(void);
 void set_Timer_u32(uint32_t val);
 # 2 "utExecutionAndResults/utUnderTest/test/test_ExecutePendingTasks_1.c" 2
@@ -2671,11 +2671,12 @@ void Sched_Task3_Stub(CMOCK_Sched_Task3_CALLBACK Callback);
 #pragma GCC diagnostic pop
 # 6 "utExecutionAndResults/utUnderTest/test/test_ExecutePendingTasks_1.c" 2
 
-void setUp(void) {}
+void setUp(void) {
+}
 
-void tearDown(void) {}
+void tearDown(void) {
+}
 
-void test_ExecutePendingTasks(void)
-{
-    UnityIgnore( (("Auto-generated stub test")), (UNITY_UINT)(13));
+void test_ExecutePendingTasks(void) {
+  UnityIgnore( (("Auto-generated stub test")), (UNITY_UINT)(14));
 }

@@ -30,7 +30,7 @@
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="Sched_8c.html#ae75409b16ee02f84ef65a77637d2decb" target="_top" xlink:title=" ">
+<g id="a_Node000002"><a xlink:href="group__Sched.html#gae75409b16ee02f84ef65a77637d2decb" target="_top" xlink:title="Main scheduler function.">
 <polygon fill="white" stroke="#666666" points="75,-19 0,-19 0,0 75,0 75,-19"/>
 <text text-anchor="middle" x="37.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">Sched_Main</text>
 </a>

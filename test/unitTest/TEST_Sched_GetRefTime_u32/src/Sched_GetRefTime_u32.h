@@ -6,5 +6,4 @@
 
 uint32_t Sched_GetRefTime_u32(void);
 
-
 #endif /* TEST_SCHED_GETREFTIME_U32_H */

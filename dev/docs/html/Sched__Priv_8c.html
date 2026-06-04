@@ -95,11 +95,10 @@ $(document).ready(function(){initNavTree('Sched__Priv_8c.html',''); initResizabl
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="Sched__Priv_8h_source.html">Sched_Priv.h</a>&quot;</code><br />
-<code>#include &quot;Mcu.h&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for Sched_Priv.c:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="Sched__Priv_8c__incl.svg" width="318" height="183"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="Sched__Priv_8c__incl.svg" width="316" height="183"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 <p><a href="Sched__Priv_8c_source.html">Go to the source code of this file.</a></p>
@@ -132,10 +131,10 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Sched__Priv_8c_source.html#l00004">4</a> of file <a class="el" href="Sched__Priv_8c_source.html">Sched_Priv.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">    4</span>                       {</div>
-<div class="line"><span class="lineno">    5</span>  <span class="comment">/* Task code for 5ms period */</span></div>
-<div class="line"><span class="lineno">    6</span>}</div>
+<p class="definition">Definition at line <a class="el" href="Sched__Priv_8c_source.html#l00003">3</a> of file <a class="el" href="Sched__Priv_8c_source.html">Sched_Priv.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">    3</span>                       {</div>
+<div class="line"><span class="lineno">    4</span>  <span class="comment">/* Task code for 5ms period */</span></div>
+<div class="line"><span class="lineno">    5</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -155,10 +154,10 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Sched__Priv_8c_source.html#l00008">8</a> of file <a class="el" href="Sched__Priv_8c_source.html">Sched_Priv.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">    8</span>                       {</div>
-<div class="line"><span class="lineno">    9</span>  <span class="comment">/* Task code for 10ms period */</span></div>
-<div class="line"><span class="lineno">   10</span>}</div>
+<p class="definition">Definition at line <a class="el" href="Sched__Priv_8c_source.html#l00007">7</a> of file <a class="el" href="Sched__Priv_8c_source.html">Sched_Priv.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">    7</span>                       {</div>
+<div class="line"><span class="lineno">    8</span>  <span class="comment">/* Task code for 10ms period */</span></div>
+<div class="line"><span class="lineno">    9</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -178,11 +177,10 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Sched__Priv_8c_source.html#l00012">12</a> of file <a class="el" href="Sched__Priv_8c_source.html">Sched_Priv.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   12</span>                       {</div>
-<div class="line"><span class="lineno">   13</span>  <span class="comment">/* Task code for 20ms period */</span></div>
-<div class="line"><span class="lineno">   14</span>  Mcu_ServiceWatchdog();</div>
-<div class="line"><span class="lineno">   15</span>}</div>
+<p class="definition">Definition at line <a class="el" href="Sched__Priv_8c_source.html#l00011">11</a> of file <a class="el" href="Sched__Priv_8c_source.html">Sched_Priv.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   11</span>                       {</div>
+<div class="line"><span class="lineno">   12</span>  <span class="comment">/* Task code for 20ms period */</span></div>
+<div class="line"><span class="lineno">   13</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -202,21 +200,10 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Sched__Priv_8c_source.html#l00017">17</a> of file <a class="el" href="Sched__Priv_8c_source.html">Sched_Priv.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   17</span>                       {</div>
-<div class="line"><span class="lineno">   18</span>  <span class="comment">/* Task code for 100ms period */</span></div>
-<div class="line"><span class="lineno">   19</span> </div>
-<div class="line"><span class="lineno">   20</span><span class="comment">  /************* example code *************/</span></div>
-<div class="line"><span class="lineno">   21</span>  <span class="keyword">static</span> uint8_t counter = 0;</div>
-<div class="line"><span class="lineno">   22</span> </div>
-<div class="line"><span class="lineno">   23</span>  counter++;</div>
-<div class="line"><span class="lineno">   24</span> </div>
-<div class="line"><span class="lineno">   25</span>  <span class="keywordflow">if</span>(counter &gt;= 5) {</div>
-<div class="line"><span class="lineno">   26</span>    counter = 0;</div>
-<div class="line"><span class="lineno">   27</span>    toggle_led();</div>
-<div class="line"><span class="lineno">   28</span>  }</div>
-<div class="line"><span class="lineno">   29</span><span class="comment">  /****************************************/</span></div>
-<div class="line"><span class="lineno">   30</span>}</div>
+<p class="definition">Definition at line <a class="el" href="Sched__Priv_8c_source.html#l00015">15</a> of file <a class="el" href="Sched__Priv_8c_source.html">Sched_Priv.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   15</span>                       {</div>
+<div class="line"><span class="lineno">   16</span>  <span class="comment">/* Task code for 100ms period */</span></div>
+<div class="line"><span class="lineno">   17</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
