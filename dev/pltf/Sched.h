@@ -18,9 +18,17 @@
  * @brief Scheduler
  * 
  * Tasks:
+ * - @ref Sched_Main
+ * - @ref CountTime
+ * - @ref DeltaTime_u32
+ * - @ref Sched_GetRefTime_u32
+ * - @ref Sched_EntrySequence
  * - @ref Sched_Task0
  * - @ref Sched_Task1
  * - @ref Sched_Task2
+ * - @ref Sched_Task3
+ * - @ref Sched_Task4
+ * - @ref SCHED_TASK0_PERIOD
  *
  * | Name                 | Input | Output | Type                     | Factor | Offset | Size | Range         | Unit | Init value | Special Values | Link          |
  * |----------------------|-------|--------|--------------------------|--------|--------|------|---------------|------|------------|----------------|---------------|
