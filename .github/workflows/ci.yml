@@ -19,14 +19,10 @@ jobs:
     if: ${{ github.ref != 'refs/heads/main' && github.ref != 'refs/heads/develop' }}
 
     steps:
-
-      - name: Checkout git_action_scripts repo
+      - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          repository: moa2ofo/git_action_scripts
-          ref: doxygenDocumentation   # <-- QUI
-          path: git_action_scripts
-          fetch-depth: 1
+          fetch-depth: 0
 
       - name: Sync branch with remote (push only)
         if: github.event_name == 'push'
@@ -174,3 +170,5 @@ jobs:
           if [ "$FAILED" -eq 1 ]; then
             exit 1
           fi
+
+
