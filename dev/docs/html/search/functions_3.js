@@ -7,5 +7,5 @@ var searchData=
   ['sched_5ftask1_4',['sched_task1',['../group__Sched.html#ga10314d7837d80b3579c3b4267d144945',1,'Sched_Task1(void):&#160;Sched_Priv.c'],['../group__Sched.html#ga10314d7837d80b3579c3b4267d144945',1,'Sched_Task1(void):&#160;Sched_Priv.c']]],
   ['sched_5ftask2_5',['sched_task2',['../group__Sched.html#ga2903d59f824547c96cfde10d5356a158',1,'Sched_Task2(void):&#160;Sched_Priv.c'],['../group__Sched.html#ga2903d59f824547c96cfde10d5356a158',1,'Sched_Task2(void):&#160;Sched_Priv.c']]],
   ['sched_5ftask3_6',['sched_task3',['../group__Sched.html#ga0e7ef63cf946dd03f941e68381e6089e',1,'Sched_Task3(void):&#160;Sched_Priv.c'],['../group__Sched.html#ga0e7ef63cf946dd03f941e68381e6089e',1,'Sched_Task3(void):&#160;Sched_Priv.c']]],
-  ['sched_5ftask4_7',['Sched_Task4',['../group__Sched.html#gaed8620d4925861e52e20a1fe0e49126d',1,'Sched_Priv.h']]]
+  ['sched_5ftask4_7',['sched_task4',['../group__Sched.html#gaed8620d4925861e52e20a1fe0e49126d',1,'Sched_Task4(void):&#160;Sched_Priv.c'],['../group__Sched.html#gaed8620d4925861e52e20a1fe0e49126d',1,'Sched_Task4(void):&#160;Sched_Priv.c']]]
 ];

@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['numoftaskcalls_5fau32_0',['NumOfTaskCalls_au32',['../Sched_8c.html#a5aafb740a26c9198fe9aeb07862a223f',1,'Sched.c']]]
+  ['matrix_0',['Tracebility module matrix',['../group__Sched.html#autotoc_md0',1,'']]],
+  ['module_20data_20and_20interface_20specification_1',['Module Data and Interface Specification',['../group__Sched.html#autotoc_md1',1,'']]],
+  ['module_20matrix_2',['Tracebility module matrix',['../group__Sched.html#autotoc_md0',1,'']]]
 ];

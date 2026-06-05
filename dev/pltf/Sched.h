@@ -93,19 +93,55 @@
  * | SCHED_TASK3_PERIOD   | Yes   | No     | const uint32             | 1      | 0      | 1    | [100,100]     | ms   | 100        | N/A            |
  *
  * ### High-level interaction
-* @startuml
- * External -> Sched_Main
- * External -> Sched_EntrySequence
- * External -> Sched_GetRefTime_u32
+ * @startuml
+ * title Scheduler
  *
- * Sched_Main -> CountTime
- * Sched_Main -> ExecutePendingTasks
+ * actor External as External
  *
- * ExecutePendingTasks -> Sched_Task0
- * ExecutePendingTasks -> Sched_Task1
- * ExecutePendingTasks -> Sched_Task2
- * ExecutePendingTasks -> Sched_Task3
- * ExecutePendingTasks -> Sched_Task4
+ * box "Public functions"
+ *   participant "Sched_Main()" as Sched_Main
+ *   participant "Sched_EntrySequence()" as Entry
+ *   participant "Sched_GetRefTime_u32()" as GetRef
+ * end box
+ *
+ * box "Internal functions"
+ *   participant "CountTime()" as CountTime
+ *   participant "ExecutePendingTasks()" as Exec
+ *   participant "Sched_Task0()" as T0
+ *   participant "Sched_Task1()" as T1
+ *   participant "Sched_Task2()" as T2
+ *   participant "Sched_Task3()" as T3
+ *   participant "Sched_Task4()" as T4
+ * end box
+ *
+ * == Entry point 1 ==
+ * External -> Sched_Main : call Sched_Main()
+ * Sched_Main -> CountTime : call CountTime()
+ * CountTime --> Sched_Main : return
+ *
+ * Sched_Main -> Exec : call ExecutePendingTasks()
+ * Exec -> T0 : call Sched_Task0()
+ * T0 --> Exec : return
+ * Exec -> T1 : call Sched_Task1()
+ * T1 --> Exec : return
+ * Exec -> T2 : call Sched_Task2()
+ * T2 --> Exec : return
+ * Exec -> T3 : call Sched_Task3()
+ * T3 --> Exec : return
+ * Exec -> T4 : call Sched_Task4()
+ * T4 --> Exec : return
+ *
+ * Exec --> Sched_Main : return
+ * Sched_Main --> External : return
+ *
+ * == Entry point 2 ==
+ * External -> Entry : call Sched_EntrySequence()
+ * Entry --> External : return
+ *
+ * == Entry point 3 ==
+ * External -> GetRef : call Sched_GetRefTime_u32()
+ * GetRef --> External : return
+ *
  * @enduml
  */
 

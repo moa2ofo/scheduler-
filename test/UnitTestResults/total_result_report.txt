@@ -10,3 +10,4 @@
 | Sched_Task1          | Sched_Task1_1   | PASSED  | 0.0%      | -%           |
 | CountTime            | CountTime_1     | PASSED  | 0.0%      | 0.0%         |
 | Sched_EntrySequence  | NO_TESTS        | NOT EXC | -         | -            |
+| Sched_Task4          | NO_TESTS        | NOT EXC | -         | -            |
