@@ -43,7 +43,7 @@ static void CountTime(void);
  * | Interface                | In | Out | Type / Signature       | Param | Factor | Offset | Size | Range            | Unit |
  * |--------------------------|----|-----|-------------------------|-------|--------|--------|------|------------------|------|
  * | Timer_u32                | X  |     | uint32_t (global)       |       |   1    |   0    |   1  | 0..(wrap)        | [-]  |
- * | Task_ac                  | X  |     | const @ref Task_t[]     |       |   1    |   0    |   N  | configured       | [-]  |
+ * | Task_ac                  | X  |     | const Task_t[]          |       |   1    |   0    |   N  | configured       | [-]  |
  * | NumOfTaskCalls_au32      | X  |  X  | uint32_t[] (global)     |       |   1    |   0    |   N  | 0..(wrap)        | [-]  |
  * | handler_                 | X  |     | void (*)(void)          |       |   1    |   0    |   1  | -                | [-]  |
  * | return val               |    |     | void                    |       |   1    |   0    |   1  | -                | [-]  |
