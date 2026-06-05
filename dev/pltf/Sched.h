@@ -15,6 +15,13 @@
  *
  * ## Module Interface Specification
  *
+ * @brief Scheduler
+ * 
+ * Tasks:
+ * - @ref Sched_Task0
+ * - @ref Sched_Task1
+ * - @ref Sched_Task2
+ *
  * | Name                 | Input | Output | Type                     | Factor | Offset | Size | Range         | Unit | Init value | Special Values | Link          |
  * |----------------------|-------|--------|--------------------------|--------|--------|------|---------------|------|------------|----------------|---------------|
  * | Sched_Main           | No    | Yes    | int32_t Sched_Main(void) | N/A    | N/A    | 1    | N/A           | N/A  | N/A        | Return status  | SW_INTF-P0006 |
