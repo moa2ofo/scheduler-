@@ -15,3 +15,7 @@ void Sched_Task2(void) {
 void Sched_Task3(void) {
   /* Task code for 100ms period */
 }
+
+void Sched_Task4(void) {
+  /* Task code for 100ms period */
+}

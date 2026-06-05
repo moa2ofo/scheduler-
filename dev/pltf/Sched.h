@@ -13,34 +13,86 @@
  * as well as global and static variables, ensuring full transparency of how
  * the module exchanges and manages data in alignment with the software architecture.
  *
- * ## Module Interface Specification
  *
- * @brief Scheduler
- * 
- * Tasks:
- * - @ref Sched_Main
- * - @ref CountTime
- * - @ref DeltaTime_u32
- * - @ref Sched_GetRefTime_u32
- * - @ref Sched_EntrySequence
- * - @ref Sched_Task0
- * - @ref Sched_Task1
- * - @ref Sched_Task2
- * - @ref Sched_Task3
- * - @ref Sched_Task4
- * - @ref SCHED_TASK0_PERIOD
+ * ### Tracebility module matrix
+ * <table>
+ * <tr>
+ *   <th>Function / Data</th>
+ *   <th>Requirement</th>
+ * </tr>
  *
- * | Name                 | Input | Output | Type                     | Factor | Offset | Size | Range         | Unit | Init value | Special Values | Link          |
- * |----------------------|-------|--------|--------------------------|--------|--------|------|---------------|------|------------|----------------|---------------|
- * | Sched_Main           | No    | Yes    | int32_t Sched_Main(void) | N/A    | N/A    | 1    | N/A           | N/A  | N/A        | Return status  | SW_INTF-P0006 |
- * | Sched_GetRefTime_u32 | Yes   | No     | uint32                   | N/A    | N/A    | 1    | [0,UINT32_MAX]| ms   | N/A        | Return status  | SW_ARCH-C0005 |
- * | Sched_EntrySequence  | No    | Yes    | void (void)              | N/A    | N/A    | N/A  | N/A           | N/A  | N/A        | N/A            | SW_ARCH-C0004 |
- * | SCHED_TASK0_PERIOD   | Yes   | No     | const uint32             | 1      | 0      | 1    | [5,5]         | ms   | 5          | N/A            | SW_ARCH-C0003 |
- * | SCHED_TASK1_PERIOD   | Yes   | No     | const uint32             | 1      | 0      | 1    | [10,10]       | ms   | 10         | N/A            | SW_ARCH-C0003 |
- * | SCHED_TASK2_PERIOD   | Yes   | No     | const uint32             | 1      | 0      | 1    | [20,20]       | ms   | 20         | N/A            | SW_ARCH-C0003 |
- * | SCHED_TASK3_PERIOD   | Yes   | No     | const uint32             | 1      | 0      | 1    | [100,100]     | ms   | 100        | N/A            | SW_ARCH-C0003 |
+ * <tr>
+ *   <td rowspan="1">@ref Sched_Main</td>
+ *   <td>SW_INTF-P0006</td>
+ * </tr>
  *
- * ## High-level interaction
+ * <tr>
+ *   <td rowspan="2">@ref Sched_GetRefTime_u32</td>
+ *   <td>SW_ARCH-C0005</td>
+ * </tr>
+ * <tr>
+ *   <td>SW_INTF-P0006</td>
+ * </tr>
+ *
+ * <tr>
+ *   <td rowspan="1">@ref Sched_EntrySequence</td>
+ *   <td>SW_ARCH-C0004</td>
+ * </tr>
+ *
+ * <tr>
+ *   <td rowspan="1">@ref SCHED_TASK0_PERIOD</td>
+ *   <td>SW_ARCH-C0003</td>
+ * </tr>
+ *
+ * <tr>
+ *   <td rowspan="1">@ref Sched_Task0</td>
+ *   <td>SW_ARCH-C0003</td>
+ * </tr>
+ *
+ * <tr>
+ *   <td rowspan="1">@ref Sched_Task1</td>
+ *   <td>SW_ARCH-C0003</td>
+ * </tr>
+ *
+ * <tr>
+ *   <td rowspan="1">@ref Sched_Task2</td>
+ *   <td>SW_ARCH-C0003</td>
+ * </tr>
+ *
+ * <tr>
+ *   <td rowspan="1">@ref Sched_Task3</td>
+ *   <td>SW_ARCH-C0003</td>
+ * </tr>
+ *
+ * <tr>
+ *   <td rowspan="1">@ref Sched_Task4</td>
+ *   <td>SW_ARCH-C0003</td>
+ * </tr>
+ *
+ * <tr>
+ *   <td rowspan="1">@ref CountTime</td>
+ *   <td>N/A</td>
+ * </tr>
+ *
+ * <tr>
+ *   <td rowspan="1">@ref DeltaTime_u32</td>
+ *   <td>N/A</td>
+ * </tr>
+ *
+ * </table>
+ *
+ * ### Module Data and Interface Specification
+ * | Name                 | Input | Output | Type                     | Factor | Offset | Size | Range         | Unit | Init value | Special Values |
+ * |----------------------|-------|--------|--------------------------|--------|--------|------|---------------|------|------------|----------------|
+ * | Sched_Main           | No    | Yes    | int32_t (void)           | N/A    | N/A    | 1    | N/A           | N/A  | N/A        | Return status  |
+ * | Sched_GetRefTime_u32 | Yes   | No     | uint32                   | N/A    | N/A    | 1    | [0,UINT32_MAX]| ms   | N/A        | Return status  |
+ * | Sched_EntrySequence  | No    | Yes    | void (void)              | N/A    | N/A    | N/A  | N/A           | N/A  | N/A        | N/A            |
+ * | SCHED_TASK0_PERIOD   | Yes   | No     | const uint32             | 1      | 0      | 1    | [5,5]         | ms   | 5          | N/A            |
+ * | SCHED_TASK1_PERIOD   | Yes   | No     | const uint32             | 1      | 0      | 1    | [10,10]       | ms   | 10         | N/A            |
+ * | SCHED_TASK2_PERIOD   | Yes   | No     | const uint32             | 1      | 0      | 1    | [20,20]       | ms   | 20         | N/A            |
+ * | SCHED_TASK3_PERIOD   | Yes   | No     | const uint32             | 1      | 0      | 1    | [100,100]     | ms   | 100        | N/A            |
+ *
+ * ### High-level interaction
 * @startuml
  * External -> Sched_Main
  * External -> Sched_EntrySequence
