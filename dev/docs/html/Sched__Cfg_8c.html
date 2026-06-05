@@ -99,81 +99,20 @@ $(document).ready(function(){initNavTree('Sched__Cfg_8c.html',''); initResizable
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for Sched_Cfg.c:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="Sched__Cfg_8c__incl.svg" width="316" height="183"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="Sched__Cfg_8c__incl.svg" width="272" height="256"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 <p><a href="Sched__Cfg_8c_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a41d855b5aa179267c4c27ac86601ad34" id="r_a41d855b5aa179267c4c27ac86601ad34"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Sched__Cfg_8c.html#a41d855b5aa179267c4c27ac86601ad34">Sched_EntrySequence</a> (void)</td></tr>
-<tr class="separator:a41d855b5aa179267c4c27ac86601ad34"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6db6318dec09fb3100bd27a4fe7981ff" id="r_a6db6318dec09fb3100bd27a4fe7981ff"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Sched__Cfg_8c.html#a6db6318dec09fb3100bd27a4fe7981ff">Sched_GetRefTime_u32</a> (void)</td></tr>
-<tr class="separator:a6db6318dec09fb3100bd27a4fe7981ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga41d855b5aa179267c4c27ac86601ad34" id="r_ga41d855b5aa179267c4c27ac86601ad34"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Sched.html#ga41d855b5aa179267c4c27ac86601ad34">Sched_EntrySequence</a> (void)</td></tr>
+<tr class="memdesc:ga41d855b5aa179267c4c27ac86601ad34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Execute the scheduler entry initialization sequence.  <br /></td></tr>
+<tr class="separator:ga41d855b5aa179267c4c27ac86601ad34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6db6318dec09fb3100bd27a4fe7981ff" id="r_ga6db6318dec09fb3100bd27a4fe7981ff"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Sched.html#ga6db6318dec09fb3100bd27a4fe7981ff">Sched_GetRefTime_u32</a> (void)</td></tr>
+<tr class="memdesc:ga6db6318dec09fb3100bd27a4fe7981ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current scheduler reference time.  <br /></td></tr>
+<tr class="separator:ga6db6318dec09fb3100bd27a4fe7981ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
-<a id="a41d855b5aa179267c4c27ac86601ad34" name="a41d855b5aa179267c4c27ac86601ad34"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a41d855b5aa179267c4c27ac86601ad34">&#9670;&#160;</a></span>Sched_EntrySequence()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Sched_EntrySequence </td>
-          <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="Sched__Cfg_8c_source.html#l00004">4</a> of file <a class="el" href="Sched__Cfg_8c_source.html">Sched_Cfg.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">    4</span>                               {</div>
-<div class="line"><span class="lineno">    5</span>  <span class="comment">/* Initialize MCU hardware modules*/</span></div>
-<div class="line"><span class="lineno">    6</span>  Mcu_Initialize();</div>
-<div class="line"><span class="lineno">    7</span>  <span class="comment">/* Begin Short-Open-Window in case MCU initialization took too long */</span></div>
-<div class="line"><span class="lineno">    8</span>  Mcu_ServiceWatchdogSow();</div>
-<div class="line"><span class="lineno">    9</span>  <span class="comment">/* Reset SysTick counter and reference timestamp */</span></div>
-<div class="line"><span class="lineno">   10</span>  Mcu_ReloadSystick();</div>
-<div class="line"><span class="lineno">   11</span>}</div>
-</div><!-- fragment --><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="Sched__Cfg_8c_a41d855b5aa179267c4c27ac86601ad34_icgraph.svg" width="324" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-
-</div>
-</div>
-<a id="a6db6318dec09fb3100bd27a4fe7981ff" name="a6db6318dec09fb3100bd27a4fe7981ff"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6db6318dec09fb3100bd27a4fe7981ff">&#9670;&#160;</a></span>Sched_GetRefTime_u32()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint32_t Sched_GetRefTime_u32 </td>
-          <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="Sched__Cfg_8c_source.html#l00013">13</a> of file <a class="el" href="Sched__Cfg_8c_source.html">Sched_Cfg.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   13</span>                                    {</div>
-<div class="line"><span class="lineno">   14</span>  <span class="comment">/* Return the current system time in ms */</span></div>
-<div class="line"><span class="lineno">   15</span>  <span class="keywordflow">return</span> Mcu_GetSystemTime_u32();</div>
-<div class="line"><span class="lineno">   16</span>}</div>
-</div><!-- fragment --><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="Sched__Cfg_8c_a6db6318dec09fb3100bd27a4fe7981ff_icgraph.svg" width="647" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-
-</div>
-</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

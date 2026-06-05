@@ -48,7 +48,7 @@
 <!-- Node3 -->
 <g id="Node000003" class="node">
 <title>Node3</title>
-<g id="a_Node000003"><a xlink:href="Sched__Cfg_8c.html#a6db6318dec09fb3100bd27a4fe7981ff" target="_top" xlink:title=" ">
+<g id="a_Node000003"><a xlink:href="group__Sched.html#ga6db6318dec09fb3100bd27a4fe7981ff" target="_top" xlink:title="Get the current scheduler reference time.">
 <polygon fill="white" stroke="#666666" points="366,-19 233,-19 233,0 366,0 366,-19"/>
 <text text-anchor="middle" x="299.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">Sched_GetRefTime_u32</text>
 </a>

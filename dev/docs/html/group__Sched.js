@@ -9,6 +9,8 @@ var group__Sched =
     [ "CountTime", "group__Sched.html#ga99b8597edbc7a86e0ff556329d27d28c", null ],
     [ "DeltaTime_u32", "group__Sched.html#ga00304344cc73ea96d3ad1b85eefe2df2", null ],
     [ "ExecutePendingTasks", "group__Sched.html#ga75a48d5cf2208ddbe805fffb9af6df15", null ],
+    [ "Sched_EntrySequence", "group__Sched.html#ga41d855b5aa179267c4c27ac86601ad34", null ],
+    [ "Sched_GetRefTime_u32", "group__Sched.html#ga6db6318dec09fb3100bd27a4fe7981ff", null ],
     [ "Sched_Main", "group__Sched.html#gae75409b16ee02f84ef65a77637d2decb", null ],
     [ "Sched_Task0", "group__Sched.html#gae400bce4176ddab53753e642e759598b", null ],
     [ "Sched_Task1", "group__Sched.html#ga10314d7837d80b3579c3b4267d144945", null ],

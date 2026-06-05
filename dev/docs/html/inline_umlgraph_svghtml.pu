@@ -27,3 +27,10 @@ endwhile
 :return;
 stop
 @enduml
+@startuml inline_umlgraph_3.svg
+start
+:Mcu_Initialize();
+:Mcu_ServiceWatchdogSow();
+:Mcu_ReloadSystick();
+stop
+@enduml

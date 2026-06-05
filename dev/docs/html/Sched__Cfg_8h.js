@@ -1,8 +1,7 @@
 var Sched__Cfg_8h =
 [
-    [ "SCHED_MAX_REF_TIME", "Sched__Cfg_8h.html#a979ab355e298f761c0a8f950a9d60df8", null ],
-    [ "Sched_EntrySequence", "Sched__Cfg_8h.html#a41d855b5aa179267c4c27ac86601ad34", null ],
-    [ "Sched_GetRefTime_u32", "Sched__Cfg_8h.html#a6db6318dec09fb3100bd27a4fe7981ff", null ],
+    [ "Sched_EntrySequence", "group__Sched.html#ga41d855b5aa179267c4c27ac86601ad34", null ],
+    [ "Sched_GetRefTime_u32", "group__Sched.html#ga6db6318dec09fb3100bd27a4fe7981ff", null ],
     [ "SCHED_LOOP_PERIOD", "Sched__Cfg_8h.html#a14ace3259af023f98b4814dac0d99e84", null ],
     [ "SCHED_NUM_OF_TASKS", "Sched__Cfg_8h.html#a441af5ef523f398edaa5bbd254ca4b46", null ],
     [ "SCHED_TASK0_PERIOD", "Sched__Cfg_8h.html#a41344402d89d1dca2cdd3e8b9dbf7ec2", null ],
