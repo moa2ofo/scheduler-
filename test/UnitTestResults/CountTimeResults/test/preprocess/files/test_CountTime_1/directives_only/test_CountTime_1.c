@@ -832,80 +832,6 @@
 
 #define SCHED_CFG_H 
 
-/* Default time unit for all time-based variables is milliseconds */
-
-#define SCHED_MAX_REF_TIME (UINT32_MAX)
-
-#define SCHED_LOOP_PERIOD (100u)
-
-#define SCHED_NUM_OF_TASKS (4u)
-
-#define SCHED_TASK0_PERIOD (5u)
-#define SCHED_TASK1_PERIOD (10u)
-#define SCHED_TASK2_PERIOD (20u)
-#define SCHED_TASK3_PERIOD (100u)
-
-#define SCHED_TASK0_SHIFT (0u)
-#define SCHED_TASK1_SHIFT (2u)
-#define SCHED_TASK2_SHIFT (7u)
-#define SCHED_TASK3_SHIFT (17u)
-
-# 5 "utExecutionAndResults/utUnderTest/src/CountTime.h" 2
-# 1 "utExecutionAndResults/utUnderTest/src/Sched_Priv.h" 1
-
-# 1 "/usr/lib/gcc/x86_64-linux-gnu/12/include/stdbool.h" 1 3 4
-/* Copyright (C) 1998-2022 Free Software Foundation, Inc.
-
-This file is part of GCC.
-
-GCC is free software; you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation; either version 3, or (at your option)
-any later version.
-
-GCC is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-
-Under Section 7 of GPL version 3, you are granted additional
-permissions described in the GCC Runtime Library Exception, version
-3.1, as published by the Free Software Foundation.
-
-You should have received a copy of the GNU General Public License and
-a copy of the GCC Runtime Library Exception along with this program;
-see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
-<http://www.gnu.org/licenses/>.  */
-
-/*
- * ISO C Standard:  7.16  Boolean type and values  <stdbool.h>
- */
-
-
-#define _STDBOOL_H 
-
-
-
-#define bool _Bool
-
-
-
-
-#define true 1
-#define false 0
-
-
-
-
-
-
-
-
-
-/* Signal that all the definitions are present.  */
-#define __bool_true_false_are_defined 1
-
-# 3 "utExecutionAndResults/utUnderTest/src/Sched_Priv.h" 2
 # 1 "/usr/lib/gcc/x86_64-linux-gnu/12/include/stdint.h" 1 3 4
 
 
@@ -2953,23 +2879,271 @@ typedef __uintmax_t		uintmax_t;
 
 
 #define _GCC_WRAP_STDINT_H 
-# 4 "utExecutionAndResults/utUnderTest/src/Sched_Priv.h" 2
+# 5 "utExecutionAndResults/utUnderTest/src/Sched_Cfg.h" 2
 
+/**
+ * @ingroup Sched
+ * @brief Execute the scheduler entry initialization sequence.
+ * @details
+ * **Goal of the function**
+ *
+ * Initialize MCU hardware modules and ensure a consistent scheduler
+ * start by resetting the system time base.
+ *
+ * The function performs:
+ * - MCU initialization
+ * - Watchdog service (Short-Open-Window)
+ * - SysTick reload and reference time reset
+ *
+ * @par Interface summary
+ *
+ * | Interface                  | In | Out | Type / Signature | Description                     |
+ * |----------------------------|----|-----|------------------|---------------------------------|
+ * | Mcu_Initialize             | X  |     | void(void)       | HW initialization               |
+ * | Mcu_ServiceWatchdogSow     | X  |     | void(void)       | Watchdog servicing              |
+ * | Mcu_ReloadSystick          | X  |     | void(void)       | Reset system tick counter       |
+ * | return val                 |    |     | void             | No return value                 |
+ *
+ * @par Activity diagram (PlantUML)
+ * @startuml
+ * start
+ * :Mcu_Initialize();
+ * :Mcu_ServiceWatchdogSow();
+ * :Mcu_ReloadSystick();
+ * stop
+ * @enduml
+ *
+ * @return void
+ */
 void Sched_EntrySequence(void);
+
+/**
+ * @ingroup Sched
+ * @brief Get the current scheduler reference time.
+ * @details
+ * **Goal of the function**
+ *
+ * Provide the current system time in milliseconds used as
+ * reference for task scheduling.
+ *
+ * @par Interface summary
+ *
+ * | Interface                  | In | Out | Type / Signature  | Description              |
+ * |----------------------------|----|-----|-------------------|--------------------------|
+ * | Mcu_GetSystemTime_u32      | X  |     | uint32_t(void)    | Get system time (ms)     |
+ * | return val                 |    |  X  | uint32_t          | Current time reference   |
+ *
+ * @return uint32_t
+ * Current system time in milliseconds.
+ */
 uint32_t Sched_GetRefTime_u32(void);
 
+/**
+ * @brief Maximum reference time value before wrap-around.
+ */
+#define SCHED_MAX_REF_TIME (UINT32_MAX)
+
+/**
+ * @brief Scheduler base loop period in milliseconds.
+ * @details Must be a multiple of all configured task periods.
+ */
+const uint32 SCHED_LOOP_PERIOD = (100u);
+
+/**
+ * @brief Number of scheduled tasks.
+ */
+const uint32 SCHED_NUM_OF_TASKS = (4u);
+
+/**
+ * @name Task Periods [ms]
+ * @{
+ */
+const uint32 SCHED_TASK0_PERIOD = (5u);
+const uint32 SCHED_TASK1_PERIOD = (10u);
+const uint32 SCHED_TASK2_PERIOD = (20u);
+const uint32 SCHED_TASK3_PERIOD = (100u);
+/** @} */
+
+/**
+ * @name Task Phase Shifts [ms]
+ * @{
+ */
+const uint32 SCHED_TASK0_SHIFT = (0u);
+const uint32 SCHED_TASK1_SHIFT = (2u);
+const uint32 SCHED_TASK2_SHIFT = (7u);
+const uint32 SCHED_TASK3_SHIFT = (17u);
+/** @} */
+
+/** @} */
+
+# 5 "utExecutionAndResults/utUnderTest/src/CountTime.h" 2
+# 1 "utExecutionAndResults/utUnderTest/src/Sched_Priv.h" 1
+
+#define SCHED_PRIV_H 
+
+
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/12/include/stdbool.h" 1 3 4
+/* Copyright (C) 1998-2022 Free Software Foundation, Inc.
+
+This file is part of GCC.
+
+GCC is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 3, or (at your option)
+any later version.
+
+GCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+Under Section 7 of GPL version 3, you are granted additional
+permissions described in the GCC Runtime Library Exception, version
+3.1, as published by the Free Software Foundation.
+
+You should have received a copy of the GNU General Public License and
+a copy of the GCC Runtime Library Exception along with this program;
+see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
+<http://www.gnu.org/licenses/>.  */
+
+/*
+ * ISO C Standard:  7.16  Boolean type and values  <stdbool.h>
+ */
+
+
+#define _STDBOOL_H 
+
+
+
+#define bool _Bool
+
+
+
+
+#define true 1
+#define false 0
+
+
+
+
+
+
+
+
+
+/* Signal that all the definitions are present.  */
+#define __bool_true_false_are_defined 1
+
+# 6 "utExecutionAndResults/utUnderTest/src/Sched_Priv.h" 2
+
+
+/**
+ * @brief Task handler function type.
+ * @ingroup Sched
+ */
+typedef void (*const TaskHandler_t)(void);
+
+/**
+ * @brief Task configuration structure.
+ * @ingroup Sched
+ */
+typedef struct {
+  TaskHandler_t handler_;     /**< Task function */
+  const uint32_t period_cu32; /**< Task period */
+  const uint32_t shift_cu32;  /**< Task phase shift */
+} Task_t;
+
+/**
+ * @brief Update scheduler time base.
+ * @ingroup Sched
+ */
+
+/**
+ * @ingroup Sched
+ * @brief Execute all tasks whose activation time has been reached.
+ * @ingroup Sched
+ * @details
+ * **Goal of the function**
+ *
+ * Iterate over the configured task list and invoke each task whose
+ * scheduled activation time has been reached according to the current
+ * scheduler time base (`Timer_u32`).
+ *
+ * @par Interface summary
+ *
+ * | Interface                | In | Out | Type / Signature       | Param | Factor | Offset | Size | Range            | Unit |
+ * |--------------------------|----|-----|-------------------------|-------|--------|--------|------|------------------|------|
+ * | Timer_u32                | X  |     | uint32_t (global)       |       |   1    |   0    |   1  | 0..(wrap)        | [-]  |
+ * | Task_ac                  | X  |     | const Task_t[]          |       |   1    |   0    |   N  | configured       | [-]  |
+ * | NumOfTaskCalls_au32      | X  |  X  | uint32_t[] (global)     |       |   1    |   0    |   N  | 0..(wrap)        | [-]  |
+ * | handler_                 | X  |     | void (*)(void)          |       |   1    |   0    |   1  | -                | [-]  |
+ * | return val               |    |     | void                    |       |   1    |   0    |   1  | -                | [-]  |
+ *
+ * @par Activity diagram (PlantUML)
+ *
+ * @startuml
+ * start
+ * :l_idx_u32 = 0;
+ * while (l_idx_u32 < SCHED_NUM_OF_TASKS) is (yes)
+ *   :compute l_timeShift_s32;
+ *   if (l_timeShift_s32 >= 0) then (yes)
+ *     :call handler_();
+ *     :NumOfTaskCalls_au32[idx]++;
+ *   else (no)
+ *   endif
+ *   :l_idx_u32++;
+ * endwhile
+ * :return;
+ * stop
+ * @enduml
+ *
+ * @return void
+ * No return value.
+ */
+
 void ExecutePendingTasks(void);
+
+/**
+ * @brief Compute elapsed time since last call.
+ * @return Delta time.
+ * @ingroup Sched
+ */
 uint32_t DeltaTime_u32(void);
 
+/**
+ * @brief Task 0 entry point.
+ * @ingroup Sched
+ */
 void Sched_Task0(void);
 
-void Sched_Task1(void);
 
 
-void Sched_Task2(void);
 
 
-void Sched_Task3(void);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3338,928 +3512,15 @@ typedef struct {
 
 
 # 8 "utExecutionAndResults/utUnderTest/src/CountTime.h" 2
-# 1 "/usr/include/string.h" 1 3 4
-/* Copyright (C) 1991-2022 Free Software Foundation, Inc.
-   This file is part of the GNU C Library.
 
-   The GNU C Library is free software; you can redistribute it and/or
-   modify it under the terms of the GNU Lesser General Public
-   License as published by the Free Software Foundation; either
-   version 2.1 of the License, or (at your option) any later version.
-
-   The GNU C Library is distributed in the hope that it will be useful,
-   but WITHOUT ANY WARRANTY; without even the implied warranty of
-   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-   Lesser General Public License for more details.
-
-   You should have received a copy of the GNU Lesser General Public
-   License along with the GNU C Library; if not, see
-   <https://www.gnu.org/licenses/>.  */
-
-/*
- *	ISO C99 Standard: 7.21 String handling	<string.h>
+/**
+ * @brief Update scheduler time base.
+ * @ingroup Sched
  */
-
-
-#define _STRING_H 1
-
-#define __GLIBC_INTERNAL_STARTING_HEADER_IMPLEMENTATION 
-# 1 "/usr/include/x86_64-linux-gnu/bits/libc-header-start.h" 1 3 4
-/* Handle feature test macros at the start of a header.
-   Copyright (C) 2016-2022 Free Software Foundation, Inc.
-   This file is part of the GNU C Library.
-
-   The GNU C Library is free software; you can redistribute it and/or
-   modify it under the terms of the GNU Lesser General Public
-   License as published by the Free Software Foundation; either
-   version 2.1 of the License, or (at your option) any later version.
-
-   The GNU C Library is distributed in the hope that it will be useful,
-   but WITHOUT ANY WARRANTY; without even the implied warranty of
-   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-   Lesser General Public License for more details.
-
-   You should have received a copy of the GNU Lesser General Public
-   License along with the GNU C Library; if not, see
-   <https://www.gnu.org/licenses/>.  */
-
-/* This header is internal to glibc and should not be included outside
-   of glibc headers.  Headers including it must define
-   __GLIBC_INTERNAL_STARTING_HEADER_IMPLEMENTATION first.  This header
-   cannot have multiple include guards because ISO C feature test
-   macros depend on the definition of the macro when an affected
-   header is included, not when the first system header is
-   included.  */
-
-
-
-
-
-#undef __GLIBC_INTERNAL_STARTING_HEADER_IMPLEMENTATION
-
-
-
-/* ISO/IEC TR 24731-2:2010 defines the __STDC_WANT_LIB_EXT2__
-   macro.  */
-#undef __GLIBC_USE_LIB_EXT2
-
-
-
-
-#define __GLIBC_USE_LIB_EXT2 0
-
-
-/* ISO/IEC TS 18661-1:2014 defines the __STDC_WANT_IEC_60559_BFP_EXT__
-   macro.  Most but not all symbols enabled by that macro in TS
-   18661-1 are enabled unconditionally in C2X.  In C2X, the symbols in
-   Annex F still require a new feature test macro
-   __STDC_WANT_IEC_60559_EXT__ instead (C2X does not define
-   __STDC_WANT_IEC_60559_BFP_EXT__), while a few features from TS
-   18661-1 are not included in C2X (and thus should depend on
-   __STDC_WANT_IEC_60559_BFP_EXT__ even when C2X features are
-   enabled).
-
-   __GLIBC_USE (IEC_60559_BFP_EXT) controls those features from TS
-   18661-1 not included in C2X.
-
-   __GLIBC_USE (IEC_60559_BFP_EXT_C2X) controls those features from TS
-   18661-1 that are also included in C2X (with no feature test macro
-   required in C2X).
-
-   __GLIBC_USE (IEC_60559_EXT) controls those features from TS 18661-1
-   that are included in C2X but conditional on
-   __STDC_WANT_IEC_60559_EXT__.  (There are currently no features
-   conditional on __STDC_WANT_IEC_60559_EXT__ that are not in TS
-   18661-1.)  */
-#undef __GLIBC_USE_IEC_60559_BFP_EXT
-
-
-
-#define __GLIBC_USE_IEC_60559_BFP_EXT 0
-
-#undef __GLIBC_USE_IEC_60559_BFP_EXT_C2X
-
-
-
-#define __GLIBC_USE_IEC_60559_BFP_EXT_C2X 0
-
-#undef __GLIBC_USE_IEC_60559_EXT
-
-
-
-#define __GLIBC_USE_IEC_60559_EXT 0
-
-
-/* ISO/IEC TS 18661-4:2015 defines the
-   __STDC_WANT_IEC_60559_FUNCS_EXT__ macro.  Other than the reduction
-   functions, the symbols from this TS are enabled unconditionally in
-   C2X.  */
-#undef __GLIBC_USE_IEC_60559_FUNCS_EXT
-
-
-
-#define __GLIBC_USE_IEC_60559_FUNCS_EXT 0
-
-#undef __GLIBC_USE_IEC_60559_FUNCS_EXT_C2X
-
-
-
-#define __GLIBC_USE_IEC_60559_FUNCS_EXT_C2X 0
-
-
-/* ISO/IEC TS 18661-3:2015 defines the
-   __STDC_WANT_IEC_60559_TYPES_EXT__ macro.  */
-#undef __GLIBC_USE_IEC_60559_TYPES_EXT
-
-
-
-#define __GLIBC_USE_IEC_60559_TYPES_EXT 0
-# 27 "/usr/include/string.h" 2 3 4
-
-__BEGIN_DECLS
-
-/* Get size_t and NULL from <stddef.h>.  */
-#define __need_size_t 
-#define __need_NULL 
-# 1 "/usr/lib/gcc/x86_64-linux-gnu/12/include/stddef.h" 1 3 4
-/* Copyright (C) 1989-2022 Free Software Foundation, Inc.
-
-This file is part of GCC.
-
-GCC is free software; you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation; either version 3, or (at your option)
-any later version.
-
-GCC is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-
-Under Section 7 of GPL version 3, you are granted additional
-permissions described in the GCC Runtime Library Exception, version
-3.1, as published by the Free Software Foundation.
-
-You should have received a copy of the GNU General Public License and
-a copy of the GCC Runtime Library Exception along with this program;
-see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
-<http://www.gnu.org/licenses/>.  */
-
-/*
- * ISO C Standard:  7.17  Common definitions  <stddef.h>
- */
-
-
-
-
-
-
-/* Any one of these symbols __need_* means that GNU libc
-   wants us just to define one data type.  So don't define
-   the symbols that indicate this file's entire job has been done.  */
-# 44 "/usr/lib/gcc/x86_64-linux-gnu/12/include/stddef.h" 3 4
-
-
-/* This avoids lossage on SunOS but only if stdtypes.h comes first.
-   There's no way to win with the other order!  Sun lossage.  */
-
-
-
-
-
-
-
-
-
-# 85 "/usr/lib/gcc/x86_64-linux-gnu/12/include/stddef.h" 3 4
-
-/* Sequent's header files use _PTRDIFF_T_ in some conflicting way.
-   Just ignore it.  */
-
-
-
-
-/* On VxWorks, <type/vxTypesBase.h> may have defined macros like
-   _TYPE_size_t which will typedef size_t.  fixincludes patched the
-   vxTypesBase.h so that this macro is only defined if _GCC_SIZE_T is
-   not defined, and so that defining this macro defines _GCC_SIZE_T.
-   If we find that the macros are still defined at this point, we must
-   invoke them so that the type is defined as expected.  */
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* In case nobody has defined these types, but we aren't running under
-   GCC 2.00, make sure that __PTRDIFF_TYPE__, __SIZE_TYPE__, and
-   __WCHAR_TYPE__ have reasonable values.  This can happen if the
-   parts of GCC is compiled by an older compiler, that actually
-   include gstddef.h, such as collect2.  */
-
-/* Signed type of difference of two pointers.  */
-
-/* Define this type if we are doing the whole job,
-   or if we want this type in particular.  */
-
-# 156 "/usr/lib/gcc/x86_64-linux-gnu/12/include/stddef.h" 3 4
-
-/* If this symbol has done its job, get rid of it.  */
-#undef __need_ptrdiff_t
-
-
-
-/* Unsigned type of `sizeof' something.  */
-
-/* Define this type if we are doing the whole job,
-   or if we want this type in particular.  */
-
-# 237 "/usr/lib/gcc/x86_64-linux-gnu/12/include/stddef.h" 3 4
-#undef __need_size_t
-
-
-
-/* Wide character type.
-   Locale-writers should change this as necessary to
-   be big enough to hold unique values not between 0 and 127,
-   and not (wchar_t) -1, for each defined multibyte character.  */
-
-/* Define this type if we are doing the whole job,
-   or if we want this type in particular.  */
-
-# 349 "/usr/lib/gcc/x86_64-linux-gnu/12/include/stddef.h" 3 4
-#undef __need_wchar_t
-
-
-# 363 "/usr/lib/gcc/x86_64-linux-gnu/12/include/stddef.h" 3 4
-
-# 393 "/usr/lib/gcc/x86_64-linux-gnu/12/include/stddef.h" 3 4
-
-
-
-/* A null pointer constant.  */
-
-
-#undef NULL
-
-
-
-
-#define NULL ((void *)0)
-
-
-
-
-
-#undef __need_NULL
-
-
-
-/* Offset of member MEMBER in a struct of type TYPE. */
-#define offsetof(TYPE,MEMBER) __builtin_offsetof (TYPE, MEMBER)
-
-
-
-# 437 "/usr/lib/gcc/x86_64-linux-gnu/12/include/stddef.h" 3 4
-
-
-
-
-
-
-
-
-
-
-
-# 34 "/usr/include/string.h" 2 3 4
-
-/* Tell the caller that we provide correct C++ prototypes.  */
-
-
-
-
-
-
-/* Copy N bytes of SRC to DEST.  */
-extern void *memcpy (void *__restrict __dest, const void *__restrict __src,
-		     size_t __n) __THROW __nonnull ((1, 2));
-/* Copy N bytes of SRC to DEST, guaranteeing
-   correct behavior for overlapping strings.  */
-extern void *memmove (void *__dest, const void *__src, size_t __n)
-     __THROW __nonnull ((1, 2));
-
-/* Copy no more than N bytes of SRC to DEST, stopping when C is found.
-   Return the position in DEST one byte past where C was copied,
-   or NULL if C was not found in the first N bytes of SRC.  */
-
-extern void *memccpy (void *__restrict __dest, const void *__restrict __src,
-		      int __c, size_t __n)
-    __THROW __nonnull ((1, 2)) __attr_access ((__write_only__, 1, 4));
-
-
-
-/* Set N bytes of S to C.  */
-extern void *memset (void *__s, int __c, size_t __n) __THROW __nonnull ((1));
-
-/* Compare N bytes of S1 and S2.  */
-extern int memcmp (const void *__s1, const void *__s2, size_t __n)
-     __THROW __attribute_pure__ __nonnull ((1, 2));
-
-/* Compare N bytes of S1 and S2.  Return zero if S1 and S2 are equal.
-   Return some non-zero value otherwise.
-
-   Essentially __memcmpeq has the exact same semantics as memcmp
-   except the return value is less constrained.  memcmp is always a
-   correct implementation of __memcmpeq.  As well !!memcmp, -memcmp,
-   or bcmp are correct implementations.
-
-   __memcmpeq is meant to be used by compilers when memcmp return is
-   only used for its boolean value.
-
-   __memcmpeq is declared only for use by compilers.  Programs should
-   continue to use memcmp.  */
-extern int __memcmpeq (const void *__s1, const void *__s2, size_t __n)
-     __THROW __attribute_pure__ __nonnull ((1, 2));
-
-/* Search N bytes of S for C.  */
-# 107 "/usr/include/string.h" 3 4
-extern void *memchr (const void *__s, int __c, size_t __n)
-      __THROW __attribute_pure__ __nonnull ((1));
-
-
-# 138 "/usr/include/string.h" 3 4
-
-
-/* Copy SRC to DEST.  */
-extern char *strcpy (char *__restrict __dest, const char *__restrict __src)
-     __THROW __nonnull ((1, 2));
-/* Copy no more than N characters of SRC to DEST.  */
-extern char *strncpy (char *__restrict __dest,
-		      const char *__restrict __src, size_t __n)
-     __THROW __nonnull ((1, 2));
-
-/* Append SRC onto DEST.  */
-extern char *strcat (char *__restrict __dest, const char *__restrict __src)
-     __THROW __nonnull ((1, 2));
-/* Append no more than N characters from SRC onto DEST.  */
-extern char *strncat (char *__restrict __dest, const char *__restrict __src,
-		      size_t __n) __THROW __nonnull ((1, 2));
-
-/* Compare S1 and S2.  */
-extern int strcmp (const char *__s1, const char *__s2)
-     __THROW __attribute_pure__ __nonnull ((1, 2));
-/* Compare N characters of S1 and S2.  */
-extern int strncmp (const char *__s1, const char *__s2, size_t __n)
-     __THROW __attribute_pure__ __nonnull ((1, 2));
-
-/* Compare the collated forms of S1 and S2.  */
-extern int strcoll (const char *__s1, const char *__s2)
-     __THROW __attribute_pure__ __nonnull ((1, 2));
-/* Put a transformation of SRC into no more than N bytes of DEST.  */
-extern size_t strxfrm (char *__restrict __dest,
-		       const char *__restrict __src, size_t __n)
-    __THROW __nonnull ((2)) __attr_access ((__write_only__, 1, 3));
-
-
-/* POSIX.1-2008 extended locale interface (see locale.h).  */
-# 1 "/usr/include/x86_64-linux-gnu/bits/types/locale_t.h" 1 3 4
-/* Definition of locale_t.
-   Copyright (C) 2017-2022 Free Software Foundation, Inc.
-   This file is part of the GNU C Library.
-
-   The GNU C Library is free software; you can redistribute it and/or
-   modify it under the terms of the GNU Lesser General Public
-   License as published by the Free Software Foundation; either
-   version 2.1 of the License, or (at your option) any later version.
-
-   The GNU C Library is distributed in the hope that it will be useful,
-   but WITHOUT ANY WARRANTY; without even the implied warranty of
-   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-   Lesser General Public License for more details.
-
-   You should have received a copy of the GNU Lesser General Public
-   License along with the GNU C Library; if not, see
-   <https://www.gnu.org/licenses/>.  */
-
-
-#define _BITS_TYPES_LOCALE_T_H 1
-
-# 1 "/usr/include/x86_64-linux-gnu/bits/types/__locale_t.h" 1 3 4
-/* Definition of struct __locale_struct and __locale_t.
-   Copyright (C) 1997-2022 Free Software Foundation, Inc.
-   This file is part of the GNU C Library.
-
-   The GNU C Library is free software; you can redistribute it and/or
-   modify it under the terms of the GNU Lesser General Public
-   License as published by the Free Software Foundation; either
-   version 2.1 of the License, or (at your option) any later version.
-
-   The GNU C Library is distributed in the hope that it will be useful,
-   but WITHOUT ANY WARRANTY; without even the implied warranty of
-   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-   Lesser General Public License for more details.
-
-   You should have received a copy of the GNU Lesser General Public
-   License along with the GNU C Library; if not, see
-   <https://www.gnu.org/licenses/>.  */
-
-
-#define _BITS_TYPES___LOCALE_T_H 1
-
-/* POSIX.1-2008: the locale_t type, representing a locale context
-   (implementation-namespace version).  This type should be treated
-   as opaque by applications; some details are exposed for the sake of
-   efficiency in e.g. ctype functions.  */
-
-struct __locale_struct
-{
-  /* Note: LC_ALL is not a valid index into this array.  */
-  struct __locale_data *__locales[13]; /* 13 = __LC_LAST. */
-
-  /* To increase the speed of this solution we add some special members.  */
-  const unsigned short int *__ctype_b;
-  const int *__ctype_tolower;
-  const int *__ctype_toupper;
-
-  /* Note: LC_ALL is not a valid index into this array.  */
-  const char *__names[13];
-};
-
-typedef struct __locale_struct *__locale_t;
-
-# 23 "/usr/include/x86_64-linux-gnu/bits/types/locale_t.h" 2 3 4
-
-typedef __locale_t locale_t;
-
-# 173 "/usr/include/string.h" 2 3 4
-
-/* Compare the collated forms of S1 and S2, using sorting rules from L.  */
-extern int strcoll_l (const char *__s1, const char *__s2, locale_t __l)
-     __THROW __attribute_pure__ __nonnull ((1, 2, 3));
-/* Put a transformation of SRC into no more than N bytes of DEST,
-   using sorting rules from L.  */
-extern size_t strxfrm_l (char *__dest, const char *__src, size_t __n,
-			 locale_t __l) __THROW __nonnull ((2, 4))
-     __attr_access ((__write_only__, 1, 3));
-
-
-
-
-/* Duplicate S, returning an identical malloc'd string.  */
-extern char *strdup (const char *__s)
-     __THROW __attribute_malloc__ __nonnull ((1));
-
-
-/* Return a malloc'd copy of at most N bytes of STRING.  The
-   resultant string is terminated even if no null terminator
-   appears before STRING[N].  */
-
-extern char *strndup (const char *__string, size_t __n)
-     __THROW __attribute_malloc__ __nonnull ((1));
-
-
-# 221 "/usr/include/string.h" 3 4
-
-/* Find the first occurrence of C in S.  */
-# 246 "/usr/include/string.h" 3 4
-extern char *strchr (const char *__s, int __c)
-     __THROW __attribute_pure__ __nonnull ((1));
-
-/* Find the last occurrence of C in S.  */
-# 273 "/usr/include/string.h" 3 4
-extern char *strrchr (const char *__s, int __c)
-     __THROW __attribute_pure__ __nonnull ((1));
-
-
-# 290 "/usr/include/string.h" 3 4
-
-/* Return the length of the initial segment of S which
-   consists entirely of characters not in REJECT.  */
-extern size_t strcspn (const char *__s, const char *__reject)
-     __THROW __attribute_pure__ __nonnull ((1, 2));
-/* Return the length of the initial segment of S which
-   consists entirely of characters in ACCEPT.  */
-extern size_t strspn (const char *__s, const char *__accept)
-     __THROW __attribute_pure__ __nonnull ((1, 2));
-/* Find the first occurrence in S of any character in ACCEPT.  */
-# 323 "/usr/include/string.h" 3 4
-extern char *strpbrk (const char *__s, const char *__accept)
-     __THROW __attribute_pure__ __nonnull ((1, 2));
-
-/* Find the first occurrence of NEEDLE in HAYSTACK.  */
-# 350 "/usr/include/string.h" 3 4
-extern char *strstr (const char *__haystack, const char *__needle)
-     __THROW __attribute_pure__ __nonnull ((1, 2));
-
-
-
-/* Divide S into tokens separated by characters in DELIM.  */
-extern char *strtok (char *__restrict __s, const char *__restrict __delim)
-     __THROW __nonnull ((2));
-
-/* Divide S into tokens separated by characters in DELIM.  Information
-   passed between calls are stored in SAVE_PTR.  */
-extern char *__strtok_r (char *__restrict __s,
-			 const char *__restrict __delim,
-			 char **__restrict __save_ptr)
-     __THROW __nonnull ((2, 3));
-
-extern char *strtok_r (char *__restrict __s, const char *__restrict __delim,
-		       char **__restrict __save_ptr)
-     __THROW __nonnull ((2, 3));
-
-
-# 384 "/usr/include/string.h" 3 4
-
-# 404 "/usr/include/string.h" 3 4
-
-
-/* Return the length of S.  */
-extern size_t strlen (const char *__s)
-     __THROW __attribute_pure__ __nonnull ((1));
-
-
-/* Find the length of STRING, but scan at most MAXLEN characters.
-   If no '\0' terminator is found in that many characters, return MAXLEN.  */
-extern size_t strnlen (const char *__string, size_t __maxlen)
-     __THROW __attribute_pure__ __nonnull ((1));
-
-
-
-/* Return a string describing the meaning of the `errno' code in ERRNUM.  */
-extern char *strerror (int __errnum) __THROW;
-
-/* Reentrant version of `strerror'.
-   There are 2 flavors of `strerror_r', GNU which returns the string
-   and may or may not use the supplied temporary buffer and POSIX one
-   which fills the string into the buffer.
-   To use the POSIX version, -D_XOPEN_SOURCE=600 or -D_POSIX_C_SOURCE=200112L
-   without -D_GNU_SOURCE is needed, otherwise the GNU version is
-   preferred.  */
-
-/* Fill BUF with a string describing the meaning of the `errno' code in
-   ERRNUM.  */
-
-extern int __REDIRECT_NTH (strerror_r,
-			   (int __errnum, char *__buf, size_t __buflen),
-			   __xpg_strerror_r) __nonnull ((2))
-    __attr_access ((__write_only__, 2, 3));
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Translate error number to string according to the locale L.  */
-extern char *strerror_l (int __errnum, locale_t __l) __THROW;
-
-
-
-# 1 "/usr/include/strings.h" 1 3 4
-/* Copyright (C) 1991-2022 Free Software Foundation, Inc.
-   This file is part of the GNU C Library.
-
-   The GNU C Library is free software; you can redistribute it and/or
-   modify it under the terms of the GNU Lesser General Public
-   License as published by the Free Software Foundation; either
-   version 2.1 of the License, or (at your option) any later version.
-
-   The GNU C Library is distributed in the hope that it will be useful,
-   but WITHOUT ANY WARRANTY; without even the implied warranty of
-   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-   Lesser General Public License for more details.
-
-   You should have received a copy of the GNU Lesser General Public
-   License along with the GNU C Library; if not, see
-   <https://www.gnu.org/licenses/>.  */
-
-
-#define _STRINGS_H 1
-
-
-#define __need_size_t 
-# 1 "/usr/lib/gcc/x86_64-linux-gnu/12/include/stddef.h" 1 3 4
-/* Copyright (C) 1989-2022 Free Software Foundation, Inc.
-
-This file is part of GCC.
-
-GCC is free software; you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation; either version 3, or (at your option)
-any later version.
-
-GCC is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-
-Under Section 7 of GPL version 3, you are granted additional
-permissions described in the GCC Runtime Library Exception, version
-3.1, as published by the Free Software Foundation.
-
-You should have received a copy of the GNU General Public License and
-a copy of the GCC Runtime Library Exception along with this program;
-see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
-<http://www.gnu.org/licenses/>.  */
-
-/*
- * ISO C Standard:  7.17  Common definitions  <stddef.h>
- */
-
-
-
-
-
-
-/* Any one of these symbols __need_* means that GNU libc
-   wants us just to define one data type.  So don't define
-   the symbols that indicate this file's entire job has been done.  */
-# 44 "/usr/lib/gcc/x86_64-linux-gnu/12/include/stddef.h" 3 4
-
-
-/* This avoids lossage on SunOS but only if stdtypes.h comes first.
-   There's no way to win with the other order!  Sun lossage.  */
-
-
-
-
-
-
-
-
-
-# 85 "/usr/lib/gcc/x86_64-linux-gnu/12/include/stddef.h" 3 4
-
-/* Sequent's header files use _PTRDIFF_T_ in some conflicting way.
-   Just ignore it.  */
-
-
-
-
-/* On VxWorks, <type/vxTypesBase.h> may have defined macros like
-   _TYPE_size_t which will typedef size_t.  fixincludes patched the
-   vxTypesBase.h so that this macro is only defined if _GCC_SIZE_T is
-   not defined, and so that defining this macro defines _GCC_SIZE_T.
-   If we find that the macros are still defined at this point, we must
-   invoke them so that the type is defined as expected.  */
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* In case nobody has defined these types, but we aren't running under
-   GCC 2.00, make sure that __PTRDIFF_TYPE__, __SIZE_TYPE__, and
-   __WCHAR_TYPE__ have reasonable values.  This can happen if the
-   parts of GCC is compiled by an older compiler, that actually
-   include gstddef.h, such as collect2.  */
-
-/* Signed type of difference of two pointers.  */
-
-/* Define this type if we are doing the whole job,
-   or if we want this type in particular.  */
-
-# 156 "/usr/lib/gcc/x86_64-linux-gnu/12/include/stddef.h" 3 4
-
-/* If this symbol has done its job, get rid of it.  */
-#undef __need_ptrdiff_t
-
-
-
-/* Unsigned type of `sizeof' something.  */
-
-/* Define this type if we are doing the whole job,
-   or if we want this type in particular.  */
-
-# 237 "/usr/lib/gcc/x86_64-linux-gnu/12/include/stddef.h" 3 4
-#undef __need_size_t
-
-
-
-/* Wide character type.
-   Locale-writers should change this as necessary to
-   be big enough to hold unique values not between 0 and 127,
-   and not (wchar_t) -1, for each defined multibyte character.  */
-
-/* Define this type if we are doing the whole job,
-   or if we want this type in particular.  */
-
-# 349 "/usr/lib/gcc/x86_64-linux-gnu/12/include/stddef.h" 3 4
-#undef __need_wchar_t
-
-
-# 363 "/usr/lib/gcc/x86_64-linux-gnu/12/include/stddef.h" 3 4
-
-# 393 "/usr/lib/gcc/x86_64-linux-gnu/12/include/stddef.h" 3 4
-
-
-
-/* A null pointer constant.  */
-
-
-#undef NULL
-
-
-
-
-#define NULL ((void *)0)
-
-
-
-
-
-#undef __need_NULL
-
-
-
-/* Offset of member MEMBER in a struct of type TYPE. */
-#define offsetof(TYPE,MEMBER) __builtin_offsetof (TYPE, MEMBER)
-
-
-
-# 437 "/usr/lib/gcc/x86_64-linux-gnu/12/include/stddef.h" 3 4
-
-
-
-
-
-
-
-
-
-
-
-# 24 "/usr/include/strings.h" 2 3 4
-
-/* Tell the caller that we provide correct C++ prototypes.  */
-
-
-
-
-__BEGIN_DECLS
-
-
-/* Compare N bytes of S1 and S2 (same as memcmp).  */
-extern int bcmp (const void *__s1, const void *__s2, size_t __n)
-     __THROW __attribute_pure__ __nonnull ((1, 2));
-
-/* Copy N bytes of SRC to DEST (like memmove, but args reversed).  */
-extern void bcopy (const void *__src, void *__dest, size_t __n)
-  __THROW __nonnull ((1, 2));
-
-/* Set N bytes of S to 0.  */
-extern void bzero (void *__s, size_t __n) __THROW __nonnull ((1));
-
-/* Find the first occurrence of C in S (same as strchr).  */
-# 68 "/usr/include/strings.h" 3 4
-extern char *index (const char *__s, int __c)
-     __THROW __attribute_pure__ __nonnull ((1));
-
-
-/* Find the last occurrence of C in S (same as strrchr).  */
-# 96 "/usr/include/strings.h" 3 4
-extern char *rindex (const char *__s, int __c)
-     __THROW __attribute_pure__ __nonnull ((1));
-
-
-
-
-/* Return the position of the first bit set in I, or 0 if none are set.
-   The least-significant bit is position 1, the most-significant 32.  */
-extern int ffs (int __i) __THROW __attribute_const__;
-
-
-/* The following two functions are non-standard but necessary for non-32 bit
-   platforms.  */
-
-extern int ffsl (long int __l) __THROW __attribute_const__;
-__extension__ extern int ffsll (long long int __ll)
-     __THROW __attribute_const__;
-
-
-/* Compare S1 and S2, ignoring case.  */
-extern int strcasecmp (const char *__s1, const char *__s2)
-     __THROW __attribute_pure__ __nonnull ((1, 2));
-
-/* Compare no more than N chars of S1 and S2, ignoring case.  */
-extern int strncasecmp (const char *__s1, const char *__s2, size_t __n)
-     __THROW __attribute_pure__ __nonnull ((1, 2));
-
-
-/* POSIX.1-2008 extended locale interface (see locale.h).  */
-
-
-/* Compare S1 and S2, ignoring case, using collation rules from LOC.  */
-extern int strcasecmp_l (const char *__s1, const char *__s2, locale_t __loc)
-     __THROW __attribute_pure__ __nonnull ((1, 2, 3));
-
-/* Compare no more than N chars of S1 and S2, ignoring case, using
-   collation rules from LOC.  */
-extern int strncasecmp_l (const char *__s1, const char *__s2,
-			  size_t __n, locale_t __loc)
-     __THROW __attribute_pure__ __nonnull ((1, 2, 4));
-
-
-__END_DECLS
-
-
-
-
-
-
-
-
-
-# 463 "/usr/include/string.h" 2 3 4
-
-/* Set N bytes of S to 0.  The compiler will not delete a call to this
-   function, even if S is dead after the call.  */
-extern void explicit_bzero (void *__s, size_t __n) __THROW __nonnull ((1))
-    __fortified_attr_access (__write_only__, 1, 2);
-
-/* Return the next DELIM-delimited token from *STRINGP,
-   terminating it with a '\0', and update *STRINGP to point past it.  */
-extern char *strsep (char **__restrict __stringp,
-		     const char *__restrict __delim)
-     __THROW __nonnull ((1, 2));
-
-
-
-/* Return a string describing the meaning of the signal number in SIG.  */
-extern char *strsignal (int __sig) __THROW;
-
-
-
-
-
-
-
-
-
-/* Copy SRC to DEST, returning the address of the terminating '\0' in DEST.  */
-extern char *__stpcpy (char *__restrict __dest, const char *__restrict __src)
-     __THROW __nonnull ((1, 2));
-extern char *stpcpy (char *__restrict __dest, const char *__restrict __src)
-     __THROW __nonnull ((1, 2));
-
-/* Copy no more than N characters of SRC to DEST, returning the address of
-   the last character written into DEST.  */
-extern char *__stpncpy (char *__restrict __dest,
-			const char *__restrict __src, size_t __n)
-     __THROW __nonnull ((1, 2));
-extern char *stpncpy (char *__restrict __dest,
-		      const char *__restrict __src, size_t __n)
-     __THROW __nonnull ((1, 2));
-
-
-# 531 "/usr/include/string.h" 3 4
-
-
-
-
-
-
-
-
-__END_DECLS
-
-# 9 "utExecutionAndResults/utUnderTest/src/CountTime.h" 2
-
 void CountTime(void);
 
-uint32_t *get_NumOfTaskCalls_au32_ptr(void);
+uint32_t* get_NumOfTaskCalls_au32_ptr(void);
 size_t get_NumOfTaskCalls_au32_size(void);
-void set_NumOfTaskCalls_au32(const uint32_t *src, size_t n);
 uint32_t get_Timer_u32(void);
 void set_Timer_u32(uint32_t val);
 
@@ -11217,6 +10478,30 @@ void mock_Sched_Cfg_Verify(void);
 
 
 
+#define Sched_EntrySequence_IgnoreAndReturn(cmock_retval) TEST_FAIL_MESSAGE("Sched_EntrySequence requires _Ignore (not AndReturn)");
+#define Sched_EntrySequence_Ignore() Sched_EntrySequence_CMockIgnore()
+void Sched_EntrySequence_CMockIgnore(void);
+#define Sched_EntrySequence_StopIgnore() Sched_EntrySequence_CMockStopIgnore()
+void Sched_EntrySequence_CMockStopIgnore(void);
+#define Sched_EntrySequence_ExpectAndReturn(cmock_retval) TEST_FAIL_MESSAGE("Sched_EntrySequence requires _Expect (not AndReturn)");
+#define Sched_EntrySequence_Expect() Sched_EntrySequence_CMockExpect(__LINE__)
+void Sched_EntrySequence_CMockExpect(UNITY_LINE_TYPE cmock_line);
+typedef void (* CMOCK_Sched_EntrySequence_CALLBACK)(int cmock_num_calls);
+void Sched_EntrySequence_AddCallback(CMOCK_Sched_EntrySequence_CALLBACK Callback);
+void Sched_EntrySequence_Stub(CMOCK_Sched_EntrySequence_CALLBACK Callback);
+#define Sched_EntrySequence_StubWithCallback Sched_EntrySequence_Stub
+#define Sched_GetRefTime_u32_Ignore() TEST_FAIL_MESSAGE("Sched_GetRefTime_u32 requires _IgnoreAndReturn");
+#define Sched_GetRefTime_u32_IgnoreAndReturn(cmock_retval) Sched_GetRefTime_u32_CMockIgnoreAndReturn(__LINE__, cmock_retval)
+void Sched_GetRefTime_u32_CMockIgnoreAndReturn(UNITY_LINE_TYPE cmock_line, uint32_t cmock_to_return);
+#define Sched_GetRefTime_u32_StopIgnore() Sched_GetRefTime_u32_CMockStopIgnore()
+void Sched_GetRefTime_u32_CMockStopIgnore(void);
+#define Sched_GetRefTime_u32_Expect() TEST_FAIL_MESSAGE("Sched_GetRefTime_u32 requires _ExpectAndReturn");
+#define Sched_GetRefTime_u32_ExpectAndReturn(cmock_retval) Sched_GetRefTime_u32_CMockExpectAndReturn(__LINE__, cmock_retval)
+void Sched_GetRefTime_u32_CMockExpectAndReturn(UNITY_LINE_TYPE cmock_line, uint32_t cmock_to_return);
+typedef uint32_t (* CMOCK_Sched_GetRefTime_u32_CALLBACK)(int cmock_num_calls);
+void Sched_GetRefTime_u32_AddCallback(CMOCK_Sched_GetRefTime_u32_CALLBACK Callback);
+void Sched_GetRefTime_u32_Stub(CMOCK_Sched_GetRefTime_u32_CALLBACK Callback);
+#define Sched_GetRefTime_u32_StubWithCallback Sched_GetRefTime_u32_Stub
 
 
 
@@ -11236,29 +10521,6 @@ void mock_Sched_Cfg_Verify(void);
 
 
 # 1 "utExecutionAndResults/utUnderTest/src/Sched_Priv.h" 1
-
-
-
-
-void Sched_EntrySequence(void);
-uint32_t Sched_GetRefTime_u32(void);
-
-void ExecutePendingTasks(void);
-uint32_t DeltaTime_u32(void);
-
-void Sched_Task0(void);
-
-void Sched_Task1(void);
-
-
-void Sched_Task2(void);
-
-
-void Sched_Task3(void);
-
-
-
-
 # 7 "utExecutionAndResults/utUnderTest/build/test/mocks/test_CountTime_1/mock_Sched_Priv.h" 2
 
 /* Ignore the following warnings, since we are copying code */
@@ -11284,30 +10546,6 @@ void mock_Sched_Priv_Verify(void);
 
 
 
-#define Sched_EntrySequence_IgnoreAndReturn(cmock_retval) TEST_FAIL_MESSAGE("Sched_EntrySequence requires _Ignore (not AndReturn)");
-#define Sched_EntrySequence_Ignore() Sched_EntrySequence_CMockIgnore()
-void Sched_EntrySequence_CMockIgnore(void);
-#define Sched_EntrySequence_StopIgnore() Sched_EntrySequence_CMockStopIgnore()
-void Sched_EntrySequence_CMockStopIgnore(void);
-#define Sched_EntrySequence_ExpectAndReturn(cmock_retval) TEST_FAIL_MESSAGE("Sched_EntrySequence requires _Expect (not AndReturn)");
-#define Sched_EntrySequence_Expect() Sched_EntrySequence_CMockExpect(__LINE__)
-void Sched_EntrySequence_CMockExpect(UNITY_LINE_TYPE cmock_line);
-typedef void (* CMOCK_Sched_EntrySequence_CALLBACK)(int cmock_num_calls);
-void Sched_EntrySequence_AddCallback(CMOCK_Sched_EntrySequence_CALLBACK Callback);
-void Sched_EntrySequence_Stub(CMOCK_Sched_EntrySequence_CALLBACK Callback);
-#define Sched_EntrySequence_StubWithCallback Sched_EntrySequence_Stub
-#define Sched_GetRefTime_u32_Ignore() TEST_FAIL_MESSAGE("Sched_GetRefTime_u32 requires _IgnoreAndReturn");
-#define Sched_GetRefTime_u32_IgnoreAndReturn(cmock_retval) Sched_GetRefTime_u32_CMockIgnoreAndReturn(__LINE__, cmock_retval)
-void Sched_GetRefTime_u32_CMockIgnoreAndReturn(UNITY_LINE_TYPE cmock_line, uint32_t cmock_to_return);
-#define Sched_GetRefTime_u32_StopIgnore() Sched_GetRefTime_u32_CMockStopIgnore()
-void Sched_GetRefTime_u32_CMockStopIgnore(void);
-#define Sched_GetRefTime_u32_Expect() TEST_FAIL_MESSAGE("Sched_GetRefTime_u32 requires _ExpectAndReturn");
-#define Sched_GetRefTime_u32_ExpectAndReturn(cmock_retval) Sched_GetRefTime_u32_CMockExpectAndReturn(__LINE__, cmock_retval)
-void Sched_GetRefTime_u32_CMockExpectAndReturn(UNITY_LINE_TYPE cmock_line, uint32_t cmock_to_return);
-typedef uint32_t (* CMOCK_Sched_GetRefTime_u32_CALLBACK)(int cmock_num_calls);
-void Sched_GetRefTime_u32_AddCallback(CMOCK_Sched_GetRefTime_u32_CALLBACK Callback);
-void Sched_GetRefTime_u32_Stub(CMOCK_Sched_GetRefTime_u32_CALLBACK Callback);
-#define Sched_GetRefTime_u32_StubWithCallback Sched_GetRefTime_u32_Stub
 #define ExecutePendingTasks_IgnoreAndReturn(cmock_retval) TEST_FAIL_MESSAGE("ExecutePendingTasks requires _Ignore (not AndReturn)");
 #define ExecutePendingTasks_Ignore() ExecutePendingTasks_CMockIgnore()
 void ExecutePendingTasks_CMockIgnore(void);
@@ -11344,42 +10582,6 @@ typedef void (* CMOCK_Sched_Task0_CALLBACK)(int cmock_num_calls);
 void Sched_Task0_AddCallback(CMOCK_Sched_Task0_CALLBACK Callback);
 void Sched_Task0_Stub(CMOCK_Sched_Task0_CALLBACK Callback);
 #define Sched_Task0_StubWithCallback Sched_Task0_Stub
-#define Sched_Task1_IgnoreAndReturn(cmock_retval) TEST_FAIL_MESSAGE("Sched_Task1 requires _Ignore (not AndReturn)");
-#define Sched_Task1_Ignore() Sched_Task1_CMockIgnore()
-void Sched_Task1_CMockIgnore(void);
-#define Sched_Task1_StopIgnore() Sched_Task1_CMockStopIgnore()
-void Sched_Task1_CMockStopIgnore(void);
-#define Sched_Task1_ExpectAndReturn(cmock_retval) TEST_FAIL_MESSAGE("Sched_Task1 requires _Expect (not AndReturn)");
-#define Sched_Task1_Expect() Sched_Task1_CMockExpect(__LINE__)
-void Sched_Task1_CMockExpect(UNITY_LINE_TYPE cmock_line);
-typedef void (* CMOCK_Sched_Task1_CALLBACK)(int cmock_num_calls);
-void Sched_Task1_AddCallback(CMOCK_Sched_Task1_CALLBACK Callback);
-void Sched_Task1_Stub(CMOCK_Sched_Task1_CALLBACK Callback);
-#define Sched_Task1_StubWithCallback Sched_Task1_Stub
-#define Sched_Task2_IgnoreAndReturn(cmock_retval) TEST_FAIL_MESSAGE("Sched_Task2 requires _Ignore (not AndReturn)");
-#define Sched_Task2_Ignore() Sched_Task2_CMockIgnore()
-void Sched_Task2_CMockIgnore(void);
-#define Sched_Task2_StopIgnore() Sched_Task2_CMockStopIgnore()
-void Sched_Task2_CMockStopIgnore(void);
-#define Sched_Task2_ExpectAndReturn(cmock_retval) TEST_FAIL_MESSAGE("Sched_Task2 requires _Expect (not AndReturn)");
-#define Sched_Task2_Expect() Sched_Task2_CMockExpect(__LINE__)
-void Sched_Task2_CMockExpect(UNITY_LINE_TYPE cmock_line);
-typedef void (* CMOCK_Sched_Task2_CALLBACK)(int cmock_num_calls);
-void Sched_Task2_AddCallback(CMOCK_Sched_Task2_CALLBACK Callback);
-void Sched_Task2_Stub(CMOCK_Sched_Task2_CALLBACK Callback);
-#define Sched_Task2_StubWithCallback Sched_Task2_Stub
-#define Sched_Task3_IgnoreAndReturn(cmock_retval) TEST_FAIL_MESSAGE("Sched_Task3 requires _Ignore (not AndReturn)");
-#define Sched_Task3_Ignore() Sched_Task3_CMockIgnore()
-void Sched_Task3_CMockIgnore(void);
-#define Sched_Task3_StopIgnore() Sched_Task3_CMockStopIgnore()
-void Sched_Task3_CMockStopIgnore(void);
-#define Sched_Task3_ExpectAndReturn(cmock_retval) TEST_FAIL_MESSAGE("Sched_Task3 requires _Expect (not AndReturn)");
-#define Sched_Task3_Expect() Sched_Task3_CMockExpect(__LINE__)
-void Sched_Task3_CMockExpect(UNITY_LINE_TYPE cmock_line);
-typedef void (* CMOCK_Sched_Task3_CALLBACK)(int cmock_num_calls);
-void Sched_Task3_AddCallback(CMOCK_Sched_Task3_CALLBACK Callback);
-void Sched_Task3_Stub(CMOCK_Sched_Task3_CALLBACK Callback);
-#define Sched_Task3_StubWithCallback Sched_Task3_Stub
 
 
 
@@ -11393,12 +10595,11 @@ void Sched_Task3_Stub(CMOCK_Sched_Task3_CALLBACK Callback);
 
 # 6 "utExecutionAndResults/utUnderTest/test/test_CountTime_1.c" 2
 
-void setUp(void) {
-}
+void setUp(void) {}
 
-void tearDown(void) {
-}
+void tearDown(void) {}
 
-void test_CountTime(void) {
-  TEST_IGNORE_MESSAGE("Auto-generated stub test");
+void test_CountTime(void)
+{
+    TEST_IGNORE_MESSAGE("Auto-generated stub test");
 }

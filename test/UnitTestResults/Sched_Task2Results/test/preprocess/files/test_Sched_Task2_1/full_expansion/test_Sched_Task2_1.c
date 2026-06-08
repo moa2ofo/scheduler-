@@ -9,11 +9,9 @@
 
 
 # 1 "utExecutionAndResults/utUnderTest/src/Sched_Cfg.h" 1
-# 5 "utExecutionAndResults/utUnderTest/src/Sched_Task2.h" 2
-# 1 "utExecutionAndResults/utUnderTest/src/Sched_Priv.h" 1
 
-# 1 "/usr/lib/gcc/x86_64-linux-gnu/12/include/stdbool.h" 1 3 4
-# 3 "utExecutionAndResults/utUnderTest/src/Sched_Priv.h" 2
+
+
 # 1 "/usr/lib/gcc/x86_64-linux-gnu/12/include/stdint.h" 1 3 4
 # 9 "/usr/lib/gcc/x86_64-linux-gnu/12/include/stdint.h" 3 4
 # 1 "/usr/include/stdint.h" 1 3 4
@@ -247,26 +245,85 @@ typedef unsigned long int uintptr_t;
 typedef __intmax_t intmax_t;
 typedef __uintmax_t uintmax_t;
 # 10 "/usr/lib/gcc/x86_64-linux-gnu/12/include/stdint.h" 2 3 4
-# 4 "utExecutionAndResults/utUnderTest/src/Sched_Priv.h" 2
+# 5 "utExecutionAndResults/utUnderTest/src/Sched_Cfg.h" 2
+# 40 "utExecutionAndResults/utUnderTest/src/Sched_Cfg.h"
 
-
-# 5 "utExecutionAndResults/utUnderTest/src/Sched_Priv.h"
+# 40 "utExecutionAndResults/utUnderTest/src/Sched_Cfg.h"
 void Sched_EntrySequence(void);
+# 61 "utExecutionAndResults/utUnderTest/src/Sched_Cfg.h"
 uint32_t Sched_GetRefTime_u32(void);
+# 72 "utExecutionAndResults/utUnderTest/src/Sched_Cfg.h"
+const uint32 SCHED_LOOP_PERIOD = (100u);
+
+
+
+
+const uint32 SCHED_NUM_OF_TASKS = (4u);
+
+
+
+
+
+const uint32 SCHED_TASK0_PERIOD = (5u);
+const uint32 SCHED_TASK1_PERIOD = (10u);
+const uint32 SCHED_TASK2_PERIOD = (20u);
+const uint32 SCHED_TASK3_PERIOD = (100u);
+
+
+
+
+
+
+const uint32 SCHED_TASK0_SHIFT = (0u);
+const uint32 SCHED_TASK1_SHIFT = (2u);
+const uint32 SCHED_TASK2_SHIFT = (7u);
+const uint32 SCHED_TASK3_SHIFT = (17u);
+# 5 "utExecutionAndResults/utUnderTest/src/Sched_Task2.h" 2
+# 1 "utExecutionAndResults/utUnderTest/src/Sched_Priv.h" 1
+
+
+
+
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/12/include/stdbool.h" 1 3 4
+# 6 "utExecutionAndResults/utUnderTest/src/Sched_Priv.h" 2
+
+
+
+
+
+
+typedef void (*const TaskHandler_t)(void);
+
+
+
+
+
+typedef struct {
+  TaskHandler_t handler_;
+  const uint32_t period_cu32;
+  const uint32_t shift_cu32;
+} Task_t;
+
+
+
+
 
 void CountTime(void);
+# 73 "utExecutionAndResults/utUnderTest/src/Sched_Priv.h"
 void ExecutePendingTasks(void);
+
+
+
+
+
+
 uint32_t DeltaTime_u32(void);
 
+
+
+
+
 void Sched_Task0(void);
-
-void Sched_Task1(void);
-
-
-
-
-
-void Sched_Task3(void);
 # 6 "utExecutionAndResults/utUnderTest/src/Sched_Task2.h" 2
 
 void Sched_Task2(void);
@@ -2216,57 +2273,6 @@ void verifyTest(void);
 void mock_Sched_Cfg_Init(void);
 void mock_Sched_Cfg_Destroy(void);
 void mock_Sched_Cfg_Verify(void);
-# 38 "utExecutionAndResults/utUnderTest/build/test/mocks/test_Sched_Task2_1/mock_Sched_Cfg.h"
-#pragma GCC diagnostic pop
-# 5 "utExecutionAndResults/utUnderTest/test/test_Sched_Task2_1.c" 2
-# 1 "utExecutionAndResults/utUnderTest/build/test/mocks/test_Sched_Task2_1/mock_Sched_Priv.h" 1
-
-
-
-
-
-# 1 "utExecutionAndResults/utUnderTest/src/Sched_Priv.h" 1
-
-
-
-
-void Sched_EntrySequence(void);
-uint32_t Sched_GetRefTime_u32(void);
-
-void CountTime(void);
-void ExecutePendingTasks(void);
-uint32_t DeltaTime_u32(void);
-
-void Sched_Task0(void);
-
-void Sched_Task1(void);
-
-
-
-
-
-void Sched_Task3(void);
-# 7 "utExecutionAndResults/utUnderTest/build/test/mocks/test_Sched_Task2_1/mock_Sched_Priv.h" 2
-
-
-
-
-#pragma GCC diagnostic push
-
-
-#pragma GCC diagnostic ignored "-Wpragmas"
-
-#pragma GCC diagnostic ignored "-Wunknown-pragmas"
-#pragma GCC diagnostic ignored "-Wduplicate-decl-specifier"
-
-
-
-
-
-
-void mock_Sched_Priv_Init(void);
-void mock_Sched_Priv_Destroy(void);
-void mock_Sched_Priv_Verify(void);
 
 
 
@@ -2294,6 +2300,40 @@ void Sched_GetRefTime_u32_CMockExpectAndReturn(UNITY_UINT cmock_line, uint32_t c
 typedef uint32_t (* CMOCK_Sched_GetRefTime_u32_CALLBACK)(int cmock_num_calls);
 void Sched_GetRefTime_u32_AddCallback(CMOCK_Sched_GetRefTime_u32_CALLBACK Callback);
 void Sched_GetRefTime_u32_Stub(CMOCK_Sched_GetRefTime_u32_CALLBACK Callback);
+# 62 "utExecutionAndResults/utUnderTest/build/test/mocks/test_Sched_Task2_1/mock_Sched_Cfg.h"
+#pragma GCC diagnostic pop
+# 5 "utExecutionAndResults/utUnderTest/test/test_Sched_Task2_1.c" 2
+# 1 "utExecutionAndResults/utUnderTest/build/test/mocks/test_Sched_Task2_1/mock_Sched_Priv.h" 1
+
+
+
+
+
+# 1 "utExecutionAndResults/utUnderTest/src/Sched_Priv.h" 1
+# 7 "utExecutionAndResults/utUnderTest/build/test/mocks/test_Sched_Task2_1/mock_Sched_Priv.h" 2
+
+
+
+
+#pragma GCC diagnostic push
+
+
+#pragma GCC diagnostic ignored "-Wpragmas"
+
+#pragma GCC diagnostic ignored "-Wunknown-pragmas"
+#pragma GCC diagnostic ignored "-Wduplicate-decl-specifier"
+
+
+
+
+
+
+void mock_Sched_Priv_Init(void);
+void mock_Sched_Priv_Destroy(void);
+void mock_Sched_Priv_Verify(void);
+
+
+
 
 
 
@@ -2342,40 +2382,15 @@ void Sched_Task0_CMockExpect(UNITY_UINT cmock_line);
 typedef void (* CMOCK_Sched_Task0_CALLBACK)(int cmock_num_calls);
 void Sched_Task0_AddCallback(CMOCK_Sched_Task0_CALLBACK Callback);
 void Sched_Task0_Stub(CMOCK_Sched_Task0_CALLBACK Callback);
-
-
-
-void Sched_Task1_CMockIgnore(void);
-
-void Sched_Task1_CMockStopIgnore(void);
-
-
-void Sched_Task1_CMockExpect(UNITY_UINT cmock_line);
-typedef void (* CMOCK_Sched_Task1_CALLBACK)(int cmock_num_calls);
-void Sched_Task1_AddCallback(CMOCK_Sched_Task1_CALLBACK Callback);
-void Sched_Task1_Stub(CMOCK_Sched_Task1_CALLBACK Callback);
-
-
-
-void Sched_Task3_CMockIgnore(void);
-
-void Sched_Task3_CMockStopIgnore(void);
-
-
-void Sched_Task3_CMockExpect(UNITY_UINT cmock_line);
-typedef void (* CMOCK_Sched_Task3_CALLBACK)(int cmock_num_calls);
-void Sched_Task3_AddCallback(CMOCK_Sched_Task3_CALLBACK Callback);
-void Sched_Task3_Stub(CMOCK_Sched_Task3_CALLBACK Callback);
-# 134 "utExecutionAndResults/utUnderTest/build/test/mocks/test_Sched_Task2_1/mock_Sched_Priv.h"
+# 86 "utExecutionAndResults/utUnderTest/build/test/mocks/test_Sched_Task2_1/mock_Sched_Priv.h"
 #pragma GCC diagnostic pop
 # 6 "utExecutionAndResults/utUnderTest/test/test_Sched_Task2_1.c" 2
 
-void setUp(void) {
-}
+void setUp(void) {}
 
-void tearDown(void) {
-}
+void tearDown(void) {}
 
-void test_Sched_Task2(void) {
-  UnityIgnore( (("Auto-generated stub test")), (UNITY_UINT)(14));
+void test_Sched_Task2(void)
+{
+    UnityIgnore( (("Auto-generated stub test")), (UNITY_UINT)(13));
 }

@@ -164,34 +164,33 @@ $(document).ready(function(){initNavTree('Sched_8c_source.html',''); initResizab
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>  <span class="keywordflow">else</span> {</div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    l_deltaTime_u32 = 0u;</div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>  }</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>  l_PrevTimestamp_u32 = l_currTimeStamp_u32;</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>  <span class="keywordflow">return</span> l_deltaTime_u32;</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>}</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>  l_PrevTimestamp_u32 = l_currTimeStamp_u32;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>  <span class="keywordflow">return</span> l_deltaTime_u32;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>}</div>
 </div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
-<div class="foldopen" id="foldopen00067" data-start="{" data-end="}">
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="Sched_8c.html#a75a48d5cf2208ddbe805fffb9af6df15">   67</a></span><span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="Sched_8c.html#a75a48d5cf2208ddbe805fffb9af6df15">ExecutePendingTasks</a>(<span class="keywordtype">void</span>) {</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>  uint32_t l_idx_u32;</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>  int32_t l_timeShift_s32;</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>  <span class="comment">/* Parse through all tasks, with lower index tasks having higher priority */</span></div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>  <span class="keywordflow">for</span>(l_idx_u32 = 0u; l_idx_u32 &lt; <a class="code hl_variable" href="Sched__Cfg_8h.html#a441af5ef523f398edaa5bbd254ca4b46">SCHED_NUM_OF_TASKS</a>; l_idx_u32++) {</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <span class="comment">/* Calculate current time relative to the next call of the task*/</span></div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    l_timeShift_s32 = (int32_t)(<a class="code hl_variable" href="Sched_8c.html#a2ea1befa89db1d891653a142535cdf4d">Timer_u32</a> - ((<a class="code hl_variable" href="Sched_8c.html#ab4e66f821cd9db9184340762ea40b555">Task_ac</a>[l_idx_u32].period_cu32 * <a class="code hl_variable" href="Sched_8c.html#a5aafb740a26c9198fe9aeb07862a223f">NumOfTaskCalls_au32</a>[l_idx_u32]) + <a class="code hl_variable" href="Sched_8c.html#ab4e66f821cd9db9184340762ea40b555">Task_ac</a>[l_idx_u32].shift_cu32));</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <span class="keywordflow">if</span>(l_timeShift_s32 &gt;= 0) {</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>      <a class="code hl_variable" href="Sched_8c.html#ab4e66f821cd9db9184340762ea40b555">Task_ac</a>[l_idx_u32].<a class="code hl_variable" href="structTask__t.html#af6bbf42a3241695d7c9e64091f66e685">handler_</a>();</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>      <a class="code hl_variable" href="Sched_8c.html#a5aafb740a26c9198fe9aeb07862a223f">NumOfTaskCalls_au32</a>[l_idx_u32]++;</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    }</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>  }</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>}</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="foldopen" id="foldopen00066" data-start="{" data-end="}">
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="Sched_8c.html#a75a48d5cf2208ddbe805fffb9af6df15">   66</a></span><span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="Sched_8c.html#a75a48d5cf2208ddbe805fffb9af6df15">ExecutePendingTasks</a>(<span class="keywordtype">void</span>) {</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>  uint32_t l_idx_u32;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>  int32_t l_timeShift_s32;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>  <span class="comment">/* Parse through all tasks, with lower index tasks having higher priority */</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>  <span class="keywordflow">for</span>(l_idx_u32 = 0u; l_idx_u32 &lt; <a class="code hl_variable" href="Sched__Cfg_8h.html#a441af5ef523f398edaa5bbd254ca4b46">SCHED_NUM_OF_TASKS</a>; l_idx_u32++) {</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <span class="comment">/* Calculate current time relative to the next call of the task*/</span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    l_timeShift_s32 = (int32_t)(<a class="code hl_variable" href="Sched_8c.html#a2ea1befa89db1d891653a142535cdf4d">Timer_u32</a> - ((<a class="code hl_variable" href="Sched_8c.html#ab4e66f821cd9db9184340762ea40b555">Task_ac</a>[l_idx_u32].period_cu32 * <a class="code hl_variable" href="Sched_8c.html#a5aafb740a26c9198fe9aeb07862a223f">NumOfTaskCalls_au32</a>[l_idx_u32]) + <a class="code hl_variable" href="Sched_8c.html#ab4e66f821cd9db9184340762ea40b555">Task_ac</a>[l_idx_u32].shift_cu32));</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <span class="keywordflow">if</span>(l_timeShift_s32 &gt;= 0) {</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>      <a class="code hl_variable" href="Sched_8c.html#ab4e66f821cd9db9184340762ea40b555">Task_ac</a>[l_idx_u32].<a class="code hl_variable" href="structTask__t.html#af6bbf42a3241695d7c9e64091f66e685">handler_</a>();</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>      <a class="code hl_variable" href="Sched_8c.html#a5aafb740a26c9198fe9aeb07862a223f">NumOfTaskCalls_au32</a>[l_idx_u32]++;</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    }</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>  }</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>}</div>
 </div>
 <div class="ttc" id="aSched_8c_html_a00304344cc73ea96d3ad1b85eefe2df2"><div class="ttname"><a href="Sched_8c.html#a00304344cc73ea96d3ad1b85eefe2df2">DeltaTime_u32</a></div><div class="ttdeci">static uint32_t DeltaTime_u32(void)</div><div class="ttdef"><b>Definition</b> <a href="Sched_8c_source.html#l00044">Sched.c:44</a></div></div>
 <div class="ttc" id="aSched_8c_html_a2ea1befa89db1d891653a142535cdf4d"><div class="ttname"><a href="Sched_8c.html#a2ea1befa89db1d891653a142535cdf4d">Timer_u32</a></div><div class="ttdeci">static uint32_t Timer_u32</div><div class="ttdef"><b>Definition</b> <a href="Sched_8c_source.html#l00004">Sched.c:4</a></div></div>
 <div class="ttc" id="aSched_8c_html_a5aafb740a26c9198fe9aeb07862a223f"><div class="ttname"><a href="Sched_8c.html#a5aafb740a26c9198fe9aeb07862a223f">NumOfTaskCalls_au32</a></div><div class="ttdeci">static uint32_t NumOfTaskCalls_au32[SCHED_NUM_OF_TASKS]</div><div class="ttdef"><b>Definition</b> <a href="Sched_8c_source.html#l00006">Sched.c:6</a></div></div>
-<div class="ttc" id="aSched_8c_html_a75a48d5cf2208ddbe805fffb9af6df15"><div class="ttname"><a href="Sched_8c.html#a75a48d5cf2208ddbe805fffb9af6df15">ExecutePendingTasks</a></div><div class="ttdeci">static void ExecutePendingTasks(void)</div><div class="ttdef"><b>Definition</b> <a href="Sched_8c_source.html#l00067">Sched.c:67</a></div></div>
+<div class="ttc" id="aSched_8c_html_a75a48d5cf2208ddbe805fffb9af6df15"><div class="ttname"><a href="Sched_8c.html#a75a48d5cf2208ddbe805fffb9af6df15">ExecutePendingTasks</a></div><div class="ttdeci">static void ExecutePendingTasks(void)</div><div class="ttdef"><b>Definition</b> <a href="Sched_8c_source.html#l00066">Sched.c:66</a></div></div>
 <div class="ttc" id="aSched_8c_html_a99b8597edbc7a86e0ff556329d27d28c"><div class="ttname"><a href="Sched_8c.html#a99b8597edbc7a86e0ff556329d27d28c">CountTime</a></div><div class="ttdeci">static void CountTime(void)</div><div class="ttdef"><b>Definition</b> <a href="Sched_8c_source.html#l00035">Sched.c:35</a></div></div>
 <div class="ttc" id="aSched_8c_html_ab4e66f821cd9db9184340762ea40b555"><div class="ttname"><a href="Sched_8c.html#ab4e66f821cd9db9184340762ea40b555">Task_ac</a></div><div class="ttdeci">static const Task_t Task_ac[SCHED_NUM_OF_TASKS]</div><div class="ttdef"><b>Definition</b> <a href="Sched_8c_source.html#l00007">Sched.c:7</a></div></div>
 <div class="ttc" id="aSched__Cfg_8h_html_a0bd9c2a6a04c48f9a08225c0187ca02c"><div class="ttname"><a href="Sched__Cfg_8h.html#a0bd9c2a6a04c48f9a08225c0187ca02c">SCHED_TASK1_SHIFT</a></div><div class="ttdeci">const uint32 SCHED_TASK1_SHIFT</div><div class="ttdef"><b>Definition</b> <a href="Sched__Cfg_8h_source.html#l00094">Sched_Cfg.h:94</a></div></div>

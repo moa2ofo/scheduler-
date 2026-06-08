@@ -28,6 +28,18 @@ void mock_Sched_Cfg_Verify(void);
 
 
 
+#define Sched_EntrySequence_IgnoreAndReturn(cmock_retval) TEST_FAIL_MESSAGE("Sched_EntrySequence requires _Ignore (not AndReturn)");
+#define Sched_EntrySequence_Ignore() Sched_EntrySequence_CMockIgnore()
+void Sched_EntrySequence_CMockIgnore(void);
+#define Sched_EntrySequence_StopIgnore() Sched_EntrySequence_CMockStopIgnore()
+void Sched_EntrySequence_CMockStopIgnore(void);
+#define Sched_EntrySequence_ExpectAndReturn(cmock_retval) TEST_FAIL_MESSAGE("Sched_EntrySequence requires _Expect (not AndReturn)");
+#define Sched_EntrySequence_Expect() Sched_EntrySequence_CMockExpect(__LINE__)
+void Sched_EntrySequence_CMockExpect(UNITY_LINE_TYPE cmock_line);
+typedef void (* CMOCK_Sched_EntrySequence_CALLBACK)(int cmock_num_calls);
+void Sched_EntrySequence_AddCallback(CMOCK_Sched_EntrySequence_CALLBACK Callback);
+void Sched_EntrySequence_Stub(CMOCK_Sched_EntrySequence_CALLBACK Callback);
+#define Sched_EntrySequence_StubWithCallback Sched_EntrySequence_Stub
 
 #ifdef __cplusplus
 }

@@ -832,80 +832,6 @@
 
 #define SCHED_CFG_H 
 
-/* Default time unit for all time-based variables is milliseconds */
-
-#define SCHED_MAX_REF_TIME (UINT32_MAX)
-
-#define SCHED_LOOP_PERIOD (100u)
-
-#define SCHED_NUM_OF_TASKS (4u)
-
-#define SCHED_TASK0_PERIOD (5u)
-#define SCHED_TASK1_PERIOD (10u)
-#define SCHED_TASK2_PERIOD (20u)
-#define SCHED_TASK3_PERIOD (100u)
-
-#define SCHED_TASK0_SHIFT (0u)
-#define SCHED_TASK1_SHIFT (2u)
-#define SCHED_TASK2_SHIFT (7u)
-#define SCHED_TASK3_SHIFT (17u)
-
-# 5 "utExecutionAndResults/utUnderTest/src/Sched_GetRefTime_u32.h" 2
-# 1 "utExecutionAndResults/utUnderTest/src/Sched_Priv.h" 1
-
-# 1 "/usr/lib/gcc/x86_64-linux-gnu/12/include/stdbool.h" 1 3 4
-/* Copyright (C) 1998-2022 Free Software Foundation, Inc.
-
-This file is part of GCC.
-
-GCC is free software; you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation; either version 3, or (at your option)
-any later version.
-
-GCC is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-
-Under Section 7 of GPL version 3, you are granted additional
-permissions described in the GCC Runtime Library Exception, version
-3.1, as published by the Free Software Foundation.
-
-You should have received a copy of the GNU General Public License and
-a copy of the GCC Runtime Library Exception along with this program;
-see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
-<http://www.gnu.org/licenses/>.  */
-
-/*
- * ISO C Standard:  7.16  Boolean type and values  <stdbool.h>
- */
-
-
-#define _STDBOOL_H 
-
-
-
-#define bool _Bool
-
-
-
-
-#define true 1
-#define false 0
-
-
-
-
-
-
-
-
-
-/* Signal that all the definitions are present.  */
-#define __bool_true_false_are_defined 1
-
-# 3 "utExecutionAndResults/utUnderTest/src/Sched_Priv.h" 2
 # 1 "/usr/lib/gcc/x86_64-linux-gnu/12/include/stdint.h" 1 3 4
 
 
@@ -2953,30 +2879,298 @@ typedef __uintmax_t		uintmax_t;
 
 
 #define _GCC_WRAP_STDINT_H 
-# 4 "utExecutionAndResults/utUnderTest/src/Sched_Priv.h" 2
+# 5 "utExecutionAndResults/utUnderTest/src/Sched_Cfg.h" 2
 
+/**
+ * @ingroup Sched
+ * @brief Execute the scheduler entry initialization sequence.
+ * @details
+ * **Goal of the function**
+ *
+ * Initialize MCU hardware modules and ensure a consistent scheduler
+ * start by resetting the system time base.
+ *
+ * The function performs:
+ * - MCU initialization
+ * - Watchdog service (Short-Open-Window)
+ * - SysTick reload and reference time reset
+ *
+ * @par Interface summary
+ *
+ * | Interface                  | In | Out | Type / Signature | Description                     |
+ * |----------------------------|----|-----|------------------|---------------------------------|
+ * | Mcu_Initialize             | X  |     | void(void)       | HW initialization               |
+ * | Mcu_ServiceWatchdogSow     | X  |     | void(void)       | Watchdog servicing              |
+ * | Mcu_ReloadSystick          | X  |     | void(void)       | Reset system tick counter       |
+ * | return val                 |    |     | void             | No return value                 |
+ *
+ * @par Activity diagram (PlantUML)
+ * @startuml
+ * start
+ * :Mcu_Initialize();
+ * :Mcu_ServiceWatchdogSow();
+ * :Mcu_ReloadSystick();
+ * stop
+ * @enduml
+ *
+ * @return void
+ */
 void Sched_EntrySequence(void);
 
+/**
+ * @ingroup Sched
+ * @brief Get the current scheduler reference time.
+ * @details
+ * **Goal of the function**
+ *
+ * Provide the current system time in milliseconds used as
+ * reference for task scheduling.
+ *
+ * @par Interface summary
+ *
+ * | Interface                  | In | Out | Type / Signature  | Description              |
+ * |----------------------------|----|-----|-------------------|--------------------------|
+ * | Mcu_GetSystemTime_u32      | X  |     | uint32_t(void)    | Get system time (ms)     |
+ * | return val                 |    |  X  | uint32_t          | Current time reference   |
+ *
+ * @return uint32_t
+ * Current system time in milliseconds.
+ */
+
+/**
+ * @brief Maximum reference time value before wrap-around.
+ */
+#define SCHED_MAX_REF_TIME (UINT32_MAX)
+
+/**
+ * @brief Scheduler base loop period in milliseconds.
+ * @details Must be a multiple of all configured task periods.
+ */
+const uint32 SCHED_LOOP_PERIOD = (100u);
+
+/**
+ * @brief Number of scheduled tasks.
+ */
+const uint32 SCHED_NUM_OF_TASKS = (4u);
+
+/**
+ * @name Task Periods [ms]
+ * @{
+ */
+const uint32 SCHED_TASK0_PERIOD = (5u);
+const uint32 SCHED_TASK1_PERIOD = (10u);
+const uint32 SCHED_TASK2_PERIOD = (20u);
+const uint32 SCHED_TASK3_PERIOD = (100u);
+/** @} */
+
+/**
+ * @name Task Phase Shifts [ms]
+ * @{
+ */
+const uint32 SCHED_TASK0_SHIFT = (0u);
+const uint32 SCHED_TASK1_SHIFT = (2u);
+const uint32 SCHED_TASK2_SHIFT = (7u);
+const uint32 SCHED_TASK3_SHIFT = (17u);
+/** @} */
+
+/** @} */
+
+# 5 "utExecutionAndResults/utUnderTest/src/Sched_GetRefTime_u32.h" 2
+# 1 "utExecutionAndResults/utUnderTest/src/Sched_Priv.h" 1
+
+#define SCHED_PRIV_H 
+
+
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/12/include/stdbool.h" 1 3 4
+/* Copyright (C) 1998-2022 Free Software Foundation, Inc.
+
+This file is part of GCC.
+
+GCC is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 3, or (at your option)
+any later version.
+
+GCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+Under Section 7 of GPL version 3, you are granted additional
+permissions described in the GCC Runtime Library Exception, version
+3.1, as published by the Free Software Foundation.
+
+You should have received a copy of the GNU General Public License and
+a copy of the GCC Runtime Library Exception along with this program;
+see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
+<http://www.gnu.org/licenses/>.  */
+
+/*
+ * ISO C Standard:  7.16  Boolean type and values  <stdbool.h>
+ */
+
+
+#define _STDBOOL_H 
+
+
+
+#define bool _Bool
+
+
+
+
+#define true 1
+#define false 0
+
+
+
+
+
+
+
+
+
+/* Signal that all the definitions are present.  */
+#define __bool_true_false_are_defined 1
+
+# 6 "utExecutionAndResults/utUnderTest/src/Sched_Priv.h" 2
+
+
+/**
+ * @brief Task handler function type.
+ * @ingroup Sched
+ */
+typedef void (*const TaskHandler_t)(void);
+
+/**
+ * @brief Task configuration structure.
+ * @ingroup Sched
+ */
+typedef struct {
+  TaskHandler_t handler_;     /**< Task function */
+  const uint32_t period_cu32; /**< Task period */
+  const uint32_t shift_cu32;  /**< Task phase shift */
+} Task_t;
+
+/**
+ * @brief Update scheduler time base.
+ * @ingroup Sched
+ */
 void CountTime(void);
+
+/**
+ * @ingroup Sched
+ * @brief Execute all tasks whose activation time has been reached.
+ * @ingroup Sched
+ * @details
+ * **Goal of the function**
+ *
+ * Iterate over the configured task list and invoke each task whose
+ * scheduled activation time has been reached according to the current
+ * scheduler time base (`Timer_u32`).
+ *
+ * @par Interface summary
+ *
+ * | Interface                | In | Out | Type / Signature       | Param | Factor | Offset | Size | Range            | Unit |
+ * |--------------------------|----|-----|-------------------------|-------|--------|--------|------|------------------|------|
+ * | Timer_u32                | X  |     | uint32_t (global)       |       |   1    |   0    |   1  | 0..(wrap)        | [-]  |
+ * | Task_ac                  | X  |     | const Task_t[]          |       |   1    |   0    |   N  | configured       | [-]  |
+ * | NumOfTaskCalls_au32      | X  |  X  | uint32_t[] (global)     |       |   1    |   0    |   N  | 0..(wrap)        | [-]  |
+ * | handler_                 | X  |     | void (*)(void)          |       |   1    |   0    |   1  | -                | [-]  |
+ * | return val               |    |     | void                    |       |   1    |   0    |   1  | -                | [-]  |
+ *
+ * @par Activity diagram (PlantUML)
+ *
+ * @startuml
+ * start
+ * :l_idx_u32 = 0;
+ * while (l_idx_u32 < SCHED_NUM_OF_TASKS) is (yes)
+ *   :compute l_timeShift_s32;
+ *   if (l_timeShift_s32 >= 0) then (yes)
+ *     :call handler_();
+ *     :NumOfTaskCalls_au32[idx]++;
+ *   else (no)
+ *   endif
+ *   :l_idx_u32++;
+ * endwhile
+ * :return;
+ * stop
+ * @enduml
+ *
+ * @return void
+ * No return value.
+ */
+
 void ExecutePendingTasks(void);
+
+/**
+ * @brief Compute elapsed time since last call.
+ * @return Delta time.
+ * @ingroup Sched
+ */
 uint32_t DeltaTime_u32(void);
 
+/**
+ * @brief Task 0 entry point.
+ * @ingroup Sched
+ */
 void Sched_Task0(void);
 
-void Sched_Task1(void);
 
 
-void Sched_Task2(void);
 
 
-void Sched_Task3(void);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 
 # 6 "utExecutionAndResults/utUnderTest/src/Sched_GetRefTime_u32.h" 2
 
+/**
+ * @ingroup Sched
+ * @brief Get the current scheduler reference time.
+ * @details
+ * **Goal of the function**
+ *
+ * Provide the current system time in milliseconds used as
+ * reference for task scheduling.
+ *
+ * @par Interface summary
+ *
+ * | Interface                  | In | Out | Type / Signature  | Description              |
+ * |----------------------------|----|-----|-------------------|--------------------------|
+ * | Mcu_GetSystemTime_u32      | X  |     | uint32_t(void)    | Get system time (ms)     |
+ * | return val                 |    |  X  | uint32_t          | Current time reference   |
+ *
+ * @return uint32_t
+ * Current system time in milliseconds.
+ */
 uint32_t Sched_GetRefTime_u32(void);
+
 
 # 2 "utExecutionAndResults/utUnderTest/test/test_Sched_GetRefTime_u32_1.c" 2
 # 1 "utExecutionAndResults/utUnderTest/build/vendor/unity/src/unity.h" 1
@@ -10266,6 +10460,18 @@ void mock_Sched_Cfg_Verify(void);
 
 
 
+#define Sched_EntrySequence_IgnoreAndReturn(cmock_retval) TEST_FAIL_MESSAGE("Sched_EntrySequence requires _Ignore (not AndReturn)");
+#define Sched_EntrySequence_Ignore() Sched_EntrySequence_CMockIgnore()
+void Sched_EntrySequence_CMockIgnore(void);
+#define Sched_EntrySequence_StopIgnore() Sched_EntrySequence_CMockStopIgnore()
+void Sched_EntrySequence_CMockStopIgnore(void);
+#define Sched_EntrySequence_ExpectAndReturn(cmock_retval) TEST_FAIL_MESSAGE("Sched_EntrySequence requires _Expect (not AndReturn)");
+#define Sched_EntrySequence_Expect() Sched_EntrySequence_CMockExpect(__LINE__)
+void Sched_EntrySequence_CMockExpect(UNITY_LINE_TYPE cmock_line);
+typedef void (* CMOCK_Sched_EntrySequence_CALLBACK)(int cmock_num_calls);
+void Sched_EntrySequence_AddCallback(CMOCK_Sched_EntrySequence_CALLBACK Callback);
+void Sched_EntrySequence_Stub(CMOCK_Sched_EntrySequence_CALLBACK Callback);
+#define Sched_EntrySequence_StubWithCallback Sched_EntrySequence_Stub
 
 
 
@@ -10285,29 +10491,6 @@ void mock_Sched_Cfg_Verify(void);
 
 
 # 1 "utExecutionAndResults/utUnderTest/src/Sched_Priv.h" 1
-
-
-
-
-void Sched_EntrySequence(void);
-
-void CountTime(void);
-void ExecutePendingTasks(void);
-uint32_t DeltaTime_u32(void);
-
-void Sched_Task0(void);
-
-void Sched_Task1(void);
-
-
-void Sched_Task2(void);
-
-
-void Sched_Task3(void);
-
-
-
-
 # 7 "utExecutionAndResults/utUnderTest/build/test/mocks/test_Sched_GetRefTime_u32_1/mock_Sched_Priv.h" 2
 
 /* Ignore the following warnings, since we are copying code */
@@ -10333,18 +10516,6 @@ void mock_Sched_Priv_Verify(void);
 
 
 
-#define Sched_EntrySequence_IgnoreAndReturn(cmock_retval) TEST_FAIL_MESSAGE("Sched_EntrySequence requires _Ignore (not AndReturn)");
-#define Sched_EntrySequence_Ignore() Sched_EntrySequence_CMockIgnore()
-void Sched_EntrySequence_CMockIgnore(void);
-#define Sched_EntrySequence_StopIgnore() Sched_EntrySequence_CMockStopIgnore()
-void Sched_EntrySequence_CMockStopIgnore(void);
-#define Sched_EntrySequence_ExpectAndReturn(cmock_retval) TEST_FAIL_MESSAGE("Sched_EntrySequence requires _Expect (not AndReturn)");
-#define Sched_EntrySequence_Expect() Sched_EntrySequence_CMockExpect(__LINE__)
-void Sched_EntrySequence_CMockExpect(UNITY_LINE_TYPE cmock_line);
-typedef void (* CMOCK_Sched_EntrySequence_CALLBACK)(int cmock_num_calls);
-void Sched_EntrySequence_AddCallback(CMOCK_Sched_EntrySequence_CALLBACK Callback);
-void Sched_EntrySequence_Stub(CMOCK_Sched_EntrySequence_CALLBACK Callback);
-#define Sched_EntrySequence_StubWithCallback Sched_EntrySequence_Stub
 #define CountTime_IgnoreAndReturn(cmock_retval) TEST_FAIL_MESSAGE("CountTime requires _Ignore (not AndReturn)");
 #define CountTime_Ignore() CountTime_CMockIgnore()
 void CountTime_CMockIgnore(void);
@@ -10393,42 +10564,6 @@ typedef void (* CMOCK_Sched_Task0_CALLBACK)(int cmock_num_calls);
 void Sched_Task0_AddCallback(CMOCK_Sched_Task0_CALLBACK Callback);
 void Sched_Task0_Stub(CMOCK_Sched_Task0_CALLBACK Callback);
 #define Sched_Task0_StubWithCallback Sched_Task0_Stub
-#define Sched_Task1_IgnoreAndReturn(cmock_retval) TEST_FAIL_MESSAGE("Sched_Task1 requires _Ignore (not AndReturn)");
-#define Sched_Task1_Ignore() Sched_Task1_CMockIgnore()
-void Sched_Task1_CMockIgnore(void);
-#define Sched_Task1_StopIgnore() Sched_Task1_CMockStopIgnore()
-void Sched_Task1_CMockStopIgnore(void);
-#define Sched_Task1_ExpectAndReturn(cmock_retval) TEST_FAIL_MESSAGE("Sched_Task1 requires _Expect (not AndReturn)");
-#define Sched_Task1_Expect() Sched_Task1_CMockExpect(__LINE__)
-void Sched_Task1_CMockExpect(UNITY_LINE_TYPE cmock_line);
-typedef void (* CMOCK_Sched_Task1_CALLBACK)(int cmock_num_calls);
-void Sched_Task1_AddCallback(CMOCK_Sched_Task1_CALLBACK Callback);
-void Sched_Task1_Stub(CMOCK_Sched_Task1_CALLBACK Callback);
-#define Sched_Task1_StubWithCallback Sched_Task1_Stub
-#define Sched_Task2_IgnoreAndReturn(cmock_retval) TEST_FAIL_MESSAGE("Sched_Task2 requires _Ignore (not AndReturn)");
-#define Sched_Task2_Ignore() Sched_Task2_CMockIgnore()
-void Sched_Task2_CMockIgnore(void);
-#define Sched_Task2_StopIgnore() Sched_Task2_CMockStopIgnore()
-void Sched_Task2_CMockStopIgnore(void);
-#define Sched_Task2_ExpectAndReturn(cmock_retval) TEST_FAIL_MESSAGE("Sched_Task2 requires _Expect (not AndReturn)");
-#define Sched_Task2_Expect() Sched_Task2_CMockExpect(__LINE__)
-void Sched_Task2_CMockExpect(UNITY_LINE_TYPE cmock_line);
-typedef void (* CMOCK_Sched_Task2_CALLBACK)(int cmock_num_calls);
-void Sched_Task2_AddCallback(CMOCK_Sched_Task2_CALLBACK Callback);
-void Sched_Task2_Stub(CMOCK_Sched_Task2_CALLBACK Callback);
-#define Sched_Task2_StubWithCallback Sched_Task2_Stub
-#define Sched_Task3_IgnoreAndReturn(cmock_retval) TEST_FAIL_MESSAGE("Sched_Task3 requires _Ignore (not AndReturn)");
-#define Sched_Task3_Ignore() Sched_Task3_CMockIgnore()
-void Sched_Task3_CMockIgnore(void);
-#define Sched_Task3_StopIgnore() Sched_Task3_CMockStopIgnore()
-void Sched_Task3_CMockStopIgnore(void);
-#define Sched_Task3_ExpectAndReturn(cmock_retval) TEST_FAIL_MESSAGE("Sched_Task3 requires _Expect (not AndReturn)");
-#define Sched_Task3_Expect() Sched_Task3_CMockExpect(__LINE__)
-void Sched_Task3_CMockExpect(UNITY_LINE_TYPE cmock_line);
-typedef void (* CMOCK_Sched_Task3_CALLBACK)(int cmock_num_calls);
-void Sched_Task3_AddCallback(CMOCK_Sched_Task3_CALLBACK Callback);
-void Sched_Task3_Stub(CMOCK_Sched_Task3_CALLBACK Callback);
-#define Sched_Task3_StubWithCallback Sched_Task3_Stub
 
 
 
@@ -10442,12 +10577,11 @@ void Sched_Task3_Stub(CMOCK_Sched_Task3_CALLBACK Callback);
 
 # 6 "utExecutionAndResults/utUnderTest/test/test_Sched_GetRefTime_u32_1.c" 2
 
-void setUp(void) {
-}
+void setUp(void) {}
 
-void tearDown(void) {
-}
+void tearDown(void) {}
 
-void test_Sched_GetRefTime_u32(void) {
-  TEST_IGNORE_MESSAGE("Auto-generated stub test");
+void test_Sched_GetRefTime_u32(void)
+{
+    TEST_IGNORE_MESSAGE("Auto-generated stub test");
 }

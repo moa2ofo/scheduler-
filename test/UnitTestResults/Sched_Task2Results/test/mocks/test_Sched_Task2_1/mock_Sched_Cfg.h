@@ -28,6 +28,30 @@ void mock_Sched_Cfg_Verify(void);
 
 
 
+#define Sched_EntrySequence_IgnoreAndReturn(cmock_retval) TEST_FAIL_MESSAGE("Sched_EntrySequence requires _Ignore (not AndReturn)");
+#define Sched_EntrySequence_Ignore() Sched_EntrySequence_CMockIgnore()
+void Sched_EntrySequence_CMockIgnore(void);
+#define Sched_EntrySequence_StopIgnore() Sched_EntrySequence_CMockStopIgnore()
+void Sched_EntrySequence_CMockStopIgnore(void);
+#define Sched_EntrySequence_ExpectAndReturn(cmock_retval) TEST_FAIL_MESSAGE("Sched_EntrySequence requires _Expect (not AndReturn)");
+#define Sched_EntrySequence_Expect() Sched_EntrySequence_CMockExpect(__LINE__)
+void Sched_EntrySequence_CMockExpect(UNITY_LINE_TYPE cmock_line);
+typedef void (* CMOCK_Sched_EntrySequence_CALLBACK)(int cmock_num_calls);
+void Sched_EntrySequence_AddCallback(CMOCK_Sched_EntrySequence_CALLBACK Callback);
+void Sched_EntrySequence_Stub(CMOCK_Sched_EntrySequence_CALLBACK Callback);
+#define Sched_EntrySequence_StubWithCallback Sched_EntrySequence_Stub
+#define Sched_GetRefTime_u32_Ignore() TEST_FAIL_MESSAGE("Sched_GetRefTime_u32 requires _IgnoreAndReturn");
+#define Sched_GetRefTime_u32_IgnoreAndReturn(cmock_retval) Sched_GetRefTime_u32_CMockIgnoreAndReturn(__LINE__, cmock_retval)
+void Sched_GetRefTime_u32_CMockIgnoreAndReturn(UNITY_LINE_TYPE cmock_line, uint32_t cmock_to_return);
+#define Sched_GetRefTime_u32_StopIgnore() Sched_GetRefTime_u32_CMockStopIgnore()
+void Sched_GetRefTime_u32_CMockStopIgnore(void);
+#define Sched_GetRefTime_u32_Expect() TEST_FAIL_MESSAGE("Sched_GetRefTime_u32 requires _ExpectAndReturn");
+#define Sched_GetRefTime_u32_ExpectAndReturn(cmock_retval) Sched_GetRefTime_u32_CMockExpectAndReturn(__LINE__, cmock_retval)
+void Sched_GetRefTime_u32_CMockExpectAndReturn(UNITY_LINE_TYPE cmock_line, uint32_t cmock_to_return);
+typedef uint32_t (* CMOCK_Sched_GetRefTime_u32_CALLBACK)(int cmock_num_calls);
+void Sched_GetRefTime_u32_AddCallback(CMOCK_Sched_GetRefTime_u32_CALLBACK Callback);
+void Sched_GetRefTime_u32_Stub(CMOCK_Sched_GetRefTime_u32_CALLBACK Callback);
+#define Sched_GetRefTime_u32_StubWithCallback Sched_GetRefTime_u32_Stub
 
 #ifdef __cplusplus
 }

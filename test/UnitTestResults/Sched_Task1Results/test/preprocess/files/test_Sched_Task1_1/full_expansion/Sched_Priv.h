@@ -4,10 +4,13 @@
 # 1 "/usr/include/stdc-predef.h" 1 3 4
 # 0 "<command-line>" 2
 # 1 "utExecutionAndResults/utUnderTest/src/Sched_Priv.h"
+
+
+
 # 1 "utExecutionAndResults/utUnderTest/src/Sched_Cfg.h" 1
-# 2 "utExecutionAndResults/utUnderTest/src/Sched_Priv.h" 2
-# 1 "/usr/lib/gcc/x86_64-linux-gnu/12/include/stdbool.h" 1 3 4
-# 3 "utExecutionAndResults/utUnderTest/src/Sched_Priv.h" 2
+
+
+
 # 1 "/usr/lib/gcc/x86_64-linux-gnu/12/include/stdint.h" 1 3 4
 # 9 "/usr/lib/gcc/x86_64-linux-gnu/12/include/stdint.h" 3 4
 # 1 "/usr/include/stdint.h" 1 3 4
@@ -241,23 +244,77 @@ typedef unsigned long int uintptr_t;
 typedef __intmax_t intmax_t;
 typedef __uintmax_t uintmax_t;
 # 10 "/usr/lib/gcc/x86_64-linux-gnu/12/include/stdint.h" 2 3 4
-# 4 "utExecutionAndResults/utUnderTest/src/Sched_Priv.h" 2
+# 5 "utExecutionAndResults/utUnderTest/src/Sched_Cfg.h" 2
+# 40 "utExecutionAndResults/utUnderTest/src/Sched_Cfg.h"
 
-
-# 5 "utExecutionAndResults/utUnderTest/src/Sched_Priv.h"
+# 40 "utExecutionAndResults/utUnderTest/src/Sched_Cfg.h"
 void Sched_EntrySequence(void);
+# 61 "utExecutionAndResults/utUnderTest/src/Sched_Cfg.h"
 uint32_t Sched_GetRefTime_u32(void);
+# 72 "utExecutionAndResults/utUnderTest/src/Sched_Cfg.h"
+const uint32 SCHED_LOOP_PERIOD = (100u);
+
+
+
+
+const uint32 SCHED_NUM_OF_TASKS = (4u);
+
+
+
+
+
+const uint32 SCHED_TASK0_PERIOD = (5u);
+const uint32 SCHED_TASK1_PERIOD = (10u);
+const uint32 SCHED_TASK2_PERIOD = (20u);
+const uint32 SCHED_TASK3_PERIOD = (100u);
+
+
+
+
+
+
+const uint32 SCHED_TASK0_SHIFT = (0u);
+const uint32 SCHED_TASK1_SHIFT = (2u);
+const uint32 SCHED_TASK2_SHIFT = (7u);
+const uint32 SCHED_TASK3_SHIFT = (17u);
+# 5 "utExecutionAndResults/utUnderTest/src/Sched_Priv.h" 2
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/12/include/stdbool.h" 1 3 4
+# 6 "utExecutionAndResults/utUnderTest/src/Sched_Priv.h" 2
+
+
+
+
+
+
+typedef void (*const TaskHandler_t)(void);
+
+
+
+
+
+typedef struct {
+  TaskHandler_t handler_;
+  const uint32_t period_cu32;
+  const uint32_t shift_cu32;
+} Task_t;
+
+
+
+
 
 void CountTime(void);
+# 73 "utExecutionAndResults/utUnderTest/src/Sched_Priv.h"
 void ExecutePendingTasks(void);
+
+
+
+
+
+
 uint32_t DeltaTime_u32(void);
 
+
+
+
+
 void Sched_Task0(void);
-
-
-
-
-void Sched_Task2(void);
-
-
-void Sched_Task3(void);

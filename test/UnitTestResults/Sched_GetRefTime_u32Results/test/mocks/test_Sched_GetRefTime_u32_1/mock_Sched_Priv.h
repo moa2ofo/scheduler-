@@ -28,18 +28,6 @@ void mock_Sched_Priv_Verify(void);
 
 
 
-#define Sched_EntrySequence_IgnoreAndReturn(cmock_retval) TEST_FAIL_MESSAGE("Sched_EntrySequence requires _Ignore (not AndReturn)");
-#define Sched_EntrySequence_Ignore() Sched_EntrySequence_CMockIgnore()
-void Sched_EntrySequence_CMockIgnore(void);
-#define Sched_EntrySequence_StopIgnore() Sched_EntrySequence_CMockStopIgnore()
-void Sched_EntrySequence_CMockStopIgnore(void);
-#define Sched_EntrySequence_ExpectAndReturn(cmock_retval) TEST_FAIL_MESSAGE("Sched_EntrySequence requires _Expect (not AndReturn)");
-#define Sched_EntrySequence_Expect() Sched_EntrySequence_CMockExpect(__LINE__)
-void Sched_EntrySequence_CMockExpect(UNITY_LINE_TYPE cmock_line);
-typedef void (* CMOCK_Sched_EntrySequence_CALLBACK)(int cmock_num_calls);
-void Sched_EntrySequence_AddCallback(CMOCK_Sched_EntrySequence_CALLBACK Callback);
-void Sched_EntrySequence_Stub(CMOCK_Sched_EntrySequence_CALLBACK Callback);
-#define Sched_EntrySequence_StubWithCallback Sched_EntrySequence_Stub
 #define CountTime_IgnoreAndReturn(cmock_retval) TEST_FAIL_MESSAGE("CountTime requires _Ignore (not AndReturn)");
 #define CountTime_Ignore() CountTime_CMockIgnore()
 void CountTime_CMockIgnore(void);
@@ -88,42 +76,6 @@ typedef void (* CMOCK_Sched_Task0_CALLBACK)(int cmock_num_calls);
 void Sched_Task0_AddCallback(CMOCK_Sched_Task0_CALLBACK Callback);
 void Sched_Task0_Stub(CMOCK_Sched_Task0_CALLBACK Callback);
 #define Sched_Task0_StubWithCallback Sched_Task0_Stub
-#define Sched_Task1_IgnoreAndReturn(cmock_retval) TEST_FAIL_MESSAGE("Sched_Task1 requires _Ignore (not AndReturn)");
-#define Sched_Task1_Ignore() Sched_Task1_CMockIgnore()
-void Sched_Task1_CMockIgnore(void);
-#define Sched_Task1_StopIgnore() Sched_Task1_CMockStopIgnore()
-void Sched_Task1_CMockStopIgnore(void);
-#define Sched_Task1_ExpectAndReturn(cmock_retval) TEST_FAIL_MESSAGE("Sched_Task1 requires _Expect (not AndReturn)");
-#define Sched_Task1_Expect() Sched_Task1_CMockExpect(__LINE__)
-void Sched_Task1_CMockExpect(UNITY_LINE_TYPE cmock_line);
-typedef void (* CMOCK_Sched_Task1_CALLBACK)(int cmock_num_calls);
-void Sched_Task1_AddCallback(CMOCK_Sched_Task1_CALLBACK Callback);
-void Sched_Task1_Stub(CMOCK_Sched_Task1_CALLBACK Callback);
-#define Sched_Task1_StubWithCallback Sched_Task1_Stub
-#define Sched_Task2_IgnoreAndReturn(cmock_retval) TEST_FAIL_MESSAGE("Sched_Task2 requires _Ignore (not AndReturn)");
-#define Sched_Task2_Ignore() Sched_Task2_CMockIgnore()
-void Sched_Task2_CMockIgnore(void);
-#define Sched_Task2_StopIgnore() Sched_Task2_CMockStopIgnore()
-void Sched_Task2_CMockStopIgnore(void);
-#define Sched_Task2_ExpectAndReturn(cmock_retval) TEST_FAIL_MESSAGE("Sched_Task2 requires _Expect (not AndReturn)");
-#define Sched_Task2_Expect() Sched_Task2_CMockExpect(__LINE__)
-void Sched_Task2_CMockExpect(UNITY_LINE_TYPE cmock_line);
-typedef void (* CMOCK_Sched_Task2_CALLBACK)(int cmock_num_calls);
-void Sched_Task2_AddCallback(CMOCK_Sched_Task2_CALLBACK Callback);
-void Sched_Task2_Stub(CMOCK_Sched_Task2_CALLBACK Callback);
-#define Sched_Task2_StubWithCallback Sched_Task2_Stub
-#define Sched_Task3_IgnoreAndReturn(cmock_retval) TEST_FAIL_MESSAGE("Sched_Task3 requires _Ignore (not AndReturn)");
-#define Sched_Task3_Ignore() Sched_Task3_CMockIgnore()
-void Sched_Task3_CMockIgnore(void);
-#define Sched_Task3_StopIgnore() Sched_Task3_CMockStopIgnore()
-void Sched_Task3_CMockStopIgnore(void);
-#define Sched_Task3_ExpectAndReturn(cmock_retval) TEST_FAIL_MESSAGE("Sched_Task3 requires _Expect (not AndReturn)");
-#define Sched_Task3_Expect() Sched_Task3_CMockExpect(__LINE__)
-void Sched_Task3_CMockExpect(UNITY_LINE_TYPE cmock_line);
-typedef void (* CMOCK_Sched_Task3_CALLBACK)(int cmock_num_calls);
-void Sched_Task3_AddCallback(CMOCK_Sched_Task3_CALLBACK Callback);
-void Sched_Task3_Stub(CMOCK_Sched_Task3_CALLBACK Callback);
-#define Sched_Task3_StubWithCallback Sched_Task3_Stub
 
 #ifdef __cplusplus
 }

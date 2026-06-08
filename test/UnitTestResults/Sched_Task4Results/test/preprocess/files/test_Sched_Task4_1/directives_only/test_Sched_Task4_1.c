@@ -3075,7 +3075,7 @@ void CountTime(void);
  * | Interface                | In | Out | Type / Signature       | Param | Factor | Offset | Size | Range            | Unit |
  * |--------------------------|----|-----|-------------------------|-------|--------|--------|------|------------------|------|
  * | Timer_u32                | X  |     | uint32_t (global)       |       |   1    |   0    |   1  | 0..(wrap)        | [-]  |
- * | Task_ac                  | X  |     | const @ref Task_t[]     |       |   1    |   0    |   N  | configured       | [-]  |
+ * | Task_ac                  | X  |     | const Task_t[]          |       |   1    |   0    |   N  | configured       | [-]  |
  * | NumOfTaskCalls_au32      | X  |  X  | uint32_t[] (global)     |       |   1    |   0    |   N  | 0..(wrap)        | [-]  |
  * | handler_                 | X  |     | void (*)(void)          |       |   1    |   0    |   1  | -                | [-]  |
  * | return val               |    |     | void                    |       |   1    |   0    |   1  | -                | [-]  |
@@ -3152,6 +3152,7 @@ void Sched_Task0(void);
 # 6 "utExecutionAndResults/utUnderTest/src/Sched_Task4.h" 2
 
 void Sched_Task4(void);
+
 
 # 2 "utExecutionAndResults/utUnderTest/test/test_Sched_Task4_1.c" 2
 # 1 "utExecutionAndResults/utUnderTest/build/vendor/unity/src/unity.h" 1
@@ -10570,12 +10571,11 @@ void Sched_Task0_Stub(CMOCK_Sched_Task0_CALLBACK Callback);
 
 # 6 "utExecutionAndResults/utUnderTest/test/test_Sched_Task4_1.c" 2
 
-void setUp(void) {
-}
+void setUp(void) {}
 
-void tearDown(void) {
-}
+void tearDown(void) {}
 
-void test_Sched_Task4(void) {
-  TEST_IGNORE_MESSAGE("Auto-generated stub test");
+void test_Sched_Task4(void)
+{
+    TEST_IGNORE_MESSAGE("Auto-generated stub test");
 }

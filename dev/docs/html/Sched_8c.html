@@ -218,11 +218,10 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">   58</span>  <span class="keywordflow">else</span> {</div>
 <div class="line"><span class="lineno">   59</span>    l_deltaTime_u32 = 0u;</div>
 <div class="line"><span class="lineno">   60</span>  }</div>
-<div class="line"><span class="lineno">   61</span> </div>
-<div class="line"><span class="lineno">   62</span>  l_PrevTimestamp_u32 = l_currTimeStamp_u32;</div>
-<div class="line"><span class="lineno">   63</span> </div>
-<div class="line"><span class="lineno">   64</span>  <span class="keywordflow">return</span> l_deltaTime_u32;</div>
-<div class="line"><span class="lineno">   65</span>}</div>
+<div class="line"><span class="lineno">   61</span>  l_PrevTimestamp_u32 = l_currTimeStamp_u32;</div>
+<div class="line"><span class="lineno">   62</span> </div>
+<div class="line"><span class="lineno">   63</span>  <span class="keywordflow">return</span> l_deltaTime_u32;</div>
+<div class="line"><span class="lineno">   64</span>}</div>
 <div class="ttc" id="agroup__Sched_html_ga6db6318dec09fb3100bd27a4fe7981ff"><div class="ttname"><a href="group__Sched.html#ga6db6318dec09fb3100bd27a4fe7981ff">Sched_GetRefTime_u32</a></div><div class="ttdeci">uint32_t Sched_GetRefTime_u32(void)</div><div class="ttdoc">Get the current scheduler reference time.</div><div class="ttdef"><b>Definition</b> <a href="Sched__Cfg_8c_source.html#l00013">Sched_Cfg.c:13</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -261,22 +260,22 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Sched_8c_source.html#l00067">67</a> of file <a class="el" href="Sched_8c_source.html">Sched.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   67</span>                                      {</div>
-<div class="line"><span class="lineno">   68</span>  uint32_t l_idx_u32;</div>
-<div class="line"><span class="lineno">   69</span>  int32_t l_timeShift_s32;</div>
-<div class="line"><span class="lineno">   70</span> </div>
-<div class="line"><span class="lineno">   71</span>  <span class="comment">/* Parse through all tasks, with lower index tasks having higher priority */</span></div>
-<div class="line"><span class="lineno">   72</span>  <span class="keywordflow">for</span>(l_idx_u32 = 0u; l_idx_u32 &lt; <a class="code hl_variable" href="Sched__Cfg_8h.html#a441af5ef523f398edaa5bbd254ca4b46">SCHED_NUM_OF_TASKS</a>; l_idx_u32++) {</div>
-<div class="line"><span class="lineno">   73</span>    <span class="comment">/* Calculate current time relative to the next call of the task*/</span></div>
-<div class="line"><span class="lineno">   74</span>    l_timeShift_s32 = (int32_t)(<a class="code hl_variable" href="Sched_8c.html#a2ea1befa89db1d891653a142535cdf4d">Timer_u32</a> - ((<a class="code hl_variable" href="Sched_8c.html#ab4e66f821cd9db9184340762ea40b555">Task_ac</a>[l_idx_u32].period_cu32 * <a class="code hl_variable" href="Sched_8c.html#a5aafb740a26c9198fe9aeb07862a223f">NumOfTaskCalls_au32</a>[l_idx_u32]) + <a class="code hl_variable" href="Sched_8c.html#ab4e66f821cd9db9184340762ea40b555">Task_ac</a>[l_idx_u32].shift_cu32));</div>
-<div class="line"><span class="lineno">   75</span> </div>
-<div class="line"><span class="lineno">   76</span>    <span class="keywordflow">if</span>(l_timeShift_s32 &gt;= 0) {</div>
-<div class="line"><span class="lineno">   77</span>      <a class="code hl_variable" href="Sched_8c.html#ab4e66f821cd9db9184340762ea40b555">Task_ac</a>[l_idx_u32].<a class="code hl_variable" href="structTask__t.html#af6bbf42a3241695d7c9e64091f66e685">handler_</a>();</div>
-<div class="line"><span class="lineno">   78</span>      <a class="code hl_variable" href="Sched_8c.html#a5aafb740a26c9198fe9aeb07862a223f">NumOfTaskCalls_au32</a>[l_idx_u32]++;</div>
-<div class="line"><span class="lineno">   79</span>    }</div>
-<div class="line"><span class="lineno">   80</span>  }</div>
-<div class="line"><span class="lineno">   81</span>}</div>
+<p class="definition">Definition at line <a class="el" href="Sched_8c_source.html#l00066">66</a> of file <a class="el" href="Sched_8c_source.html">Sched.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   66</span>                                      {</div>
+<div class="line"><span class="lineno">   67</span>  uint32_t l_idx_u32;</div>
+<div class="line"><span class="lineno">   68</span>  int32_t l_timeShift_s32;</div>
+<div class="line"><span class="lineno">   69</span> </div>
+<div class="line"><span class="lineno">   70</span>  <span class="comment">/* Parse through all tasks, with lower index tasks having higher priority */</span></div>
+<div class="line"><span class="lineno">   71</span>  <span class="keywordflow">for</span>(l_idx_u32 = 0u; l_idx_u32 &lt; <a class="code hl_variable" href="Sched__Cfg_8h.html#a441af5ef523f398edaa5bbd254ca4b46">SCHED_NUM_OF_TASKS</a>; l_idx_u32++) {</div>
+<div class="line"><span class="lineno">   72</span>    <span class="comment">/* Calculate current time relative to the next call of the task*/</span></div>
+<div class="line"><span class="lineno">   73</span>    l_timeShift_s32 = (int32_t)(<a class="code hl_variable" href="Sched_8c.html#a2ea1befa89db1d891653a142535cdf4d">Timer_u32</a> - ((<a class="code hl_variable" href="Sched_8c.html#ab4e66f821cd9db9184340762ea40b555">Task_ac</a>[l_idx_u32].period_cu32 * <a class="code hl_variable" href="Sched_8c.html#a5aafb740a26c9198fe9aeb07862a223f">NumOfTaskCalls_au32</a>[l_idx_u32]) + <a class="code hl_variable" href="Sched_8c.html#ab4e66f821cd9db9184340762ea40b555">Task_ac</a>[l_idx_u32].shift_cu32));</div>
+<div class="line"><span class="lineno">   74</span> </div>
+<div class="line"><span class="lineno">   75</span>    <span class="keywordflow">if</span>(l_timeShift_s32 &gt;= 0) {</div>
+<div class="line"><span class="lineno">   76</span>      <a class="code hl_variable" href="Sched_8c.html#ab4e66f821cd9db9184340762ea40b555">Task_ac</a>[l_idx_u32].<a class="code hl_variable" href="structTask__t.html#af6bbf42a3241695d7c9e64091f66e685">handler_</a>();</div>
+<div class="line"><span class="lineno">   77</span>      <a class="code hl_variable" href="Sched_8c.html#a5aafb740a26c9198fe9aeb07862a223f">NumOfTaskCalls_au32</a>[l_idx_u32]++;</div>
+<div class="line"><span class="lineno">   78</span>    }</div>
+<div class="line"><span class="lineno">   79</span>  }</div>
+<div class="line"><span class="lineno">   80</span>}</div>
 <div class="ttc" id="aSched_8c_html_ab4e66f821cd9db9184340762ea40b555"><div class="ttname"><a href="Sched_8c.html#ab4e66f821cd9db9184340762ea40b555">Task_ac</a></div><div class="ttdeci">static const Task_t Task_ac[SCHED_NUM_OF_TASKS]</div><div class="ttdef"><b>Definition</b> <a href="Sched_8c_source.html#l00007">Sched.c:7</a></div></div>
 <div class="ttc" id="aSched__Cfg_8h_html_a441af5ef523f398edaa5bbd254ca4b46"><div class="ttname"><a href="Sched__Cfg_8h.html#a441af5ef523f398edaa5bbd254ca4b46">SCHED_NUM_OF_TASKS</a></div><div class="ttdeci">const uint32 SCHED_NUM_OF_TASKS</div><div class="ttdoc">Number of scheduled tasks.</div><div class="ttdef"><b>Definition</b> <a href="Sched__Cfg_8h_source.html#l00077">Sched_Cfg.h:77</a></div></div>
 <div class="ttc" id="astructTask__t_html_af6bbf42a3241695d7c9e64091f66e685"><div class="ttname"><a href="structTask__t.html#af6bbf42a3241695d7c9e64091f66e685">Task_t::handler_</a></div><div class="ttdeci">TaskHandler_t handler_</div><div class="ttdef"><b>Definition</b> <a href="Sched__Priv_8h_source.html#l00019">Sched_Priv.h:19</a></div></div>

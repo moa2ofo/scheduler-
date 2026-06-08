@@ -8,28 +8,7 @@
 static const char* CMockString_CountTime = "CountTime";
 static const char* CMockString_DeltaTime_u32 = "DeltaTime_u32";
 static const char* CMockString_ExecutePendingTasks = "ExecutePendingTasks";
-static const char* CMockString_Sched_EntrySequence = "Sched_EntrySequence";
-static const char* CMockString_Sched_GetRefTime_u32 = "Sched_GetRefTime_u32";
 static const char* CMockString_Sched_Task0 = "Sched_Task0";
-static const char* CMockString_Sched_Task2 = "Sched_Task2";
-static const char* CMockString_Sched_Task3 = "Sched_Task3";
-
-typedef struct _CMOCK_Sched_EntrySequence_CALL_INSTANCE
-{
-  UNITY_LINE_TYPE LineNumber;
-  char ExpectAnyArgsBool;
-  int CallOrder;
-
-} CMOCK_Sched_EntrySequence_CALL_INSTANCE;
-
-typedef struct _CMOCK_Sched_GetRefTime_u32_CALL_INSTANCE
-{
-  UNITY_LINE_TYPE LineNumber;
-  char ExpectAnyArgsBool;
-  uint32_t ReturnVal;
-  int CallOrder;
-
-} CMOCK_Sched_GetRefTime_u32_CALL_INSTANCE;
 
 typedef struct _CMOCK_CountTime_CALL_INSTANCE
 {
@@ -64,35 +43,8 @@ typedef struct _CMOCK_Sched_Task0_CALL_INSTANCE
 
 } CMOCK_Sched_Task0_CALL_INSTANCE;
 
-typedef struct _CMOCK_Sched_Task2_CALL_INSTANCE
-{
-  UNITY_LINE_TYPE LineNumber;
-  char ExpectAnyArgsBool;
-  int CallOrder;
-
-} CMOCK_Sched_Task2_CALL_INSTANCE;
-
-typedef struct _CMOCK_Sched_Task3_CALL_INSTANCE
-{
-  UNITY_LINE_TYPE LineNumber;
-  char ExpectAnyArgsBool;
-  int CallOrder;
-
-} CMOCK_Sched_Task3_CALL_INSTANCE;
-
 static struct mock_Sched_PrivInstance
 {
-  char Sched_EntrySequence_IgnoreBool;
-  char Sched_EntrySequence_CallbackBool;
-  CMOCK_Sched_EntrySequence_CALLBACK Sched_EntrySequence_CallbackFunctionPointer;
-  int Sched_EntrySequence_CallbackCalls;
-  CMOCK_MEM_INDEX_TYPE Sched_EntrySequence_CallInstance;
-  char Sched_GetRefTime_u32_IgnoreBool;
-  uint32_t Sched_GetRefTime_u32_FinalReturn;
-  char Sched_GetRefTime_u32_CallbackBool;
-  CMOCK_Sched_GetRefTime_u32_CALLBACK Sched_GetRefTime_u32_CallbackFunctionPointer;
-  int Sched_GetRefTime_u32_CallbackCalls;
-  CMOCK_MEM_INDEX_TYPE Sched_GetRefTime_u32_CallInstance;
   char CountTime_IgnoreBool;
   char CountTime_CallbackBool;
   CMOCK_CountTime_CALLBACK CountTime_CallbackFunctionPointer;
@@ -114,16 +66,6 @@ static struct mock_Sched_PrivInstance
   CMOCK_Sched_Task0_CALLBACK Sched_Task0_CallbackFunctionPointer;
   int Sched_Task0_CallbackCalls;
   CMOCK_MEM_INDEX_TYPE Sched_Task0_CallInstance;
-  char Sched_Task2_IgnoreBool;
-  char Sched_Task2_CallbackBool;
-  CMOCK_Sched_Task2_CALLBACK Sched_Task2_CallbackFunctionPointer;
-  int Sched_Task2_CallbackCalls;
-  CMOCK_MEM_INDEX_TYPE Sched_Task2_CallInstance;
-  char Sched_Task3_IgnoreBool;
-  char Sched_Task3_CallbackBool;
-  CMOCK_Sched_Task3_CALLBACK Sched_Task3_CallbackFunctionPointer;
-  int Sched_Task3_CallbackCalls;
-  CMOCK_MEM_INDEX_TYPE Sched_Task3_CallInstance;
 } Mock;
 
 extern int GlobalExpectCount;
@@ -133,32 +75,6 @@ void mock_Sched_Priv_Verify(void)
 {
   UNITY_LINE_TYPE cmock_line = TEST_LINE_NUM;
   CMOCK_MEM_INDEX_TYPE call_instance;
-  call_instance = Mock.Sched_EntrySequence_CallInstance;
-  if (Mock.Sched_EntrySequence_IgnoreBool)
-    call_instance = CMOCK_GUTS_NONE;
-  if (CMOCK_GUTS_NONE != call_instance)
-  {
-    UNITY_SET_DETAIL(CMockString_Sched_EntrySequence);
-    UNITY_TEST_FAIL(cmock_line, CMockStringCalledLess);
-  }
-  if (Mock.Sched_EntrySequence_CallbackFunctionPointer != NULL)
-  {
-    call_instance = CMOCK_GUTS_NONE;
-    (void)call_instance;
-  }
-  call_instance = Mock.Sched_GetRefTime_u32_CallInstance;
-  if (Mock.Sched_GetRefTime_u32_IgnoreBool)
-    call_instance = CMOCK_GUTS_NONE;
-  if (CMOCK_GUTS_NONE != call_instance)
-  {
-    UNITY_SET_DETAIL(CMockString_Sched_GetRefTime_u32);
-    UNITY_TEST_FAIL(cmock_line, CMockStringCalledLess);
-  }
-  if (Mock.Sched_GetRefTime_u32_CallbackFunctionPointer != NULL)
-  {
-    call_instance = CMOCK_GUTS_NONE;
-    (void)call_instance;
-  }
   call_instance = Mock.CountTime_CallInstance;
   if (Mock.CountTime_IgnoreBool)
     call_instance = CMOCK_GUTS_NONE;
@@ -211,32 +127,6 @@ void mock_Sched_Priv_Verify(void)
     call_instance = CMOCK_GUTS_NONE;
     (void)call_instance;
   }
-  call_instance = Mock.Sched_Task2_CallInstance;
-  if (Mock.Sched_Task2_IgnoreBool)
-    call_instance = CMOCK_GUTS_NONE;
-  if (CMOCK_GUTS_NONE != call_instance)
-  {
-    UNITY_SET_DETAIL(CMockString_Sched_Task2);
-    UNITY_TEST_FAIL(cmock_line, CMockStringCalledLess);
-  }
-  if (Mock.Sched_Task2_CallbackFunctionPointer != NULL)
-  {
-    call_instance = CMOCK_GUTS_NONE;
-    (void)call_instance;
-  }
-  call_instance = Mock.Sched_Task3_CallInstance;
-  if (Mock.Sched_Task3_IgnoreBool)
-    call_instance = CMOCK_GUTS_NONE;
-  if (CMOCK_GUTS_NONE != call_instance)
-  {
-    UNITY_SET_DETAIL(CMockString_Sched_Task3);
-    UNITY_TEST_FAIL(cmock_line, CMockStringCalledLess);
-  }
-  if (Mock.Sched_Task3_CallbackFunctionPointer != NULL)
-  {
-    call_instance = CMOCK_GUTS_NONE;
-    (void)call_instance;
-  }
 }
 
 void mock_Sched_Priv_Init(void)
@@ -250,160 +140,6 @@ void mock_Sched_Priv_Destroy(void)
   memset(&Mock, 0, sizeof(Mock));
   GlobalExpectCount = 0;
   GlobalVerifyOrder = 0;
-}
-
-void Sched_EntrySequence(void)
-{
-  UNITY_LINE_TYPE cmock_line = TEST_LINE_NUM;
-  CMOCK_Sched_EntrySequence_CALL_INSTANCE* cmock_call_instance;
-  UNITY_SET_DETAIL(CMockString_Sched_EntrySequence);
-  cmock_call_instance = (CMOCK_Sched_EntrySequence_CALL_INSTANCE*)CMock_Guts_GetAddressFor(Mock.Sched_EntrySequence_CallInstance);
-  Mock.Sched_EntrySequence_CallInstance = CMock_Guts_MemNext(Mock.Sched_EntrySequence_CallInstance);
-  if (Mock.Sched_EntrySequence_IgnoreBool)
-  {
-    UNITY_CLR_DETAILS();
-    return;
-  }
-  if (!Mock.Sched_EntrySequence_CallbackBool &&
-      Mock.Sched_EntrySequence_CallbackFunctionPointer != NULL)
-  {
-    Mock.Sched_EntrySequence_CallbackFunctionPointer(Mock.Sched_EntrySequence_CallbackCalls++);
-    UNITY_CLR_DETAILS();
-    return;
-  }
-  UNITY_TEST_ASSERT_NOT_NULL(cmock_call_instance, cmock_line, CMockStringCalledMore);
-  cmock_line = cmock_call_instance->LineNumber;
-  if (cmock_call_instance->CallOrder > ++GlobalVerifyOrder)
-    UNITY_TEST_FAIL(cmock_line, CMockStringCalledEarly);
-  if (cmock_call_instance->CallOrder < GlobalVerifyOrder)
-    UNITY_TEST_FAIL(cmock_line, CMockStringCalledLate);
-  if (Mock.Sched_EntrySequence_CallbackFunctionPointer != NULL)
-  {
-    Mock.Sched_EntrySequence_CallbackFunctionPointer(Mock.Sched_EntrySequence_CallbackCalls++);
-  }
-  UNITY_CLR_DETAILS();
-}
-
-void Sched_EntrySequence_CMockIgnore(void)
-{
-  Mock.Sched_EntrySequence_IgnoreBool = (char)1;
-}
-
-void Sched_EntrySequence_CMockStopIgnore(void)
-{
-  Mock.Sched_EntrySequence_IgnoreBool = (char)0;
-}
-
-void Sched_EntrySequence_CMockExpect(UNITY_LINE_TYPE cmock_line)
-{
-  CMOCK_MEM_INDEX_TYPE cmock_guts_index = CMock_Guts_MemNew(sizeof(CMOCK_Sched_EntrySequence_CALL_INSTANCE));
-  CMOCK_Sched_EntrySequence_CALL_INSTANCE* cmock_call_instance = (CMOCK_Sched_EntrySequence_CALL_INSTANCE*)CMock_Guts_GetAddressFor(cmock_guts_index);
-  UNITY_TEST_ASSERT_NOT_NULL(cmock_call_instance, cmock_line, CMockStringOutOfMemory);
-  memset(cmock_call_instance, 0, sizeof(*cmock_call_instance));
-  Mock.Sched_EntrySequence_CallInstance = CMock_Guts_MemChain(Mock.Sched_EntrySequence_CallInstance, cmock_guts_index);
-  Mock.Sched_EntrySequence_IgnoreBool = (char)0;
-  cmock_call_instance->LineNumber = cmock_line;
-  cmock_call_instance->CallOrder = ++GlobalExpectCount;
-  cmock_call_instance->ExpectAnyArgsBool = (char)0;
-}
-
-void Sched_EntrySequence_AddCallback(CMOCK_Sched_EntrySequence_CALLBACK Callback)
-{
-  Mock.Sched_EntrySequence_IgnoreBool = (char)0;
-  Mock.Sched_EntrySequence_CallbackBool = (char)1;
-  Mock.Sched_EntrySequence_CallbackFunctionPointer = Callback;
-}
-
-void Sched_EntrySequence_Stub(CMOCK_Sched_EntrySequence_CALLBACK Callback)
-{
-  Mock.Sched_EntrySequence_IgnoreBool = (char)0;
-  Mock.Sched_EntrySequence_CallbackBool = (char)0;
-  Mock.Sched_EntrySequence_CallbackFunctionPointer = Callback;
-}
-
-uint32_t Sched_GetRefTime_u32(void)
-{
-  UNITY_LINE_TYPE cmock_line = TEST_LINE_NUM;
-  CMOCK_Sched_GetRefTime_u32_CALL_INSTANCE* cmock_call_instance;
-  UNITY_SET_DETAIL(CMockString_Sched_GetRefTime_u32);
-  cmock_call_instance = (CMOCK_Sched_GetRefTime_u32_CALL_INSTANCE*)CMock_Guts_GetAddressFor(Mock.Sched_GetRefTime_u32_CallInstance);
-  Mock.Sched_GetRefTime_u32_CallInstance = CMock_Guts_MemNext(Mock.Sched_GetRefTime_u32_CallInstance);
-  if (Mock.Sched_GetRefTime_u32_IgnoreBool)
-  {
-    UNITY_CLR_DETAILS();
-    if (cmock_call_instance == NULL)
-      return Mock.Sched_GetRefTime_u32_FinalReturn;
-    Mock.Sched_GetRefTime_u32_FinalReturn = cmock_call_instance->ReturnVal;
-    return cmock_call_instance->ReturnVal;
-  }
-  if (!Mock.Sched_GetRefTime_u32_CallbackBool &&
-      Mock.Sched_GetRefTime_u32_CallbackFunctionPointer != NULL)
-  {
-    uint32_t cmock_cb_ret = Mock.Sched_GetRefTime_u32_CallbackFunctionPointer(Mock.Sched_GetRefTime_u32_CallbackCalls++);
-    UNITY_CLR_DETAILS();
-    return cmock_cb_ret;
-  }
-  UNITY_TEST_ASSERT_NOT_NULL(cmock_call_instance, cmock_line, CMockStringCalledMore);
-  cmock_line = cmock_call_instance->LineNumber;
-  if (cmock_call_instance->CallOrder > ++GlobalVerifyOrder)
-    UNITY_TEST_FAIL(cmock_line, CMockStringCalledEarly);
-  if (cmock_call_instance->CallOrder < GlobalVerifyOrder)
-    UNITY_TEST_FAIL(cmock_line, CMockStringCalledLate);
-  if (Mock.Sched_GetRefTime_u32_CallbackFunctionPointer != NULL)
-  {
-    cmock_call_instance->ReturnVal = Mock.Sched_GetRefTime_u32_CallbackFunctionPointer(Mock.Sched_GetRefTime_u32_CallbackCalls++);
-  }
-  UNITY_CLR_DETAILS();
-  return cmock_call_instance->ReturnVal;
-}
-
-void Sched_GetRefTime_u32_CMockIgnoreAndReturn(UNITY_LINE_TYPE cmock_line, uint32_t cmock_to_return)
-{
-  CMOCK_MEM_INDEX_TYPE cmock_guts_index = CMock_Guts_MemNew(sizeof(CMOCK_Sched_GetRefTime_u32_CALL_INSTANCE));
-  CMOCK_Sched_GetRefTime_u32_CALL_INSTANCE* cmock_call_instance = (CMOCK_Sched_GetRefTime_u32_CALL_INSTANCE*)CMock_Guts_GetAddressFor(cmock_guts_index);
-  UNITY_TEST_ASSERT_NOT_NULL(cmock_call_instance, cmock_line, CMockStringOutOfMemory);
-  memset(cmock_call_instance, 0, sizeof(*cmock_call_instance));
-  Mock.Sched_GetRefTime_u32_CallInstance = CMock_Guts_MemChain(Mock.Sched_GetRefTime_u32_CallInstance, cmock_guts_index);
-  Mock.Sched_GetRefTime_u32_IgnoreBool = (char)0;
-  cmock_call_instance->LineNumber = cmock_line;
-  cmock_call_instance->ExpectAnyArgsBool = (char)0;
-  cmock_call_instance->ReturnVal = cmock_to_return;
-  Mock.Sched_GetRefTime_u32_IgnoreBool = (char)1;
-}
-
-void Sched_GetRefTime_u32_CMockStopIgnore(void)
-{
-  if(Mock.Sched_GetRefTime_u32_IgnoreBool)
-    Mock.Sched_GetRefTime_u32_CallInstance = CMock_Guts_MemNext(Mock.Sched_GetRefTime_u32_CallInstance);
-  Mock.Sched_GetRefTime_u32_IgnoreBool = (char)0;
-}
-
-void Sched_GetRefTime_u32_CMockExpectAndReturn(UNITY_LINE_TYPE cmock_line, uint32_t cmock_to_return)
-{
-  CMOCK_MEM_INDEX_TYPE cmock_guts_index = CMock_Guts_MemNew(sizeof(CMOCK_Sched_GetRefTime_u32_CALL_INSTANCE));
-  CMOCK_Sched_GetRefTime_u32_CALL_INSTANCE* cmock_call_instance = (CMOCK_Sched_GetRefTime_u32_CALL_INSTANCE*)CMock_Guts_GetAddressFor(cmock_guts_index);
-  UNITY_TEST_ASSERT_NOT_NULL(cmock_call_instance, cmock_line, CMockStringOutOfMemory);
-  memset(cmock_call_instance, 0, sizeof(*cmock_call_instance));
-  Mock.Sched_GetRefTime_u32_CallInstance = CMock_Guts_MemChain(Mock.Sched_GetRefTime_u32_CallInstance, cmock_guts_index);
-  Mock.Sched_GetRefTime_u32_IgnoreBool = (char)0;
-  cmock_call_instance->LineNumber = cmock_line;
-  cmock_call_instance->CallOrder = ++GlobalExpectCount;
-  cmock_call_instance->ExpectAnyArgsBool = (char)0;
-  cmock_call_instance->ReturnVal = cmock_to_return;
-}
-
-void Sched_GetRefTime_u32_AddCallback(CMOCK_Sched_GetRefTime_u32_CALLBACK Callback)
-{
-  Mock.Sched_GetRefTime_u32_IgnoreBool = (char)0;
-  Mock.Sched_GetRefTime_u32_CallbackBool = (char)1;
-  Mock.Sched_GetRefTime_u32_CallbackFunctionPointer = Callback;
-}
-
-void Sched_GetRefTime_u32_Stub(CMOCK_Sched_GetRefTime_u32_CALLBACK Callback)
-{
-  Mock.Sched_GetRefTime_u32_IgnoreBool = (char)0;
-  Mock.Sched_GetRefTime_u32_CallbackBool = (char)0;
-  Mock.Sched_GetRefTime_u32_CallbackFunctionPointer = Callback;
 }
 
 void CountTime(void)
@@ -696,143 +432,5 @@ void Sched_Task0_Stub(CMOCK_Sched_Task0_CALLBACK Callback)
   Mock.Sched_Task0_IgnoreBool = (char)0;
   Mock.Sched_Task0_CallbackBool = (char)0;
   Mock.Sched_Task0_CallbackFunctionPointer = Callback;
-}
-
-void Sched_Task2(void)
-{
-  UNITY_LINE_TYPE cmock_line = TEST_LINE_NUM;
-  CMOCK_Sched_Task2_CALL_INSTANCE* cmock_call_instance;
-  UNITY_SET_DETAIL(CMockString_Sched_Task2);
-  cmock_call_instance = (CMOCK_Sched_Task2_CALL_INSTANCE*)CMock_Guts_GetAddressFor(Mock.Sched_Task2_CallInstance);
-  Mock.Sched_Task2_CallInstance = CMock_Guts_MemNext(Mock.Sched_Task2_CallInstance);
-  if (Mock.Sched_Task2_IgnoreBool)
-  {
-    UNITY_CLR_DETAILS();
-    return;
-  }
-  if (!Mock.Sched_Task2_CallbackBool &&
-      Mock.Sched_Task2_CallbackFunctionPointer != NULL)
-  {
-    Mock.Sched_Task2_CallbackFunctionPointer(Mock.Sched_Task2_CallbackCalls++);
-    UNITY_CLR_DETAILS();
-    return;
-  }
-  UNITY_TEST_ASSERT_NOT_NULL(cmock_call_instance, cmock_line, CMockStringCalledMore);
-  cmock_line = cmock_call_instance->LineNumber;
-  if (cmock_call_instance->CallOrder > ++GlobalVerifyOrder)
-    UNITY_TEST_FAIL(cmock_line, CMockStringCalledEarly);
-  if (cmock_call_instance->CallOrder < GlobalVerifyOrder)
-    UNITY_TEST_FAIL(cmock_line, CMockStringCalledLate);
-  if (Mock.Sched_Task2_CallbackFunctionPointer != NULL)
-  {
-    Mock.Sched_Task2_CallbackFunctionPointer(Mock.Sched_Task2_CallbackCalls++);
-  }
-  UNITY_CLR_DETAILS();
-}
-
-void Sched_Task2_CMockIgnore(void)
-{
-  Mock.Sched_Task2_IgnoreBool = (char)1;
-}
-
-void Sched_Task2_CMockStopIgnore(void)
-{
-  Mock.Sched_Task2_IgnoreBool = (char)0;
-}
-
-void Sched_Task2_CMockExpect(UNITY_LINE_TYPE cmock_line)
-{
-  CMOCK_MEM_INDEX_TYPE cmock_guts_index = CMock_Guts_MemNew(sizeof(CMOCK_Sched_Task2_CALL_INSTANCE));
-  CMOCK_Sched_Task2_CALL_INSTANCE* cmock_call_instance = (CMOCK_Sched_Task2_CALL_INSTANCE*)CMock_Guts_GetAddressFor(cmock_guts_index);
-  UNITY_TEST_ASSERT_NOT_NULL(cmock_call_instance, cmock_line, CMockStringOutOfMemory);
-  memset(cmock_call_instance, 0, sizeof(*cmock_call_instance));
-  Mock.Sched_Task2_CallInstance = CMock_Guts_MemChain(Mock.Sched_Task2_CallInstance, cmock_guts_index);
-  Mock.Sched_Task2_IgnoreBool = (char)0;
-  cmock_call_instance->LineNumber = cmock_line;
-  cmock_call_instance->CallOrder = ++GlobalExpectCount;
-  cmock_call_instance->ExpectAnyArgsBool = (char)0;
-}
-
-void Sched_Task2_AddCallback(CMOCK_Sched_Task2_CALLBACK Callback)
-{
-  Mock.Sched_Task2_IgnoreBool = (char)0;
-  Mock.Sched_Task2_CallbackBool = (char)1;
-  Mock.Sched_Task2_CallbackFunctionPointer = Callback;
-}
-
-void Sched_Task2_Stub(CMOCK_Sched_Task2_CALLBACK Callback)
-{
-  Mock.Sched_Task2_IgnoreBool = (char)0;
-  Mock.Sched_Task2_CallbackBool = (char)0;
-  Mock.Sched_Task2_CallbackFunctionPointer = Callback;
-}
-
-void Sched_Task3(void)
-{
-  UNITY_LINE_TYPE cmock_line = TEST_LINE_NUM;
-  CMOCK_Sched_Task3_CALL_INSTANCE* cmock_call_instance;
-  UNITY_SET_DETAIL(CMockString_Sched_Task3);
-  cmock_call_instance = (CMOCK_Sched_Task3_CALL_INSTANCE*)CMock_Guts_GetAddressFor(Mock.Sched_Task3_CallInstance);
-  Mock.Sched_Task3_CallInstance = CMock_Guts_MemNext(Mock.Sched_Task3_CallInstance);
-  if (Mock.Sched_Task3_IgnoreBool)
-  {
-    UNITY_CLR_DETAILS();
-    return;
-  }
-  if (!Mock.Sched_Task3_CallbackBool &&
-      Mock.Sched_Task3_CallbackFunctionPointer != NULL)
-  {
-    Mock.Sched_Task3_CallbackFunctionPointer(Mock.Sched_Task3_CallbackCalls++);
-    UNITY_CLR_DETAILS();
-    return;
-  }
-  UNITY_TEST_ASSERT_NOT_NULL(cmock_call_instance, cmock_line, CMockStringCalledMore);
-  cmock_line = cmock_call_instance->LineNumber;
-  if (cmock_call_instance->CallOrder > ++GlobalVerifyOrder)
-    UNITY_TEST_FAIL(cmock_line, CMockStringCalledEarly);
-  if (cmock_call_instance->CallOrder < GlobalVerifyOrder)
-    UNITY_TEST_FAIL(cmock_line, CMockStringCalledLate);
-  if (Mock.Sched_Task3_CallbackFunctionPointer != NULL)
-  {
-    Mock.Sched_Task3_CallbackFunctionPointer(Mock.Sched_Task3_CallbackCalls++);
-  }
-  UNITY_CLR_DETAILS();
-}
-
-void Sched_Task3_CMockIgnore(void)
-{
-  Mock.Sched_Task3_IgnoreBool = (char)1;
-}
-
-void Sched_Task3_CMockStopIgnore(void)
-{
-  Mock.Sched_Task3_IgnoreBool = (char)0;
-}
-
-void Sched_Task3_CMockExpect(UNITY_LINE_TYPE cmock_line)
-{
-  CMOCK_MEM_INDEX_TYPE cmock_guts_index = CMock_Guts_MemNew(sizeof(CMOCK_Sched_Task3_CALL_INSTANCE));
-  CMOCK_Sched_Task3_CALL_INSTANCE* cmock_call_instance = (CMOCK_Sched_Task3_CALL_INSTANCE*)CMock_Guts_GetAddressFor(cmock_guts_index);
-  UNITY_TEST_ASSERT_NOT_NULL(cmock_call_instance, cmock_line, CMockStringOutOfMemory);
-  memset(cmock_call_instance, 0, sizeof(*cmock_call_instance));
-  Mock.Sched_Task3_CallInstance = CMock_Guts_MemChain(Mock.Sched_Task3_CallInstance, cmock_guts_index);
-  Mock.Sched_Task3_IgnoreBool = (char)0;
-  cmock_call_instance->LineNumber = cmock_line;
-  cmock_call_instance->CallOrder = ++GlobalExpectCount;
-  cmock_call_instance->ExpectAnyArgsBool = (char)0;
-}
-
-void Sched_Task3_AddCallback(CMOCK_Sched_Task3_CALLBACK Callback)
-{
-  Mock.Sched_Task3_IgnoreBool = (char)0;
-  Mock.Sched_Task3_CallbackBool = (char)1;
-  Mock.Sched_Task3_CallbackFunctionPointer = Callback;
-}
-
-void Sched_Task3_Stub(CMOCK_Sched_Task3_CALLBACK Callback)
-{
-  Mock.Sched_Task3_IgnoreBool = (char)0;
-  Mock.Sched_Task3_CallbackBool = (char)0;
-  Mock.Sched_Task3_CallbackFunctionPointer = Callback;
 }
 
