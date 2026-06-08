@@ -58,7 +58,6 @@ static uint32_t DeltaTime_u32(void) {
   else {
     l_deltaTime_u32 = 0u;
   }
-
   l_PrevTimestamp_u32 = l_currTimeStamp_u32;
 
   return l_deltaTime_u32;
