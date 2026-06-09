@@ -82,15 +82,11 @@
  * </table>
  *
  * ### Module Data and Interface Specification
- * | Name                 | Input | Output | Type                     | Factor | Offset | Size | Range         | Unit | Init value | Special Values |
- * |----------------------|-------|--------|--------------------------|--------|--------|------|---------------|------|------------|----------------|
- * | Sched_Main           | No    | Yes    | int32_t (void)           | N/A    | N/A    | 1    | N/A           | N/A  | N/A        | Return status  |
- * | Sched_GetRefTime_u32 | Yes   | No     | uint32                   | N/A    | N/A    | 1    | [0,UINT32_MAX]| ms   | N/A        | Return status  |
- * | Sched_EntrySequence  | No    | Yes    | void (void)              | N/A    | N/A    | N/A  | N/A           | N/A  | N/A        | N/A            |
- * | SCHED_TASK0_PERIOD   | Yes   | No     | const uint32             | 1      | 0      | 1    | [5,5]         | ms   | 5          | N/A            |
- * | SCHED_TASK1_PERIOD   | Yes   | No     | const uint32             | 1      | 0      | 1    | [10,10]       | ms   | 10         | N/A            |
- * | SCHED_TASK2_PERIOD   | Yes   | No     | const uint32             | 1      | 0      | 1    | [20,20]       | ms   | 20         | N/A            |
- * | SCHED_TASK3_PERIOD   | Yes   | No     | const uint32             | 1      | 0      | 1    | [100,100]     | ms   | 100        | N/A            |
+ * | Name                 |Paramter |Datum|Command| Type                     | Factor | Offset | Size | Range         | Unit | Init value | Special Values |
+ * |----------------------|---------|-----|-------|--------------------------|--------|--------|------|---------------|------|------------|----------------|
+ * | Sched_Main           |         |     |   x   | int32_t (void)           | N/A    | N/A    | 1    | N/A           | N/A  | N/A        | Return status  |
+ * | Sched_GetRefTime_u32 |         |  r  |       | uint32                   | N/A    | N/A    | 1    | [0,UINT32_MAX]| ms   | N/A        | Return status  |
+ * | Sched_EntrySequence  |         |     |   x   | void (void)              | N/A    | N/A    | N/A  | N/A           | N/A  | N/A        | N/A            |
  *
  * ### High-level interaction
  * @startuml
