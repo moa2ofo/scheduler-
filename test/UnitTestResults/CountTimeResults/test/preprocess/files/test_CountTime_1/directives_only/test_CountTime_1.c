@@ -3519,7 +3519,7 @@ typedef struct {
  */
 void CountTime(void);
 
-uint32_t* get_NumOfTaskCalls_au32_ptr(void);
+uint32_t *get_NumOfTaskCalls_au32_ptr(void);
 size_t get_NumOfTaskCalls_au32_size(void);
 uint32_t get_Timer_u32(void);
 void set_Timer_u32(uint32_t val);
@@ -10595,11 +10595,12 @@ void Sched_Task0_Stub(CMOCK_Sched_Task0_CALLBACK Callback);
 
 # 6 "utExecutionAndResults/utUnderTest/test/test_CountTime_1.c" 2
 
-void setUp(void) {}
+void setUp(void) {
+}
 
-void tearDown(void) {}
+void tearDown(void) {
+}
 
-void test_CountTime(void)
-{
-    TEST_IGNORE_MESSAGE("Auto-generated stub test");
+void test_CountTime(void) {
+  TEST_IGNORE_MESSAGE("Auto-generated stub test");
 }

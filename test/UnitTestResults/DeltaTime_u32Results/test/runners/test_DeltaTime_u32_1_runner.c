@@ -86,7 +86,7 @@ static void run_test(UnityTestFunction func, const char* name, UNITY_LINE_TYPE l
 int main(void)
 {
   UnityBegin("test_DeltaTime_u32_1.c");
-  run_test(test_DeltaTime_u32, "test_DeltaTime_u32", 11);
+  run_test(test_DeltaTime_u32, "test_DeltaTime_u32", 13);
 
   CMock_Guts_MemFreeFinal();
   return UNITY_END();

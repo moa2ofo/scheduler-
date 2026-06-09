@@ -50,9 +50,9 @@
  */
 void ExecutePendingTasks(void);
 
-uint32_t* get_NumOfTaskCalls_au32_ptr(void);
+uint32_t *get_NumOfTaskCalls_au32_ptr(void);
 size_t get_NumOfTaskCalls_au32_size(void);
-const Task_t* get_Task_ac_ptr(void);
+const Task_t *get_Task_ac_ptr(void);
 size_t get_Task_ac_size(void);
 uint32_t get_Timer_u32(void);
 void set_Timer_u32(uint32_t val);
