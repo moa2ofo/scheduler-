@@ -12,6 +12,16 @@
  * Initialize MCU hardware modules and ensure a consistent scheduler
  * start by resetting the system time base.
  *
+ * @par Unit test link
+ * Unit test evidence: @ref UT_Sched_EntrySequence
+ *
+ * @par Relative paths
+ * - SW unit: `dev/cfg/Sched_Cfg.h`
+ * - Unit test: `test/unitTest/TEST_Sched_EntrySequence/test/test_Sched_EntrySequence.c`
+ *
+ * Initialize MCU hardware modules and ensure a consistent scheduler
+ * start by resetting the system time base.
+ *
  * The function performs:
  * - MCU initialization
  * - Watchdog service (Short-Open-Window)

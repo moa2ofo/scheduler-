@@ -1,2 +1,0 @@
-/usr/bin/ar qc libnew.a CMakeFiles/new.dir/cfg/Sched_Cfg.c.o CMakeFiles/new.dir/cfg/Sched_Priv.c.o CMakeFiles/new.dir/pltf/Sched.c.o
-/usr/bin/ranlib libnew.a
