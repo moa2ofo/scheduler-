@@ -91,17 +91,13 @@ uint32_t Sched_GetRefTime_u32(void);
  * @name Task Phase Shifts [ms]
  * @{
  */
-<<<<<<< HEAD
-extern const uint32_t SCHED_TASK0_SHIFT;
-extern const uint32_t SCHED_TASK1_SHIFT;
-extern const uint32_t SCHED_TASK2_SHIFT;
-extern const uint32_t SCHED_TASK3_SHIFT;
-=======
+
+
 #define SCHED_TASK0_SHIFT   (0u)
 #define SCHED_TASK1_SHIFT   (2u)
 #define SCHED_TASK2_SHIFT   (7u)
 #define SCHED_TASK3_SHIFT   (17u)
->>>>>>> 53a872f (retrigger)
+
 /** @} */
 
 /** @} */
