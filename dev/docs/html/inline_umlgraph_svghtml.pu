@@ -1,0 +1,71 @@
+@startuml inline_umlgraph_1.svg
+title Scheduler
+
+actor External as External
+
+box "Public functions"
+  participant "Sched_Main()" as Sched_Main
+  participant "Sched_EntrySequence()" as Entry
+  participant "Sched_GetRefTime_u32()" as GetRef
+end box
+
+box "Internal functions"
+  participant "CountTime()" as CountTime
+  participant "ExecutePendingTasks()" as Exec
+  participant "Sched_Task0()" as T0
+  participant "Sched_Task1()" as T1
+  participant "Sched_Task2()" as T2
+  participant "Sched_Task3()" as T3
+  participant "Sched_Task4()" as T4
+end box
+
+== Entry point 1 ==
+External -> Sched_Main : call Sched_Main()
+Sched_Main -> CountTime : call CountTime()
+CountTime --> Sched_Main : return
+
+Sched_Main -> Exec : call ExecutePendingTasks()
+Exec -> T0 : call Sched_Task0()
+T0 --> Exec : return
+Exec -> T1 : call Sched_Task1()
+T1 --> Exec : return
+Exec -> T2 : call Sched_Task2()
+T2 --> Exec : return
+Exec -> T3 : call Sched_Task3()
+T3 --> Exec : return
+Exec -> T4 : call Sched_Task4()
+T4 --> Exec : return
+
+Exec --> Sched_Main : return
+Sched_Main --> External : return
+
+== Entry point 2 ==
+External -> Entry : call Sched_EntrySequence()
+Entry --> External : return
+
+== Entry point 3 ==
+External -> GetRef : call Sched_GetRefTime_u32()
+GetRef --> External : return
+@enduml
+@startuml inline_umlgraph_2.svg
+start
+:l_idx_u32 = 0;
+while (l_idx_u32 < SCHED_NUM_OF_TASKS) is (yes)
+  :compute l_timeShift_s32;
+  if (l_timeShift_s32 >= 0) then (yes)
+    :call handler_();
+    :NumOfTaskCalls_au32[idx]++;
+  else (no)
+  endif
+  :l_idx_u32++;
+endwhile
+:return;
+stop
+@enduml
+@startuml inline_umlgraph_3.svg
+start
+:Mcu_Initialize();
+:Mcu_ServiceWatchdogSow();
+:Mcu_ReloadSystick();
+stop
+@enduml
