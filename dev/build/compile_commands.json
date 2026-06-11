@@ -1,0 +1,20 @@
+[
+{
+  "directory": "/workspace/build",
+  "command": "/usr/bin/cc  -I/workspace/pltf -I/workspace/cfg -I/workspace/stub -O3 -DNDEBUG -Wall -Wextra -Wpedantic -o CMakeFiles/new.dir/cfg/Sched_Cfg.c.o -c /workspace/cfg/Sched_Cfg.c",
+  "file": "/workspace/cfg/Sched_Cfg.c",
+  "output": "CMakeFiles/new.dir/cfg/Sched_Cfg.c.o"
+},
+{
+  "directory": "/workspace/build",
+  "command": "/usr/bin/cc  -I/workspace/pltf -I/workspace/cfg -I/workspace/stub -O3 -DNDEBUG -Wall -Wextra -Wpedantic -o CMakeFiles/new.dir/cfg/Sched_Priv.c.o -c /workspace/cfg/Sched_Priv.c",
+  "file": "/workspace/cfg/Sched_Priv.c",
+  "output": "CMakeFiles/new.dir/cfg/Sched_Priv.c.o"
+},
+{
+  "directory": "/workspace/build",
+  "command": "/usr/bin/cc  -I/workspace/pltf -I/workspace/cfg -I/workspace/stub -O3 -DNDEBUG -Wall -Wextra -Wpedantic -o CMakeFiles/new.dir/pltf/Sched.c.o -c /workspace/pltf/Sched.c",
+  "file": "/workspace/pltf/Sched.c",
+  "output": "CMakeFiles/new.dir/pltf/Sched.c.o"
+}
+]

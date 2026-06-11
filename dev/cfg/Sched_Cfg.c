@@ -1,7 +1,6 @@
 #include "Mcu.h"
 #include "Sched_Priv.h"
 
-
 void Sched_EntrySequence(void) {
   /* Initialize MCU hardware modules*/
   Mcu_Initialize();
