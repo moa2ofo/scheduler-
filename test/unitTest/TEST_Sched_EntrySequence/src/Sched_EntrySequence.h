@@ -40,5 +40,4 @@
  */
 void Sched_EntrySequence(void);
 
-
 #endif /* TEST_SCHED_ENTRYSEQUENCE_H */

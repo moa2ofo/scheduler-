@@ -6,5 +6,4 @@
 
 void Sched_Task4(void);
 
-
 #endif /* TEST_SCHED_TASK4_H */

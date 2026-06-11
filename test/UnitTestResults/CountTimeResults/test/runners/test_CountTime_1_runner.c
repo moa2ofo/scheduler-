@@ -86,7 +86,7 @@ static void run_test(UnityTestFunction func, const char* name, UNITY_LINE_TYPE l
 int main(void)
 {
   UnityBegin("test_CountTime_1.c");
-  run_test(test_CountTime, "test_CountTime", 11);
+  run_test(test_CountTime, "test_CountTime", 13);
 
   CMock_Guts_MemFreeFinal();
   return UNITY_END();

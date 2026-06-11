@@ -86,7 +86,7 @@ static void run_test(UnityTestFunction func, const char* name, UNITY_LINE_TYPE l
 int main(void)
 {
   UnityBegin("test_Sched_Task0_1.c");
-  run_test(test_Sched_Task0, "test_Sched_Task0", 11);
+  run_test(test_Sched_Task0, "test_Sched_Task0", 13);
 
   CMock_Guts_MemFreeFinal();
   return UNITY_END();

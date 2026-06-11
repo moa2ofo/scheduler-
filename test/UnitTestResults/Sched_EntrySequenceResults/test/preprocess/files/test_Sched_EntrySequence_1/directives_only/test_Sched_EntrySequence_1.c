@@ -3186,7 +3186,6 @@ void Sched_Task3(void);
  */
 void Sched_EntrySequence(void);
 
-
 # 2 "utExecutionAndResults/utUnderTest/test/test_Sched_EntrySequence_1.c" 2
 # 1 "utExecutionAndResults/utUnderTest/build/vendor/unity/src/unity.h" 1
 /* =========================================================================
@@ -10628,11 +10627,12 @@ void Sched_Task3_Stub(CMOCK_Sched_Task3_CALLBACK Callback);
 
 # 6 "utExecutionAndResults/utUnderTest/test/test_Sched_EntrySequence_1.c" 2
 
-void setUp(void) {}
+void setUp(void) {
+}
 
-void tearDown(void) {}
+void tearDown(void) {
+}
 
-void test_Sched_EntrySequence(void)
-{
-    TEST_IGNORE_MESSAGE("Auto-generated stub test");
+void test_Sched_EntrySequence(void) {
+  TEST_IGNORE_MESSAGE("Auto-generated stub test");
 }
