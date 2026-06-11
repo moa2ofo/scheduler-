@@ -1,9 +1,9 @@
 #ifndef TEST_SCHED_ENTRYSEQUENCE_H
 #define TEST_SCHED_ENTRYSEQUENCE_H
 
+#include "Mcu.h"
 #include "Sched_Cfg.h"
 #include "Sched_Priv.h"
-#include "Mcu.h"
 
 /**
  * @ingroup Sched
@@ -50,6 +50,5 @@
  * @return void
  */
 void Sched_EntrySequence(void);
-
 
 #endif /* TEST_SCHED_ENTRYSEQUENCE_H */

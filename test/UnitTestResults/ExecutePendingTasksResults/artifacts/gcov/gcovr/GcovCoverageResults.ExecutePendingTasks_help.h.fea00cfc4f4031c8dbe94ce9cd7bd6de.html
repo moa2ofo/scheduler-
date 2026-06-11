@@ -27,7 +27,7 @@
     </tr>
     <tr>
       <th scope="row">Date:</th>
-      <td>2026-06-11 12:36:09</td>
+      <td>2026-06-11 12:42:26</td>
     </tr>
   </table>
 </div>
@@ -42,7 +42,7 @@
     <tr>
       <th scope="row">Lines:</th>
       <td>0</td>
-      <td>12</td>
+      <td>18</td>
       <td class="coverage-none">0.0%</td>
     </tr>
     <tr>
@@ -86,40 +86,29 @@
     </tr>
     <tr>
       <td>
-        <a href="#l11">get_NumOfTaskCalls_au32_size</a>
+        <a href="#l13">get_NumOfTaskCalls_au32_size</a>
       </td>
       <td>
-        <a href="#l11">11</a>
+        <a href="#l13">13</a>
       </td>
       <td>
-        <a href="#l11"> not called</a>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <a href="#l34">get_Task_ac_ptr</a>
-      </td>
-      <td>
-        <a href="#l34">34</a>
-      </td>
-      <td>
-        <a href="#l34"> not called</a>
+        <a href="#l13"> not called</a>
       </td>
     </tr>
     <tr>
       <td>
-        <a href="#l35">get_Task_ac_size</a>
+        <a href="#l38">get_Task_ac_ptr</a>
       </td>
       <td>
-        <a href="#l35">35</a>
+        <a href="#l38">38</a>
       </td>
       <td>
-        <a href="#l35"> not called</a>
+        <a href="#l38"> not called</a>
       </td>
     </tr>
     <tr>
       <td>
-        <a href="#l41">get_Timer_u32</a>
+        <a href="#l41">get_Task_ac_size</a>
       </td>
       <td>
         <a href="#l41">41</a>
@@ -130,35 +119,46 @@
     </tr>
     <tr>
       <td>
-        <a href="#l12">set_NumOfTaskCalls_au32</a>
+        <a href="#l49">get_Timer_u32</a>
       </td>
       <td>
-        <a href="#l12">12</a>
+        <a href="#l49">49</a>
       </td>
       <td>
-        <a href="#l12"> not called</a>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <a href="#l36">set_Task_ac</a>
-      </td>
-      <td>
-        <a href="#l36">36</a>
-      </td>
-      <td>
-        <a href="#l36"> not called</a>
+        <a href="#l49"> not called</a>
       </td>
     </tr>
     <tr>
       <td>
-        <a href="#l42">set_Timer_u32</a>
+        <a href="#l16">set_NumOfTaskCalls_au32</a>
       </td>
       <td>
-        <a href="#l42">42</a>
+        <a href="#l16">16</a>
       </td>
       <td>
-        <a href="#l42"> not called</a>
+        <a href="#l16"> not called</a>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a href="#l44">set_Task_ac</a>
+      </td>
+      <td>
+        <a href="#l44">44</a>
+      </td>
+      <td>
+        <a href="#l44"> not called</a>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a href="#l52">set_Timer_u32</a>
+      </td>
+      <td>
+        <a href="#l52">52</a>
+      </td>
+      <td>
+        <a href="#l52"> not called</a>
       </td>
     </tr>
   </table>
@@ -253,7 +253,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount uncoveredLine">&cross;</td>
-      <td class="src uncoveredLine"><span class="kt">uint32_t</span><span class="o">*</span><span class="w"> </span><span class="nf">get_NumOfTaskCalls_au32_ptr</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">NumOfTaskCalls_au32</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
+      <td class="src uncoveredLine"><span class="kt">uint32_t</span><span class="w"> </span><span class="o">*</span><span class="nf">get_NumOfTaskCalls_au32_ptr</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
 
     <tr class="source-line">
@@ -261,15 +261,15 @@
       <td class="linebranch">
       </td>
       <td class="linecount uncoveredLine">&cross;</td>
-      <td class="src uncoveredLine"><span class="kt">size_t</span><span class="w"> </span><span class="nf">get_NumOfTaskCalls_au32_size</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="kt">size_t</span><span class="p">)</span><span class="mi">4</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
+      <td class="src uncoveredLine"><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">NumOfTaskCalls_au32</span><span class="p">;</span></td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno"><a id="l12" href="#l12">12</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount uncoveredLine">&cross;</td>
-      <td class="src uncoveredLine"><span class="kt">void</span><span class="w"> </span><span class="nf">set_NumOfTaskCalls_au32</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">uint32_t</span><span class="o">*</span><span class="w"> </span><span class="n">src</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
+      <td class="linecount "></td>
+      <td class="src "><span class="p">}</span></td>
     </tr>
 
     <tr class="source-line">
@@ -277,7 +277,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount uncoveredLine">&cross;</td>
-      <td class="src uncoveredLine"><span class="w">    </span><span class="kt">size_t</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="p">(</span><span class="kt">size_t</span><span class="p">)</span><span class="mi">4</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="p">(</span><span class="kt">size_t</span><span class="p">)</span><span class="mi">4</span><span class="p">;</span></td>
+      <td class="src uncoveredLine"><span class="kt">size_t</span><span class="w"> </span><span class="nf">get_NumOfTaskCalls_au32_size</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
 
     <tr class="source-line">
@@ -285,7 +285,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount uncoveredLine">&cross;</td>
-      <td class="src uncoveredLine"><span class="w">    </span><span class="n">memcpy</span><span class="p">(</span><span class="n">NumOfTaskCalls_au32</span><span class="p">,</span><span class="w"> </span><span class="n">src</span><span class="p">,</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">uint32_t</span><span class="p">));</span></td>
+      <td class="src uncoveredLine"><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="kt">size_t</span><span class="p">)</span><span class="mi">4</span><span class="p">;</span></td>
     </tr>
 
     <tr class="source-line">
@@ -300,24 +300,24 @@
       <td class="lineno"><a id="l16" href="#l16">16</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount "></td>
-      <td class="src "><span class="k">static</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Task_t</span><span class="w"> </span><span class="n">Task_ac</span><span class="p">[</span><span class="n">SCHED_NUM_OF_TASKS</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span></td>
+      <td class="linecount uncoveredLine">&cross;</td>
+      <td class="src uncoveredLine"><span class="kt">void</span><span class="w"> </span><span class="nf">set_NumOfTaskCalls_au32</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">uint32_t</span><span class="w"> </span><span class="o">*</span><span class="n">src</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno"><a id="l17" href="#l17">17</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount "></td>
-      <td class="src "><span class="w">    </span><span class="p">{.</span><span class="n">handler_</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">Sched_Task0</span><span class="p">,</span><span class="w"> </span><span class="p">.</span><span class="n">period_cu32</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SCHED_TASK0_PERIOD</span><span class="p">,</span><span class="w"> </span><span class="p">.</span><span class="n">shift_cu32</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SCHED_TASK0_SHIFT</span><span class="p">},</span></td>
+      <td class="linecount uncoveredLine">&cross;</td>
+      <td class="src uncoveredLine"><span class="w">  </span><span class="kt">size_t</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="p">(</span><span class="kt">size_t</span><span class="p">)</span><span class="mi">4</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="p">(</span><span class="kt">size_t</span><span class="p">)</span><span class="mi">4</span><span class="p">;</span></td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno"><a id="l18" href="#l18">18</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount "></td>
-      <td class="src "><span class="cp">#if(SCHED_NUM_OF_TASKS &gt; 1u)</span></td>
+      <td class="linecount uncoveredLine">&cross;</td>
+      <td class="src uncoveredLine"><span class="w">  </span><span class="n">memcpy</span><span class="p">(</span><span class="n">NumOfTaskCalls_au32</span><span class="p">,</span><span class="w"> </span><span class="n">src</span><span class="p">,</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">uint32_t</span><span class="p">));</span></td>
     </tr>
 
     <tr class="source-line">
@@ -325,7 +325,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w">    </span><span class="p">{.</span><span class="n">handler_</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">Sched_Task1</span><span class="p">,</span><span class="w"> </span><span class="p">.</span><span class="n">period_cu32</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SCHED_TASK1_PERIOD</span><span class="p">,</span><span class="w"> </span><span class="p">.</span><span class="n">shift_cu32</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SCHED_TASK1_SHIFT</span><span class="p">},</span></td>
+      <td class="src "><span class="p">}</span></td>
     </tr>
 
     <tr class="source-line">
@@ -333,7 +333,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cp">#endif</span></td>
+      <td class="src "><span class="k">static</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Task_t</span><span class="w"> </span><span class="n">Task_ac</span><span class="p">[</span><span class="n">SCHED_NUM_OF_TASKS</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
 
     <tr class="source-line">
@@ -341,7 +341,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cp">#if(SCHED_NUM_OF_TASKS &gt; 2u)</span></td>
+      <td class="src "><span class="w">    </span><span class="p">{.</span><span class="n">handler_</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">Sched_Task0</span><span class="p">,</span><span class="w"> </span><span class="p">.</span><span class="n">period_cu32</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SCHED_TASK0_PERIOD</span><span class="p">,</span><span class="w"> </span><span class="p">.</span><span class="n">shift_cu32</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SCHED_TASK0_SHIFT</span><span class="p">},</span></td>
     </tr>
 
     <tr class="source-line">
@@ -349,7 +349,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w">    </span><span class="p">{.</span><span class="n">handler_</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">Sched_Task2</span><span class="p">,</span><span class="w"> </span><span class="p">.</span><span class="n">period_cu32</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SCHED_TASK2_PERIOD</span><span class="p">,</span><span class="w"> </span><span class="p">.</span><span class="n">shift_cu32</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SCHED_TASK2_SHIFT</span><span class="p">},</span></td>
+      <td class="src "><span class="cp">#if(SCHED_NUM_OF_TASKS &gt; 1u)</span></td>
     </tr>
 
     <tr class="source-line">
@@ -357,7 +357,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cp">#endif</span></td>
+      <td class="src "><span class="w">    </span><span class="p">{.</span><span class="n">handler_</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">Sched_Task1</span><span class="p">,</span><span class="w"> </span><span class="p">.</span><span class="n">period_cu32</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SCHED_TASK1_PERIOD</span><span class="p">,</span><span class="w"> </span><span class="p">.</span><span class="n">shift_cu32</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SCHED_TASK1_SHIFT</span><span class="p">},</span></td>
     </tr>
 
     <tr class="source-line">
@@ -365,7 +365,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cp">#if(SCHED_NUM_OF_TASKS &gt; 3u)</span></td>
+      <td class="src "><span class="cp">#endif</span></td>
     </tr>
 
     <tr class="source-line">
@@ -373,7 +373,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w">    </span><span class="p">{.</span><span class="n">handler_</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">Sched_Task3</span><span class="p">,</span><span class="w"> </span><span class="p">.</span><span class="n">period_cu32</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SCHED_TASK3_PERIOD</span><span class="p">,</span><span class="w"> </span><span class="p">.</span><span class="n">shift_cu32</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SCHED_TASK3_SHIFT</span><span class="p">},</span></td>
+      <td class="src "><span class="cp">#if(SCHED_NUM_OF_TASKS &gt; 2u)</span></td>
     </tr>
 
     <tr class="source-line">
@@ -381,7 +381,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cp">#endif</span></td>
+      <td class="src "><span class="w">    </span><span class="p">{.</span><span class="n">handler_</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">Sched_Task2</span><span class="p">,</span><span class="w"> </span><span class="p">.</span><span class="n">period_cu32</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SCHED_TASK2_PERIOD</span><span class="p">,</span><span class="w"> </span><span class="p">.</span><span class="n">shift_cu32</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SCHED_TASK2_SHIFT</span><span class="p">},</span></td>
     </tr>
 
     <tr class="source-line">
@@ -389,7 +389,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cp">#if(SCHED_NUM_OF_TASKS &gt; 4u)</span></td>
+      <td class="src "><span class="cp">#endif</span></td>
     </tr>
 
     <tr class="source-line">
@@ -397,7 +397,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w">    </span><span class="p">{.</span><span class="n">handler_</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">Sched_Task4</span><span class="p">,</span><span class="w"> </span><span class="p">.</span><span class="n">period_cu32</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SCHED_TASK4_PERIOD</span><span class="p">,</span><span class="w"> </span><span class="p">.</span><span class="n">shift_cu32</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SCHED_TASK4_SHIFT</span><span class="p">},</span></td>
+      <td class="src "><span class="cp">#if(SCHED_NUM_OF_TASKS &gt; 3u)</span></td>
     </tr>
 
     <tr class="source-line">
@@ -405,7 +405,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cp">#endif</span></td>
+      <td class="src "><span class="w">    </span><span class="p">{.</span><span class="n">handler_</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">Sched_Task3</span><span class="p">,</span><span class="w"> </span><span class="p">.</span><span class="n">period_cu32</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SCHED_TASK3_PERIOD</span><span class="p">,</span><span class="w"> </span><span class="p">.</span><span class="n">shift_cu32</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SCHED_TASK3_SHIFT</span><span class="p">},</span></td>
     </tr>
 
     <tr class="source-line">
@@ -413,7 +413,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cp">#if(SCHED_NUM_OF_TASKS &gt; 5u)</span></td>
+      <td class="src "><span class="cp">#endif</span></td>
     </tr>
 
     <tr class="source-line">
@@ -421,7 +421,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cp">#error &quot;Number of tasks exceeds the maximum supported by the implementation.&quot;</span></td>
+      <td class="src "><span class="cp">#if(SCHED_NUM_OF_TASKS &gt; 4u)</span></td>
     </tr>
 
     <tr class="source-line">
@@ -429,7 +429,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cp">#endif</span></td>
+      <td class="src "><span class="w">    </span><span class="p">{.</span><span class="n">handler_</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">Sched_Task4</span><span class="p">,</span><span class="w"> </span><span class="p">.</span><span class="n">period_cu32</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SCHED_TASK4_PERIOD</span><span class="p">,</span><span class="w"> </span><span class="p">.</span><span class="n">shift_cu32</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SCHED_TASK4_SHIFT</span><span class="p">},</span></td>
     </tr>
 
     <tr class="source-line">
@@ -437,39 +437,39 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="p">};</span></td>
+      <td class="src "><span class="cp">#endif</span></td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno"><a id="l34" href="#l34">34</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount uncoveredLine">&cross;</td>
-      <td class="src uncoveredLine"><span class="k">const</span><span class="w"> </span><span class="n">Task_t</span><span class="o">*</span><span class="w"> </span><span class="nf">get_Task_ac_ptr</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">Task_ac</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
+      <td class="linecount "></td>
+      <td class="src "><span class="cp">#if(SCHED_NUM_OF_TASKS &gt; 5u)</span></td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno"><a id="l35" href="#l35">35</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount uncoveredLine">&cross;</td>
-      <td class="src uncoveredLine"><span class="kt">size_t</span><span class="w"> </span><span class="nf">get_Task_ac_size</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="kt">size_t</span><span class="p">)</span><span class="mi">4</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
+      <td class="linecount "></td>
+      <td class="src "><span class="cp">#error &quot;Number of tasks exceeds the maximum supported by the implementation.&quot;</span></td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno"><a id="l36" href="#l36">36</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount uncoveredLine">&cross;</td>
-      <td class="src uncoveredLine"><span class="kt">void</span><span class="w"> </span><span class="nf">set_Task_ac</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Task_t</span><span class="o">*</span><span class="w"> </span><span class="n">src</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
+      <td class="linecount "></td>
+      <td class="src "><span class="cp">#endif</span></td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno"><a id="l37" href="#l37">37</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount uncoveredLine">&cross;</td>
-      <td class="src uncoveredLine"><span class="w">    </span><span class="kt">size_t</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="p">(</span><span class="kt">size_t</span><span class="p">)</span><span class="mi">4</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="p">(</span><span class="kt">size_t</span><span class="p">)</span><span class="mi">4</span><span class="p">;</span></td>
+      <td class="linecount "></td>
+      <td class="src "><span class="p">};</span></td>
     </tr>
 
     <tr class="source-line">
@@ -477,15 +477,15 @@
       <td class="linebranch">
       </td>
       <td class="linecount uncoveredLine">&cross;</td>
-      <td class="src uncoveredLine"><span class="w">    </span><span class="n">memcpy</span><span class="p">(</span><span class="n">Task_ac</span><span class="p">,</span><span class="w"> </span><span class="n">src</span><span class="p">,</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Task_t</span><span class="p">));</span></td>
+      <td class="src uncoveredLine"><span class="k">const</span><span class="w"> </span><span class="n">Task_t</span><span class="w"> </span><span class="o">*</span><span class="nf">get_Task_ac_ptr</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno"><a id="l39" href="#l39">39</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount "></td>
-      <td class="src "><span class="p">}</span></td>
+      <td class="linecount uncoveredLine">&cross;</td>
+      <td class="src uncoveredLine"><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">Task_ac</span><span class="p">;</span></td>
     </tr>
 
     <tr class="source-line">
@@ -493,7 +493,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="k">static</span><span class="w"> </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">Timer_u32</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0u</span><span class="p">;</span></td>
+      <td class="src "><span class="p">}</span></td>
     </tr>
 
     <tr class="source-line">
@@ -501,7 +501,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount uncoveredLine">&cross;</td>
-      <td class="src uncoveredLine"><span class="kt">uint32_t</span><span class="w"> </span><span class="nf">get_Timer_u32</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">Timer_u32</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
+      <td class="src uncoveredLine"><span class="kt">size_t</span><span class="w"> </span><span class="nf">get_Task_ac_size</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
 
     <tr class="source-line">
@@ -509,7 +509,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount uncoveredLine">&cross;</td>
-      <td class="src uncoveredLine"><span class="kt">void</span><span class="w"> </span><span class="nf">set_Timer_u32</span><span class="p">(</span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">val</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">Timer_u32</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">val</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
+      <td class="src uncoveredLine"><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="kt">size_t</span><span class="p">)</span><span class="mi">4</span><span class="p">;</span></td>
     </tr>
 
     <tr class="source-line">
@@ -517,11 +517,107 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="src "><span class="p">}</span></td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno"><a id="l44" href="#l44">44</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount uncoveredLine">&cross;</td>
+      <td class="src uncoveredLine"><span class="kt">void</span><span class="w"> </span><span class="nf">set_Task_ac</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Task_t</span><span class="w"> </span><span class="o">*</span><span class="n">src</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l45" href="#l45">45</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount uncoveredLine">&cross;</td>
+      <td class="src uncoveredLine"><span class="w">  </span><span class="kt">size_t</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="p">(</span><span class="kt">size_t</span><span class="p">)</span><span class="mi">4</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="p">(</span><span class="kt">size_t</span><span class="p">)</span><span class="mi">4</span><span class="p">;</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l46" href="#l46">46</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount uncoveredLine">&cross;</td>
+      <td class="src uncoveredLine"><span class="w">  </span><span class="n">memcpy</span><span class="p">(</span><span class="n">Task_ac</span><span class="p">,</span><span class="w"> </span><span class="n">src</span><span class="p">,</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Task_t</span><span class="p">));</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l47" href="#l47">47</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="p">}</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l48" href="#l48">48</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="k">static</span><span class="w"> </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">Timer_u32</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0u</span><span class="p">;</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l49" href="#l49">49</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount uncoveredLine">&cross;</td>
+      <td class="src uncoveredLine"><span class="kt">uint32_t</span><span class="w"> </span><span class="nf">get_Timer_u32</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l50" href="#l50">50</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount uncoveredLine">&cross;</td>
+      <td class="src uncoveredLine"><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">Timer_u32</span><span class="p">;</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l51" href="#l51">51</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="p">}</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l52" href="#l52">52</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount uncoveredLine">&cross;</td>
+      <td class="src uncoveredLine"><span class="kt">void</span><span class="w"> </span><span class="nf">set_Timer_u32</span><span class="p">(</span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">val</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l53" href="#l53">53</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount uncoveredLine">&cross;</td>
+      <td class="src uncoveredLine"><span class="w">  </span><span class="n">Timer_u32</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">val</span><span class="p">;</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l54" href="#l54">54</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="p">}</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l55" href="#l55">55</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l56" href="#l56">56</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
@@ -529,7 +625,7 @@
     </tr>
 
     <tr class="source-line">
-      <td class="lineno"><a id="l45" href="#l45">45</a></td>
+      <td class="lineno"><a id="l57" href="#l57">57</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>

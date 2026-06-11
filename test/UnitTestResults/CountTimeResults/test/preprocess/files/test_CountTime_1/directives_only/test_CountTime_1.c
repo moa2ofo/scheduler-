@@ -834,7 +834,7 @@
     * This file contains the Unity unit test stub for the SW unit
     * CountTime.
     */
-    
+
 # 1 "utExecutionAndResults/utUnderTest/src/CountTime.h" 1
 
 #define TEST_COUNTTIME_H 
@@ -4458,9 +4458,9 @@ __END_DECLS
  */
 void CountTime(void);
 
-uint32_t* get_NumOfTaskCalls_au32_ptr(void);
+uint32_t *get_NumOfTaskCalls_au32_ptr(void);
 size_t get_NumOfTaskCalls_au32_size(void);
-void set_NumOfTaskCalls_au32(const uint32_t* src, size_t n);
+void set_NumOfTaskCalls_au32(const uint32_t *src, size_t n);
 uint32_t get_Timer_u32(void);
 void set_Timer_u32(uint32_t val);
 
@@ -11571,11 +11571,12 @@ void Sched_Task3_Stub(CMOCK_Sched_Task3_CALLBACK Callback);
 
 # 17 "utExecutionAndResults/utUnderTest/test/test_CountTime_1.c" 2
 
-void setUp(void) {}
+void setUp(void) {
+}
 
-void tearDown(void) {}
+void tearDown(void) {
+}
 
-void test_CountTime(void)
-{
-    TEST_IGNORE_MESSAGE("Auto-generated stub test");
+void test_CountTime(void) {
+  TEST_IGNORE_MESSAGE("Auto-generated stub test");
 }

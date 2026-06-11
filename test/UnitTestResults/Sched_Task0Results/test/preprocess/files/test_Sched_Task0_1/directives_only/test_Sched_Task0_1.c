@@ -834,7 +834,7 @@
     * This file contains the Unity unit test stub for the SW unit
     * Sched_Task0.
     */
-    
+
 # 1 "utExecutionAndResults/utUnderTest/src/Sched_Task0.h" 1
 
 #define TEST_SCHED_TASK0_H 
@@ -3178,7 +3178,6 @@ void Sched_Task3(void);
  * @ingroup Sched
  */
 void Sched_Task0(void);
-
 
 # 13 "utExecutionAndResults/utUnderTest/test/test_Sched_Task0_1.c" 2
 # 1 "utExecutionAndResults/utUnderTest/build/vendor/unity/src/unity.h" 1
@@ -10621,11 +10620,12 @@ void Sched_Task3_Stub(CMOCK_Sched_Task3_CALLBACK Callback);
 
 # 17 "utExecutionAndResults/utUnderTest/test/test_Sched_Task0_1.c" 2
 
-void setUp(void) {}
+void setUp(void) {
+}
 
-void tearDown(void) {}
+void tearDown(void) {
+}
 
-void test_Sched_Task0(void)
-{
-    TEST_IGNORE_MESSAGE("Auto-generated stub test");
+void test_Sched_Task0(void) {
+  TEST_IGNORE_MESSAGE("Auto-generated stub test");
 }

@@ -9,10 +9,7 @@
 
 
 
-# 1 "utExecutionAndResults/utUnderTest/src/Sched_Cfg.h" 1
-
-
-
+# 1 "utExecutionAndResults/utUnderTest/src/Mcu.h" 1
 # 1 "/usr/lib/gcc/x86_64-linux-gnu/12/include/stdint.h" 1 3 4
 # 9 "/usr/lib/gcc/x86_64-linux-gnu/12/include/stdint.h" 3 4
 # 1 "/usr/include/stdint.h" 1 3 4
@@ -246,12 +243,22 @@ typedef unsigned long int uintptr_t;
 typedef __intmax_t intmax_t;
 typedef __uintmax_t uintmax_t;
 # 10 "/usr/lib/gcc/x86_64-linux-gnu/12/include/stdint.h" 2 3 4
-# 5 "utExecutionAndResults/utUnderTest/src/Sched_Cfg.h" 2
-# 50 "utExecutionAndResults/utUnderTest/src/Sched_Cfg.h"
+# 2 "utExecutionAndResults/utUnderTest/src/Mcu.h" 2
 
+
+# 3 "utExecutionAndResults/utUnderTest/src/Mcu.h"
+void Mcu_Initialize();
+
+void Mcu_ServiceWatchdogSow();
+
+void Mcu_ReloadSystick();
+
+uint32_t Mcu_GetSystemTime_u32();
+# 5 "utExecutionAndResults/utUnderTest/src/Sched_GetRefTime_u32.h" 2
+# 1 "utExecutionAndResults/utUnderTest/src/Sched_Cfg.h" 1
 # 50 "utExecutionAndResults/utUnderTest/src/Sched_Cfg.h"
 void Sched_EntrySequence(void);
-# 5 "utExecutionAndResults/utUnderTest/src/Sched_GetRefTime_u32.h" 2
+# 6 "utExecutionAndResults/utUnderTest/src/Sched_GetRefTime_u32.h" 2
 # 1 "utExecutionAndResults/utUnderTest/src/Sched_Priv.h" 1
 
 
@@ -320,17 +327,6 @@ void Sched_Task2(void);
 
 
 void Sched_Task3(void);
-# 6 "utExecutionAndResults/utUnderTest/src/Sched_GetRefTime_u32.h" 2
-# 1 "utExecutionAndResults/utUnderTest/src/Mcu.h" 1
-
-
-void Mcu_Initialize();
-
-void Mcu_ServiceWatchdogSow();
-
-void Mcu_ReloadSystick();
-
-uint32_t Mcu_GetSystemTime_u32();
 # 7 "utExecutionAndResults/utUnderTest/src/Sched_GetRefTime_u32.h" 2
 # 27 "utExecutionAndResults/utUnderTest/src/Sched_GetRefTime_u32.h"
 uint32_t Sched_GetRefTime_u32(void);
@@ -2252,6 +2248,97 @@ void resetTest(void);
 void verifyTest(void);
 # 14 "utExecutionAndResults/utUnderTest/test/test_Sched_GetRefTime_u32_1.c" 2
 
+# 1 "utExecutionAndResults/utUnderTest/build/test/mocks/test_Sched_GetRefTime_u32_1/mock_Mcu.h" 1
+
+
+
+
+
+# 1 "utExecutionAndResults/utUnderTest/src/Mcu.h" 1
+
+
+void Mcu_Initialize();
+
+void Mcu_ServiceWatchdogSow();
+
+void Mcu_ReloadSystick();
+
+uint32_t Mcu_GetSystemTime_u32();
+# 7 "utExecutionAndResults/utUnderTest/build/test/mocks/test_Sched_GetRefTime_u32_1/mock_Mcu.h" 2
+
+
+
+
+#pragma GCC diagnostic push
+
+
+#pragma GCC diagnostic ignored "-Wpragmas"
+
+#pragma GCC diagnostic ignored "-Wunknown-pragmas"
+#pragma GCC diagnostic ignored "-Wduplicate-decl-specifier"
+
+
+
+
+
+
+void mock_Mcu_Init(void);
+void mock_Mcu_Destroy(void);
+void mock_Mcu_Verify(void);
+
+
+
+
+
+
+void Mcu_Initialize_CMockIgnore(void);
+
+void Mcu_Initialize_CMockStopIgnore(void);
+
+
+void Mcu_Initialize_CMockExpect(UNITY_UINT cmock_line);
+typedef void (* CMOCK_Mcu_Initialize_CALLBACK)(int cmock_num_calls);
+void Mcu_Initialize_AddCallback(CMOCK_Mcu_Initialize_CALLBACK Callback);
+void Mcu_Initialize_Stub(CMOCK_Mcu_Initialize_CALLBACK Callback);
+
+
+
+void Mcu_ServiceWatchdogSow_CMockIgnore(void);
+
+void Mcu_ServiceWatchdogSow_CMockStopIgnore(void);
+
+
+void Mcu_ServiceWatchdogSow_CMockExpect(UNITY_UINT cmock_line);
+typedef void (* CMOCK_Mcu_ServiceWatchdogSow_CALLBACK)(int cmock_num_calls);
+void Mcu_ServiceWatchdogSow_AddCallback(CMOCK_Mcu_ServiceWatchdogSow_CALLBACK Callback);
+void Mcu_ServiceWatchdogSow_Stub(CMOCK_Mcu_ServiceWatchdogSow_CALLBACK Callback);
+
+
+
+void Mcu_ReloadSystick_CMockIgnore(void);
+
+void Mcu_ReloadSystick_CMockStopIgnore(void);
+
+
+void Mcu_ReloadSystick_CMockExpect(UNITY_UINT cmock_line);
+typedef void (* CMOCK_Mcu_ReloadSystick_CALLBACK)(int cmock_num_calls);
+void Mcu_ReloadSystick_AddCallback(CMOCK_Mcu_ReloadSystick_CALLBACK Callback);
+void Mcu_ReloadSystick_Stub(CMOCK_Mcu_ReloadSystick_CALLBACK Callback);
+
+
+
+void Mcu_GetSystemTime_u32_CMockIgnoreAndReturn(UNITY_UINT cmock_line, uint32_t cmock_to_return);
+
+void Mcu_GetSystemTime_u32_CMockStopIgnore(void);
+
+
+void Mcu_GetSystemTime_u32_CMockExpectAndReturn(UNITY_UINT cmock_line, uint32_t cmock_to_return);
+typedef uint32_t (* CMOCK_Mcu_GetSystemTime_u32_CALLBACK)(int cmock_num_calls);
+void Mcu_GetSystemTime_u32_AddCallback(CMOCK_Mcu_GetSystemTime_u32_CALLBACK Callback);
+void Mcu_GetSystemTime_u32_Stub(CMOCK_Mcu_GetSystemTime_u32_CALLBACK Callback);
+# 86 "utExecutionAndResults/utUnderTest/build/test/mocks/test_Sched_GetRefTime_u32_1/mock_Mcu.h"
+#pragma GCC diagnostic pop
+# 16 "utExecutionAndResults/utUnderTest/test/test_Sched_GetRefTime_u32_1.c" 2
 # 1 "utExecutionAndResults/utUnderTest/build/test/mocks/test_Sched_GetRefTime_u32_1/mock_Sched_Cfg.h" 1
 
 
@@ -2297,7 +2384,7 @@ void Sched_EntrySequence_AddCallback(CMOCK_Sched_EntrySequence_CALLBACK Callback
 void Sched_EntrySequence_Stub(CMOCK_Sched_EntrySequence_CALLBACK Callback);
 # 50 "utExecutionAndResults/utUnderTest/build/test/mocks/test_Sched_GetRefTime_u32_1/mock_Sched_Cfg.h"
 #pragma GCC diagnostic pop
-# 16 "utExecutionAndResults/utUnderTest/test/test_Sched_GetRefTime_u32_1.c" 2
+# 17 "utExecutionAndResults/utUnderTest/test/test_Sched_GetRefTime_u32_1.c" 2
 # 1 "utExecutionAndResults/utUnderTest/build/test/mocks/test_Sched_GetRefTime_u32_1/mock_Sched_Priv.h" 1
 
 
@@ -2415,104 +2502,14 @@ void Sched_Task3_AddCallback(CMOCK_Sched_Task3_CALLBACK Callback);
 void Sched_Task3_Stub(CMOCK_Sched_Task3_CALLBACK Callback);
 # 122 "utExecutionAndResults/utUnderTest/build/test/mocks/test_Sched_GetRefTime_u32_1/mock_Sched_Priv.h"
 #pragma GCC diagnostic pop
-# 17 "utExecutionAndResults/utUnderTest/test/test_Sched_GetRefTime_u32_1.c" 2
-# 1 "utExecutionAndResults/utUnderTest/build/test/mocks/test_Sched_GetRefTime_u32_1/mock_Mcu.h" 1
-
-
-
-
-
-# 1 "utExecutionAndResults/utUnderTest/src/Mcu.h" 1
-
-
-void Mcu_Initialize();
-
-void Mcu_ServiceWatchdogSow();
-
-void Mcu_ReloadSystick();
-
-uint32_t Mcu_GetSystemTime_u32();
-# 7 "utExecutionAndResults/utUnderTest/build/test/mocks/test_Sched_GetRefTime_u32_1/mock_Mcu.h" 2
-
-
-
-
-#pragma GCC diagnostic push
-
-
-#pragma GCC diagnostic ignored "-Wpragmas"
-
-#pragma GCC diagnostic ignored "-Wunknown-pragmas"
-#pragma GCC diagnostic ignored "-Wduplicate-decl-specifier"
-
-
-
-
-
-
-void mock_Mcu_Init(void);
-void mock_Mcu_Destroy(void);
-void mock_Mcu_Verify(void);
-
-
-
-
-
-
-void Mcu_Initialize_CMockIgnore(void);
-
-void Mcu_Initialize_CMockStopIgnore(void);
-
-
-void Mcu_Initialize_CMockExpect(UNITY_UINT cmock_line);
-typedef void (* CMOCK_Mcu_Initialize_CALLBACK)(int cmock_num_calls);
-void Mcu_Initialize_AddCallback(CMOCK_Mcu_Initialize_CALLBACK Callback);
-void Mcu_Initialize_Stub(CMOCK_Mcu_Initialize_CALLBACK Callback);
-
-
-
-void Mcu_ServiceWatchdogSow_CMockIgnore(void);
-
-void Mcu_ServiceWatchdogSow_CMockStopIgnore(void);
-
-
-void Mcu_ServiceWatchdogSow_CMockExpect(UNITY_UINT cmock_line);
-typedef void (* CMOCK_Mcu_ServiceWatchdogSow_CALLBACK)(int cmock_num_calls);
-void Mcu_ServiceWatchdogSow_AddCallback(CMOCK_Mcu_ServiceWatchdogSow_CALLBACK Callback);
-void Mcu_ServiceWatchdogSow_Stub(CMOCK_Mcu_ServiceWatchdogSow_CALLBACK Callback);
-
-
-
-void Mcu_ReloadSystick_CMockIgnore(void);
-
-void Mcu_ReloadSystick_CMockStopIgnore(void);
-
-
-void Mcu_ReloadSystick_CMockExpect(UNITY_UINT cmock_line);
-typedef void (* CMOCK_Mcu_ReloadSystick_CALLBACK)(int cmock_num_calls);
-void Mcu_ReloadSystick_AddCallback(CMOCK_Mcu_ReloadSystick_CALLBACK Callback);
-void Mcu_ReloadSystick_Stub(CMOCK_Mcu_ReloadSystick_CALLBACK Callback);
-
-
-
-void Mcu_GetSystemTime_u32_CMockIgnoreAndReturn(UNITY_UINT cmock_line, uint32_t cmock_to_return);
-
-void Mcu_GetSystemTime_u32_CMockStopIgnore(void);
-
-
-void Mcu_GetSystemTime_u32_CMockExpectAndReturn(UNITY_UINT cmock_line, uint32_t cmock_to_return);
-typedef uint32_t (* CMOCK_Mcu_GetSystemTime_u32_CALLBACK)(int cmock_num_calls);
-void Mcu_GetSystemTime_u32_AddCallback(CMOCK_Mcu_GetSystemTime_u32_CALLBACK Callback);
-void Mcu_GetSystemTime_u32_Stub(CMOCK_Mcu_GetSystemTime_u32_CALLBACK Callback);
-# 86 "utExecutionAndResults/utUnderTest/build/test/mocks/test_Sched_GetRefTime_u32_1/mock_Mcu.h"
-#pragma GCC diagnostic pop
 # 18 "utExecutionAndResults/utUnderTest/test/test_Sched_GetRefTime_u32_1.c" 2
 
-void setUp(void) {}
+void setUp(void) {
+}
 
-void tearDown(void) {}
+void tearDown(void) {
+}
 
-void test_Sched_GetRefTime_u32(void)
-{
-    UnityIgnore( (("Auto-generated stub test")), (UNITY_UINT)(25));
+void test_Sched_GetRefTime_u32(void) {
+  UnityIgnore( (("Auto-generated stub test")), (UNITY_UINT)(26));
 }

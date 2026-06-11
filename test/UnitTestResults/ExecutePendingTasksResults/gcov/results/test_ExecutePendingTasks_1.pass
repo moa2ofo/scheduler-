@@ -7,7 +7,7 @@
 :failures: []
 :ignores:
 - :test: test_ExecutePendingTasks
-  :line: 24
+  :line: 25
   :message: Auto-generated stub test
   :unity_test_time: 0
 :counts:
@@ -16,4 +16,4 @@
   :failed: 0
   :ignored: 1
 :stdout: []
-:time: 0.0007156789999953617
+:time: 0.000905733999985614

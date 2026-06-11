@@ -3,7 +3,6 @@
 
 #include <stdint.h>
 
-
 /**
  * @ingroup Sched
  * @brief Execute the scheduler entry initialization sequence.

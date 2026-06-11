@@ -6,12 +6,14 @@
 #include "mock_Sched_Priv.h"
 
 void setUp(void)
-{}
+{
+}
 
 void tearDown(void)
-{}
+{
+}
 
 void test_Sched_Task3(void)
 {
-    UnityIgnore( (("Auto-generated stub test")), (UNITY_UINT)(24));
+  UnityIgnore( (("Auto-generated stub test")), (UNITY_UINT)(25));
 }

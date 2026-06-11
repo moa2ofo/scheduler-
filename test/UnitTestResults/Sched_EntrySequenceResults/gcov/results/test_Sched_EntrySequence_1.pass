@@ -7,7 +7,7 @@
 :failures: []
 :ignores:
 - :test: test_Sched_EntrySequence
-  :line: 25
+  :line: 26
   :message: Auto-generated stub test
   :unity_test_time: 0
 :counts:
@@ -16,4 +16,4 @@
   :failed: 0
   :ignored: 1
 :stdout: []
-:time: 0.0008868870000071638
+:time: 0.0008473550000189789

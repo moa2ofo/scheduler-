@@ -5,9 +5,9 @@
 #include "cmock.h"
 #include "Sched_EntrySequence.h"
 #include "unity.h"
+#include "mock_Mcu.h"
 #include "mock_Sched_Cfg.h"
 #include "mock_Sched_Priv.h"
-#include "mock_Mcu.h"
 
 int GlobalExpectCount;
 int GlobalVerifyOrder;
@@ -25,21 +25,21 @@ static void CMock_Init(void)
   GlobalExpectCount = 0;
   GlobalVerifyOrder = 0;
   GlobalOrderError = NULL;
+  mock_Mcu_Init();
   mock_Sched_Cfg_Init();
   mock_Sched_Priv_Init();
-  mock_Mcu_Init();
 }
 static void CMock_Verify(void)
 {
+  mock_Mcu_Verify();
   mock_Sched_Cfg_Verify();
   mock_Sched_Priv_Verify();
-  mock_Mcu_Verify();
 }
 static void CMock_Destroy(void)
 {
+  mock_Mcu_Destroy();
   mock_Sched_Cfg_Destroy();
   mock_Sched_Priv_Destroy();
-  mock_Mcu_Destroy();
 }
 
 /*=======Test Reset Options=====*/
