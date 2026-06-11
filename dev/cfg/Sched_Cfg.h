@@ -69,7 +69,8 @@ uint32_t Sched_GetRefTime_u32(void);
  * @brief Scheduler base loop period in milliseconds.
  * @details Must be a multiple of all configured task periods.
  */
-extern const uint32_t SCHED_LOOP_PERIOD;
+#define SCHED_LOOP_PERIOD   (100u)
+
 
 /**
  * @brief Number of scheduled tasks.
@@ -80,20 +81,27 @@ extern const uint32_t SCHED_LOOP_PERIOD;
  * @name Task Periods [ms]
  * @{
  */
-extern const uint32_t SCHED_TASK0_PERIOD;
-extern const uint32_t SCHED_TASK1_PERIOD;
-extern const uint32_t SCHED_TASK2_PERIOD;
-extern const uint32_t SCHED_TASK3_PERIOD;
+#define SCHED_TASK0_PERIOD  (5u)
+#define SCHED_TASK1_PERIOD  (10u)
+#define SCHED_TASK2_PERIOD  (20u)
+#define SCHED_TASK3_PERIOD  (100u)
 /** @} */
 
 /**
  * @name Task Phase Shifts [ms]
  * @{
  */
+<<<<<<< HEAD
 extern const uint32_t SCHED_TASK0_SHIFT;
 extern const uint32_t SCHED_TASK1_SHIFT;
 extern const uint32_t SCHED_TASK2_SHIFT;
 extern const uint32_t SCHED_TASK3_SHIFT;
+=======
+#define SCHED_TASK0_SHIFT   (0u)
+#define SCHED_TASK1_SHIFT   (2u)
+#define SCHED_TASK2_SHIFT   (7u)
+#define SCHED_TASK3_SHIFT   (17u)
+>>>>>>> 53a872f (retrigger)
 /** @} */
 
 /** @} */
