@@ -74,7 +74,7 @@ const uint32_t SCHED_LOOP_PERIOD = (100u);
 /**
  * @brief Number of scheduled tasks.
  */
-#define SCHED_NUM_OF_TASKS  (4u)
+#define SCHED_NUM_OF_TASKS (4u)
 
 /**
  * @name Task Periods [ms]
