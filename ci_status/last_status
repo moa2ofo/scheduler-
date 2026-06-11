@@ -1,8 +1,8 @@
-GIT ACTION PERFORMED
-Run: https://github.com/moa2ofo/scheduler-/actions/runs/27336066189
+GIT ACTION FAILED
+Run: https://github.com/moa2ofo/scheduler-/actions/runs/27336999168
 generate_tests: performed
 docker info: performed
-swCmpBuildCheck: performed
+swCmpBuildCheck: failed
 doxygen: performed
 unit tests: performed
-Timestamp (UTC): 2026-06-11T09:06:43Z
+Timestamp (UTC): 2026-06-11T09:24:07Z

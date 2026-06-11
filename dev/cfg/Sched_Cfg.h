@@ -90,10 +90,10 @@ extern const uint32_t SCHED_TASK3_PERIOD;
  * @name Task Phase Shifts [ms]
  * @{
  */
-extern const uint32_t SCHED_TASK0_SHIFT; 
-extern const uint32_t SCHED_TASK1_SHIFT; 
-extern const uint32_t SCHED_TASK2_SHIFT; 
-extern const uint32_t SCHED_TASK3_SHIFT; 
+extern const uint32_t SCHED_TASK0_SHIFT;
+extern const uint32_t SCHED_TASK1_SHIFT;
+extern const uint32_t SCHED_TASK2_SHIFT;
+extern const uint32_t SCHED_TASK3_SHIFT;
 /** @} */
 
 /** @} */

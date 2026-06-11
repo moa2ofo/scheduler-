@@ -173,7 +173,7 @@ Tracebility module matrix</h3>
 <p class="endtd"></p>
 </td></tr>
 <tr>
-<td rowspan="1"><a class="el" href="Sched__Cfg_8h.html#a9c9a0cd94c4361719d68e226731444ef">SCHED_TASK0_PERIOD</a> </td><td><p class="starttd">SW_ARCH-C0003 </p>
+<td rowspan="1"><a class="el" href="Sched__Cfg_8c.html#a9c9a0cd94c4361719d68e226731444ef">SCHED_TASK0_PERIOD</a> </td><td><p class="starttd">SW_ARCH-C0003 </p>
 <p class="endtd"></p>
 </td></tr>
 <tr>
@@ -392,15 +392,15 @@ High-level interaction</h3>
 </dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Sched__Cfg_8c_source.html#l00004">4</a> of file <a class="el" href="Sched__Cfg_8c_source.html">Sched_Cfg.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">    4</span>                               {</div>
-<div class="line"><span class="lineno">    5</span>  <span class="comment">/* Initialize MCU hardware modules*/</span></div>
-<div class="line"><span class="lineno">    6</span>  Mcu_Initialize();</div>
-<div class="line"><span class="lineno">    7</span>  <span class="comment">/* Begin Short-Open-Window in case MCU initialization took too long */</span></div>
-<div class="line"><span class="lineno">    8</span>  Mcu_ServiceWatchdogSow();</div>
-<div class="line"><span class="lineno">    9</span>  <span class="comment">/* Reset SysTick counter and reference timestamp */</span></div>
-<div class="line"><span class="lineno">   10</span>  Mcu_ReloadSystick();</div>
-<div class="line"><span class="lineno">   11</span>}</div>
+<p class="definition">Definition at line <a class="el" href="Sched__Cfg_8c_source.html#l00014">14</a> of file <a class="el" href="Sched__Cfg_8c_source.html">Sched_Cfg.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   14</span>                               {</div>
+<div class="line"><span class="lineno">   15</span>  <span class="comment">/* Initialize MCU hardware modules*/</span></div>
+<div class="line"><span class="lineno">   16</span>  Mcu_Initialize();</div>
+<div class="line"><span class="lineno">   17</span>  <span class="comment">/* Begin Short-Open-Window in case MCU initialization took too long */</span></div>
+<div class="line"><span class="lineno">   18</span>  Mcu_ServiceWatchdogSow();</div>
+<div class="line"><span class="lineno">   19</span>  <span class="comment">/* Reset SysTick counter and reference timestamp */</span></div>
+<div class="line"><span class="lineno">   20</span>  Mcu_ReloadSystick();</div>
+<div class="line"><span class="lineno">   21</span>}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -439,11 +439,11 @@ Here is the caller graph for this function:</div>
 </table>
 <dl class="section return"><dt>Returns</dt><dd>uint32_t Current system time in milliseconds. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Sched__Cfg_8c_source.html#l00013">13</a> of file <a class="el" href="Sched__Cfg_8c_source.html">Sched_Cfg.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   13</span>                                    {</div>
-<div class="line"><span class="lineno">   14</span>  <span class="comment">/* Return the current system time in ms */</span></div>
-<div class="line"><span class="lineno">   15</span>  <span class="keywordflow">return</span> Mcu_GetSystemTime_u32();</div>
-<div class="line"><span class="lineno">   16</span>}</div>
+<p class="definition">Definition at line <a class="el" href="Sched__Cfg_8c_source.html#l00023">23</a> of file <a class="el" href="Sched__Cfg_8c_source.html">Sched_Cfg.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   23</span>                                    {</div>
+<div class="line"><span class="lineno">   24</span>  <span class="comment">/* Return the current system time in ms */</span></div>
+<div class="line"><span class="lineno">   25</span>  <span class="keywordflow">return</span> Mcu_GetSystemTime_u32();</div>
+<div class="line"><span class="lineno">   26</span>}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -482,7 +482,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">   33</span>}</div>
 <div class="ttc" id="aSched_8c_html_a75a48d5cf2208ddbe805fffb9af6df15"><div class="ttname"><a href="Sched_8c.html#a75a48d5cf2208ddbe805fffb9af6df15">ExecutePendingTasks</a></div><div class="ttdeci">static void ExecutePendingTasks(void)</div><div class="ttdef"><b>Definition</b> <a href="Sched_8c_source.html#l00066">Sched.c:66</a></div></div>
 <div class="ttc" id="aSched_8c_html_a99b8597edbc7a86e0ff556329d27d28c"><div class="ttname"><a href="Sched_8c.html#a99b8597edbc7a86e0ff556329d27d28c">CountTime</a></div><div class="ttdeci">static void CountTime(void)</div><div class="ttdef"><b>Definition</b> <a href="Sched_8c_source.html#l00035">Sched.c:35</a></div></div>
-<div class="ttc" id="agroup__Sched_html_ga41d855b5aa179267c4c27ac86601ad34"><div class="ttname"><a href="group__Sched.html#ga41d855b5aa179267c4c27ac86601ad34">Sched_EntrySequence</a></div><div class="ttdeci">void Sched_EntrySequence(void)</div><div class="ttdoc">Execute the scheduler entry initialization sequence.</div><div class="ttdef"><b>Definition</b> <a href="Sched__Cfg_8c_source.html#l00004">Sched_Cfg.c:4</a></div></div>
+<div class="ttc" id="agroup__Sched_html_ga41d855b5aa179267c4c27ac86601ad34"><div class="ttname"><a href="group__Sched.html#ga41d855b5aa179267c4c27ac86601ad34">Sched_EntrySequence</a></div><div class="ttdeci">void Sched_EntrySequence(void)</div><div class="ttdoc">Execute the scheduler entry initialization sequence.</div><div class="ttdef"><b>Definition</b> <a href="Sched__Cfg_8c_source.html#l00014">Sched_Cfg.c:14</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
