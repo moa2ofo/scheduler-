@@ -69,31 +69,31 @@ uint32_t Sched_GetRefTime_u32(void);
  * @brief Scheduler base loop period in milliseconds.
  * @details Must be a multiple of all configured task periods.
  */
-const uint32 SCHED_LOOP_PERIOD = (100u);
+const uint32_t SCHED_LOOP_PERIOD = (100u);
 
 /**
  * @brief Number of scheduled tasks.
  */
-const uint32 SCHED_NUM_OF_TASKS = (4u);
+#define SCHED_NUM_OF_TASKS  (4u)
 
 /**
  * @name Task Periods [ms]
  * @{
  */
-const uint32 SCHED_TASK0_PERIOD = (5u);
-const uint32 SCHED_TASK1_PERIOD = (10u);
-const uint32 SCHED_TASK2_PERIOD = (20u);
-const uint32 SCHED_TASK3_PERIOD = (100u);
+const uint32_t SCHED_TASK0_PERIOD = (5u);
+const uint32_t SCHED_TASK1_PERIOD = (10u);
+const uint32_t SCHED_TASK2_PERIOD = (20u);
+const uint32_t SCHED_TASK3_PERIOD = (100u);
 /** @} */
 
 /**
  * @name Task Phase Shifts [ms]
  * @{
  */
-const uint32 SCHED_TASK0_SHIFT = (0u);
-const uint32 SCHED_TASK1_SHIFT = (2u);
-const uint32 SCHED_TASK2_SHIFT = (7u);
-const uint32 SCHED_TASK3_SHIFT = (17u);
+const uint32_t SCHED_TASK0_SHIFT = (0u);
+const uint32_t SCHED_TASK1_SHIFT = (2u);
+const uint32_t SCHED_TASK2_SHIFT = (7u);
+const uint32_t SCHED_TASK3_SHIFT = (17u);
 /** @} */
 
 /** @} */

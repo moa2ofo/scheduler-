@@ -85,7 +85,7 @@
  * | Name                 |Paramter |Datum|Command| Type                     | Factor | Offset | Size | Range         | Unit | Init value | Special Values |
  * |----------------------|---------|-----|-------|--------------------------|--------|--------|------|---------------|------|------------|----------------|
  * | Sched_Main           |         |     |   x   | int32_t (void)           | N/A    | N/A    | 1    | N/A           | N/A  | N/A        | Return status  |
- * | Sched_GetRefTime_u32 |         |  r  |       | uint32                   | N/A    | N/A    | 1    | [0,UINT32_MAX]| ms   | N/A        | Return status  |
+ * | Sched_GetRefTime_u32 |         |  r  |       | uint32_t                   | N/A    | N/A    | 1    | [0,UINT32_MAX]| ms   | N/A        | Return status  |
  * | Sched_EntrySequence  |         |     |   x   | void (void)              | N/A    | N/A    | N/A  | N/A           | N/A  | N/A        | N/A            |
  *
  * ### High-level interaction
