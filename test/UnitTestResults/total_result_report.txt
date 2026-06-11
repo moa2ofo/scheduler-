@@ -1,0 +1,13 @@
+| function_name        | test_name | status  | linesCvrg | branchesCvrg |
+|----------------------|-----------|---------|-----------|--------------|
+| Sched_Main           | NO_TESTS  | NOT EXC | -         | -            |
+| Sched_Task2          | NO_TESTS  | NOT EXC | -         | -            |
+| Sched_GetRefTime_u32 | NO_TESTS  | NOT EXC | -         | -            |
+| CountTime            | NO_TESTS  | NOT EXC | -         | -            |
+| Sched_Task0          | NO_TESTS  | NOT EXC | -         | -            |
+| Sched_Task4          | NO_TESTS  | NOT EXC | -         | -            |
+| ExecutePendingTasks  | NO_TESTS  | NOT EXC | -         | -            |
+| Sched_Task1          | NO_TESTS  | NOT EXC | -         | -            |
+| Sched_Task3          | NO_TESTS  | NOT EXC | -         | -            |
+| DeltaTime_u32        | NO_TESTS  | NOT EXC | -         | -            |
+| Sched_EntrySequence  | NO_TESTS  | NOT EXC | -         | -            |
