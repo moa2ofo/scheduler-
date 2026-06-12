@@ -1,39 +1,39 @@
 @startuml inline_umlgraph_1.svg
-   title Scheduler Module
-   actor External as External
-   box "Platform interfaces"
-       participant "Sched_Main()" as Main
-   end box
-   box "Platform internal"
-       participant "CountTime()" as CountTime
-       participant "ExecutePendingTasks()" as ExecuteTasks
-       participant "DeltaTime_u32()" as DeltaTime    
-   end box
-   box "Configuration"
-       participant "Sched_EntrySequence()" as EntrySeq
-       participant "Sched_Task0()" as Task0
-       participant "Sched_Task1()" as Task1
-       participant "Sched_Task2()" as Task2
-       participant "Sched_Task3()" as Task3
-   end box
-   
-   
-   actor "Mcu" as Mcu
-   
-   == Entry point ==
-   External -> Main : call Sched_Main()
-   Main -> EntrySeq : call Sched_EntrySequence()
-   EntrySeq -> Mcu : call Mcu_Initialize()
-   EntrySeq -> Mcu : call Mcu_ServiceWatchdogSow()
-   EntrySeq -> Mcu : call Mcu_ReloadSystick()
-   Main -> CountTime : call CountTime()
-   CountTime -> DeltaTime : call DeltaTime_u32()
-   Main -> ExecuteTasks : call ExecutePendingTasks()
-   ExecuteTasks -> Task0 : call Sched_Task0() [5ms]
-   ExecuteTasks -> Task1 : call Sched_Task1() [10ms]
-   ExecuteTasks -> Task2 : call Sched_Task2() [20ms]
-   Task2 -> Mcu : call Mcu_ServiceWatchdog()
-   ExecuteTasks -> Task3 : call Sched_Task3() [100ms]
+title Scheduler Module
+actor External as External
+box "Platform interfaces"
+    participant "Sched_Main()" as Main
+end box
+box "Platform internal"
+    participant "CountTime()" as CountTime
+    participant "ExecutePendingTasks()" as ExecuteTasks
+    participant "DeltaTime_u32()" as DeltaTime    
+end box
+box "Configuration"
+    participant "Sched_EntrySequence()" as EntrySeq
+    participant "Sched_Task0()" as Task0
+    participant "Sched_Task1()" as Task1
+    participant "Sched_Task2()" as Task2
+    participant "Sched_Task3()" as Task3
+end box
+
+
+actor "Mcu" as Mcu
+
+== Entry point ==
+External -> Main : call Sched_Main()
+Main -> EntrySeq : call Sched_EntrySequence()
+EntrySeq -> Mcu : call Mcu_Initialize()
+EntrySeq -> Mcu : call Mcu_ServiceWatchdogSow()
+EntrySeq -> Mcu : call Mcu_ReloadSystick()
+Main -> CountTime : call CountTime()
+CountTime -> DeltaTime : call DeltaTime_u32()
+Main -> ExecuteTasks : call ExecutePendingTasks()
+ExecuteTasks -> Task0 : call Sched_Task0() [5ms]
+ExecuteTasks -> Task1 : call Sched_Task1() [10ms]
+ExecuteTasks -> Task2 : call Sched_Task2() [20ms]
+Task2 -> Mcu : call Mcu_ServiceWatchdog()
+ExecuteTasks -> Task3 : call Sched_Task3() [100ms]
 @enduml
 @startuml inline_umlgraph_2.svg
 start

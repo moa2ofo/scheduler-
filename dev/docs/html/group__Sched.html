@@ -151,7 +151,6 @@ Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Scheduler module. </p>
 <p>The Module Data and Interface Specification define, in a clear, verifiable, and consistent manner, all externally relevant aspects of a module, including its interfaces and internal data. It covers function interfaces as well as global and static variables, ensuring full transparency of how the module exchanges and manages data in alignment with the software architecture.</p>
-<p>/** </p>
 <h3><a class="anchor" id="autotoc_md0"></a>
 Static design and traceability matrix</h3>
 <table class="doxtable">
@@ -160,32 +159,50 @@ Static design and traceability matrix</h3>
 <p class="endtd"></p>
 </th></tr>
 <tr>
-<td><a class="el" href="group__Sched.html#gae75409b16ee02f84ef65a77637d2decb">Sched_Main</a> </td><td>Public interface / Command </td><td>External </td><td>SW_INTF-P0006 </td><td><p class="starttd">Main scheduler entry point called by the external platform. </p>
-<p class="endtd"></p>
-</td></tr>
+<td><a class="el" href="group__Sched.html#gae75409b16ee02f84ef65a77637d2decb">Sched_Main</a> </td><td>unit  </td><td rowspan="2">External </td><td>SW_INTF-P0006 </td><td>Main scheduler entry point called by the external platform.  </td></tr>
 <tr>
-<td><a class="el" href="group__Sched.html#ga6db6318dec09fb3100bd27a4fe7981ff">Sched_GetRefTime_u32</a> </td><td>Public interface / Data access </td><td>External </td><td>SW_ARCH-C0005<br  />
+<td><a class="el" href="group__Sched.html#ga6db6318dec09fb3100bd27a4fe7981ff">Sched_GetRefTime_u32</a> </td><td>unit  </td><td>SW_ARCH-C0005<br  />
 SW_INTF-P0006 </td><td><p class="starttd">Provides the current scheduler reference time. </p>
 <p class="endtd"></p>
 </td></tr>
 <tr>
-<td><a class="el" href="group__Sched.html#ga41d855b5aa179267c4c27ac86601ad34">Sched_EntrySequence</a> </td><td>Internal unit </td><td>Internal </td><td>SW_ARCH-C0004 </td><td><p class="starttd">Executes the scheduler entry sequence and initializes platform services. </p>
+<td><a class="el" href="group__Sched.html#ga41d855b5aa179267c4c27ac86601ad34">Sched_EntrySequence</a> </td><td>unit </td><td rowspan="6">Internal </td><td>SW_ARCH-C0004 </td><td>Executes the scheduler entry sequence and initializes platform services.  </td></tr>
+<tr>
+<td><a class="el" href="Sched_8c.html#a99b8597edbc7a86e0ff556329d27d28c">CountTime</a> </td><td>unit </td><td>Derived from SW_ARCH-C0005 </td><td>Updates the internal scheduler timer.  </td></tr>
+<tr>
+<td><a class="el" href="Sched_8c.html#a00304344cc73ea96d3ad1b85eefe2df2">DeltaTime_u32</a> </td><td>unit </td><td>Derived from SW_ARCH-C0005 </td><td>Calculates elapsed time between two uint32_t time references.  </td></tr>
+<tr>
+<td><a class="el" href="Sched_8c.html#a2ea1befa89db1d891653a142535cdf4d">Timer_u32</a> </td><td>Data  </td><td>Derived from SW_ARCH-C0005 </td><td>Calculates elapsed time between two uint32_t time references.  </td></tr>
+<tr>
+<td><a class="el" href="Sched_8c.html#a5aafb740a26c9198fe9aeb07862a223f">NumOfTaskCalls_au32</a> </td><td>Data  </td><td>Derived from SW_ARCH-C0005 </td><td>Calculates elapsed time between two uint32_t time references.  </td></tr>
+<tr>
+<td><a class="el" href="Sched_8c.html#ab4e66f821cd9db9184340762ea40b555">Task_ac</a> </td><td>Data  </td><td>Derived from SW_ARCH-C0005 </td><td><p class="starttd">Calculates elapsed time between two uint32_t time references. </p>
 <p class="endtd"></p>
 </td></tr>
 <tr>
-<td><a class="el" href="Sched_8c.html#a99b8597edbc7a86e0ff556329d27d28c">CountTime</a> </td><td>Internal unit </td><td>Internal </td><td>Derived from SW_ARCH-C0005 </td><td><p class="starttd">Updates the internal scheduler timer. </p>
-<p class="endtd"></p>
-</td></tr>
+<td>SCHED_TASK0_PERIOD </td><td>parameter </td><td rowspan="12">Configuration </td><td>SW_ARCH-C0003 </td><td>Defines the execution period of Task0.  </td></tr>
 <tr>
-<td><a class="el" href="Sched_8c.html#a00304344cc73ea96d3ad1b85eefe2df2">DeltaTime_u32</a> </td><td>Internal utility unit </td><td>Internal </td><td>Derived from SW_ARCH-C0005 </td><td><p class="starttd">Calculates elapsed time between two uint32_t time references. </p>
-<p class="endtd"></p>
-</td></tr>
+<td>SCHED_TASK1_PERIOD </td><td>parameter </td><td>SW_ARCH-C0003 </td><td>Defines the execution period of Task1.  </td></tr>
 <tr>
-<td>SCHED_TASK0_PERIOD </td><td>Configuration parameter </td><td>Configuration </td><td>SW_ARCH-C0003 </td><td><p class="starttd">Defines the execution period of Task0. </p>
-<p class="endtd"></p>
-</td></tr>
+<td>SCHED_TASK2_PERIOD </td><td>parameter </td><td>SW_ARCH-C0003 </td><td>Defines the execution period of Task2.  </td></tr>
 <tr>
-<td><a class="el" href="group__Sched.html#gae400bce4176ddab53753e642e759598b">Sched_Task0</a> </td><td>Configured runnable </td><td>Configuration </td><td>SW_ARCH-C0003 </td><td><p class="starttd">Task executed according to the configured scheduler timing. </p>
+<td>SCHED_TASK3_PERIOD </td><td>parameter </td><td>SW_ARCH-C0003 </td><td>Defines the execution period of Task3.  </td></tr>
+<tr>
+<td>SCHED_TASK0_SHIFT </td><td>parameter </td><td>SW_ARCH-C0003 </td><td>Defines the phase shift of Task0.  </td></tr>
+<tr>
+<td>SCHED_TASK1_SHIFT </td><td>parameter </td><td>SW_ARCH-C0003 </td><td>Defines the phase shift of Task1.  </td></tr>
+<tr>
+<td>SCHED_TASK2_SHIFT </td><td>parameter </td><td>SW_ARCH-C0003 </td><td>Defines the phase shift of Task2.  </td></tr>
+<tr>
+<td>SCHED_TASK3_SHIFT </td><td>parameter </td><td>SW_ARCH-C0003 </td><td>Defines the phase shift of Task3.  </td></tr>
+<tr>
+<td><a class="el" href="group__Sched.html#gae400bce4176ddab53753e642e759598b">Sched_Task0</a> </td><td>unit  </td><td>SW_ARCH-C0003 </td><td>Task executed according to the configured scheduler timing.  </td></tr>
+<tr>
+<td><a class="el" href="group__Sched.html#ga10314d7837d80b3579c3b4267d144945">Sched_Task1</a> </td><td>unit  </td><td>SW_ARCH-C0003 </td><td>Task executed according to the configured scheduler timing.  </td></tr>
+<tr>
+<td><a class="el" href="group__Sched.html#ga2903d59f824547c96cfde10d5356a158">Sched_Task2</a> </td><td>unit  </td><td>SW_ARCH-C0003 </td><td>Task executed according to the configured scheduler timing.  </td></tr>
+<tr>
+<td><a class="el" href="group__Sched.html#ga0e7ef63cf946dd03f941e68381e6089e">Sched_Task3</a> </td><td>unit  </td><td>SW_ARCH-C0003 </td><td><p class="starttd">Task executed according to the configured scheduler timing. </p>
 <p class="endtd"></p>
 </td></tr>
 </table>
