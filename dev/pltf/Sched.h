@@ -14,7 +14,7 @@
  * the module exchanges and manages data in alignment with the software architecture.
  *
  *
-/**
+ *
  * ### Static design and traceability matrix
  * <table>
  * <tr>
@@ -27,61 +27,132 @@
  *
  * <tr>
  *   <td>@ref Sched_Main</td>
- *   <td>Public interface / Command</td>
- *   <td>External</td>
+ *   <td> unit </td>
+ *   <td rowspan="2">External</td>
  *   <td>SW_INTF-P0006</td>
  *   <td>Main scheduler entry point called by the external platform.</td>
  * </tr>
- *
  * <tr>
  *   <td>@ref Sched_GetRefTime_u32</td>
- *   <td>Public interface / Data access</td>
- *   <td>External</td>
+ *   <td> unit </td>
  *   <td>SW_ARCH-C0005<br>SW_INTF-P0006</td>
  *   <td>Provides the current scheduler reference time.</td>
  * </tr>
  *
  * <tr>
  *   <td>@ref Sched_EntrySequence</td>
- *   <td>Internal unit</td>
- *   <td>Internal</td>
+ *   <td> unit</td>
+ *   <td rowspan="6">Internal</td>
  *   <td>SW_ARCH-C0004</td>
  *   <td>Executes the scheduler entry sequence and initializes platform services.</td>
  * </tr>
- *
  * <tr>
  *   <td>@ref CountTime</td>
- *   <td>Internal unit</td>
- *   <td>Internal</td>
+ *   <td> unit</td>
  *   <td>Derived from SW_ARCH-C0005</td>
  *   <td>Updates the internal scheduler timer.</td>
  * </tr>
- *
  * <tr>
  *   <td>@ref DeltaTime_u32</td>
- *   <td>Internal utility unit</td>
- *   <td>Internal</td>
+ *   <td> unit</td>
+ *   <td>Derived from SW_ARCH-C0005</td>
+ *   <td>Calculates elapsed time between two uint32_t time references.</td>
+ * </tr>
+ * <tr>
+ *   <td>@ref Timer_u32</td>
+ *   <td> Data </td>
+ *   <td>Derived from SW_ARCH-C0005</td>
+ *   <td>Calculates elapsed time between two uint32_t time references.</td>
+ * </tr>
+ * <tr>
+ *   <td>@ref NumOfTaskCalls_au32</td>
+ *   <td> Data </td>
+ *   <td>Derived from SW_ARCH-C0005</td>
+ *   <td>Calculates elapsed time between two uint32_t time references.</td>
+ * </tr>
+ * <tr>
+ *   <td>@ref Task_ac</td>
+ *   <td> Data </td>
  *   <td>Derived from SW_ARCH-C0005</td>
  *   <td>Calculates elapsed time between two uint32_t time references.</td>
  * </tr>
  *
  * <tr>
  *   <td>@ref SCHED_TASK0_PERIOD</td>
- *   <td>Configuration parameter</td>
- *   <td>Configuration</td>
+ *   <td> parameter</td>
+ *   <td rowspan="12">Configuration</td>
  *   <td>SW_ARCH-C0003</td>
  *   <td>Defines the execution period of Task0.</td>
  * </tr>
- *
+ * <tr>
+ *   <td>@ref SCHED_TASK1_PERIOD</td>
+ *   <td> parameter</td>
+ *   <td>SW_ARCH-C0003</td>
+ *   <td>Defines the execution period of Task1.</td>
+ * </tr>
+ * <tr>
+ *   <td>@ref SCHED_TASK2_PERIOD</td>
+ *   <td> parameter</td>
+ *   <td>SW_ARCH-C0003</td>
+ *   <td>Defines the execution period of Task2.</td>
+ * </tr>
+ * <tr>
+ *   <td>@ref SCHED_TASK3_PERIOD</td>
+ *   <td> parameter</td>
+ *   <td>SW_ARCH-C0003</td>
+ *   <td>Defines the execution period of Task3.</td>
+ * </tr>
+ * <tr>
+ *   <td>@ref SCHED_TASK0_SHIFT</td>
+ *   <td> parameter</td>
+ *   <td>SW_ARCH-C0003</td>
+ *   <td>Defines the phase shift of Task0.</td>
+ * </tr>
+ * <tr>
+ *   <td>@ref SCHED_TASK1_SHIFT</td>
+ *   <td> parameter</td>
+ *   <td>SW_ARCH-C0003</td>
+ *   <td>Defines the phase shift of Task1.</td>
+ * </tr>
+ * <tr>
+ *   <td>@ref SCHED_TASK2_SHIFT</td>
+ *   <td> parameter</td>
+ *   <td>SW_ARCH-C0003</td>
+ *   <td>Defines the phase shift of Task2.</td>
+ * </tr>
+ * <tr>
+ *   <td>@ref SCHED_TASK3_SHIFT</td>
+ *   <td> parameter</td>
+ *   <td>SW_ARCH-C0003</td>
+ *   <td>Defines the phase shift of Task3.</td>
+ * </tr>
  * <tr>
  *   <td>@ref Sched_Task0</td>
- *   <td>Configured runnable</td>
- *   <td>Configuration</td>
+ *   <td> unit </td>
+ *   <td>SW_ARCH-C0003</td>
+ *   <td>Task executed according to the configured scheduler timing.</td>
+ * </tr>
+ * <tr>
+ *   <td>@ref Sched_Task1</td>
+ *   <td> unit </td>
+ *   <td>SW_ARCH-C0003</td>
+ *   <td>Task executed according to the configured scheduler timing.</td>
+ * </tr>
+ * <tr>
+ *   <td>@ref Sched_Task2</td>
+ *   <td> unit </td>
+ *   <td>SW_ARCH-C0003</td>
+ *   <td>Task executed according to the configured scheduler timing.</td>
+ * </tr>
+ * <tr>
+ *   <td>@ref Sched_Task3</td>
+ *   <td> unit </td>
  *   <td>SW_ARCH-C0003</td>
  *   <td>Task executed according to the configured scheduler timing.</td>
  * </tr>
  *
  * </table>
+ *
  *
  *
  * ### Module Data and Interface Specification
