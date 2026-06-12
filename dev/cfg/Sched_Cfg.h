@@ -14,7 +14,7 @@
  *
  * @par Unit test link
  * Unit test evidence: @ref UT_Sched_EntrySequence
- *
+ * @par SWDD_XXXX_CFG
  * @par Relative paths
  * - SW unit: `dev/cfg/Sched_Cfg.h`
  * - Unit test: `test/unitTest/TEST_Sched_EntrySequence/test/test_Sched_EntrySequence.c`
@@ -57,7 +57,7 @@ void Sched_EntrySequence(void);
  *
  * Provide the current system time in milliseconds used as
  * reference for task scheduling.
- *
+ * @par SWDD_XXXX_CFG
  * @par Interface summary
  *
  * | Interface                  | In | Out | Type / Signature  | Description              |
