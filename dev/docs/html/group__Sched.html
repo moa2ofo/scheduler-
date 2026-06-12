@@ -159,15 +159,22 @@ Static design and traceability matrix</h3>
 <p class="endtd"></p>
 </th></tr>
 <tr>
-<td><a class="el" href="group__Sched.html#gae75409b16ee02f84ef65a77637d2decb">Sched_Main</a> </td><td>command </td><td>External </td><td>SW_INTF-P0006 </td><td><p class="starttd">Main scheduler entry point called by the external platform. </p>
-<p class="endtd"></p>
-</td></tr>
+<td><a class="el" href="group__Sched.html#gae75409b16ee02f84ef65a77637d2decb">Sched_Main</a> </td><td rowspan="7">command </td><td rowspan="11">Platform </td><td>SW_INTF-P0006 </td><td>Main scheduler entry point called by the external platform.  </td></tr>
 <tr>
-<td><a class="el" href="Sched_8c.html#a99b8597edbc7a86e0ff556329d27d28c">CountTime</a> </td><td rowspan="3">command </td><td rowspan="6">Internal </td><td>Derived from SW_ARCH-C0005 </td><td>Updates the internal scheduler timer.  </td></tr>
+<td><a class="el" href="Sched_8c.html#a99b8597edbc7a86e0ff556329d27d28c">CountTime</a> </td><td>Derived from SW_ARCH-C0005 </td><td>Updates the internal scheduler timer.  </td></tr>
 <tr>
 <td><a class="el" href="Sched_8c.html#a00304344cc73ea96d3ad1b85eefe2df2">DeltaTime_u32</a> </td><td>Derived from SW_ARCH-C0005 </td><td>Calculates elapsed time between two uint32_t time references.  </td></tr>
 <tr>
 <td><a class="el" href="Sched_8c.html#a75a48d5cf2208ddbe805fffb9af6df15">ExecutePendingTasks</a> </td><td>Derived from SW_ARCH-C0003 </td><td>Executes all scheduler tasks that are pending according to the configured timing.  </td></tr>
+<tr>
+<td><a class="el" href="group__Sched.html#ga41d855b5aa179267c4c27ac86601ad34">Sched_EntrySequence</a> </td><td>SW_ARCH-C0004 </td><td>Executes the scheduler entry sequence and initializes platform services.  </td></tr>
+<tr>
+<td><a class="el" href="group__Sched.html#ga6db6318dec09fb3100bd27a4fe7981ff">Sched_GetRefTime_u32</a> </td><td>SW_ARCH-C0005<br  />
+SW_INTF-P0006 </td><td>Provides the current scheduler reference time.  </td></tr>
+<tr>
+<td><a class="el" href="group__Sched.html#gae400bce4176ddab53753e642e759598b">Sched_Task0</a> </td><td>SW_ARCH-C0003 </td><td><p class="starttd">Task executed according to the configured scheduler timing. </p>
+<p class="endtd"></p>
+</td></tr>
 <tr>
 <td><a class="el" href="Sched_8c.html#a2ea1befa89db1d891653a142535cdf4d">Timer_u32</a> </td><td rowspan="3">datum </td><td>Derived from SW_ARCH-C0005 </td><td>Stores the current scheduler reference time.  </td></tr>
 <tr>
@@ -177,15 +184,17 @@ Static design and traceability matrix</h3>
 <p class="endtd"></p>
 </td></tr>
 <tr>
-<td>SCHED_TASK0_PERIOD </td><td rowspan="8">parameter </td><td rowspan="14">Configuration </td><td>SW_ARCH-C0003 </td><td>Defines the execution period of Task0.  </td></tr>
+<td>SCHED_TASK0_SHIFT </td><td>parameter </td><td>SW_ARCH-C0003 </td><td><p class="starttd">Defines the phase shift of Task0. </p>
+<p class="endtd"></p>
+</td></tr>
+<tr>
+<td>SCHED_TASK0_PERIOD </td><td rowspan="7">parameter </td><td rowspan="10">Configuration </td><td>SW_ARCH-C0003 </td><td>Defines the execution period of Task0.  </td></tr>
 <tr>
 <td>SCHED_TASK1_PERIOD </td><td>SW_ARCH-C0003 </td><td>Defines the execution period of Task1.  </td></tr>
 <tr>
 <td>SCHED_TASK2_PERIOD </td><td>SW_ARCH-C0003 </td><td>Defines the execution period of Task2.  </td></tr>
 <tr>
 <td>SCHED_TASK3_PERIOD </td><td>SW_ARCH-C0003 </td><td>Defines the execution period of Task3.  </td></tr>
-<tr>
-<td>SCHED_TASK0_SHIFT </td><td>SW_ARCH-C0003 </td><td>Defines the phase shift of Task0.  </td></tr>
 <tr>
 <td>SCHED_TASK1_SHIFT </td><td>SW_ARCH-C0003 </td><td>Defines the phase shift of Task1.  </td></tr>
 <tr>
@@ -195,14 +204,7 @@ Static design and traceability matrix</h3>
 <p class="endtd"></p>
 </td></tr>
 <tr>
-<td><a class="el" href="group__Sched.html#ga41d855b5aa179267c4c27ac86601ad34">Sched_EntrySequence</a> </td><td rowspan="6">command </td><td>SW_ARCH-C0004 </td><td>Executes the scheduler entry sequence and initializes platform services.  </td></tr>
-<tr>
-<td><a class="el" href="group__Sched.html#ga6db6318dec09fb3100bd27a4fe7981ff">Sched_GetRefTime_u32</a> </td><td>SW_ARCH-C0005<br  />
-SW_INTF-P0006 </td><td>Provides the current scheduler reference time.  </td></tr>
-<tr>
-<td><a class="el" href="group__Sched.html#gae400bce4176ddab53753e642e759598b">Sched_Task0</a> </td><td>SW_ARCH-C0003 </td><td>Task executed according to the configured scheduler timing.  </td></tr>
-<tr>
-<td><a class="el" href="group__Sched.html#ga10314d7837d80b3579c3b4267d144945">Sched_Task1</a> </td><td>SW_ARCH-C0003 </td><td>Task executed according to the configured scheduler timing.  </td></tr>
+<td><a class="el" href="group__Sched.html#ga10314d7837d80b3579c3b4267d144945">Sched_Task1</a> </td><td rowspan="3">command </td><td>SW_ARCH-C0003 </td><td>Task executed according to the configured scheduler timing.  </td></tr>
 <tr>
 <td><a class="el" href="group__Sched.html#ga2903d59f824547c96cfde10d5356a158">Sched_Task2</a> </td><td>SW_ARCH-C0003 </td><td>Task executed according to the configured scheduler timing.  </td></tr>
 <tr>
@@ -211,46 +213,46 @@ SW_INTF-P0006 </td><td>Provides the current scheduler reference time.  </td></tr
 </td></tr>
 </table>
 <h3><a class="anchor" id="autotoc_md1"></a>
-Platform Data and Interface Specification</h3>
+Platform Interface Specification</h3>
 <table class="markdownTable">
 <tr class="markdownTableHead">
-<th class="markdownTableHeadNone">Name   </th><th class="markdownTableHeadNone">Category   </th><th class="markdownTableHeadNone">Type   </th><th class="markdownTableHeadNone">Factor   </th><th class="markdownTableHeadNone">Offset   </th><th class="markdownTableHeadNone">Size   </th><th class="markdownTableHeadNone">Range   </th><th class="markdownTableHeadNone">Unit   </th><th class="markdownTableHeadNone">Init value   </th><th class="markdownTableHeadNone">Special Values    </th></tr>
+<th class="markdownTableHeadNone">PUID   </th><th class="markdownTableHeadNone">Name   </th><th class="markdownTableHeadNone">Category   </th><th class="markdownTableHeadNone">Type   </th><th class="markdownTableHeadNone">Factor   </th><th class="markdownTableHeadNone">Offset   </th><th class="markdownTableHeadNone">Size   </th><th class="markdownTableHeadNone">Range   </th><th class="markdownTableHeadNone">Unit   </th><th class="markdownTableHeadNone">Init value   </th><th class="markdownTableHeadNone">Special Values    </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><a class="el" href="group__Sched.html#gae75409b16ee02f84ef65a77637d2decb">Sched_Main</a>   </td><td class="markdownTableBodyNone">C(I/O)   </td><td class="markdownTableBodyNone">int32_t (void)   </td><td class="markdownTableBodyNone">N/A   </td><td class="markdownTableBodyNone">N/A   </td><td class="markdownTableBodyNone">1   </td><td class="markdownTableBodyNone">N/A   </td><td class="markdownTableBodyNone">N/A   </td><td class="markdownTableBodyNone">N/A   </td><td class="markdownTableBodyNone">Return status    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><a class="el" href="Sched_8c.html#a5aafb740a26c9198fe9aeb07862a223f">NumOfTaskCalls_au32</a>   </td><td class="markdownTableBodyNone">D(I/O)   </td><td class="markdownTableBodyNone">uint32_t   </td><td class="markdownTableBodyNone">N/A   </td><td class="markdownTableBodyNone">N/A   </td><td class="markdownTableBodyNone">SCHED_NUM_OF_TASKS   </td><td class="markdownTableBodyNone">N/A   </td><td class="markdownTableBodyNone">N/A   </td><td class="markdownTableBodyNone">0   </td><td class="markdownTableBodyNone">Return status    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><a class="el" href="Sched_8c.html#ab4e66f821cd9db9184340762ea40b555">Task_ac</a>   </td><td class="markdownTableBodyNone">D(I/O)   </td><td class="markdownTableBodyNone">const <a class="el" href="structTask__t.html" title="Task configuration structure.">Task_t</a>   </td><td class="markdownTableBodyNone">N/A   </td><td class="markdownTableBodyNone">N/A   </td><td class="markdownTableBodyNone">SCHED_NUM_OF_TASKS   </td><td class="markdownTableBodyNone">N/A   </td><td class="markdownTableBodyNone">N/A   </td><td class="markdownTableBodyNone">N/A   </td><td class="markdownTableBodyNone">Return status    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><a class="el" href="Sched_8c.html#a2ea1befa89db1d891653a142535cdf4d">Timer_u32</a>   </td><td class="markdownTableBodyNone">D(I/O)   </td><td class="markdownTableBodyNone">uint32_t   </td><td class="markdownTableBodyNone">N/A   </td><td class="markdownTableBodyNone">N/A   </td><td class="markdownTableBodyNone">1   </td><td class="markdownTableBodyNone">0..UINT32_MAX   </td><td class="markdownTableBodyNone">N/A   </td><td class="markdownTableBodyNone">0   </td><td class="markdownTableBodyNone">N/A   </td></tr>
+<td class="markdownTableBodyNone">SWDD_0001_PLTF   </td><td class="markdownTableBodyNone"><a class="el" href="group__Sched.html#gae75409b16ee02f84ef65a77637d2decb">Sched_Main</a>   </td><td class="markdownTableBodyNone">C   </td><td class="markdownTableBodyNone">int32_t (void)   </td><td class="markdownTableBodyNone">N/A   </td><td class="markdownTableBodyNone">N/A   </td><td class="markdownTableBodyNone">1   </td><td class="markdownTableBodyNone">N/A   </td><td class="markdownTableBodyNone">N/A   </td><td class="markdownTableBodyNone">N/A   </td><td class="markdownTableBodyNone">Return status   </td></tr>
 </table>
 <h3><a class="anchor" id="autotoc_md2"></a>
-Configuration Data and Interface Specification</h3>
+Configuration Data Specification</h3>
 <table class="markdownTable">
 <tr class="markdownTableHead">
-<th class="markdownTableHeadNone">Name   </th><th class="markdownTableHeadNone">Category   </th><th class="markdownTableHeadNone">Type   </th><th class="markdownTableHeadNone">Factor   </th><th class="markdownTableHeadNone">Offset   </th><th class="markdownTableHeadNone">Size   </th><th class="markdownTableHeadNone">Range   </th><th class="markdownTableHeadNone">Unit   </th><th class="markdownTableHeadNone">Init value   </th><th class="markdownTableHeadNone">Special Values    </th></tr>
+<th class="markdownTableHeadNone">PUID   </th><th class="markdownTableHeadNone">Name   </th><th class="markdownTableHeadNone">Category   </th><th class="markdownTableHeadNone">Type   </th><th class="markdownTableHeadNone">Factor   </th><th class="markdownTableHeadNone">Offset   </th><th class="markdownTableHeadNone">Size   </th><th class="markdownTableHeadNone">Range   </th><th class="markdownTableHeadNone">Unit   </th><th class="markdownTableHeadNone">Init value   </th><th class="markdownTableHeadNone">Special Values    </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">SCHED_MAX_REF_TIME   </td><td class="markdownTableBodyNone">P(I)   </td><td class="markdownTableBodyNone">uint32_t   </td><td class="markdownTableBodyNone">N/A   </td><td class="markdownTableBodyNone">N/A   </td><td class="markdownTableBodyNone">1   </td><td class="markdownTableBodyNone">UINT32_MAX   </td><td class="markdownTableBodyNone">ms   </td><td class="markdownTableBodyNone">UINT32_MAX   </td><td class="markdownTableBodyNone">N/A    </td></tr>
+<td class="markdownTableBodyNone">SWDD_0002_PLTF   </td><td class="markdownTableBodyNone">SCHED_MAX_REF_TIME   </td><td class="markdownTableBodyNone">P   </td><td class="markdownTableBodyNone">uint32_t   </td><td class="markdownTableBodyNone">N/A   </td><td class="markdownTableBodyNone">N/A   </td><td class="markdownTableBodyNone">1   </td><td class="markdownTableBodyNone">UINT32_MAX   </td><td class="markdownTableBodyNone">ms   </td><td class="markdownTableBodyNone">UINT32_MAX   </td><td class="markdownTableBodyNone">N/A    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">SCHED_LOOP_PERIOD   </td><td class="markdownTableBodyNone">P(I)   </td><td class="markdownTableBodyNone">uint32_t   </td><td class="markdownTableBodyNone">N/A   </td><td class="markdownTableBodyNone">N/A   </td><td class="markdownTableBodyNone">1   </td><td class="markdownTableBodyNone">100   </td><td class="markdownTableBodyNone">ms   </td><td class="markdownTableBodyNone">100   </td><td class="markdownTableBodyNone">N/A    </td></tr>
+<td class="markdownTableBodyNone">SWDD_0003_PLTF   </td><td class="markdownTableBodyNone">SCHED_LOOP_PERIOD   </td><td class="markdownTableBodyNone">P   </td><td class="markdownTableBodyNone">uint32_t   </td><td class="markdownTableBodyNone">N/A   </td><td class="markdownTableBodyNone">N/A   </td><td class="markdownTableBodyNone">1   </td><td class="markdownTableBodyNone">100   </td><td class="markdownTableBodyNone">ms   </td><td class="markdownTableBodyNone">100   </td><td class="markdownTableBodyNone">N/A    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">SCHED_NUM_OF_TASKS   </td><td class="markdownTableBodyNone">P(I)   </td><td class="markdownTableBodyNone">uint32_t   </td><td class="markdownTableBodyNone">N/A   </td><td class="markdownTableBodyNone">N/A   </td><td class="markdownTableBodyNone">1   </td><td class="markdownTableBodyNone">4   </td><td class="markdownTableBodyNone">N/A   </td><td class="markdownTableBodyNone">4   </td><td class="markdownTableBodyNone">N/A    </td></tr>
+<td class="markdownTableBodyNone">SWDD_0004_PLTF   </td><td class="markdownTableBodyNone">SCHED_NUM_OF_TASKS   </td><td class="markdownTableBodyNone">P   </td><td class="markdownTableBodyNone">uint32_t   </td><td class="markdownTableBodyNone">N/A   </td><td class="markdownTableBodyNone">N/A   </td><td class="markdownTableBodyNone">1   </td><td class="markdownTableBodyNone">4   </td><td class="markdownTableBodyNone">N/A   </td><td class="markdownTableBodyNone">4   </td><td class="markdownTableBodyNone">N/A    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">SCHED_TASK0_PERIOD   </td><td class="markdownTableBodyNone">P(I)   </td><td class="markdownTableBodyNone">uint32_t   </td><td class="markdownTableBodyNone">N/A   </td><td class="markdownTableBodyNone">N/A   </td><td class="markdownTableBodyNone">1   </td><td class="markdownTableBodyNone">5   </td><td class="markdownTableBodyNone">ms   </td><td class="markdownTableBodyNone">5   </td><td class="markdownTableBodyNone">N/A    </td></tr>
+<td class="markdownTableBodyNone">SWDD_0005_PLTF   </td><td class="markdownTableBodyNone">SCHED_TASK0_PERIOD   </td><td class="markdownTableBodyNone">P   </td><td class="markdownTableBodyNone">uint32_t   </td><td class="markdownTableBodyNone">N/A   </td><td class="markdownTableBodyNone">N/A   </td><td class="markdownTableBodyNone">1   </td><td class="markdownTableBodyNone">5   </td><td class="markdownTableBodyNone">ms   </td><td class="markdownTableBodyNone">5   </td><td class="markdownTableBodyNone">N/A    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">SCHED_TASK1_PERIOD   </td><td class="markdownTableBodyNone">P(I)   </td><td class="markdownTableBodyNone">uint32_t   </td><td class="markdownTableBodyNone">N/A   </td><td class="markdownTableBodyNone">N/A   </td><td class="markdownTableBodyNone">1   </td><td class="markdownTableBodyNone">10   </td><td class="markdownTableBodyNone">ms   </td><td class="markdownTableBodyNone">10   </td><td class="markdownTableBodyNone">N/A    </td></tr>
+<td class="markdownTableBodyNone">SWDD_0009_PLTF   </td><td class="markdownTableBodyNone">SCHED_TASK0_SHIFT   </td><td class="markdownTableBodyNone">P   </td><td class="markdownTableBodyNone">uint32_t   </td><td class="markdownTableBodyNone">N/A   </td><td class="markdownTableBodyNone">N/A   </td><td class="markdownTableBodyNone">1   </td><td class="markdownTableBodyNone">0   </td><td class="markdownTableBodyNone">ms   </td><td class="markdownTableBodyNone">0   </td><td class="markdownTableBodyNone">N/A    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">SCHED_TASK2_PERIOD   </td><td class="markdownTableBodyNone">P(I)   </td><td class="markdownTableBodyNone">uint32_t   </td><td class="markdownTableBodyNone">N/A   </td><td class="markdownTableBodyNone">N/A   </td><td class="markdownTableBodyNone">1   </td><td class="markdownTableBodyNone">20   </td><td class="markdownTableBodyNone">ms   </td><td class="markdownTableBodyNone">20   </td><td class="markdownTableBodyNone">N/A    </td></tr>
+<td class="markdownTableBodyNone">SWDD_0013_PLTF   </td><td class="markdownTableBodyNone"><a class="el" href="Sched_8c.html#a5aafb740a26c9198fe9aeb07862a223f">NumOfTaskCalls_au32</a>   </td><td class="markdownTableBodyNone">D(R/W)   </td><td class="markdownTableBodyNone">uint32_t   </td><td class="markdownTableBodyNone">N/A   </td><td class="markdownTableBodyNone">N/A   </td><td class="markdownTableBodyNone">SCHED_NUM_OF_TASKS   </td><td class="markdownTableBodyNone">N/A   </td><td class="markdownTableBodyNone">N/A   </td><td class="markdownTableBodyNone">0   </td><td class="markdownTableBodyNone">Return status    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">SCHED_TASK3_PERIOD   </td><td class="markdownTableBodyNone">P(I)   </td><td class="markdownTableBodyNone">uint32_t   </td><td class="markdownTableBodyNone">N/A   </td><td class="markdownTableBodyNone">N/A   </td><td class="markdownTableBodyNone">1   </td><td class="markdownTableBodyNone">100   </td><td class="markdownTableBodyNone">ms   </td><td class="markdownTableBodyNone">100   </td><td class="markdownTableBodyNone">N/A    </td></tr>
+<td class="markdownTableBodyNone">SWDD_0014_PLTF   </td><td class="markdownTableBodyNone"><a class="el" href="Sched_8c.html#ab4e66f821cd9db9184340762ea40b555">Task_ac</a>   </td><td class="markdownTableBodyNone">D(R/W)   </td><td class="markdownTableBodyNone">const <a class="el" href="structTask__t.html" title="Task configuration structure.">Task_t</a>   </td><td class="markdownTableBodyNone">N/A   </td><td class="markdownTableBodyNone">N/A   </td><td class="markdownTableBodyNone">SCHED_NUM_OF_TASKS   </td><td class="markdownTableBodyNone">N/A   </td><td class="markdownTableBodyNone">N/A   </td><td class="markdownTableBodyNone">N/A   </td><td class="markdownTableBodyNone">Return status    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">SCHED_TASK0_SHIFT   </td><td class="markdownTableBodyNone">P(I)   </td><td class="markdownTableBodyNone">uint32_t   </td><td class="markdownTableBodyNone">N/A   </td><td class="markdownTableBodyNone">N/A   </td><td class="markdownTableBodyNone">1   </td><td class="markdownTableBodyNone">0   </td><td class="markdownTableBodyNone">ms   </td><td class="markdownTableBodyNone">0   </td><td class="markdownTableBodyNone">N/A    </td></tr>
+<td class="markdownTableBodyNone">SWDD_0015_PLTF   </td><td class="markdownTableBodyNone"><a class="el" href="Sched_8c.html#a2ea1befa89db1d891653a142535cdf4d">Timer_u32</a>   </td><td class="markdownTableBodyNone">D(R/W)   </td><td class="markdownTableBodyNone">uint32_t   </td><td class="markdownTableBodyNone">N/A   </td><td class="markdownTableBodyNone">N/A   </td><td class="markdownTableBodyNone">1   </td><td class="markdownTableBodyNone">0..UINT32_MAX   </td><td class="markdownTableBodyNone">N/A   </td><td class="markdownTableBodyNone">0   </td><td class="markdownTableBodyNone">N/A    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">SCHED_TASK1_SHIFT   </td><td class="markdownTableBodyNone">P(I)   </td><td class="markdownTableBodyNone">uint32_t   </td><td class="markdownTableBodyNone">N/A   </td><td class="markdownTableBodyNone">N/A   </td><td class="markdownTableBodyNone">1   </td><td class="markdownTableBodyNone">2   </td><td class="markdownTableBodyNone">ms   </td><td class="markdownTableBodyNone">2   </td><td class="markdownTableBodyNone">N/A    </td></tr>
+<td class="markdownTableBodyNone">SWDD_0006_CFG   </td><td class="markdownTableBodyNone">SCHED_TASK1_PERIOD   </td><td class="markdownTableBodyNone">P   </td><td class="markdownTableBodyNone">uint32_t   </td><td class="markdownTableBodyNone">N/A   </td><td class="markdownTableBodyNone">N/A   </td><td class="markdownTableBodyNone">1   </td><td class="markdownTableBodyNone">10   </td><td class="markdownTableBodyNone">ms   </td><td class="markdownTableBodyNone">10   </td><td class="markdownTableBodyNone">N/A    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">SCHED_TASK2_SHIFT   </td><td class="markdownTableBodyNone">P(I)   </td><td class="markdownTableBodyNone">uint32_t   </td><td class="markdownTableBodyNone">N/A   </td><td class="markdownTableBodyNone">N/A   </td><td class="markdownTableBodyNone">1   </td><td class="markdownTableBodyNone">7   </td><td class="markdownTableBodyNone">ms   </td><td class="markdownTableBodyNone">7   </td><td class="markdownTableBodyNone">N/A    </td></tr>
+<td class="markdownTableBodyNone">SWDD_0007_CFG   </td><td class="markdownTableBodyNone">SCHED_TASK2_PERIOD   </td><td class="markdownTableBodyNone">P   </td><td class="markdownTableBodyNone">uint32_t   </td><td class="markdownTableBodyNone">N/A   </td><td class="markdownTableBodyNone">N/A   </td><td class="markdownTableBodyNone">1   </td><td class="markdownTableBodyNone">20   </td><td class="markdownTableBodyNone">ms   </td><td class="markdownTableBodyNone">20   </td><td class="markdownTableBodyNone">N/A    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">SCHED_TASK3_SHIFT   </td><td class="markdownTableBodyNone">P(I)   </td><td class="markdownTableBodyNone">uint32_t   </td><td class="markdownTableBodyNone">N/A   </td><td class="markdownTableBodyNone">N/A   </td><td class="markdownTableBodyNone">1   </td><td class="markdownTableBodyNone">17   </td><td class="markdownTableBodyNone">ms   </td><td class="markdownTableBodyNone">17   </td><td class="markdownTableBodyNone">N/A   </td></tr>
+<td class="markdownTableBodyNone">SWDD_0008_CFG   </td><td class="markdownTableBodyNone">SCHED_TASK3_PERIOD   </td><td class="markdownTableBodyNone">P   </td><td class="markdownTableBodyNone">uint32_t   </td><td class="markdownTableBodyNone">N/A   </td><td class="markdownTableBodyNone">N/A   </td><td class="markdownTableBodyNone">1   </td><td class="markdownTableBodyNone">100   </td><td class="markdownTableBodyNone">ms   </td><td class="markdownTableBodyNone">100   </td><td class="markdownTableBodyNone">N/A    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">SWDD_0010_CFG   </td><td class="markdownTableBodyNone">SCHED_TASK1_SHIFT   </td><td class="markdownTableBodyNone">P   </td><td class="markdownTableBodyNone">uint32_t   </td><td class="markdownTableBodyNone">N/A   </td><td class="markdownTableBodyNone">N/A   </td><td class="markdownTableBodyNone">1   </td><td class="markdownTableBodyNone">2   </td><td class="markdownTableBodyNone">ms   </td><td class="markdownTableBodyNone">2   </td><td class="markdownTableBodyNone">N/A    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">SWDD_0011_CFG   </td><td class="markdownTableBodyNone">SCHED_TASK2_SHIFT   </td><td class="markdownTableBodyNone">P   </td><td class="markdownTableBodyNone">uint32_t   </td><td class="markdownTableBodyNone">N/A   </td><td class="markdownTableBodyNone">N/A   </td><td class="markdownTableBodyNone">1   </td><td class="markdownTableBodyNone">7   </td><td class="markdownTableBodyNone">ms   </td><td class="markdownTableBodyNone">7   </td><td class="markdownTableBodyNone">N/A    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">SWDD_0012_CFG   </td><td class="markdownTableBodyNone">SCHED_TASK3_SHIFT   </td><td class="markdownTableBodyNone">P   </td><td class="markdownTableBodyNone">uint32_t   </td><td class="markdownTableBodyNone">N/A   </td><td class="markdownTableBodyNone">N/A   </td><td class="markdownTableBodyNone">1   </td><td class="markdownTableBodyNone">17   </td><td class="markdownTableBodyNone">ms   </td><td class="markdownTableBodyNone">17   </td><td class="markdownTableBodyNone">N/A   </td></tr>
 </table>
 <h3><a class="anchor" id="autotoc_md3"></a>
 High-level interaction</h3>
