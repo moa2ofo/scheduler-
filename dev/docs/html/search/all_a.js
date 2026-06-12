@@ -16,5 +16,6 @@ var searchData=
   ['sched_5ftask4_13',['sched_task4',['../group__Sched.html#gaed8620d4925861e52e20a1fe0e49126d',1,'Sched_Task4(void):&#160;Sched_Priv.c'],['../group__Sched.html#gaed8620d4925861e52e20a1fe0e49126d',1,'Sched_Task4(void):&#160;Sched_Priv.c']]],
   ['scheduler_14',['Scheduler',['../group__Sched.html',1,'']]],
   ['shift_5fcu32_15',['shift_cu32',['../structTask__t.html#a7486afa45342e74af53777cf69ce6599',1,'Task_t']]],
-  ['specification_16',['Module Data and Interface Specification',['../group__Sched.html#autotoc_md1',1,'']]]
+  ['specification_16',['Module Data and Interface Specification',['../group__Sched.html#autotoc_md1',1,'']]],
+  ['static_20design_20and_20traceability_20matrix_17',['Static design and traceability matrix',['../group__Sched.html#autotoc_md0',1,'']]]
 ];
