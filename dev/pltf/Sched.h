@@ -25,26 +25,16 @@
  *
  * <tr>
  *   <td>@ref Sched_Main</td>
- *   <td rowspan="2">command</td>
- *   <td rowspan="2">External</td>
+ *   <td>command</td>
+ *   <td>External</td>
  *   <td>SW_INTF-P0006</td>
  *   <td>Main scheduler entry point called by the external platform.</td>
  * </tr>
- * <tr>
- *   <td>@ref Sched_GetRefTime_u32</td>
- *   <td>SW_ARCH-C0005<br>SW_INTF-P0006</td>
- *   <td>Provides the current scheduler reference time.</td>
- * </tr>
  *
  * <tr>
- *   <td>@ref Sched_EntrySequence</td>
+ *   <td>@ref CountTime</td>
  *   <td rowspan="3">command</td>
  *   <td rowspan="6">Internal</td>
- *   <td>SW_ARCH-C0004</td>
- *   <td>Executes the scheduler entry sequence and initializes platform services.</td>
- * </tr>
- * <tr>
- *   <td>@ref CountTime</td>
  *   <td>Derived from SW_ARCH-C0005</td>
  *   <td>Updates the internal scheduler timer.</td>
  * </tr>
@@ -53,7 +43,11 @@
  *   <td>Derived from SW_ARCH-C0005</td>
  *   <td>Calculates elapsed time between two uint32_t time references.</td>
  * </tr>
- *
+ * <tr>
+ *   <td>@ref ExecutePendingTasks</td>
+ *   <td>Derived from SW_ARCH-C0003</td>
+ *   <td>Executes all scheduler tasks that are pending according to the configured timing.</td>
+ * </tr>
  * <tr>
  *   <td>@ref Timer_u32</td>
  *   <td rowspan="3">datum</td>
@@ -74,7 +68,7 @@
  * <tr>
  *   <td>@ref SCHED_TASK0_PERIOD</td>
  *   <td rowspan="8">parameter</td>
- *   <td rowspan="12">Configuration</td>
+ *   <td rowspan="14">Configuration</td>
  *   <td>SW_ARCH-C0003</td>
  *   <td>Defines the execution period of Task0.</td>
  * </tr>
@@ -115,8 +109,18 @@
  * </tr>
  *
  * <tr>
+ *   <td>@ref Sched_EntrySequence</td>
+ *   <td rowspan="6">command</td>
+ *   <td>SW_ARCH-C0004</td>
+ *   <td>Executes the scheduler entry sequence and initializes platform services.</td>
+ * </tr>
+ * <tr>
+ *   <td>@ref Sched_GetRefTime_u32</td>
+ *   <td>SW_ARCH-C0005<br>SW_INTF-P0006</td>
+ *   <td>Provides the current scheduler reference time.</td>
+ * </tr>
+ * <tr>
  *   <td>@ref Sched_Task0</td>
- *   <td rowspan="4">command</td>
  *   <td>SW_ARCH-C0003</td>
  *   <td>Task executed according to the configured scheduler timing.</td>
  * </tr>
@@ -140,24 +144,27 @@
  *
  *
  *
- * ### Module Data and Interface Specification
- * | Name                 | Paramter | Datum | Command | Type             | Factor | Offset | Size               | Range              | Unit | Init value | Special Values |
- * |----------------------|----------|-------|---------|------------------|--------|--------|--------------------|--------------------|------|------------|----------------|
- * | Sched_Main           |          |       |    x    | int32_t (void)   | N/A    | N/A    | 1                  | N/A                | N/A  | N/A        | Return status  |
- * | NumOfTaskCalls_au32  |          |   x   |         | uint32_t         | N/A    | N/A    | SCHED_NUM_OF_TASKS | N/A                | N/A  | 0          | Return status  |
- * | Task_ac              |          |   x   |         | const Task_t     | N/A    | N/A    | SCHED_NUM_OF_TASKS | N/A                | N/A  | N/A        | Return status  |
- * | Timer_u32            |          |   x   |         | uint32_t         | N/A    | N/A    | 1                  | 0..UINT32_MAX      | ms   | 0          | N/A            |
- * | SCHED_MAX_REF_TIME   |    x     |       |         | uint32_t         | N/A    | N/A    | 1                  | UINT32_MAX         | ms   | UINT32_MAX | N/A            |
- * | SCHED_LOOP_PERIOD    |    x     |       |         | uint32_t         | N/A    | N/A    | 1                  | 100                | ms   | 100        | N/A            |
- * | SCHED_NUM_OF_TASKS   |    x     |       |         | uint32_t         | N/A    | N/A    | 1                  | 4                  | N/A  | 4          | N/A            |
- * | SCHED_TASK0_PERIOD   |    x     |       |         | uint32_t         | N/A    | N/A    | 1                  | 5                  | ms   | 5          | N/A            |
- * | SCHED_TASK1_PERIOD   |    x     |       |         | uint32_t         | N/A    | N/A    | 1                  | 10                 | ms   | 10         | N/A            |
- * | SCHED_TASK2_PERIOD   |    x     |       |         | uint32_t         | N/A    | N/A    | 1                  | 20                 | ms   | 20         | N/A            |
- * | SCHED_TASK3_PERIOD   |    x     |       |         | uint32_t         | N/A    | N/A    | 1                  | 100                | ms   | 100        | N/A            |
- * | SCHED_TASK0_SHIFT    |    x     |       |         | uint32_t         | N/A    | N/A    | 1                  | 0                  | ms   | 0          | N/A            |
- * | SCHED_TASK1_SHIFT    |    x     |       |         | uint32_t         | N/A    | N/A    | 1                  | 2                  | ms   | 2          | N/A            |
- * | SCHED_TASK2_SHIFT    |    x     |       |         | uint32_t         | N/A    | N/A    | 1                  | 7                  | ms   | 7          | N/A            |
- * | SCHED_TASK3_SHIFT    |    x     |       |         | uint32_t         | N/A    | N/A    | 1                  | 17                 | ms   | 17         | N/A            |
+ * ### Platform Data and Interface Specification
+ * | Name                      | Category | Type             | Factor | Offset | Size               | Range              | Unit | Init value | Special Values |
+ * |---------------------------|----------|------------------|--------|--------|--------------------|--------------------|------|------------|----------------|
+ * | @ref Sched_Main           | C(I/O)   | int32_t (void)   | N/A    | N/A    | 1                  | N/A                | N/A  | N/A        | Return status  |
+ * | @ref NumOfTaskCalls_au32  | D(I/O)   | uint32_t         | N/A    | N/A    | SCHED_NUM_OF_TASKS | N/A                | N/A  | 0          | Return status  |
+ * | @ref Task_ac              | D(I/O)   | const Task_t     | N/A    | N/A    | SCHED_NUM_OF_TASKS | N/A                | N/A  | N/A        | Return status  |
+ * | @ref Timer_u32            | D(I/O)   | uint32_t         | N/A    | N/A    | 1                  | 0..UINT32_MAX      | N/A  | 0          | N/A            |
+ * ### Configuration Data and Interface Specification
+ * | Name                      | Category | Type             | Factor | Offset | Size               | Range              | Unit | Init value | Special Values |
+ * |---------------------------|----------|------------------|--------|--------|--------------------|--------------------|------|------------|----------------|
+ * | @ref SCHED_MAX_REF_TIME   | P(I)     | uint32_t         | N/A    | N/A    | 1                  | UINT32_MAX         | ms   | UINT32_MAX | N/A            |
+ * | @ref SCHED_LOOP_PERIOD    | P(I)     | uint32_t         | N/A    | N/A    | 1                  | 100                | ms   | 100        | N/A            |
+ * | @ref SCHED_NUM_OF_TASKS   | P(I)     | uint32_t         | N/A    | N/A    | 1                  | 4                  | N/A  | 4          | N/A            |
+ * | @ref SCHED_TASK0_PERIOD   | P(I)     | uint32_t         | N/A    | N/A    | 1                  | 5                  | ms   | 5          | N/A            |
+ * | @ref SCHED_TASK1_PERIOD   | P(I)     | uint32_t         | N/A    | N/A    | 1                  | 10                 | ms   | 10         | N/A            |
+ * | @ref SCHED_TASK2_PERIOD   | P(I)     | uint32_t         | N/A    | N/A    | 1                  | 20                 | ms   | 20         | N/A            |
+ * | @ref SCHED_TASK3_PERIOD   | P(I)     | uint32_t         | N/A    | N/A    | 1                  | 100                | ms   | 100        | N/A            |
+ * | @ref SCHED_TASK0_SHIFT    | P(I)     | uint32_t         | N/A    | N/A    | 1                  | 0                  | ms   | 0          | N/A            |
+ * | @ref SCHED_TASK1_SHIFT    | P(I)     | uint32_t         | N/A    | N/A    | 1                  | 2                  | ms   | 2          | N/A            |
+ * | @ref SCHED_TASK2_SHIFT    | P(I)     | uint32_t         | N/A    | N/A    | 1                  | 7                  | ms   | 7          | N/A            |
+ * | @ref SCHED_TASK3_SHIFT    | P(I)     | uint32_t         | N/A    | N/A    | 1                  | 17                 | ms   | 17         | N/A            |
  *
  * ### High-level interaction
  * @startuml
