@@ -144,12 +144,12 @@
  *
  *
  *
- * ### Platform Interface Specification
+ * ### Interface Specification
  * | PUID           | Name                      | Category | Type             | Factor | Offset | Size               | Range              | Unit | Init value | Special Values |
  * |----------------|---------------------------|----------|------------------|--------|--------|--------------------|--------------------|------|------------|----------------|
  * | SWDD_0001_PLTF | @ref Sched_Main           | C        | int32_t (void)   | N/A    | N/A    | 1                  | N/A                | N/A  | N/A        | Return status  |
  *
- * ### Configuration Data Specification
+ * ### Data Specification
  * | PUID           | Name                      | Category | Type             | Factor | Offset | Size               | Range              | Unit | Init value | Special Values |
  * |----------------|---------------------------|----------|------------------|--------|--------|--------------------|--------------------|------|------------|----------------|
  * | SWDD_0002_PLTF | @ref SCHED_MAX_REF_TIME   | P        | uint32_t         | N/A    | N/A    | 1                  | UINT32_MAX         | ms   | UINT32_MAX | N/A            |
