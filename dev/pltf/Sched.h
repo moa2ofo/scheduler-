@@ -143,7 +143,6 @@
  * </table>
  *
  *
- *
  * ### Interface Specification
  * | PUID           | Name                      | Category | Type             | Factor | Offset | Size               | Range              | Unit | Init value | Special Values |
  * |----------------|---------------------------|----------|------------------|--------|--------|--------------------|--------------------|------|------------|----------------|
