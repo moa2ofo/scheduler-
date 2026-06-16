@@ -19,7 +19,7 @@ env:
 TZ: Europe/Rome
 if: ${{ github.ref != 'refs/heads/main' && github.ref != 'refs/heads/develop' }}
 
-```
+
 steps:
   - name: Checkout repository
     uses: actions/checkout@v4
@@ -183,4 +183,4 @@ steps:
       if [ "$FAILED" -eq 1 ]; then
         exit 1
       fi
-```
+
