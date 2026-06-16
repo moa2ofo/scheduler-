@@ -165,7 +165,6 @@
  * | SWDD_0011_CFG  | @ref SCHED_TASK2_SHIFT    | P        | uint32_t         | N/A    | N/A    | 1                  | 7                  | ms   | 7          | N/A            |
  * | SWDD_0012_CFG  | @ref SCHED_TASK3_SHIFT    | P        | uint32_t         | N/A    | N/A    | 1                  | 17                 | ms   | 17         | N/A            |
  *
- *
  * ### High-level interaction
  * @startuml
  * title Scheduler Module
