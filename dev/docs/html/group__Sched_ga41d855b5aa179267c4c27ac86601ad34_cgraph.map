@@ -1,0 +1,9 @@
+<map id="Sched_EntrySequence" name="Sched_EntrySequence">
+<area shape="rect" id="Node000001" title="Execute the scheduler entry initialization sequence." alt="" coords="5,55,171,80"/>
+<area shape="rect" id="Node000002" href="$Mcu_8h.html#a6d525c04d7766d41d60f052dd1bbc9d8" title=" " alt="" coords="260,5,372,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="147,52,246,30,247,35,148,57"/>
+<area shape="rect" id="Node000003" href="$Mcu_8h.html#af3068ed072b7767aae4b65bae414fe5b" title=" " alt="" coords="242,55,390,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="171,65,228,65,228,70,171,70"/>
+<area shape="rect" id="Node000004" href="$Mcu_8h.html#aa2dd2a6ae57ff27cf0ea8a6aa7563e44" title=" " alt="" coords="219,104,413,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="148,77,244,98,243,104,147,83"/>
+</map>
