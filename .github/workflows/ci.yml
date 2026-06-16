@@ -78,11 +78,7 @@ jobs:
         run: |
           sudo -E python3 git_action_scripts/swCmpBuildCheck.py
 
-      - name: Run swCmpDocsGenerator
-        id: sw_docs_generator
-        continue-on-error: true
-        run: |
-          sudo -E python3 git_action_scripts/swCmpDocsGenerator.py
+
 
       - name: Fix permissions for git_action_scripts workspace
         id: fix_permissions
@@ -96,6 +92,12 @@ jobs:
         continue-on-error: true
         run: |
           script -q -e -c "sudo -E python3 git_action_scripts/unitTestsLauncher.py all" /dev/null
+          
+      - name: Run swCmpDocsGenerator
+        id: sw_docs_generator
+        continue-on-error: true
+        run: |
+          sudo -E python3 git_action_scripts/swCmpDocsGenerator.py
 
       - name: Delete git_action_scripts folder
         if: always()
