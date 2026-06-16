@@ -24,7 +24,7 @@
 */
 var NAVTREE =
 [
-  [ "projectName Doc", "index.html", [
+  [ "scheduler-", "index.html", [
     [ "Topics", "topics.html", "topics" ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
