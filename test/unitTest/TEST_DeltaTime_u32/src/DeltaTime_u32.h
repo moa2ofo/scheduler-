@@ -11,5 +11,4 @@
  */
 uint32_t DeltaTime_u32(void);
 
-
 #endif /* TEST_DELTATIME_U32_H */

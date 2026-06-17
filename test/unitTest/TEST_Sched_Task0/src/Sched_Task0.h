@@ -10,5 +10,4 @@
  */
 void Sched_Task0(void);
 
-
 #endif /* TEST_SCHED_TASK0_H */

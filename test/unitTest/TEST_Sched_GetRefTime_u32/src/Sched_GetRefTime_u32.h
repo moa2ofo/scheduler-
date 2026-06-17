@@ -1,9 +1,9 @@
 #ifndef TEST_SCHED_GETREFTIME_U32_H
 #define TEST_SCHED_GETREFTIME_U32_H
 
+#include "Mcu.h"
 #include "Sched_Cfg.h"
 #include "Sched_Priv.h"
-#include "Mcu.h"
 
 /**
  * @ingroup Sched
@@ -25,6 +25,5 @@
  * Current system time in milliseconds.
  */
 uint32_t Sched_GetRefTime_u32(void);
-
 
 #endif /* TEST_SCHED_GETREFTIME_U32_H */
