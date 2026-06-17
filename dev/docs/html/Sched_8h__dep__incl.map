@@ -1,7 +1,0 @@
-<map id="pltf/Sched.h" name="pltf/Sched.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="87,5,185,31"/>
-<area shape="rect" id="Node000002" href="$Sched__Cfg_8c.html" title=" " alt="" coords="5,79,131,104"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="117,42,81,80,77,77,114,39"/>
-<area shape="rect" id="Node000003" href="$Sched_8c.html" title=" " alt="" coords="155,79,253,104"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="158,39,195,77,191,80,155,42"/>
-</map>
