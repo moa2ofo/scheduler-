@@ -2420,11 +2420,12 @@ void Sched_Task3_Stub(CMOCK_Sched_Task3_CALLBACK Callback);
 #pragma GCC diagnostic pop
 # 17 "utExecutionAndResults/utUnderTest/test/test_Sched_Task4_1.c" 2
 
-void setUp(void) {}
+void setUp(void) {
+}
 
-void tearDown(void) {}
+void tearDown(void) {
+}
 
-void test_Sched_Task4(void)
-{
-    UnityIgnore( (("Auto-generated stub test")), (UNITY_UINT)(24));
+void test_Sched_Task4(void) {
+  UnityIgnore( (("Auto-generated stub test")), (UNITY_UINT)(25));
 }

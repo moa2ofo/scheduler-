@@ -834,7 +834,7 @@
     * This file contains the Unity unit test stub for the SW unit
     * DeltaTime_u32.
     */
-    
+
 # 1 "utExecutionAndResults/utUnderTest/src/DeltaTime_u32.h" 1
 
 #define TEST_DELTATIME_U32_H 
@@ -3179,7 +3179,6 @@ void Sched_Task3(void);
  * @ingroup Sched
  */
 uint32_t DeltaTime_u32(void);
-
 
 # 13 "utExecutionAndResults/utUnderTest/test/test_DeltaTime_u32_1.c" 2
 # 1 "utExecutionAndResults/utUnderTest/build/vendor/unity/src/unity.h" 1
@@ -10622,11 +10621,12 @@ void Sched_Task3_Stub(CMOCK_Sched_Task3_CALLBACK Callback);
 
 # 17 "utExecutionAndResults/utUnderTest/test/test_DeltaTime_u32_1.c" 2
 
-void setUp(void) {}
+void setUp(void) {
+}
 
-void tearDown(void) {}
+void tearDown(void) {
+}
 
-void test_DeltaTime_u32(void)
-{
-    TEST_IGNORE_MESSAGE("Auto-generated stub test");
+void test_DeltaTime_u32(void) {
+  TEST_IGNORE_MESSAGE("Auto-generated stub test");
 }
