@@ -6,10 +6,9 @@ var group__Sched =
       [ "shift_cu32", "structTask__t.html#a7486afa45342e74af53777cf69ce6599", null ]
     ] ],
     [ "TaskHandler_t", "group__Sched.html#gadce47304ee8b44e4d240b01367c2f82a", null ],
-    [ "TaskHandler_t", "group__Sched.html#gadce47304ee8b44e4d240b01367c2f82a", null ],
-    [ "CountTime", "group__Sched.html#ga8ff5fad2bc085b42857d0a167f9ae3e2", null ],
-    [ "DeltaTime_u32", "group__Sched.html#gad96c7d7f2c095f2e4622bb18fb459c12", null ],
-    [ "ExecutePendingTasks", "group__Sched.html#ga2679ff4b078150030488c031d6aa0db9", null ],
+    [ "CountTime", "group__Sched.html#ga99b8597edbc7a86e0ff556329d27d28c", null ],
+    [ "DeltaTime_u32", "group__Sched.html#ga00304344cc73ea96d3ad1b85eefe2df2", null ],
+    [ "ExecutePendingTasks", "group__Sched.html#ga75a48d5cf2208ddbe805fffb9af6df15", null ],
     [ "Sched_EntrySequence", "group__Sched.html#ga41d855b5aa179267c4c27ac86601ad34", null ],
     [ "Sched_GetRefTime_u32", "group__Sched.html#ga6db6318dec09fb3100bd27a4fe7981ff", null ],
     [ "Sched_Main", "group__Sched.html#gae75409b16ee02f84ef65a77637d2decb", null ],

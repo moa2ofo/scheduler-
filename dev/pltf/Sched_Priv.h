@@ -5,7 +5,6 @@
 #include <stdbool.h>
 #include <stdint.h>
 
-
 #define SCHED_TASK1_SHIFT (2u)
 #define SCHED_TASK2_SHIFT (7u)
 #define SCHED_TASK3_SHIFT (17u)

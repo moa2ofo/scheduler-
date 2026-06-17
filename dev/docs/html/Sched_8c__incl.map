@@ -1,11 +1,9 @@
 <map id="pltf/Sched.c" name="pltf/Sched.c">
-<area shape="rect" id="Node000001" title=" " alt="" coords="125,5,223,31"/>
-<area shape="rect" id="Node000002" href="$pltf_2Sched__Priv_8h.html" title=" " alt="" coords="122,79,226,104"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="177,31,177,65,171,65,171,31"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="5,152,108,177"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="157,106,89,147,86,142,154,102"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="133,152,215,177"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="177,104,177,138,171,138,171,104"/>
-<area shape="rect" id="Node000005" title=" " alt="" coords="240,152,311,177"/>
-<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="192,102,249,142,246,146,189,106"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="32,5,131,31"/>
+<area shape="rect" id="Node000002" href="$Sched_8h.html" title=" " alt="" coords="45,79,118,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="84,31,84,65,79,65,79,31"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,152,67,177"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="76,106,53,142,48,139,72,103"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="91,152,162,177"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="91,103,114,139,110,142,87,106"/>
 </map>

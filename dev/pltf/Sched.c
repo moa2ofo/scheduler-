@@ -1,5 +1,5 @@
-#include "Sched_Priv.h"
 #include "Sched.h"
+#include "Sched_Priv.h"
 #include <string.h>
 
 static uint32_t Timer_u32 = 0u;

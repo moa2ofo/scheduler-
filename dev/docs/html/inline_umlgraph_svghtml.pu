@@ -57,17 +57,3 @@ start
 :Mcu_ReloadSystick();
 stop
 @enduml
-@startuml inline_umlgraph_4.svg
-start
-:Mcu_Initialize();
-:Mcu_ServiceWatchdogSow();
-:Mcu_ReloadSystick();
-stop
-@enduml
-@startuml inline_umlgraph_5.svg
-start
-:Mcu_Initialize();
-:Mcu_ServiceWatchdogSow();
-:Mcu_ReloadSystick();
-stop
-@enduml

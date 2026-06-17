@@ -1,10 +1,8 @@
 #ifndef SCHED_CFG_H
 #define SCHED_CFG_H
 
-#include <stdint.h>
 #include "Sched_Priv.h"
-
-
+#include <stdint.h>
 
 /**
  * @brief Maximum reference time value before wrap-around.
@@ -36,7 +34,6 @@
  */
 
 #define SCHED_TASK0_SHIFT (0u)
-
 
 /** @} */
 
