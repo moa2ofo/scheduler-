@@ -61,6 +61,14 @@ jobs:
           docker pull ghcr.io/moa2ofo/git_action_scripts/llvm-c-parser:latest
           docker tag ghcr.io/moa2ofo/git_action_scripts/llvm-c-parser:latest llvm-c-parser:latest
 
+      - name: Debug Doxygen in prebuilt image
+        run: |
+          docker run --rm llvm-c-parser:latest bash -lc '
+            which doxygen || true
+            file "$(which doxygen)" || true
+            ldd "$(which doxygen)" || true
+            doxygen --version || true
+            
       - name: Generate test units
         id: generate_tests
         run: |
