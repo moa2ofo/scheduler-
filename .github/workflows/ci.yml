@@ -63,12 +63,11 @@ jobs:
 
       - name: Debug Doxygen in prebuilt image
         run: |
-          docker run --rm llvm-c-parser:latest bash -lc '
-            which doxygen || true
-            file "$(which doxygen)" || true
-            ldd "$(which doxygen)" || true
-            doxygen --version || true
-            
+          docker run --rm llvm-c-parser:latest bash -c "which doxygen || true"
+          docker run --rm llvm-c-parser:latest bash -c 'file "$(which doxygen)" || true'
+          docker run --rm llvm-c-parser:latest bash -c 'ldd "$(which doxygen)" || true'
+          docker run --rm llvm-c-parser:latest bash -c "doxygen --version || true"
+
       - name: Generate test units
         id: generate_tests
         run: |
