@@ -5,6 +5,14 @@
 #include <stdbool.h>
 #include <stdint.h>
 
+
+#define SCHED_TASK1_SHIFT (2u)
+#define SCHED_TASK2_SHIFT (7u)
+#define SCHED_TASK3_SHIFT (17u)
+#define SCHED_TASK1_PERIOD (10u)
+#define SCHED_TASK2_PERIOD (20u)
+#define SCHED_TASK3_PERIOD (100u)
+
 /**
  * @brief Task handler function type.
  * @ingroup Sched

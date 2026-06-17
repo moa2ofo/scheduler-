@@ -1,0 +1,16 @@
+# ninja log v7
+3	121	8034075031252042	CMakeFiles/new.dir/cfg/Sched_Cfg.c.obj	2ae14238f02f7fc6
+16	124	8034075031382046	CMakeFiles/new.dir/pltf/Sched.c.obj	3a9b5e05216050d
+10	125	8034075031322041	CMakeFiles/new.dir/cfg/Sched_Priv.c.obj	ec8a9721bb892a1
+125	542	8034075032466580	libnew.a	3d4c18f6e1841b9b
+3	297	8034076279893471	build.ninja	85eb8142116b202b
+12	116	8034076280317794	CMakeFiles/new.dir/cfg/Sched_Cfg.c.obj	467aa4f4cb424647
+17	123	8034076280367798	CMakeFiles/new.dir/cfg/Sched_Priv.c.obj	2c855a1f7d48e1e1
+23	130	8034076280427802	CMakeFiles/new.dir/pltf/Sched.c.obj	33cbeceb7524e801
+131	277	8034076281502980	libnew.a	3d4c18f6e1841b9b
+4	104	8034076753244834	CMakeFiles/new.dir/pltf/Sched.c.obj	33cbeceb7524e801
+105	246	8034076754259817	libnew.a	3d4c18f6e1841b9b
+3	108	8034078110099718	CMakeFiles/new.dir/cfg/Sched_Cfg.c.obj	467aa4f4cb424647
+10	121	8034078110169711	CMakeFiles/new.dir/cfg/Sched_Priv.c.obj	2c855a1f7d48e1e1
+16	125	8034078110219725	CMakeFiles/new.dir/pltf/Sched.c.obj	33cbeceb7524e801
+125	268	8034078111321246	libnew.a	3d4c18f6e1841b9b

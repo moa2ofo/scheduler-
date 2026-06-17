@@ -1,20 +1,20 @@
 [
 {
-  "directory": "/workspace/build",
-  "command": "/usr/bin/cc  -I/workspace/pltf -I/workspace/cfg -I/workspace/stub -O3 -DNDEBUG -Wall -Wextra -Wpedantic -o CMakeFiles/new.dir/cfg/Sched_Cfg.c.o -c /workspace/cfg/Sched_Cfg.c",
-  "file": "/workspace/cfg/Sched_Cfg.c",
-  "output": "CMakeFiles/new.dir/cfg/Sched_Cfg.c.o"
+  "directory": "C:/docAiGen/Manuali_SW3_SW4/scheduler-/dev/build",
+  "command": "C:\\TDM-GCC-64\\bin\\gcc.exe -IC:/docAiGen/Manuali_SW3_SW4/scheduler-/dev/pltf -IC:/docAiGen/Manuali_SW3_SW4/scheduler-/dev/cfg -IC:/docAiGen/Manuali_SW3_SW4/scheduler-/dev/stub -o CMakeFiles\\new.dir\\cfg\\Sched_Cfg.c.obj -c C:\\docAiGen\\Manuali_SW3_SW4\\scheduler-\\dev\\cfg\\Sched_Cfg.c",
+  "file": "C:\\docAiGen\\Manuali_SW3_SW4\\scheduler-\\dev\\cfg\\Sched_Cfg.c",
+  "output": "CMakeFiles\\new.dir\\cfg\\Sched_Cfg.c.obj"
 },
 {
-  "directory": "/workspace/build",
-  "command": "/usr/bin/cc  -I/workspace/pltf -I/workspace/cfg -I/workspace/stub -O3 -DNDEBUG -Wall -Wextra -Wpedantic -o CMakeFiles/new.dir/cfg/Sched_Priv.c.o -c /workspace/cfg/Sched_Priv.c",
-  "file": "/workspace/cfg/Sched_Priv.c",
-  "output": "CMakeFiles/new.dir/cfg/Sched_Priv.c.o"
+  "directory": "C:/docAiGen/Manuali_SW3_SW4/scheduler-/dev/build",
+  "command": "C:\\TDM-GCC-64\\bin\\gcc.exe -IC:/docAiGen/Manuali_SW3_SW4/scheduler-/dev/pltf -IC:/docAiGen/Manuali_SW3_SW4/scheduler-/dev/cfg -IC:/docAiGen/Manuali_SW3_SW4/scheduler-/dev/stub -o CMakeFiles\\new.dir\\cfg\\Sched_Priv.c.obj -c C:\\docAiGen\\Manuali_SW3_SW4\\scheduler-\\dev\\cfg\\Sched_Priv.c",
+  "file": "C:\\docAiGen\\Manuali_SW3_SW4\\scheduler-\\dev\\cfg\\Sched_Priv.c",
+  "output": "CMakeFiles\\new.dir\\cfg\\Sched_Priv.c.obj"
 },
 {
-  "directory": "/workspace/build",
-  "command": "/usr/bin/cc  -I/workspace/pltf -I/workspace/cfg -I/workspace/stub -O3 -DNDEBUG -Wall -Wextra -Wpedantic -o CMakeFiles/new.dir/pltf/Sched.c.o -c /workspace/pltf/Sched.c",
-  "file": "/workspace/pltf/Sched.c",
-  "output": "CMakeFiles/new.dir/pltf/Sched.c.o"
+  "directory": "C:/docAiGen/Manuali_SW3_SW4/scheduler-/dev/build",
+  "command": "C:\\TDM-GCC-64\\bin\\gcc.exe -IC:/docAiGen/Manuali_SW3_SW4/scheduler-/dev/pltf -IC:/docAiGen/Manuali_SW3_SW4/scheduler-/dev/cfg -IC:/docAiGen/Manuali_SW3_SW4/scheduler-/dev/stub -o CMakeFiles\\new.dir\\pltf\\Sched.c.obj -c C:\\docAiGen\\Manuali_SW3_SW4\\scheduler-\\dev\\pltf\\Sched.c",
+  "file": "C:\\docAiGen\\Manuali_SW3_SW4\\scheduler-\\dev\\pltf\\Sched.c",
+  "output": "CMakeFiles\\new.dir\\pltf\\Sched.c.obj"
 }
 ]

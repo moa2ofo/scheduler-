@@ -17,7 +17,5 @@ target_include_directories(new PUBLIC
 )
 
 target_compile_options(new PRIVATE
-    -Wall
-    -Wextra
-    -Wpedantic
+
 )
