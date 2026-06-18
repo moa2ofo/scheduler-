@@ -5,12 +5,28 @@
 #include <stdbool.h>
 #include <stdint.h>
 
-#define SCHED_TASK1_SHIFT (2u)
-#define SCHED_TASK2_SHIFT (7u)
-#define SCHED_TASK3_SHIFT (17u)
-#define SCHED_TASK1_PERIOD (10u)
-#define SCHED_TASK2_PERIOD (20u)
-#define SCHED_TASK3_PERIOD (100u)
+
+/**
+ * @brief Maximum reference time value before wrap-around.
+ */
+#define SCHED_MAX_REF_TIME (UINT32_MAX)
+
+/**
+ * @brief Scheduler base loop period in milliseconds.
+ * @details Must be a multiple of all configured task periods.
+ */
+#define SCHED_LOOP_PERIOD (100u)
+
+/**
+ * @brief Number of scheduled tasks.
+ */
+#define SCHED_NUM_OF_TASKS (4u)
+
+/**
+ * @name Task Periods [ms]
+ * @{
+ */
+#define SCHED_TASK0_PERIOD (5u)
 
 /**
  * @brief Task handler function type.
@@ -85,6 +101,12 @@ static void ExecutePendingTasks(void);
  * @ingroup Sched
  */
 static uint32_t DeltaTime_u32(void);
+
+/**
+ * @brief Task 0 entry point.
+ * @ingroup Sched
+ */
+#define SCHED_TASK0_SHIFT (0u)
 
 /**
  * @brief Task 0 entry point.

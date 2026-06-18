@@ -1,5 +1,5 @@
 #include "Sched.h"
-#include "Sched_Priv.h"
+#include "Sched_Cfg.h"
 #include <string.h>
 
 /**
@@ -43,9 +43,6 @@ static const Task_t Task_ac[SCHED_NUM_OF_TASKS] = {
     {.handler_ = &Sched_Task3, .period_cu32 = SCHED_TASK3_PERIOD, .shift_cu32 = SCHED_TASK3_SHIFT},
 #endif
 #if(SCHED_NUM_OF_TASKS > 4u)
-    {.handler_ = &Sched_Task4, .period_cu32 = SCHED_TASK4_PERIOD, .shift_cu32 = SCHED_TASK4_SHIFT},
-#endif
-#if(SCHED_NUM_OF_TASKS > 5u)
 #error "Number of tasks exceeds the maximum supported by the implementation."
 #endif
 };
@@ -67,6 +64,7 @@ static void CountTime(void) {
     memset(NumOfTaskCalls_au32, 0u, sizeof(NumOfTaskCalls_au32));
   }
 }
+ 
 
 static uint32_t DeltaTime_u32(void) {
   static uint32_t l_PrevTimestamp_u32 = 0u;

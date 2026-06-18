@@ -1,7 +1,7 @@
 #ifndef SCHED_H
 #define SCHED_H
 
-#include "Mcu.h"
+
 #include <stdint.h>
 
 /**

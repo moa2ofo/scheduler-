@@ -1,6 +1,7 @@
-
 #include "Sched_Cfg.h"
 #include "Sched.h"
+#include "Mcu.h"
+
 
 void Sched_EntrySequence(void) {
   /* Initialize MCU hardware modules*/
@@ -28,9 +29,5 @@ void Sched_Task2(void) {
   /* Task code for 20ms period */
 }
 void Sched_Task3(void) {
-  /* Task code for 100ms period */
-}
-
-void Sched_Task4(void) {
   /* Task code for 100ms period */
 }
