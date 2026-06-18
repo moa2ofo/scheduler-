@@ -1,7 +1,0 @@
-<map id="Mcu_ReloadSystick" name="Mcu_ReloadSystick">
-<area shape="rect" id="Node000001" title=" " alt="" coords="367,5,515,31"/>
-<area shape="rect" id="Node000002" href="$Sched__EntrySequence_8c.html#a41d855b5aa179267c4c27ac86601ad34" title="Execute the scheduler entry initialization sequence." alt="" coords="153,5,319,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="353,21,319,21,319,15,353,15"/>
-<area shape="rect" id="Node000003" href="$Sched__Main_8c.html#ae75409b16ee02f84ef65a77637d2decb" title=" " alt="" coords="5,5,105,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="140,21,105,21,105,15,140,15"/>
-</map>

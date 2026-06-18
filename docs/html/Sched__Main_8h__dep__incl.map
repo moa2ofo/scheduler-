@@ -1,9 +1,0 @@
-<map id="test/unitTest/TEST_Sched_Main/src/Sched_Main.h" name="test/unitTest/TEST_Sched_Main/src/Sched_Main.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="101,5,275,60"/>
-<area shape="rect" id="Node000002" href="$Sched__Main__help_8h.html" title=" " alt="" coords="5,108,179,163"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="155,72,119,110,115,106,152,68"/>
-<area shape="rect" id="Node000004" href="$test__Sched__Main_8c.html" title="Unit tests for Sched_Main." alt="" coords="203,108,368,163"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="225,68,262,106,258,110,221,72"/>
-<area shape="rect" id="Node000003" href="$Sched__Main_8c.html" title=" " alt="" coords="5,211,179,265"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="95,176,95,211,89,211,89,176"/>
-</map>

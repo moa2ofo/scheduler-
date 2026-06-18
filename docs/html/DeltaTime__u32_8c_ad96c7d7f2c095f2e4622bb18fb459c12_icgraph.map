@@ -1,7 +1,0 @@
-<map id="DeltaTime_u32" name="DeltaTime_u32">
-<area shape="rect" id="Node000001" title="Compute elapsed time since last call." alt="" coords="295,5,416,31"/>
-<area shape="rect" id="Node000002" href="$CountTime_8c.html#a8ff5fad2bc085b42857d0a167f9ae3e2" title="Update scheduler time base." alt="" coords="153,5,247,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="281,21,247,21,247,15,281,15"/>
-<area shape="rect" id="Node000003" href="$Sched__Main_8c.html#ae75409b16ee02f84ef65a77637d2decb" title=" " alt="" coords="5,5,105,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="140,21,106,21,106,15,140,15"/>
-</map>
