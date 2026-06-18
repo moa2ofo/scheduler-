@@ -92,6 +92,4 @@ static uint32_t DeltaTime_u32(void);
  */
 void Sched_Task0(void);
 
-
-
 #endif

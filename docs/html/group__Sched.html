@@ -175,6 +175,11 @@ Functions</h2></td></tr>
 <tr class="memitem:gae400bce4176ddab53753e642e759598b" id="r_gae400bce4176ddab53753e642e759598b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Sched.html#gae400bce4176ddab53753e642e759598b">Sched_Task0</a> (void)</td></tr>
 <tr class="memdesc:gae400bce4176ddab53753e642e759598b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Task 0 entry point.  <br /></td></tr>
 <tr class="separator:gae400bce4176ddab53753e642e759598b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaed8620d4925861e52e20a1fe0e49126d" id="r_gaed8620d4925861e52e20a1fe0e49126d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Sched.html#gaed8620d4925861e52e20a1fe0e49126d">Sched_Task4</a> (void)</td></tr>
+<tr class="memdesc:gaed8620d4925861e52e20a1fe0e49126d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Task 4 entry point.  <br /></td></tr>
+<tr class="separator:gaed8620d4925861e52e20a1fe0e49126d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Task Phase Shifts [ms]</h2></td></tr>
 <tr class="memitem:ga10314d7837d80b3579c3b4267d144945" id="r_ga10314d7837d80b3579c3b4267d144945"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Sched.html#ga10314d7837d80b3579c3b4267d144945">Sched_Task1</a> (void)</td></tr>
 <tr class="memdesc:ga10314d7837d80b3579c3b4267d144945"><td class="mdescLeft">&#160;</td><td class="mdescRight">Task 1 entry point.  <br /></td></tr>
 <tr class="separator:ga10314d7837d80b3579c3b4267d144945"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -184,9 +189,6 @@ Functions</h2></td></tr>
 <tr class="memitem:ga0e7ef63cf946dd03f941e68381e6089e" id="r_ga0e7ef63cf946dd03f941e68381e6089e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Sched.html#ga0e7ef63cf946dd03f941e68381e6089e">Sched_Task3</a> (void)</td></tr>
 <tr class="memdesc:ga0e7ef63cf946dd03f941e68381e6089e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Task 3 entry point.  <br /></td></tr>
 <tr class="separator:ga0e7ef63cf946dd03f941e68381e6089e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaed8620d4925861e52e20a1fe0e49126d" id="r_gaed8620d4925861e52e20a1fe0e49126d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Sched.html#gaed8620d4925861e52e20a1fe0e49126d">Sched_Task4</a> (void)</td></tr>
-<tr class="memdesc:gaed8620d4925861e52e20a1fe0e49126d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Task 4 entry point.  <br /></td></tr>
-<tr class="separator:gaed8620d4925861e52e20a1fe0e49126d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Scheduler module. </p>
@@ -585,9 +587,9 @@ High-level interaction</h3>
 <div class="line"><span class="lineno">    9</span>    memset(<a class="code hl_variable" href="Sched_8c.html#a5aafb740a26c9198fe9aeb07862a223f">NumOfTaskCalls_au32</a>, 0u, <span class="keyword">sizeof</span>(<a class="code hl_variable" href="Sched_8c.html#a5aafb740a26c9198fe9aeb07862a223f">NumOfTaskCalls_au32</a>));</div>
 <div class="line"><span class="lineno">   10</span>  }</div>
 <div class="line"><span class="lineno">   11</span>}</div>
-<div class="ttc" id="aSched_8c_html_a00304344cc73ea96d3ad1b85eefe2df2"><div class="ttname"><a href="Sched_8c.html#a00304344cc73ea96d3ad1b85eefe2df2">DeltaTime_u32</a></div><div class="ttdeci">static uint32_t DeltaTime_u32(void)</div><div class="ttdef"><b>Definition</b> <a href="Sched_8c_source.html#l00045">Sched.c:45</a></div></div>
-<div class="ttc" id="aSched_8c_html_a2ea1befa89db1d891653a142535cdf4d"><div class="ttname"><a href="Sched_8c.html#a2ea1befa89db1d891653a142535cdf4d">Timer_u32</a></div><div class="ttdeci">static uint32_t Timer_u32</div><div class="ttdef"><b>Definition</b> <a href="Sched_8c_source.html#l00005">Sched.c:5</a></div></div>
-<div class="ttc" id="aSched_8c_html_a5aafb740a26c9198fe9aeb07862a223f"><div class="ttname"><a href="Sched_8c.html#a5aafb740a26c9198fe9aeb07862a223f">NumOfTaskCalls_au32</a></div><div class="ttdeci">static uint32_t NumOfTaskCalls_au32[SCHED_NUM_OF_TASKS]</div><div class="ttdef"><b>Definition</b> <a href="Sched_8c_source.html#l00007">Sched.c:7</a></div></div>
+<div class="ttc" id="aSched_8c_html_a00304344cc73ea96d3ad1b85eefe2df2"><div class="ttname"><a href="Sched_8c.html#a00304344cc73ea96d3ad1b85eefe2df2">DeltaTime_u32</a></div><div class="ttdeci">static uint32_t DeltaTime_u32(void)</div><div class="ttdef"><b>Definition</b> <a href="Sched_8c_source.html#l00071">Sched.c:71</a></div></div>
+<div class="ttc" id="aSched_8c_html_a2ea1befa89db1d891653a142535cdf4d"><div class="ttname"><a href="Sched_8c.html#a2ea1befa89db1d891653a142535cdf4d">Timer_u32</a></div><div class="ttdeci">static uint32_t Timer_u32</div><div class="ttdoc">Scheduler internal time base counter used by Task_ac.</div><div class="ttdef"><b>Definition</b> <a href="Sched_8c_source.html#l00008">Sched.c:8</a></div></div>
+<div class="ttc" id="aSched_8c_html_a5aafb740a26c9198fe9aeb07862a223f"><div class="ttname"><a href="Sched_8c.html#a5aafb740a26c9198fe9aeb07862a223f">NumOfTaskCalls_au32</a></div><div class="ttdeci">static uint32_t NumOfTaskCalls_au32[SCHED_NUM_OF_TASKS]</div><div class="ttdoc">Number of executions performed for each scheduler task configured in Task_ac.</div><div class="ttdef"><b>Definition</b> <a href="Sched_8c_source.html#l00013">Sched.c:13</a></div></div>
 <div class="ttc" id="adev_2cfg_2Sched__Cfg_8h_html_aea308311f0950c45b22527f9e26775a9"><div class="ttname"><a href="dev_2cfg_2Sched__Cfg_8h.html#aea308311f0950c45b22527f9e26775a9">SCHED_LOOP_PERIOD</a></div><div class="ttdeci">#define SCHED_LOOP_PERIOD</div><div class="ttdoc">Scheduler base loop period in milliseconds.</div><div class="ttdef"><b>Definition</b> <a href="dev_2cfg_2Sched__Cfg_8h_source.html#l00016">Sched_Cfg.h:16</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -670,7 +672,7 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">   22</span> </div>
 <div class="line"><span class="lineno">   23</span>  <span class="keywordflow">return</span> l_deltaTime_u32;</div>
 <div class="line"><span class="lineno">   24</span>}</div>
-<div class="ttc" id="agroup__Sched_html_ga6db6318dec09fb3100bd27a4fe7981ff"><div class="ttname"><a href="group__Sched.html#ga6db6318dec09fb3100bd27a4fe7981ff">Sched_GetRefTime_u32</a></div><div class="ttdeci">uint32_t Sched_GetRefTime_u32(void)</div><div class="ttdoc">Get the current scheduler reference time.</div><div class="ttdef"><b>Definition</b> <a href="Sched__Cfg_8c_source.html#l00015">Sched_Cfg.c:15</a></div></div>
+<div class="ttc" id="agroup__Sched_html_ga6db6318dec09fb3100bd27a4fe7981ff"><div class="ttname"><a href="group__Sched.html#ga6db6318dec09fb3100bd27a4fe7981ff">Sched_GetRefTime_u32</a></div><div class="ttdeci">uint32_t Sched_GetRefTime_u32(void)</div><div class="ttdoc">Get the current scheduler reference time.</div><div class="ttdef"><b>Definition</b> <a href="Sched__Cfg_8c_source.html#l00014">Sched_Cfg.c:14</a></div></div>
 <div class="ttc" id="agroup__Sched_html_ga979ab355e298f761c0a8f950a9d60df8"><div class="ttname"><a href="group__Sched.html#ga979ab355e298f761c0a8f950a9d60df8">SCHED_MAX_REF_TIME</a></div><div class="ttdeci">#define SCHED_MAX_REF_TIME</div><div class="ttdoc">Maximum reference time value before wrap-around.</div><div class="ttdef"><b>Definition</b> <a href="dev_2cfg_2Sched__Cfg_8h_source.html#l00010">Sched_Cfg.h:10</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -768,7 +770,7 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">   16</span>    }</div>
 <div class="line"><span class="lineno">   17</span>  }</div>
 <div class="line"><span class="lineno">   18</span>}</div>
-<div class="ttc" id="aSched_8c_html_ab4e66f821cd9db9184340762ea40b555"><div class="ttname"><a href="Sched_8c.html#ab4e66f821cd9db9184340762ea40b555">Task_ac</a></div><div class="ttdeci">static const Task_t Task_ac[SCHED_NUM_OF_TASKS]</div><div class="ttdef"><b>Definition</b> <a href="Sched_8c_source.html#l00008">Sched.c:8</a></div></div>
+<div class="ttc" id="aSched_8c_html_ab4e66f821cd9db9184340762ea40b555"><div class="ttname"><a href="Sched_8c.html#ab4e66f821cd9db9184340762ea40b555">Task_ac</a></div><div class="ttdeci">static const Task_t Task_ac[SCHED_NUM_OF_TASKS]</div><div class="ttdoc">Static scheduler task configuration table sized by SCHED_NUM_OF_TASKS.</div><div class="ttdef"><b>Definition</b> <a href="Sched_8c_source.html#l00034">Sched.c:34</a></div></div>
 <div class="ttc" id="adev_2cfg_2Sched__Cfg_8h_html_abefd09110bdb31d75202f8cb2258a672"><div class="ttname"><a href="dev_2cfg_2Sched__Cfg_8h.html#abefd09110bdb31d75202f8cb2258a672">SCHED_NUM_OF_TASKS</a></div><div class="ttdeci">#define SCHED_NUM_OF_TASKS</div><div class="ttdoc">Number of scheduled tasks.</div><div class="ttdef"><b>Definition</b> <a href="dev_2cfg_2Sched__Cfg_8h_source.html#l00021">Sched_Cfg.h:21</a></div></div>
 <div class="ttc" id="astructTask__t_html_af6bbf42a3241695d7c9e64091f66e685"><div class="ttname"><a href="structTask__t.html#af6bbf42a3241695d7c9e64091f66e685">Task_t::handler_</a></div><div class="ttdeci">TaskHandler_t handler_</div><div class="ttdef"><b>Definition</b> <a href="dev_2pltf_2Sched__Priv_8h_source.html#l00026">Sched_Priv.h:26</a></div></div>
 </div><!-- fragment -->
@@ -825,15 +827,15 @@ Here is the call graph for this function:</div>
 </dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Sched__Cfg_8c_source.html#l00006">6</a> of file <a class="el" href="Sched__Cfg_8c_source.html">Sched_Cfg.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">    6</span>                               {</div>
-<div class="line"><span class="lineno">    7</span>  <span class="comment">/* Initialize MCU hardware modules*/</span></div>
-<div class="line"><span class="lineno">    8</span>  <a class="code hl_function" href="Mcu_8h.html#a6d525c04d7766d41d60f052dd1bbc9d8">Mcu_Initialize</a>();</div>
-<div class="line"><span class="lineno">    9</span>  <span class="comment">/* Begin Short-Open-Window in case MCU initialization took too long */</span></div>
-<div class="line"><span class="lineno">   10</span>  <a class="code hl_function" href="Mcu_8h.html#aa2dd2a6ae57ff27cf0ea8a6aa7563e44">Mcu_ServiceWatchdogSow</a>();</div>
-<div class="line"><span class="lineno">   11</span>  <span class="comment">/* Reset SysTick counter and reference timestamp */</span></div>
-<div class="line"><span class="lineno">   12</span>  <a class="code hl_function" href="Mcu_8h.html#af3068ed072b7767aae4b65bae414fe5b">Mcu_ReloadSystick</a>();</div>
-<div class="line"><span class="lineno">   13</span>}</div>
+<p class="definition">Definition at line <a class="el" href="Sched__Cfg_8c_source.html#l00005">5</a> of file <a class="el" href="Sched__Cfg_8c_source.html">Sched_Cfg.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">    5</span>                               {</div>
+<div class="line"><span class="lineno">    6</span>  <span class="comment">/* Initialize MCU hardware modules*/</span></div>
+<div class="line"><span class="lineno">    7</span>  <a class="code hl_function" href="Mcu_8h.html#a6d525c04d7766d41d60f052dd1bbc9d8">Mcu_Initialize</a>();</div>
+<div class="line"><span class="lineno">    8</span>  <span class="comment">/* Begin Short-Open-Window in case MCU initialization took too long */</span></div>
+<div class="line"><span class="lineno">    9</span>  <a class="code hl_function" href="Mcu_8h.html#aa2dd2a6ae57ff27cf0ea8a6aa7563e44">Mcu_ServiceWatchdogSow</a>();</div>
+<div class="line"><span class="lineno">   10</span>  <span class="comment">/* Reset SysTick counter and reference timestamp */</span></div>
+<div class="line"><span class="lineno">   11</span>  <a class="code hl_function" href="Mcu_8h.html#af3068ed072b7767aae4b65bae414fe5b">Mcu_ReloadSystick</a>();</div>
+<div class="line"><span class="lineno">   12</span>}</div>
 <div class="ttc" id="aMcu_8h_html_a6d525c04d7766d41d60f052dd1bbc9d8"><div class="ttname"><a href="Mcu_8h.html#a6d525c04d7766d41d60f052dd1bbc9d8">Mcu_Initialize</a></div><div class="ttdeci">void Mcu_Initialize()</div></div>
 <div class="ttc" id="aMcu_8h_html_aa2dd2a6ae57ff27cf0ea8a6aa7563e44"><div class="ttname"><a href="Mcu_8h.html#aa2dd2a6ae57ff27cf0ea8a6aa7563e44">Mcu_ServiceWatchdogSow</a></div><div class="ttdeci">void Mcu_ServiceWatchdogSow()</div></div>
 <div class="ttc" id="aMcu_8h_html_af3068ed072b7767aae4b65bae414fe5b"><div class="ttname"><a href="Mcu_8h.html#af3068ed072b7767aae4b65bae414fe5b">Mcu_ReloadSystick</a></div><div class="ttdeci">void Mcu_ReloadSystick()</div></div>
@@ -927,11 +929,11 @@ Here is the caller graph for this function:</div>
 </table>
 <dl class="section return"><dt>Returns</dt><dd>uint32_t Current system time in milliseconds. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Sched__Cfg_8c_source.html#l00015">15</a> of file <a class="el" href="Sched__Cfg_8c_source.html">Sched_Cfg.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   15</span>                                    {</div>
-<div class="line"><span class="lineno">   16</span>  <span class="comment">/* Return the current system time in ms */</span></div>
-<div class="line"><span class="lineno">   17</span>  <span class="keywordflow">return</span> <a class="code hl_function" href="Mcu_8h.html#a20dc7d5c3ec035f3752d15febb2397b6">Mcu_GetSystemTime_u32</a>();</div>
-<div class="line"><span class="lineno">   18</span>}</div>
+<p class="definition">Definition at line <a class="el" href="Sched__Cfg_8c_source.html#l00014">14</a> of file <a class="el" href="Sched__Cfg_8c_source.html">Sched_Cfg.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   14</span>                                    {</div>
+<div class="line"><span class="lineno">   15</span>  <span class="comment">/* Return the current system time in ms */</span></div>
+<div class="line"><span class="lineno">   16</span>  <span class="keywordflow">return</span> <a class="code hl_function" href="Mcu_8h.html#a20dc7d5c3ec035f3752d15febb2397b6">Mcu_GetSystemTime_u32</a>();</div>
+<div class="line"><span class="lineno">   17</span>}</div>
 <div class="ttc" id="aMcu_8h_html_a20dc7d5c3ec035f3752d15febb2397b6"><div class="ttname"><a href="Mcu_8h.html#a20dc7d5c3ec035f3752d15febb2397b6">Mcu_GetSystemTime_u32</a></div><div class="ttdeci">uint32_t Mcu_GetSystemTime_u32()</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -965,18 +967,18 @@ Here is the caller graph for this function:</div>
 <p>Main scheduler function. </p>
 <dl class="section return"><dt>Returns</dt><dd>Execution status. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Sched_8c_source.html#l00027">27</a> of file <a class="el" href="Sched_8c_source.html">Sched.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   27</span>                         {</div>
-<div class="line"><span class="lineno">   28</span>  <a class="code hl_function" href="group__Sched.html#ga41d855b5aa179267c4c27ac86601ad34">Sched_EntrySequence</a>();</div>
-<div class="line"><span class="lineno">   29</span> </div>
-<div class="line"><span class="lineno">   30</span>  <span class="keywordflow">while</span>(<span class="keyword">true</span>) {</div>
-<div class="line"><span class="lineno">   31</span>    <a class="code hl_function" href="Sched_8c.html#a99b8597edbc7a86e0ff556329d27d28c">CountTime</a>();</div>
-<div class="line"><span class="lineno">   32</span>    <a class="code hl_function" href="Sched_8c.html#a75a48d5cf2208ddbe805fffb9af6df15">ExecutePendingTasks</a>();</div>
-<div class="line"><span class="lineno">   33</span>  }</div>
-<div class="line"><span class="lineno">   34</span>}</div>
-<div class="ttc" id="aSched_8c_html_a75a48d5cf2208ddbe805fffb9af6df15"><div class="ttname"><a href="Sched_8c.html#a75a48d5cf2208ddbe805fffb9af6df15">ExecutePendingTasks</a></div><div class="ttdeci">static void ExecutePendingTasks(void)</div><div class="ttdef"><b>Definition</b> <a href="Sched_8c_source.html#l00067">Sched.c:67</a></div></div>
-<div class="ttc" id="aSched_8c_html_a99b8597edbc7a86e0ff556329d27d28c"><div class="ttname"><a href="Sched_8c.html#a99b8597edbc7a86e0ff556329d27d28c">CountTime</a></div><div class="ttdeci">static void CountTime(void)</div><div class="ttdef"><b>Definition</b> <a href="Sched_8c_source.html#l00036">Sched.c:36</a></div></div>
-<div class="ttc" id="agroup__Sched_html_ga41d855b5aa179267c4c27ac86601ad34"><div class="ttname"><a href="group__Sched.html#ga41d855b5aa179267c4c27ac86601ad34">Sched_EntrySequence</a></div><div class="ttdeci">void Sched_EntrySequence(void)</div><div class="ttdoc">Execute the scheduler entry initialization sequence.</div><div class="ttdef"><b>Definition</b> <a href="Sched__Cfg_8c_source.html#l00006">Sched_Cfg.c:6</a></div></div>
+<p class="definition">Definition at line <a class="el" href="Sched_8c_source.html#l00053">53</a> of file <a class="el" href="Sched_8c_source.html">Sched.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   53</span>                         {</div>
+<div class="line"><span class="lineno">   54</span>  <a class="code hl_function" href="group__Sched.html#ga41d855b5aa179267c4c27ac86601ad34">Sched_EntrySequence</a>();</div>
+<div class="line"><span class="lineno">   55</span> </div>
+<div class="line"><span class="lineno">   56</span>  <span class="keywordflow">while</span>(<span class="keyword">true</span>) {</div>
+<div class="line"><span class="lineno">   57</span>    <a class="code hl_function" href="Sched_8c.html#a99b8597edbc7a86e0ff556329d27d28c">CountTime</a>();</div>
+<div class="line"><span class="lineno">   58</span>    <a class="code hl_function" href="Sched_8c.html#a75a48d5cf2208ddbe805fffb9af6df15">ExecutePendingTasks</a>();</div>
+<div class="line"><span class="lineno">   59</span>  }</div>
+<div class="line"><span class="lineno">   60</span>}</div>
+<div class="ttc" id="aSched_8c_html_a75a48d5cf2208ddbe805fffb9af6df15"><div class="ttname"><a href="Sched_8c.html#a75a48d5cf2208ddbe805fffb9af6df15">ExecutePendingTasks</a></div><div class="ttdeci">static void ExecutePendingTasks(void)</div><div class="ttdef"><b>Definition</b> <a href="Sched_8c_source.html#l00093">Sched.c:93</a></div></div>
+<div class="ttc" id="aSched_8c_html_a99b8597edbc7a86e0ff556329d27d28c"><div class="ttname"><a href="Sched_8c.html#a99b8597edbc7a86e0ff556329d27d28c">CountTime</a></div><div class="ttdeci">static void CountTime(void)</div><div class="ttdef"><b>Definition</b> <a href="Sched_8c_source.html#l00062">Sched.c:62</a></div></div>
+<div class="ttc" id="agroup__Sched_html_ga41d855b5aa179267c4c27ac86601ad34"><div class="ttname"><a href="group__Sched.html#ga41d855b5aa179267c4c27ac86601ad34">Sched_EntrySequence</a></div><div class="ttdeci">void Sched_EntrySequence(void)</div><div class="ttdoc">Execute the scheduler entry initialization sequence.</div><div class="ttdef"><b>Definition</b> <a href="Sched__Cfg_8c_source.html#l00005">Sched_Cfg.c:5</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1001,10 +1003,10 @@ Here is the caller graph for this function:</div>
 <dl class="section return"><dt>Returns</dt><dd>Delta time.</dd></dl>
 <p>Task 0 entry point. </p>
 
-<p class="definition">Definition at line <a class="el" href="Sched__Priv_8c_source.html#l00003">3</a> of file <a class="el" href="Sched__Priv_8c_source.html">Sched_Priv.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">    3</span>                       {</div>
-<div class="line"><span class="lineno">    4</span>  <span class="comment">/* Task code for 5ms period */</span></div>
-<div class="line"><span class="lineno">    5</span>}</div>
+<p class="definition">Definition at line <a class="el" href="Sched__Cfg_8c_source.html#l00019">19</a> of file <a class="el" href="Sched__Cfg_8c_source.html">Sched_Cfg.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   19</span>                       {</div>
+<div class="line"><span class="lineno">   20</span>  <span class="comment">/* Task code for 5ms period */</span></div>
+<div class="line"><span class="lineno">   21</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1028,10 +1030,10 @@ Here is the caller graph for this function:</div>
 <p>Task 0 entry point.</p>
 <p>Task 1 entry point. </p>
 
-<p class="definition">Definition at line <a class="el" href="Sched__Priv_8c_source.html#l00007">7</a> of file <a class="el" href="Sched__Priv_8c_source.html">Sched_Priv.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">    7</span>                       {</div>
-<div class="line"><span class="lineno">    8</span>  <span class="comment">/* Task code for 10ms period */</span></div>
-<div class="line"><span class="lineno">    9</span>}</div>
+<p class="definition">Definition at line <a class="el" href="Sched__Cfg_8c_source.html#l00023">23</a> of file <a class="el" href="Sched__Cfg_8c_source.html">Sched_Cfg.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   23</span>                       {</div>
+<div class="line"><span class="lineno">   24</span>  <span class="comment">/* Task code for 10ms period */</span></div>
+<div class="line"><span class="lineno">   25</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1055,10 +1057,10 @@ Here is the caller graph for this function:</div>
 <p>Task 1 entry point.</p>
 <p>Task 2 entry point. </p>
 
-<p class="definition">Definition at line <a class="el" href="Sched__Priv_8c_source.html#l00011">11</a> of file <a class="el" href="Sched__Priv_8c_source.html">Sched_Priv.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   11</span>                       {</div>
-<div class="line"><span class="lineno">   12</span>  <span class="comment">/* Task code for 20ms period */</span></div>
-<div class="line"><span class="lineno">   13</span>}</div>
+<p class="definition">Definition at line <a class="el" href="Sched__Cfg_8c_source.html#l00027">27</a> of file <a class="el" href="Sched__Cfg_8c_source.html">Sched_Cfg.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   27</span>                       {</div>
+<div class="line"><span class="lineno">   28</span>  <span class="comment">/* Task code for 20ms period */</span></div>
+<div class="line"><span class="lineno">   29</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1082,10 +1084,10 @@ Here is the caller graph for this function:</div>
 <p>Task 2 entry point.</p>
 <p>Task 3 entry point. </p>
 
-<p class="definition">Definition at line <a class="el" href="Sched__Priv_8c_source.html#l00014">14</a> of file <a class="el" href="Sched__Priv_8c_source.html">Sched_Priv.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   14</span>                       {</div>
-<div class="line"><span class="lineno">   15</span>  <span class="comment">/* Task code for 100ms period */</span></div>
-<div class="line"><span class="lineno">   16</span>}</div>
+<p class="definition">Definition at line <a class="el" href="Sched__Cfg_8c_source.html#l00030">30</a> of file <a class="el" href="Sched__Cfg_8c_source.html">Sched_Cfg.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   30</span>                       {</div>
+<div class="line"><span class="lineno">   31</span>  <span class="comment">/* Task code for 100ms period */</span></div>
+<div class="line"><span class="lineno">   32</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1109,10 +1111,10 @@ Here is the caller graph for this function:</div>
 <p>Task 3 entry point.</p>
 <p>Task 4 entry point. </p>
 
-<p class="definition">Definition at line <a class="el" href="Sched__Priv_8c_source.html#l00018">18</a> of file <a class="el" href="Sched__Priv_8c_source.html">Sched_Priv.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   18</span>                       {</div>
-<div class="line"><span class="lineno">   19</span>  <span class="comment">/* Task code for 100ms period */</span></div>
-<div class="line"><span class="lineno">   20</span>}</div>
+<p class="definition">Definition at line <a class="el" href="Sched__Cfg_8c_source.html#l00034">34</a> of file <a class="el" href="Sched__Cfg_8c_source.html">Sched_Cfg.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   34</span>                       {</div>
+<div class="line"><span class="lineno">   35</span>  <span class="comment">/* Task code for 100ms period */</span></div>
+<div class="line"><span class="lineno">   36</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
