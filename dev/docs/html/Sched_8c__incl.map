@@ -1,9 +1,0 @@
-<map id="pltf/Sched.c" name="pltf/Sched.c">
-<area shape="rect" id="Node000001" title=" " alt="" coords="32,5,131,31"/>
-<area shape="rect" id="Node000002" href="$Sched_8h.html" title=" " alt="" coords="45,79,118,104"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="84,31,84,65,79,65,79,31"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="5,152,67,177"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="76,106,53,142,48,139,72,103"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="91,152,162,177"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="91,103,114,139,110,142,87,106"/>
-</map>
