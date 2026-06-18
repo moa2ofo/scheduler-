@@ -35,6 +35,37 @@
 
 #define SCHED_TASK0_SHIFT (0u)
 
+#if(SCHED_NUM_OF_TASKS > 1u)
+/**
+ * @brief Task 1 entry point.
+ * @ingroup Sched
+ */
+void Sched_Task1(void);
+#endif
+
+#if(SCHED_NUM_OF_TASKS > 2u)
+/**
+ * @brief Task 2 entry point.
+ * @ingroup Sched
+ */
+void Sched_Task2(void);
+#endif
+
+#if(SCHED_NUM_OF_TASKS > 3u)
+/**
+ * @brief Task 3 entry point.
+ * @ingroup Sched
+ */
+void Sched_Task3(void);
+#endif
+
+#if(SCHED_NUM_OF_TASKS > 4u)
+/**
+ * @brief Task 4 entry point.
+ * @ingroup Sched
+ */
+void Sched_Task4(void);
+#endif
 /** @} */
 
 /** @} */

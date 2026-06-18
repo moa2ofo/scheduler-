@@ -2,9 +2,35 @@
 #include "Sched_Priv.h"
 #include <string.h>
 
+/**
+ * @brief Scheduler internal time base counter used by @ref Task_ac.
+ */
 static uint32_t Timer_u32 = 0u;
 
+/**
+ * @brief Number of executions performed for each scheduler task configured in @ref Task_ac.
+ */
 static uint32_t NumOfTaskCalls_au32[SCHED_NUM_OF_TASKS] = {0u};
+
+/**
+ * @brief Static scheduler task configuration table sized by @ref SCHED_NUM_OF_TASKS.
+ *
+ * @see Sched_Task0
+ * @see Sched_Task1
+ * @see Sched_Task2
+ * @see Sched_Task3
+ * @see Sched_Task4
+ * @see SCHED_TASK0_PERIOD
+ * @see SCHED_TASK0_SHIFT
+ * @see SCHED_TASK1_PERIOD
+ * @see SCHED_TASK1_SHIFT
+ * @see SCHED_TASK2_PERIOD
+ * @see SCHED_TASK2_SHIFT
+ * @see SCHED_TASK3_PERIOD
+ * @see SCHED_TASK3_SHIFT
+ * @see SCHED_TASK4_PERIOD
+ * @see SCHED_TASK4_SHIFT
+ */
 static const Task_t Task_ac[SCHED_NUM_OF_TASKS] = {
     {.handler_ = &Sched_Task0, .period_cu32 = SCHED_TASK0_PERIOD, .shift_cu32 = SCHED_TASK0_SHIFT},
 #if(SCHED_NUM_OF_TASKS > 1u)
