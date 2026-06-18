@@ -11,4 +11,3 @@
 | Sched_Task3          | Sched_Task3_1          | PASSED  | 0.0%      | -%           |
 | DeltaTime_u32        | DeltaTime_u32_1        | PASSED  | 0.0%      | 0.0%         |
 | Sched_EntrySequence  | NO_TESTS               | NOT EXC | -         | -            |
-| Sched_EntrySequence  | Sched_EntrySequence_1  | PASSED  | 0.0%      | -%           |

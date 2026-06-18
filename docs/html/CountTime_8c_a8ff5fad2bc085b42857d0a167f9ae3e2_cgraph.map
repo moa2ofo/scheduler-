@@ -1,0 +1,9 @@
+<map id="CountTime" name="CountTime">
+<area shape="rect" id="Node000001" title="Update scheduler time base." alt="" coords="5,5,99,31"/>
+<area shape="rect" id="Node000002" href="$DeltaTime__u32_8c.html#ad96c7d7f2c095f2e4622bb18fb459c12" title="Compute elapsed time since last call." alt="" coords="147,5,268,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="99,15,133,15,133,21,99,21"/>
+<area shape="rect" id="Node000003" href="$Sched__GetRefTime__u32_8c.html#a6db6318dec09fb3100bd27a4fe7981ff" title="Get the current scheduler reference time." alt="" coords="316,5,493,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="268,15,302,15,302,21,268,21"/>
+<area shape="rect" id="Node000004" href="$Mcu_8h.html#a20dc7d5c3ec035f3752d15febb2397b6" title=" " alt="" coords="541,5,733,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="494,15,527,15,527,21,494,21"/>
+</map>
