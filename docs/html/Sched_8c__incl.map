@@ -1,7 +1,0 @@
-<map id="dev/pltf/Sched.c" name="dev/pltf/Sched.c">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,132,31"/>
-<area shape="rect" id="Node000002" href="$Sched_8h.html" title=" " alt="" coords="32,79,105,104"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="71,31,71,65,66,65,66,31"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="33,152,104,177"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="71,104,71,138,66,138,66,104"/>
-</map>
