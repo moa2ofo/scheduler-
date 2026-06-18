@@ -111,9 +111,6 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ga2679ff4b078150030488c031d6aa0db9" id="r_ga2679ff4b078150030488c031d6aa0db9"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Sched.html#ga2679ff4b078150030488c031d6aa0db9">ExecutePendingTasks</a> (void)</td></tr>
-<tr class="memdesc:ga2679ff4b078150030488c031d6aa0db9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Execute all tasks whose activation time has been reached.  <br /></td></tr>
-<tr class="separator:ga2679ff4b078150030488c031d6aa0db9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0e420cdba490ed654c6127b7d0a62281" id="r_a0e420cdba490ed654c6127b7d0a62281"><td class="memItemLeft" align="right" valign="top">uint32_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ExecutePendingTasks_8h.html#a0e420cdba490ed654c6127b7d0a62281">get_NumOfTaskCalls_au32_ptr</a> (void)</td></tr>
 <tr class="separator:a0e420cdba490ed654c6127b7d0a62281"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9bd247b629d3e39ced08188ac7d4f7d0" id="r_a9bd247b629d3e39ced08188ac7d4f7d0"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ExecutePendingTasks_8h.html#a9bd247b629d3e39ced08188ac7d4f7d0">get_NumOfTaskCalls_au32_size</a> (void)</td></tr>
@@ -130,6 +127,10 @@ Functions</h2></td></tr>
 <tr class="separator:a99f3502289d439375919dd2fb5792876"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9ad161612b8e6b3c3a300c91e7dec105" id="r_a9ad161612b8e6b3c3a300c91e7dec105"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ExecutePendingTasks_8h.html#a9ad161612b8e6b3c3a300c91e7dec105">set_Timer_u32</a> (uint32_t val)</td></tr>
 <tr class="separator:a9ad161612b8e6b3c3a300c91e7dec105"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">Task Periods [ms]</div></td></tr>
+<tr class="memitem:ga2679ff4b078150030488c031d6aa0db9" id="r_ga2679ff4b078150030488c031d6aa0db9"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Sched.html#ga2679ff4b078150030488c031d6aa0db9">ExecutePendingTasks</a> (void)</td></tr>
+<tr class="memdesc:ga2679ff4b078150030488c031d6aa0db9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Execute all tasks whose activation time has been reached.  <br /></td></tr>
+<tr class="separator:ga2679ff4b078150030488c031d6aa0db9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="a0e420cdba490ed654c6127b7d0a62281" name="a0e420cdba490ed654c6127b7d0a62281"></a>
@@ -315,7 +316,7 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">   45</span>  <span class="keywordtype">size_t</span> m = (n &lt; (size_t)4) ? n : (size_t)4;</div>
 <div class="line"><span class="lineno">   46</span>  memcpy(<a class="code hl_variable" href="ExecutePendingTasks__help_8h.html#ab4e66f821cd9db9184340762ea40b555">Task_ac</a>, src, m * <span class="keyword">sizeof</span>(<span class="keyword">const</span> <a class="code hl_struct" href="structTask__t.html">Task_t</a>));</div>
 <div class="line"><span class="lineno">   47</span>}</div>
-<div class="ttc" id="astructTask__t_html"><div class="ttname"><a href="structTask__t.html">Task_t</a></div><div class="ttdoc">Task configuration structure.</div><div class="ttdef"><b>Definition</b> <a href="dev_2pltf_2Sched__Priv_8h_source.html#l00025">Sched_Priv.h:25</a></div></div>
+<div class="ttc" id="astructTask__t_html"><div class="ttname"><a href="structTask__t.html">Task_t</a></div><div class="ttdoc">Task configuration structure.</div><div class="ttdef"><b>Definition</b> <a href="dev_2pltf_2Sched__Priv_8h_source.html#l00040">Sched_Priv.h:40</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>

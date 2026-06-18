@@ -50,7 +50,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "CountTime_8c.html",
-"test_2unitTest_2TEST__Sched__Task4_2src_2Sched__Cfg_8h.html"
+"test_2unitTest_2TEST__Sched__Task4_2src_2Sched__Priv_8h_source.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -64,7 +64,6 @@ static void CountTime(void) {
     memset(NumOfTaskCalls_au32, 0u, sizeof(NumOfTaskCalls_au32));
   }
 }
- 
 
 static uint32_t DeltaTime_u32(void) {
   static uint32_t l_PrevTimestamp_u32 = 0u;

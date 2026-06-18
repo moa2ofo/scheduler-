@@ -132,9 +132,9 @@ Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a5aafb740a26c9198fe9aeb07862a223f" id="r_a5aafb740a26c9198fe9aeb07862a223f"><td class="memItemLeft" align="right" valign="top">static uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ExecutePendingTasks__help_8h.html#a5aafb740a26c9198fe9aeb07862a223f">NumOfTaskCalls_au32</a> [<a class="el" href="dev_2cfg_2Sched__Cfg_8h.html#abefd09110bdb31d75202f8cb2258a672">SCHED_NUM_OF_TASKS</a>] = {0u}</td></tr>
+<tr class="memitem:a5aafb740a26c9198fe9aeb07862a223f" id="r_a5aafb740a26c9198fe9aeb07862a223f"><td class="memItemLeft" align="right" valign="top">static uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ExecutePendingTasks__help_8h.html#a5aafb740a26c9198fe9aeb07862a223f">NumOfTaskCalls_au32</a> [<a class="el" href="dev_2pltf_2Sched__Priv_8h.html#abefd09110bdb31d75202f8cb2258a672">SCHED_NUM_OF_TASKS</a>] = {0u}</td></tr>
 <tr class="separator:a5aafb740a26c9198fe9aeb07862a223f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab4e66f821cd9db9184340762ea40b555" id="r_ab4e66f821cd9db9184340762ea40b555"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="structTask__t.html">Task_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ExecutePendingTasks__help_8h.html#ab4e66f821cd9db9184340762ea40b555">Task_ac</a> [<a class="el" href="dev_2cfg_2Sched__Cfg_8h.html#abefd09110bdb31d75202f8cb2258a672">SCHED_NUM_OF_TASKS</a>]</td></tr>
+<tr class="memitem:ab4e66f821cd9db9184340762ea40b555" id="r_ab4e66f821cd9db9184340762ea40b555"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="structTask__t.html">Task_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ExecutePendingTasks__help_8h.html#ab4e66f821cd9db9184340762ea40b555">Task_ac</a> [<a class="el" href="dev_2pltf_2Sched__Priv_8h.html#abefd09110bdb31d75202f8cb2258a672">SCHED_NUM_OF_TASKS</a>]</td></tr>
 <tr class="separator:ab4e66f821cd9db9184340762ea40b555"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2ea1befa89db1d891653a142535cdf4d" id="r_a2ea1befa89db1d891653a142535cdf4d"><td class="memItemLeft" align="right" valign="top">static uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ExecutePendingTasks__help_8h.html#a2ea1befa89db1d891653a142535cdf4d">Timer_u32</a> = 0u</td></tr>
 <tr class="separator:a2ea1befa89db1d891653a142535cdf4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -323,7 +323,7 @@ Variables</h2></td></tr>
 <div class="line"><span class="lineno">   45</span>  <span class="keywordtype">size_t</span> m = (n &lt; (size_t)4) ? n : (size_t)4;</div>
 <div class="line"><span class="lineno">   46</span>  memcpy(<a class="code hl_variable" href="ExecutePendingTasks__help_8h.html#ab4e66f821cd9db9184340762ea40b555">Task_ac</a>, src, m * <span class="keyword">sizeof</span>(<span class="keyword">const</span> <a class="code hl_struct" href="structTask__t.html">Task_t</a>));</div>
 <div class="line"><span class="lineno">   47</span>}</div>
-<div class="ttc" id="astructTask__t_html"><div class="ttname"><a href="structTask__t.html">Task_t</a></div><div class="ttdoc">Task configuration structure.</div><div class="ttdef"><b>Definition</b> <a href="dev_2pltf_2Sched__Priv_8h_source.html#l00025">Sched_Priv.h:25</a></div></div>
+<div class="ttc" id="astructTask__t_html"><div class="ttname"><a href="structTask__t.html">Task_t</a></div><div class="ttdoc">Task configuration structure.</div><div class="ttdef"><b>Definition</b> <a href="dev_2pltf_2Sched__Priv_8h_source.html#l00040">Sched_Priv.h:40</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -361,7 +361,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">uint32_t NumOfTaskCalls_au32[<a class="el" href="dev_2cfg_2Sched__Cfg_8h.html#abefd09110bdb31d75202f8cb2258a672">SCHED_NUM_OF_TASKS</a>] = {0u}</td>
+          <td class="memname">uint32_t NumOfTaskCalls_au32[<a class="el" href="dev_2pltf_2Sched__Priv_8h.html#abefd09110bdb31d75202f8cb2258a672">SCHED_NUM_OF_TASKS</a>] = {0u}</td>
         </tr>
       </table>
   </td>
@@ -386,7 +386,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="structTask__t.html">Task_t</a> Task_ac[<a class="el" href="dev_2cfg_2Sched__Cfg_8h.html#abefd09110bdb31d75202f8cb2258a672">SCHED_NUM_OF_TASKS</a>]</td>
+          <td class="memname">const <a class="el" href="structTask__t.html">Task_t</a> Task_ac[<a class="el" href="dev_2pltf_2Sched__Priv_8h.html#abefd09110bdb31d75202f8cb2258a672">SCHED_NUM_OF_TASKS</a>]</td>
         </tr>
       </table>
   </td>
@@ -396,7 +396,7 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">= {</div>
-<div class="line">    {.handler_ = &amp;<a class="code hl_function" href="group__Sched.html#gae400bce4176ddab53753e642e759598b">Sched_Task0</a>, .period_cu32 = <a class="code hl_define" href="dev_2cfg_2Sched__Cfg_8h.html#a18863de2bf4b2e00ff7cf6226ec14ce6">SCHED_TASK0_PERIOD</a>, .shift_cu32 = <a class="code hl_define" href="dev_2cfg_2Sched__Cfg_8h.html#adc67cba90889b793ab47ca425041a555">SCHED_TASK0_SHIFT</a>},</div>
+<div class="line">    {.handler_ = &amp;<a class="code hl_function" href="group__Sched.html#gae400bce4176ddab53753e642e759598b">Sched_Task0</a>, .period_cu32 = <a class="code hl_define" href="dev_2pltf_2Sched__Priv_8h.html#a18863de2bf4b2e00ff7cf6226ec14ce6">SCHED_TASK0_PERIOD</a>, .shift_cu32 = SCHED_TASK0_SHIFT},</div>
 <div class="line"> </div>
 <div class="line"> </div>
 <div class="line"> </div>
@@ -413,21 +413,20 @@ Variables</h2></td></tr>
 <div class="line"> </div>
 <div class="line"> </div>
 <div class="line">}</div>
-<div class="ttc" id="adev_2cfg_2Sched__Cfg_8h_html_a18863de2bf4b2e00ff7cf6226ec14ce6"><div class="ttname"><a href="dev_2cfg_2Sched__Cfg_8h.html#a18863de2bf4b2e00ff7cf6226ec14ce6">SCHED_TASK0_PERIOD</a></div><div class="ttdeci">#define SCHED_TASK0_PERIOD</div><div class="ttdef"><b>Definition</b> <a href="dev_2cfg_2Sched__Cfg_8h_source.html#l00027">Sched_Cfg.h:27</a></div></div>
-<div class="ttc" id="adev_2cfg_2Sched__Cfg_8h_html_adc67cba90889b793ab47ca425041a555"><div class="ttname"><a href="dev_2cfg_2Sched__Cfg_8h.html#adc67cba90889b793ab47ca425041a555">SCHED_TASK0_SHIFT</a></div><div class="ttdeci">#define SCHED_TASK0_SHIFT</div><div class="ttdef"><b>Definition</b> <a href="dev_2cfg_2Sched__Cfg_8h_source.html#l00036">Sched_Cfg.h:36</a></div></div>
+<div class="ttc" id="adev_2pltf_2Sched__Priv_8h_html_a18863de2bf4b2e00ff7cf6226ec14ce6"><div class="ttname"><a href="dev_2pltf_2Sched__Priv_8h.html#a18863de2bf4b2e00ff7cf6226ec14ce6">SCHED_TASK0_PERIOD</a></div><div class="ttdeci">#define SCHED_TASK0_PERIOD</div><div class="ttdef"><b>Definition</b> <a href="dev_2pltf_2Sched__Priv_8h_source.html#l00028">Sched_Priv.h:28</a></div></div>
 <div class="ttc" id="agroup__Sched_html_gae400bce4176ddab53753e642e759598b"><div class="ttname"><a href="group__Sched.html#gae400bce4176ddab53753e642e759598b">Sched_Task0</a></div><div class="ttdeci">void Sched_Task0(void)</div><div class="ttdoc">Task 0 entry point.</div><div class="ttdef"><b>Definition</b> <a href="Sched__Cfg_8c_source.html#l00019">Sched_Cfg.c:19</a></div></div>
 </div><!-- fragment -->
 <p class="definition">Definition at line <a class="el" href="ExecutePendingTasks__help_8h_source.html#l00020">20</a> of file <a class="el" href="ExecutePendingTasks__help_8h_source.html">ExecutePendingTasks_help.h</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   20</span>                                                  {</div>
-<div class="line"><span class="lineno">   21</span>    {.handler_ = &amp;<a class="code hl_function" href="group__Sched.html#gae400bce4176ddab53753e642e759598b">Sched_Task0</a>, .period_cu32 = <a class="code hl_define" href="dev_2cfg_2Sched__Cfg_8h.html#a18863de2bf4b2e00ff7cf6226ec14ce6">SCHED_TASK0_PERIOD</a>, .shift_cu32 = <a class="code hl_define" href="dev_2cfg_2Sched__Cfg_8h.html#adc67cba90889b793ab47ca425041a555">SCHED_TASK0_SHIFT</a>},</div>
+<div class="line"><span class="lineno">   21</span>    {.handler_ = &amp;<a class="code hl_function" href="group__Sched.html#gae400bce4176ddab53753e642e759598b">Sched_Task0</a>, .period_cu32 = <a class="code hl_define" href="dev_2pltf_2Sched__Priv_8h.html#a18863de2bf4b2e00ff7cf6226ec14ce6">SCHED_TASK0_PERIOD</a>, .shift_cu32 = SCHED_TASK0_SHIFT},</div>
 <div class="line"><span class="lineno">   22</span><span class="preprocessor">#if(SCHED_NUM_OF_TASKS &gt; 1u)</span></div>
-<div class="line"><span class="lineno">   23</span>    {.handler_ = &amp;<a class="code hl_function" href="group__Sched.html#ga10314d7837d80b3579c3b4267d144945">Sched_Task1</a>, .period_cu32 = <a class="code hl_define" href="dev_2pltf_2Sched__Priv_8h.html#a4d184e5867cc6ead3d948e1f2e3e3aca">SCHED_TASK1_PERIOD</a>, .shift_cu32 = <a class="code hl_define" href="dev_2pltf_2Sched__Priv_8h.html#a12416d1c7c7ace051dec55bd83e58d06">SCHED_TASK1_SHIFT</a>},</div>
+<div class="line"><span class="lineno">   23</span>    {.handler_ = &amp;<a class="code hl_function" href="group__Sched.html#ga10314d7837d80b3579c3b4267d144945">Sched_Task1</a>, .period_cu32 = <a class="code hl_define" href="dev_2cfg_2Sched__Cfg_8h.html#a4d184e5867cc6ead3d948e1f2e3e3aca">SCHED_TASK1_PERIOD</a>, .shift_cu32 = <a class="code hl_define" href="dev_2cfg_2Sched__Cfg_8h.html#a12416d1c7c7ace051dec55bd83e58d06">SCHED_TASK1_SHIFT</a>},</div>
 <div class="line"><span class="lineno">   24</span><span class="preprocessor">#endif</span></div>
 <div class="line"><span class="lineno">   25</span><span class="preprocessor">#if(SCHED_NUM_OF_TASKS &gt; 2u)</span></div>
-<div class="line"><span class="lineno">   26</span>    {.handler_ = &amp;<a class="code hl_function" href="group__Sched.html#ga2903d59f824547c96cfde10d5356a158">Sched_Task2</a>, .period_cu32 = <a class="code hl_define" href="dev_2pltf_2Sched__Priv_8h.html#ad6aeb6ef682b67decc0143f5b1aed113">SCHED_TASK2_PERIOD</a>, .shift_cu32 = <a class="code hl_define" href="dev_2pltf_2Sched__Priv_8h.html#aa4e6dc75244b667077f6707b6561818d">SCHED_TASK2_SHIFT</a>},</div>
+<div class="line"><span class="lineno">   26</span>    {.handler_ = &amp;<a class="code hl_function" href="group__Sched.html#ga2903d59f824547c96cfde10d5356a158">Sched_Task2</a>, .period_cu32 = <a class="code hl_define" href="dev_2cfg_2Sched__Cfg_8h.html#ad6aeb6ef682b67decc0143f5b1aed113">SCHED_TASK2_PERIOD</a>, .shift_cu32 = <a class="code hl_define" href="dev_2cfg_2Sched__Cfg_8h.html#aa4e6dc75244b667077f6707b6561818d">SCHED_TASK2_SHIFT</a>},</div>
 <div class="line"><span class="lineno">   27</span><span class="preprocessor">#endif</span></div>
 <div class="line"><span class="lineno">   28</span><span class="preprocessor">#if(SCHED_NUM_OF_TASKS &gt; 3u)</span></div>
-<div class="line"><span class="lineno">   29</span>    {.handler_ = &amp;<a class="code hl_function" href="group__Sched.html#ga0e7ef63cf946dd03f941e68381e6089e">Sched_Task3</a>, .period_cu32 = <a class="code hl_define" href="dev_2pltf_2Sched__Priv_8h.html#ad0b28ae5fb825424b02316177cb5f4ae">SCHED_TASK3_PERIOD</a>, .shift_cu32 = <a class="code hl_define" href="dev_2pltf_2Sched__Priv_8h.html#acdcf9a08ce4aae268e3a74a2534acfd8">SCHED_TASK3_SHIFT</a>},</div>
+<div class="line"><span class="lineno">   29</span>    {.handler_ = &amp;<a class="code hl_function" href="group__Sched.html#ga0e7ef63cf946dd03f941e68381e6089e">Sched_Task3</a>, .period_cu32 = <a class="code hl_define" href="dev_2cfg_2Sched__Cfg_8h.html#ad0b28ae5fb825424b02316177cb5f4ae">SCHED_TASK3_PERIOD</a>, .shift_cu32 = <a class="code hl_define" href="dev_2cfg_2Sched__Cfg_8h.html#acdcf9a08ce4aae268e3a74a2534acfd8">SCHED_TASK3_SHIFT</a>},</div>
 <div class="line"><span class="lineno">   30</span><span class="preprocessor">#endif</span></div>
 <div class="line"><span class="lineno">   31</span><span class="preprocessor">#if(SCHED_NUM_OF_TASKS &gt; 4u)</span></div>
 <div class="line"><span class="lineno">   32</span>    {.handler_ = &amp;<a class="code hl_function" href="group__Sched.html#gaed8620d4925861e52e20a1fe0e49126d">Sched_Task4</a>, .period_cu32 = SCHED_TASK4_PERIOD, .shift_cu32 = SCHED_TASK4_SHIFT},</div>
@@ -436,16 +435,16 @@ Variables</h2></td></tr>
 <div class="line"><span class="lineno">   35</span><span class="preprocessor">#error &quot;Number of tasks exceeds the maximum supported by the implementation.&quot;</span></div>
 <div class="line"><span class="lineno">   36</span><span class="preprocessor">#endif</span></div>
 <div class="line"><span class="lineno">   37</span>};</div>
-<div class="ttc" id="adev_2pltf_2Sched__Priv_8h_html_a12416d1c7c7ace051dec55bd83e58d06"><div class="ttname"><a href="dev_2pltf_2Sched__Priv_8h.html#a12416d1c7c7ace051dec55bd83e58d06">SCHED_TASK1_SHIFT</a></div><div class="ttdeci">#define SCHED_TASK1_SHIFT</div><div class="ttdef"><b>Definition</b> <a href="dev_2pltf_2Sched__Priv_8h_source.html#l00008">Sched_Priv.h:8</a></div></div>
-<div class="ttc" id="adev_2pltf_2Sched__Priv_8h_html_a4d184e5867cc6ead3d948e1f2e3e3aca"><div class="ttname"><a href="dev_2pltf_2Sched__Priv_8h.html#a4d184e5867cc6ead3d948e1f2e3e3aca">SCHED_TASK1_PERIOD</a></div><div class="ttdeci">#define SCHED_TASK1_PERIOD</div><div class="ttdef"><b>Definition</b> <a href="dev_2pltf_2Sched__Priv_8h_source.html#l00011">Sched_Priv.h:11</a></div></div>
-<div class="ttc" id="adev_2pltf_2Sched__Priv_8h_html_aa4e6dc75244b667077f6707b6561818d"><div class="ttname"><a href="dev_2pltf_2Sched__Priv_8h.html#aa4e6dc75244b667077f6707b6561818d">SCHED_TASK2_SHIFT</a></div><div class="ttdeci">#define SCHED_TASK2_SHIFT</div><div class="ttdef"><b>Definition</b> <a href="dev_2pltf_2Sched__Priv_8h_source.html#l00009">Sched_Priv.h:9</a></div></div>
-<div class="ttc" id="adev_2pltf_2Sched__Priv_8h_html_acdcf9a08ce4aae268e3a74a2534acfd8"><div class="ttname"><a href="dev_2pltf_2Sched__Priv_8h.html#acdcf9a08ce4aae268e3a74a2534acfd8">SCHED_TASK3_SHIFT</a></div><div class="ttdeci">#define SCHED_TASK3_SHIFT</div><div class="ttdef"><b>Definition</b> <a href="dev_2pltf_2Sched__Priv_8h_source.html#l00010">Sched_Priv.h:10</a></div></div>
-<div class="ttc" id="adev_2pltf_2Sched__Priv_8h_html_ad0b28ae5fb825424b02316177cb5f4ae"><div class="ttname"><a href="dev_2pltf_2Sched__Priv_8h.html#ad0b28ae5fb825424b02316177cb5f4ae">SCHED_TASK3_PERIOD</a></div><div class="ttdeci">#define SCHED_TASK3_PERIOD</div><div class="ttdef"><b>Definition</b> <a href="dev_2pltf_2Sched__Priv_8h_source.html#l00013">Sched_Priv.h:13</a></div></div>
-<div class="ttc" id="adev_2pltf_2Sched__Priv_8h_html_ad6aeb6ef682b67decc0143f5b1aed113"><div class="ttname"><a href="dev_2pltf_2Sched__Priv_8h.html#ad6aeb6ef682b67decc0143f5b1aed113">SCHED_TASK2_PERIOD</a></div><div class="ttdeci">#define SCHED_TASK2_PERIOD</div><div class="ttdef"><b>Definition</b> <a href="dev_2pltf_2Sched__Priv_8h_source.html#l00012">Sched_Priv.h:12</a></div></div>
+<div class="ttc" id="adev_2cfg_2Sched__Cfg_8h_html_a12416d1c7c7ace051dec55bd83e58d06"><div class="ttname"><a href="dev_2cfg_2Sched__Cfg_8h.html#a12416d1c7c7ace051dec55bd83e58d06">SCHED_TASK1_SHIFT</a></div><div class="ttdeci">#define SCHED_TASK1_SHIFT</div><div class="ttdef"><b>Definition</b> <a href="dev_2cfg_2Sched__Cfg_8h_source.html#l00011">Sched_Cfg.h:11</a></div></div>
+<div class="ttc" id="adev_2cfg_2Sched__Cfg_8h_html_a4d184e5867cc6ead3d948e1f2e3e3aca"><div class="ttname"><a href="dev_2cfg_2Sched__Cfg_8h.html#a4d184e5867cc6ead3d948e1f2e3e3aca">SCHED_TASK1_PERIOD</a></div><div class="ttdeci">#define SCHED_TASK1_PERIOD</div><div class="ttdef"><b>Definition</b> <a href="dev_2cfg_2Sched__Cfg_8h_source.html#l00014">Sched_Cfg.h:14</a></div></div>
+<div class="ttc" id="adev_2cfg_2Sched__Cfg_8h_html_aa4e6dc75244b667077f6707b6561818d"><div class="ttname"><a href="dev_2cfg_2Sched__Cfg_8h.html#aa4e6dc75244b667077f6707b6561818d">SCHED_TASK2_SHIFT</a></div><div class="ttdeci">#define SCHED_TASK2_SHIFT</div><div class="ttdef"><b>Definition</b> <a href="dev_2cfg_2Sched__Cfg_8h_source.html#l00012">Sched_Cfg.h:12</a></div></div>
+<div class="ttc" id="adev_2cfg_2Sched__Cfg_8h_html_acdcf9a08ce4aae268e3a74a2534acfd8"><div class="ttname"><a href="dev_2cfg_2Sched__Cfg_8h.html#acdcf9a08ce4aae268e3a74a2534acfd8">SCHED_TASK3_SHIFT</a></div><div class="ttdeci">#define SCHED_TASK3_SHIFT</div><div class="ttdef"><b>Definition</b> <a href="dev_2cfg_2Sched__Cfg_8h_source.html#l00013">Sched_Cfg.h:13</a></div></div>
+<div class="ttc" id="adev_2cfg_2Sched__Cfg_8h_html_ad0b28ae5fb825424b02316177cb5f4ae"><div class="ttname"><a href="dev_2cfg_2Sched__Cfg_8h.html#ad0b28ae5fb825424b02316177cb5f4ae">SCHED_TASK3_PERIOD</a></div><div class="ttdeci">#define SCHED_TASK3_PERIOD</div><div class="ttdef"><b>Definition</b> <a href="dev_2cfg_2Sched__Cfg_8h_source.html#l00016">Sched_Cfg.h:16</a></div></div>
+<div class="ttc" id="adev_2cfg_2Sched__Cfg_8h_html_ad6aeb6ef682b67decc0143f5b1aed113"><div class="ttname"><a href="dev_2cfg_2Sched__Cfg_8h.html#ad6aeb6ef682b67decc0143f5b1aed113">SCHED_TASK2_PERIOD</a></div><div class="ttdeci">#define SCHED_TASK2_PERIOD</div><div class="ttdef"><b>Definition</b> <a href="dev_2cfg_2Sched__Cfg_8h_source.html#l00015">Sched_Cfg.h:15</a></div></div>
 <div class="ttc" id="agroup__Sched_html_ga0e7ef63cf946dd03f941e68381e6089e"><div class="ttname"><a href="group__Sched.html#ga0e7ef63cf946dd03f941e68381e6089e">Sched_Task3</a></div><div class="ttdeci">void Sched_Task3(void)</div><div class="ttdoc">Task 3 entry point.</div><div class="ttdef"><b>Definition</b> <a href="Sched__Cfg_8c_source.html#l00030">Sched_Cfg.c:30</a></div></div>
 <div class="ttc" id="agroup__Sched_html_ga10314d7837d80b3579c3b4267d144945"><div class="ttname"><a href="group__Sched.html#ga10314d7837d80b3579c3b4267d144945">Sched_Task1</a></div><div class="ttdeci">void Sched_Task1(void)</div><div class="ttdoc">Task 1 entry point.</div><div class="ttdef"><b>Definition</b> <a href="Sched__Cfg_8c_source.html#l00023">Sched_Cfg.c:23</a></div></div>
 <div class="ttc" id="agroup__Sched_html_ga2903d59f824547c96cfde10d5356a158"><div class="ttname"><a href="group__Sched.html#ga2903d59f824547c96cfde10d5356a158">Sched_Task2</a></div><div class="ttdeci">void Sched_Task2(void)</div><div class="ttdoc">Task 2 entry point.</div><div class="ttdef"><b>Definition</b> <a href="Sched__Cfg_8c_source.html#l00027">Sched_Cfg.c:27</a></div></div>
-<div class="ttc" id="agroup__Sched_html_gaed8620d4925861e52e20a1fe0e49126d"><div class="ttname"><a href="group__Sched.html#gaed8620d4925861e52e20a1fe0e49126d">Sched_Task4</a></div><div class="ttdeci">void Sched_Task4(void)</div><div class="ttdoc">Task 4 entry point.</div><div class="ttdef"><b>Definition</b> <a href="Sched__Cfg_8c_source.html#l00034">Sched_Cfg.c:34</a></div></div>
+<div class="ttc" id="agroup__Sched_html_gaed8620d4925861e52e20a1fe0e49126d"><div class="ttname"><a href="group__Sched.html#gaed8620d4925861e52e20a1fe0e49126d">Sched_Task4</a></div><div class="ttdeci">void Sched_Task4(void)</div><div class="ttdoc">Task 4 entry point.</div><div class="ttdef"><b>Definition</b> <a href="Sched__Task4_8c_source.html#l00004">Sched_Task4.c:4</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>

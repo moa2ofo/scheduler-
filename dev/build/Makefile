@@ -153,30 +153,6 @@ cfg/Sched_Cfg.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/new.dir/build.make CMakeFiles/new.dir/cfg/Sched_Cfg.c.s
 .PHONY : cfg/Sched_Cfg.c.s
 
-cfg/Sched_Priv.o: cfg/Sched_Priv.c.o
-.PHONY : cfg/Sched_Priv.o
-
-# target to build an object file
-cfg/Sched_Priv.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/new.dir/build.make CMakeFiles/new.dir/cfg/Sched_Priv.c.o
-.PHONY : cfg/Sched_Priv.c.o
-
-cfg/Sched_Priv.i: cfg/Sched_Priv.c.i
-.PHONY : cfg/Sched_Priv.i
-
-# target to preprocess a source file
-cfg/Sched_Priv.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/new.dir/build.make CMakeFiles/new.dir/cfg/Sched_Priv.c.i
-.PHONY : cfg/Sched_Priv.c.i
-
-cfg/Sched_Priv.s: cfg/Sched_Priv.c.s
-.PHONY : cfg/Sched_Priv.s
-
-# target to generate assembly for a file
-cfg/Sched_Priv.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/new.dir/build.make CMakeFiles/new.dir/cfg/Sched_Priv.c.s
-.PHONY : cfg/Sched_Priv.c.s
-
 pltf/Sched.o: pltf/Sched.c.o
 .PHONY : pltf/Sched.o
 
@@ -213,9 +189,6 @@ help:
 	@echo "... cfg/Sched_Cfg.o"
 	@echo "... cfg/Sched_Cfg.i"
 	@echo "... cfg/Sched_Cfg.s"
-	@echo "... cfg/Sched_Priv.o"
-	@echo "... cfg/Sched_Priv.i"
-	@echo "... cfg/Sched_Priv.s"
 	@echo "... pltf/Sched.o"
 	@echo "... pltf/Sched.i"
 	@echo "... pltf/Sched.s"

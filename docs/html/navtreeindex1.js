@@ -1,8 +1,5 @@
 var NAVTREEINDEX1 =
 {
-"test_2unitTest_2TEST__Sched__Task4_2src_2Sched__Cfg_8h.html":[2,0,1,0,10,0,0],
-"test_2unitTest_2TEST__Sched__Task4_2src_2Sched__Cfg_8h_source.html":[2,0,1,0,10,0,0],
-"test_2unitTest_2TEST__Sched__Task4_2src_2Sched__Priv_8h.html":[2,0,1,0,10,0,1],
 "test_2unitTest_2TEST__Sched__Task4_2src_2Sched__Priv_8h_source.html":[2,0,1,0,10,0,1],
 "test__CountTime_8c.html":[2,0,1,0,0,1,0],
 "test__CountTime_8c.html#a53553117c8cbe2eab974e288910b0280":[2,0,1,0,0,1,0,2],

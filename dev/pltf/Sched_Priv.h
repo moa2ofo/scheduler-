@@ -5,7 +5,6 @@
 #include <stdbool.h>
 #include <stdint.h>
 
-
 /**
  * @brief Maximum reference time value before wrap-around.
  */

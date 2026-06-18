@@ -20,5 +20,4 @@ target_compile_options(new PRIVATE
     -Wall
     -Wextra
     -Wpedantic
-    -Wno-unused-function
 )

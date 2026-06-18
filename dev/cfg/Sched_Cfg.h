@@ -16,8 +16,6 @@
 #define SCHED_TASK3_PERIOD (100u)
 /** @} */
 
-
-
 #if(SCHED_NUM_OF_TASKS > 1u)
 /**
  * @brief Task 1 entry point.
@@ -41,7 +39,6 @@ void Sched_Task2(void);
  */
 void Sched_Task3(void);
 #endif
-
 
 /** @} */
 

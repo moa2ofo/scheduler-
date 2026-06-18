@@ -91,8 +91,7 @@ $(document).ready(function(){initNavTree('dev_2pltf_2Sched__Priv_8h.html',''); i
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
-<a href="#typedef-members">Typedefs</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#define-members">Macros</a>  </div>
   <div class="headertitle"><div class="title">Sched_Priv.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -115,29 +114,23 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr><td colspan="2"><div class="groupHeader">Task Phase Shifts [ms]</div></td></tr>
-<tr class="memitem:a12416d1c7c7ace051dec55bd83e58d06" id="r_a12416d1c7c7ace051dec55bd83e58d06"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dev_2pltf_2Sched__Priv_8h.html#a12416d1c7c7ace051dec55bd83e58d06">SCHED_TASK1_SHIFT</a>&#160;&#160;&#160;(2u)</td></tr>
-<tr class="separator:a12416d1c7c7ace051dec55bd83e58d06"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa4e6dc75244b667077f6707b6561818d" id="r_aa4e6dc75244b667077f6707b6561818d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dev_2pltf_2Sched__Priv_8h.html#aa4e6dc75244b667077f6707b6561818d">SCHED_TASK2_SHIFT</a>&#160;&#160;&#160;(7u)</td></tr>
-<tr class="separator:aa4e6dc75244b667077f6707b6561818d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acdcf9a08ce4aae268e3a74a2534acfd8" id="r_acdcf9a08ce4aae268e3a74a2534acfd8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dev_2pltf_2Sched__Priv_8h.html#acdcf9a08ce4aae268e3a74a2534acfd8">SCHED_TASK3_SHIFT</a>&#160;&#160;&#160;(17u)</td></tr>
-<tr class="separator:acdcf9a08ce4aae268e3a74a2534acfd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga979ab355e298f761c0a8f950a9d60df8" id="r_ga979ab355e298f761c0a8f950a9d60df8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Sched.html#ga979ab355e298f761c0a8f950a9d60df8">SCHED_MAX_REF_TIME</a>&#160;&#160;&#160;(UINT32_MAX)</td></tr>
+<tr class="memdesc:ga979ab355e298f761c0a8f950a9d60df8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum reference time value before wrap-around.  <br /></td></tr>
+<tr class="separator:ga979ab355e298f761c0a8f950a9d60df8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea308311f0950c45b22527f9e26775a9" id="r_aea308311f0950c45b22527f9e26775a9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dev_2pltf_2Sched__Priv_8h.html#aea308311f0950c45b22527f9e26775a9">SCHED_LOOP_PERIOD</a>&#160;&#160;&#160;(100u)</td></tr>
+<tr class="memdesc:aea308311f0950c45b22527f9e26775a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scheduler base loop period in milliseconds.  <br /></td></tr>
+<tr class="separator:aea308311f0950c45b22527f9e26775a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abefd09110bdb31d75202f8cb2258a672" id="r_abefd09110bdb31d75202f8cb2258a672"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dev_2pltf_2Sched__Priv_8h.html#abefd09110bdb31d75202f8cb2258a672">SCHED_NUM_OF_TASKS</a>&#160;&#160;&#160;(4u)</td></tr>
+<tr class="memdesc:abefd09110bdb31d75202f8cb2258a672"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of scheduled tasks.  <br /></td></tr>
+<tr class="separator:abefd09110bdb31d75202f8cb2258a672"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">Task Periods [ms]</div></td></tr>
-<tr class="memitem:a4d184e5867cc6ead3d948e1f2e3e3aca" id="r_a4d184e5867cc6ead3d948e1f2e3e3aca"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dev_2pltf_2Sched__Priv_8h.html#a4d184e5867cc6ead3d948e1f2e3e3aca">SCHED_TASK1_PERIOD</a>&#160;&#160;&#160;(10u)</td></tr>
-<tr class="separator:a4d184e5867cc6ead3d948e1f2e3e3aca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad6aeb6ef682b67decc0143f5b1aed113" id="r_ad6aeb6ef682b67decc0143f5b1aed113"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dev_2pltf_2Sched__Priv_8h.html#ad6aeb6ef682b67decc0143f5b1aed113">SCHED_TASK2_PERIOD</a>&#160;&#160;&#160;(20u)</td></tr>
-<tr class="separator:ad6aeb6ef682b67decc0143f5b1aed113"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad0b28ae5fb825424b02316177cb5f4ae" id="r_ad0b28ae5fb825424b02316177cb5f4ae"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dev_2pltf_2Sched__Priv_8h.html#ad0b28ae5fb825424b02316177cb5f4ae">SCHED_TASK3_PERIOD</a>&#160;&#160;&#160;(100u)</td></tr>
-<tr class="separator:ad0b28ae5fb825424b02316177cb5f4ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18863de2bf4b2e00ff7cf6226ec14ce6" id="r_a18863de2bf4b2e00ff7cf6226ec14ce6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dev_2pltf_2Sched__Priv_8h.html#a18863de2bf4b2e00ff7cf6226ec14ce6">SCHED_TASK0_PERIOD</a>&#160;&#160;&#160;(5u)</td></tr>
+<tr class="separator:a18863de2bf4b2e00ff7cf6226ec14ce6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
-Typedefs</h2></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Task Periods [ms]</h2></td></tr>
 <tr class="memitem:gadce47304ee8b44e4d240b01367c2f82a" id="r_gadce47304ee8b44e4d240b01367c2f82a"><td class="memItemLeft" align="right" valign="top">typedef void(*const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Sched.html#gadce47304ee8b44e4d240b01367c2f82a">TaskHandler_t</a>) (void)</td></tr>
 <tr class="memdesc:gadce47304ee8b44e4d240b01367c2f82a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Task handler function type.  <br /></td></tr>
 <tr class="separator:gadce47304ee8b44e4d240b01367c2f82a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
-Functions</h2></td></tr>
 <tr class="memitem:ga8ff5fad2bc085b42857d0a167f9ae3e2" id="r_ga8ff5fad2bc085b42857d0a167f9ae3e2"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Sched.html#ga8ff5fad2bc085b42857d0a167f9ae3e2">CountTime</a> (void)</td></tr>
 <tr class="memdesc:ga8ff5fad2bc085b42857d0a167f9ae3e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update scheduler time base.  <br /></td></tr>
 <tr class="separator:ga8ff5fad2bc085b42857d0a167f9ae3e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -152,99 +145,56 @@ Functions</h2></td></tr>
 <tr class="separator:gae400bce4176ddab53753e642e759598b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="a4d184e5867cc6ead3d948e1f2e3e3aca" name="a4d184e5867cc6ead3d948e1f2e3e3aca"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4d184e5867cc6ead3d948e1f2e3e3aca">&#9670;&#160;</a></span>SCHED_TASK1_PERIOD</h2>
+<a id="aea308311f0950c45b22527f9e26775a9" name="aea308311f0950c45b22527f9e26775a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea308311f0950c45b22527f9e26775a9">&#9670;&#160;</a></span>SCHED_LOOP_PERIOD</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define SCHED_TASK1_PERIOD&#160;&#160;&#160;(10u)</td>
+          <td class="memname">#define SCHED_LOOP_PERIOD&#160;&#160;&#160;(100u)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="dev_2pltf_2Sched__Priv_8h_source.html#l00011">11</a> of file <a class="el" href="dev_2pltf_2Sched__Priv_8h_source.html">Sched_Priv.h</a>.</p>
+<p>Scheduler base loop period in milliseconds. </p>
+<p>Must be a multiple of all configured task periods. </p>
+
+<p class="definition">Definition at line <a class="el" href="dev_2pltf_2Sched__Priv_8h_source.html#l00017">17</a> of file <a class="el" href="dev_2pltf_2Sched__Priv_8h_source.html">Sched_Priv.h</a>.</p>
 
 </div>
 </div>
-<a id="a12416d1c7c7ace051dec55bd83e58d06" name="a12416d1c7c7ace051dec55bd83e58d06"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a12416d1c7c7ace051dec55bd83e58d06">&#9670;&#160;</a></span>SCHED_TASK1_SHIFT</h2>
+<a id="abefd09110bdb31d75202f8cb2258a672" name="abefd09110bdb31d75202f8cb2258a672"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abefd09110bdb31d75202f8cb2258a672">&#9670;&#160;</a></span>SCHED_NUM_OF_TASKS</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define SCHED_TASK1_SHIFT&#160;&#160;&#160;(2u)</td>
+          <td class="memname">#define SCHED_NUM_OF_TASKS&#160;&#160;&#160;(4u)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="dev_2pltf_2Sched__Priv_8h_source.html#l00008">8</a> of file <a class="el" href="dev_2pltf_2Sched__Priv_8h_source.html">Sched_Priv.h</a>.</p>
+<p>Number of scheduled tasks. </p>
+
+<p class="definition">Definition at line <a class="el" href="dev_2pltf_2Sched__Priv_8h_source.html#l00022">22</a> of file <a class="el" href="dev_2pltf_2Sched__Priv_8h_source.html">Sched_Priv.h</a>.</p>
 
 </div>
 </div>
-<a id="ad6aeb6ef682b67decc0143f5b1aed113" name="ad6aeb6ef682b67decc0143f5b1aed113"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad6aeb6ef682b67decc0143f5b1aed113">&#9670;&#160;</a></span>SCHED_TASK2_PERIOD</h2>
+<a id="a18863de2bf4b2e00ff7cf6226ec14ce6" name="a18863de2bf4b2e00ff7cf6226ec14ce6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18863de2bf4b2e00ff7cf6226ec14ce6">&#9670;&#160;</a></span>SCHED_TASK0_PERIOD</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define SCHED_TASK2_PERIOD&#160;&#160;&#160;(20u)</td>
+          <td class="memname">#define SCHED_TASK0_PERIOD&#160;&#160;&#160;(5u)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="dev_2pltf_2Sched__Priv_8h_source.html#l00012">12</a> of file <a class="el" href="dev_2pltf_2Sched__Priv_8h_source.html">Sched_Priv.h</a>.</p>
-
-</div>
-</div>
-<a id="aa4e6dc75244b667077f6707b6561818d" name="aa4e6dc75244b667077f6707b6561818d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa4e6dc75244b667077f6707b6561818d">&#9670;&#160;</a></span>SCHED_TASK2_SHIFT</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define SCHED_TASK2_SHIFT&#160;&#160;&#160;(7u)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="dev_2pltf_2Sched__Priv_8h_source.html#l00009">9</a> of file <a class="el" href="dev_2pltf_2Sched__Priv_8h_source.html">Sched_Priv.h</a>.</p>
-
-</div>
-</div>
-<a id="ad0b28ae5fb825424b02316177cb5f4ae" name="ad0b28ae5fb825424b02316177cb5f4ae"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad0b28ae5fb825424b02316177cb5f4ae">&#9670;&#160;</a></span>SCHED_TASK3_PERIOD</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define SCHED_TASK3_PERIOD&#160;&#160;&#160;(100u)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="dev_2pltf_2Sched__Priv_8h_source.html#l00013">13</a> of file <a class="el" href="dev_2pltf_2Sched__Priv_8h_source.html">Sched_Priv.h</a>.</p>
-
-</div>
-</div>
-<a id="acdcf9a08ce4aae268e3a74a2534acfd8" name="acdcf9a08ce4aae268e3a74a2534acfd8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acdcf9a08ce4aae268e3a74a2534acfd8">&#9670;&#160;</a></span>SCHED_TASK3_SHIFT</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define SCHED_TASK3_SHIFT&#160;&#160;&#160;(17u)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="dev_2pltf_2Sched__Priv_8h_source.html#l00010">10</a> of file <a class="el" href="dev_2pltf_2Sched__Priv_8h_source.html">Sched_Priv.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="dev_2pltf_2Sched__Priv_8h_source.html#l00028">28</a> of file <a class="el" href="dev_2pltf_2Sched__Priv_8h_source.html">Sched_Priv.h</a>.</p>
 
 </div>
 </div>

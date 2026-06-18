@@ -1,7 +1,6 @@
 #include "Sched_Cfg.h"
-#include "Sched.h"
 #include "Mcu.h"
-
+#include "Sched.h"
 
 void Sched_EntrySequence(void) {
   /* Initialize MCU hardware modules*/
